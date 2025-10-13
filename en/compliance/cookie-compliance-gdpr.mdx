@@ -1,0 +1,109 @@
+---
+title: "Cookie Compliance with GDPR Requirements"
+description: "DialogShift enables compliance with legal requirements for cookie consent according to GDPR and other privacy regulations"
+icon: "scale-balanced"
+---
+
+<Info>
+  DialogShift offers two flexible configurations for cookie compliance that meet GDPR requirements and other privacy regulations.
+</Info>
+
+## Available Configurations
+
+DialogShift provides two options for cookie compliance, each with different advantages and disadvantages:
+
+<CardGroup cols={2}>
+  <Card
+    title="Website Cookie Management"
+    icon="browser"
+    href="#integration-of-website-chat-into-the-website-cookie-management"
+  >
+    Integration of the chat into your existing website cookie management
+  </Card>
+  <Card
+    title="DialogShift Managed Consent"
+    icon="shield-check"
+    href="#dialogshift-manages-cookie-consent-for-the-chat-widget"
+  >
+    DialogShift manages cookie consent independently
+  </Card>
+</CardGroup>
+
+## Integration of Website Chat into the Website Cookie Management
+
+With this configuration, the hotel integrates the DialogShift chat widget into the existing cookie consent management of the website.
+
+<Note>
+  The standard approach is that the website consent manager only loads our program libraries when the user has consented to functional (or marketing) cookies.
+</Note>
+
+### Advantages
+
+<Steps>
+  <Step title="Measurable Performance">
+    Evaluation of chat opening rate possible
+  </Step>
+  <Step title="Advanced Analytics">
+    User behavior scoring is possible
+  </Step>
+</Steps>
+
+### Disadvantages
+
+<Warning>
+  A significant portion of users will not see the chat offer on the website as they decline cookie consent.
+</Warning>
+
+## DialogShift Manages Cookie Consent for the Chat Widget
+
+With our own cookie consent management, our solution initially does not set any cookies.
+
+<Info>
+  Only when the user starts a live chat is cookie consent requested within the chat itself. DialogShift directly requests the consent. Integration into the website consent management is not required.
+</Info>
+
+### Advantages
+
+<Steps>
+  <Step title="Maximum Reach">
+    All website visitors can use the chatbot, regardless of their cookie settings on the website
+  </Step>
+</Steps>
+
+### Disadvantages
+
+<AccordionGroup>
+  <Accordion title="Limited Analytics">
+    The chat opening rate cannot be calculated as no tracking cookies are set before interaction
+  </Accordion>
+  <Accordion title="No Behavior Scoring">
+    User behavior scoring is not allowed as long as there is no explicit consent
+  </Accordion>
+</AccordionGroup>
+
+## Recommendation
+
+<Tip>
+  The choice between the two options depends on your specific requirements:
+  - Choose **Website Integration** if detailed analytics are important
+  - Choose **DialogShift Managed Consent** if maximum accessibility is a priority
+</Tip>
+
+## Further Information
+
+<CardGroup cols={2}>
+  <Card
+    title="Cookie Overview Consent Manager"
+    icon="list"
+    href="/en/compliance/cookie-overview-consent-manager"
+  >
+    Details about cookies with website integration
+  </Card>
+  <Card
+    title="Cookie Overview Managed Consent"
+    icon="list-check"
+    href="/en/compliance/cookie-overview-managed-consent-mode"
+  >
+    Details about cookies in managed consent mode
+  </Card>
+</CardGroup>

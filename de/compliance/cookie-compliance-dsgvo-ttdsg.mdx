@@ -1,0 +1,109 @@
+---
+title: "Cookie Compliance nach DSGVO & TTDSG"
+description: "DialogShift ermöglicht die Einhaltung der gesetzlichen Bedingungen zum Thema Cookie Consent gemäß DSGVO und TTDSG"
+icon: "scale-balanced"
+---
+
+<Info>
+  DialogShift bietet zwei flexible Konfigurationen zur Einhaltung der Cookie-Richtlinien an, die den Anforderungen der DSGVO und des TTDSG entsprechen.
+</Info>
+
+## Verfügbare Konfigurationen
+
+DialogShift stellt zwei Optionen zur Cookie-Compliance zur Verfügung, die unterschiedliche Vor- und Nachteile bieten:
+
+<CardGroup cols={2}>
+  <Card
+    title="Website Cookie Management"
+    icon="browser"
+    href="#einbindung-des-website-chat-in-das-cookie-management-der-website"
+  >
+    Integration des Chats in das bestehende Cookie-Management Ihrer Website
+  </Card>
+  <Card
+    title="DialogShift Managed Consent"
+    icon="shield-check"
+    href="#dialogshift-organisiert-den-cookie-consent-für-das-chat-widget"
+  >
+    DialogShift verwaltet den Cookie-Consent selbstständig
+  </Card>
+</CardGroup>
+
+## Einbindung des Website Chat in das Cookie Management der Website
+
+Bei dieser Konfiguration integriert das Hotel das DialogShift Chat-Widget in das bestehende Cookie Consent Management der Website. 
+
+<Note>
+  Der Standard ist, dass der Website Consent Manager unsere Programm-Bibliotheken nur dann lädt, wenn der Nutzer den funktionalen (oder Marketing) Cookies zugestimmt hat.
+</Note>
+
+### Vorteile
+
+<Steps>
+  <Step title="Messbare Performance">
+    Auswertung der Öffnungsrate des Chats möglich
+  </Step>
+  <Step title="Erweiterte Analysen">
+    Verhaltensscoring der Nutzer ist möglich
+  </Step>
+</Steps>
+
+### Nachteile
+
+<Warning>
+  Ein nicht unerheblicher Teil der Nutzer sieht das Chat-Angebot auf der Website nicht, da sie die Cookie-Zustimmung ablehnen.
+</Warning>
+
+## DialogShift organisiert den Cookie Consent für das Chat Widget
+
+Bei unserem eigenen Cookie Consent Management setzt unsere Lösung zunächst gar keine Cookies. 
+
+<Info>
+  Nur wenn der Nutzer einen Live Chat startet, wird nach dem Cookie Consent im Chat selbst gefragt. DialogShift fragt also den Consent direkt an. Eine Einbindung in das Website Consent Management ist nicht erforderlich.
+</Info>
+
+### Vorteile
+
+<Steps>
+  <Step title="Maximale Reichweite">
+    Alle Website-Besucher können den Chatbot nutzen, unabhängig von ihrer Cookie-Einstellung auf der Website
+  </Step>
+</Steps>
+
+### Nachteile
+
+<AccordionGroup>
+  <Accordion title="Eingeschränkte Analytik">
+    Die Chat-Öffnungsrate kann nicht kalkuliert werden, da keine Tracking-Cookies vor der Interaktion gesetzt werden
+  </Accordion>
+  <Accordion title="Kein Verhaltensscoring">
+    Ein Verhaltensscoring des Nutzers ist nicht erlaubt, solange keine explizite Zustimmung vorliegt
+  </Accordion>
+</AccordionGroup>
+
+## Empfehlung
+
+<Tip>
+  Die Wahl zwischen den beiden Optionen hängt von Ihren spezifischen Anforderungen ab:
+  - Wählen Sie die **Website-Integration**, wenn detaillierte Analysen wichtig sind
+  - Wählen Sie **DialogShift Managed Consent**, wenn maximale Erreichbarkeit Priorität hat
+</Tip>
+
+## Weiterführende Informationen
+
+<CardGroup cols={2}>
+  <Card
+    title="Cookie-Übersicht Consent Manager"
+    icon="list"
+    href="/de/compliance/cookie-uebersicht-consent-manager"
+  >
+    Details zu den Cookies bei Website-Integration
+  </Card>
+  <Card
+    title="Cookie-Übersicht Managed Consent"
+    icon="list-check"
+    href="/de/compliance/cookie-uebersicht-managed-consent-modus"
+  >
+    Details zu den Cookies im Managed Consent Modus
+  </Card>
+</CardGroup>
