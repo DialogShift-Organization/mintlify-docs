@@ -200,4 +200,8 @@ Here you'll find instructions for some of the most common phone systems.
         -   Edit the peer entry (`[dialogshift-trunk]`) for your trunk.
         -   Add the option `trustrpid = yes`. Although the name suggests "RPID", this option is usually also used for trusting PAI headers.
   </Accordion>
-</AccordionGroup> 
+</AccordionGroup>
+
+### Incompatible Phone Systems
+    
+  - Avaya IP Office: This phone system has only a very limited SIP implementation, which unfortunately is not compatible with Phone AI. However, it is possible to install an SBC proxy in front of the phone system to make it SIP-compatible.
