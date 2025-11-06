@@ -1,0 +1,75 @@
+---
+title: "Chatbot Modes"
+description: "Overview of different chatbot modes and their use cases for every channel"
+icon: "sliders"
+---
+
+The following chatbot modes can be configured for each channel (Website, WhatsApp, Instagram, ...):
+
+**Navigation:** Hotel Settings → Chatbot Settings → Channel Settings
+
+## Standard Chatbot
+
+The recommended mode for most use cases.
+
+**How it works:**
+- The user receives a greeting in the channel (on Facebook/Instagram only when the user starts the dialog with the "Start" button)
+- Responses can be retrieved via quick-reply buttons
+- The chatbot automatically answers user text inputs
+- If the chatbot cannot answer or doesn't understand the question, it offers a handover to the hotel team (can be disabled in Live Chat settings)
+- The user is informed about the handover to the team
+
+**Use case:** Recommended integration for most use cases across all channels
+
+## Live Chat
+
+Automatic forwarding to the team on text inputs.
+
+**How it works:**
+- The user receives a greeting in the channel (on Facebook/Instagram only when the user starts the dialog with the "Start" button)
+- Responses can be retrieved via quick-reply buttons
+- When the user enters text, **the chatbot does not respond and a live chat is immediately triggered**
+- The user is informed about the handover to the team
+
+**Use case:** Suitable for chain landing page chatbots with limited knowledge scope, for example. The greeting can mention the chatbot and that certain information (e.g., the list of chain hotels) can be retrieved via buttons.
+
+## Live Chat with Silent Handover to Team
+
+Pure live chat mode without chatbot mention.
+
+**How it works:**
+- The user receives a greeting in the channel (on Facebook/Instagram only when the user starts the dialog with the "Start" button)
+- Responses can be retrieved via quick-reply buttons
+- When the user enters text, **the chatbot does not respond and a live chat is immediately triggered**
+- When handing over to the team, **the user is not informed**
+
+**Use case:** The chatbot behavior is identical to a WhatsApp channel except for the greeting. The greeting should not mention a chatbot, as this is pure live chat.
+
+## Reserved Chatbot
+
+<Warning>
+This setting cannot be used with a GPT chatbot
+</Warning>
+
+Ideal for channels with parallel support from a social media team.
+
+**How it works:**
+- The user receives a greeting in the channel (on Facebook/Instagram only when the user starts the dialog with the "Start" button)
+- Responses can be retrieved via quick-reply buttons
+- The chatbot automatically answers user text inputs when it has an answer to the question
+- If it doesn't know the answer, it does not respond and also does not offer a handover to the team
+
+**Use case:** Deploy the chatbot in social media channels that are also monitored and managed by a social media team. Users receive an answer to standard questions ("Where can I park?"), while in all other cases ("Had a great time!", "😀") the social media team can respond.
+
+## Silent Chatbot
+
+Button-based interactions only, no automatic responses.
+
+**How it works:**
+- The user receives a greeting in the channel (on Facebook/Instagram only when the user starts the dialog with the "Start" button)
+- Responses can be retrieved via quick-reply buttons
+- The chatbot does not answer text inputs
+- Handovers to the hotel team can only be realized with quick-reply buttons, but are typically not desired in this mode
+
+**Use case:** Deploy the chatbot in social media channels that are also monitored and managed by a social media team. The social media team responds to all user inputs with their own social media tool. However, users retain the ability to retrieve information via buttons.
+

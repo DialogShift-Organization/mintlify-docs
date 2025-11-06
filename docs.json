@@ -43,6 +43,7 @@
                 "group": "Chat AI",
                 "icon": "robot",
                 "pages": [
+                  "de/chat-ai/chatbot-modi",
                   {
                     "group": "Live Chat",
                     "icon": "comments",
@@ -168,6 +169,7 @@
                 "group": "Chat AI",
                 "icon": "robot",
                 "pages": [
+                  "en/chat-ai/chatbot-modes",
                   {
                     "group": "Live Chat",
                     "icon": "comments",
