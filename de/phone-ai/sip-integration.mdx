@@ -53,15 +53,18 @@ Die Phone AI wird als SIP-Endgerät in Ihre bestehende Telefonanlage integriert.
 
 - Proxy (URL oder IP-Adresse)
 
-## Zusätzliche Anforderungen
+## Anforderungen
 
-### Lokale Telefonanlagen
+- Ausfallsicherheit: Unser Softphone meldet sich immer mit zwei Softphones an der Telefonnanlage an, die Telefonanlage muss die Anmeldung von zwei Softphones erlauben.
 
-Sie benötigen **eine** der folgenden Optionen:
+### Zusätzlich bei lokal betriebenen Telefonanlagen:
 
-- **Feste IP-Adresse** (IPv4 oder IPv6)
-- **Dynamic DNS** (hierbei kann es zu kurzen Unterbrechungen beim IP-Wechsel kommen)
- - **Ausfallsicherheit** Unser Softphone meldet sich immer mit **zwei** Softphones an der Telefonnanlage an.
+- Feste öffentliche IP-Adresse (IPv4 oder IPv6) oder Dynamic DNS (hierbei kann es zu kurzen Unterbrechungen beim IP-Wechsel kommen, wir empfehlen daher eine feste öffentliche IP)
+- Sofern ein NAT-Router zum Einsatz kommt muss die Telefonanlage NAT-Aware konfiguriert sein. Andernfalls kann keine Audioübertragung zustande kommen.
+
+<Info>
+  Beginnt die IP-Adresse mit "192.168.", "10." oder "172.16." bis "172.31." handelt es sich um eine lokale, nicht aus dem Internet erreichbare IP-Adresse, welche nicht zur SIP-Integration geeignet ist.
+</Info>
 
 <Info>
   Cloud-Telefonanlagen sind bereits über das Internet erreichbar.
