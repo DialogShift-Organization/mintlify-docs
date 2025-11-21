@@ -265,19 +265,6 @@ title: "Frequently Asked Questions"
 description: "Common questions and answers about our product"
 ---
 
-# Frequently Asked Questions
-
-<AccordionGroup>
-  <Accordion title="How do I get started?">
-    Follow our [quickstart guide](/quickstart) to begin.
-  </Accordion>
-  <Accordion title="What are the system requirements?">
-    - Modern web browser
-    - Internet connection
-    - Valid account
-  </Accordion>
-</AccordionGroup>
-```
 
 2. Update `docs.json`:
 ```json
@@ -301,4 +288,5 @@ description: "Common questions and answers about our product"
 - [MDX Documentation](https://mdxjs.com/)
 - Component examples are in `/essentials/` folder of this repo
 
-Remember: When in doubt, check existing files in this repository for examples of proper syntax and structure. 
+Remember: When in doubt, check existing files in this repository for examples of proper syntax and structure.
+
