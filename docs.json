@@ -26,6 +26,13 @@
             ]
           },
           {
+            "group": "Onboarding",
+            "icon": "sliders",
+            "pages": [
+              "de/basis/onboarding-training"
+            ]
+          },
+          {
             "group": "Basiseinstellungen",
             "icon": "sliders",
             "pages": [
@@ -149,6 +156,13 @@
             "icon": "house",
             "pages": [
               "en/index"
+            ]
+          },
+          {
+            "group": "Onboarding",
+            "icon": "sliders",
+            "pages": [
+              "en/basics/onboarding-training"
             ]
           },
           {
