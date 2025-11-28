@@ -71,6 +71,13 @@
                       "de/chat-ai/whatsapp/meta-unternehmensverifizierung",
                       "de/chat-ai/whatsapp/einbindung-darstellung"
                     ]
+                  },
+                  {
+                    "group": "Integrations",
+                    "icon": "plug",
+                    "pages": [
+                      "de/chat-ai/integrations/betterspace-integration"
+                    ]
                   }
                 ]
               },
@@ -124,10 +131,17 @@
                 ]
               },
               {
+                "group": "Integrationen",
+                "icon": "plug",
+                "pages": [
+                  "de/integrations/hns-integration",
+                  "de/integrations/dirs21-integration"
+                ]
+              },
+              {
                 "group": "Technischer Setup",
                 "icon": "screwdriver-wrench",
                 "pages": [
-                  "de/technischer-setup/hns-integration",
                   "de/technischer-setup/tracking-pixel",
                   "de/technischer-setup/url-parameter-tracking",
                   "de/technischer-setup/snippet-einbindung-pruefen",
@@ -264,10 +278,17 @@
                 ]
               },
               {
+                "group": "Integrations",
+                "icon": "plug",
+                "pages": [
+                  "en/integrations/hns-integration",
+                  "en/integrations/dirs21-integration"
+                ]
+              },
+              {
                 "group": "Technical Setup",
                 "icon": "screwdriver-wrench",
                 "pages": [
-                  "en/technical-setup/hns-integration",
                   "en/technical-setup/tracking-pixel",
                   "en/technical-setup/url-parameter-tracking",
                   "en/technical-setup/snippet-integration-check",
