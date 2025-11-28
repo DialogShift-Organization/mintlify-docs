@@ -1,0 +1,101 @@
+---
+title: "DIRS21 Integration"
+description: "How to activate the integration with DIRS21 to use availability and pricing data in DialogShift"
+---
+
+## About DIRS21
+
+DIRS21 is a leading provider of web-based booking and channel management systems for the hospitality industry. Founded in 1999, the company has been offering intelligent solutions for hotels, gastronomy, and tourism businesses in German-speaking countries and beyond for over 20 years.
+
+### DIRS21 One - The Booking Engine
+
+<Card title="DIRS21 One" icon="browser" color="#0369a1">
+  DIRS21 One is the modern booking engine from DIRS21 - a dynamic, fast, and intelligent solution that handles the entire booking process on a single page (one-pager) and enables maximum conversion rates.
+</Card>
+
+
+## DialogShift Integration with DIRS21
+
+The integration between DialogShift and DIRS21 enables hotels to access real-time availability and pricing information from the DIRS21 One engine.
+
+The integration pulls availability, inventory, and pricing data directly from your DIRS21 booking engine, allowing DialogShift's AI assistants to answer guest inquiries with up-to-date information about room availability and rates.
+
+<Info>
+  **Coming Soon:** A full booking process based on DIRS21 One will be enabled for both Chat AI and Phone AI, allowing guests to complete reservations directly through these channels.
+</Info>
+
+### Usage
+
+The data from DIRS21 is currently used for:
+
+- **Chat Dialog Quickbooker** - Availability queries and bookings directly in chat
+- **Phone Availability Info v1 and v2** - Room availability for phone inquiries
+
+### How it Works
+
+<Steps>
+  <Step title="Availability and Pricing Data">
+    DialogShift retrieves real-time availability, pricing, and rate information from the DIRS21 One engine. This data is used by Chat AI and Phone AI to provide guests with precise information about available rooms and current rates
+  </Step>
+</Steps>
+
+## Prerequisites
+
+<CardGroup cols={3}>
+  <Card title="✅ DIRS21 Customer" icon="check-circle" color="#22c55e">
+    Your hotel must already use DIRS21 One
+  </Card>
+  <Card title="✅ DialogShift Client ID" icon="key" color="#3b82f6">
+    You need your DialogShift Client ID from the app
+  </Card>
+  <Card title="✅ Integration Commissioned" icon="file-contract" color="#f59e0b">
+    Commission of the DialogShift integration with DIRS21 (paid service at DIRS21)
+  </Card>
+</CardGroup>
+
+### Find Client ID in DialogShift
+
+1. Log into your DialogShift app
+2. Navigate to **Settings** → **Integration**
+3. Copy your **Client ID** from the integration area
+
+<Tip>
+  The Client ID is a unique identifier for your hotel and is needed for configuring the integration.
+</Tip>
+
+## Activate Integration
+
+The integration is initiated by commissioning it with DIRS21. DIRS21 then forwards the relevant information to DialogShift. After configuration in both systems, the integration can be used.
+
+## Configuration
+
+After activation by DIRS21, the following fields must be filled in the DialogShift Live Chat App under **Settings** → **Integration**:
+
+### Channel ID
+
+The Channel ID for connecting with DIRS21. This is provided by the DIRS21 Support Team.
+
+### DIRS21 Directory (optional)
+
+This directory only needs to be entered if DIRS21 creates a copy of the WebBooking Engine that contains the same prices and availability but is evaluated separately in DIRS21's statistical analysis.
+
+### Booking Engine Version
+
+The Booking Engine version is preset and does not need to be adjusted. If in doubt, the ONE version can be selected.
+
+<Warning>
+  **Important:** All this information is provided by the DIRS21 Support Team.
+</Warning>
+
+
+## Support and Contact
+
+For questions about the integration, contact:
+
+### DIRS21
+- **Website:** https://www.dirs21.de
+- **Email:** info@dirs21.de
+- **Support:** Monday to Friday, 9 AM - 5 PM
+
+### DialogShift Support
+For technical questions about DialogShift, contact our support team at support@dialogshift.com

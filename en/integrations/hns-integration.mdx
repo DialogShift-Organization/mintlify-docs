@@ -13,12 +13,6 @@ Hotel Net Solutions is one of the leading technology partners for hotels in the 
   HNS's flagship product is OnePageBooking - an intuitive booking engine that handles the entire booking process on a single page while offering the highest user-friendliness.
 </Card>
 
-**Main Features:**
-- Single-page booking flow for optimal conversion
-- Mobile-optimized and responsive
-- Individual adaptation to hotel branding
-- Integration with various PMS systems
-- Multi-language and multi-currency capable
 
 ## DialogShift Integration with HNS
 
@@ -43,6 +37,9 @@ The data from HNS is currently used for:
 ### How it Works
 
 <Steps>
+  <Step title="Availability and Pricing Data">
+    DialogShift retrieves real-time availability, pricing, and rate information from the HNS OnePageBooking engine. This data is used by Chat AI and Phone AI to provide guests with precise information about available rooms and current rates
+  </Step>
   <Step title="Data transfer">
     HNS activates a special tracking system that identifies bookings supported by DialogShift services
   </Step>
@@ -53,12 +50,15 @@ The data from HNS is currently used for:
 
 ## Prerequisites
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="✅ HNS Customer" icon="check-circle" color="#22c55e">
     Your hotel must already use OnePageBooking from HNS
   </Card>
   <Card title="✅ DialogShift Client ID" icon="key" color="#3b82f6">
     You need your DialogShift Client ID from the app
+  </Card>
+  <Card title="✅ Integration Commissioned" icon="file-contract" color="#f59e0b">
+    Commission of the DialogShift integration with HNS (paid service at HNS)
   </Card>
 </CardGroup>
 
@@ -74,55 +74,7 @@ The data from HNS is currently used for:
 
 ## Activate Integration
 
-The integration with HNS is configured via the integration page in the Live Chat App. You will need access credentials provided by the HNS Support Team.
-
-### Who can start the integration?
-
-<Warning>
-  The integration can **only be initiated by Hotel Net Solutions**. As a hotel, you cannot start the process yourself.
-</Warning>
-
-### Activation Process
-
-<Steps>
-  <Step title="Paid extension">
-    Revenue tracking is a **paid additional feature** from HNS
-  </Step>
-  <Step title="Contact HNS">
-    Contact your HNS representative or support:
-    - **Phone:** +49 30 770 193 000
-    - **Email:** info@hotelnetsolutions.de
-  </Step>
-  <Step title="Submit Client ID">
-    Provide your DialogShift Client ID to HNS
-  </Step>
-  <Step title="HNS activates tracking">
-    HNS sets up the tracking system for your hotel
-  </Step>
-  <Step title="Data in DialogShift">
-    After activation, revenue data appears in your DialogShift app
-  </Step>
-</Steps>
-
-## Configuration
-
-After activation by HNS, the following fields must be filled in the DialogShift Live Chat App under **Settings** → **Integration**:
-
-### Hotel Code
-
-The hotel code for connecting with HNS. This is provided by HNS and uniquely identifies your hotel in the system.
-
-### Username
-
-The username for the HNS integration. Provided by the HNS Support Team.
-
-### Password
-
-The password for the HNS integration. Provided by the HNS Support Team.
-
-<Warning>
-  **Important:** All these credentials are provided by the HNS Support Team. When activating this integration, DialogShift can send the Client ID directly to HNS support, as HNS must register our Client ID in their system.
-</Warning>
+The integration is initiated by commissioning it with HNS. HNS then forwards the relevant information to DialogShift. The integration is configured in both systems and can then be used.
 
 ## Support and Contact
 
