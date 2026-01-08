@@ -321,8 +321,8 @@
     }
   },
   "logo": {
-    "light": "/logo/ds_logo_light.png",
-    "dark": "/logo/ds_logo_light.png"
+    "light": "/images/logo_word_light_mode.png",
+    "dark": "/images/logo_word_dark_mode.png"
   },
   "navbar": {
     "links": [
