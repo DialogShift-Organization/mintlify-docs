@@ -116,6 +116,8 @@
                 "icon": "shield",
                 "pages": [
                   "de/compliance/cookie-compliance-dsgvo-ttdsg",
+                  "de/compliance/ki-kennzeichnungspflicht",
+                  "de/compliance/textbaustein-datenschutzerklaerung",
                   "de/compliance/barrierefreiheitserklarung",
                   "de/compliance/cookie-uebersicht-consent-manager",
                   "de/compliance/cookie-uebersicht-managed-consent-modus"
@@ -263,6 +265,8 @@
                 "icon": "shield",
                 "pages": [
                   "en/compliance/cookie-compliance-gdpr",
+                  "en/compliance/ai-labeling-requirements",
+                  "en/compliance/privacy-policy-template",
                   "en/compliance/accessibility-statement",
                   "en/compliance/cookie-overview-consent-manager",
                   "en/compliance/cookie-overview-managed-consent-mode"
