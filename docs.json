@@ -14,6 +14,15 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://www.dialogshift.com/blog/blog-i"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Deutsch",
@@ -86,6 +95,7 @@
                 "icon": "phone",
                 "pages": [
                   "de/phone-ai/konfiguration",
+                  "de/phone-ai/konfiguration-copied-1",
                   "de/phone-ai/stimmen-auswahl",
                   "de/phone-ai/sip-integration",
                   "de/phone-ai/anrufweiterleitung-integration",
@@ -313,16 +323,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Blog",
-          "href": "https://www.dialogshift.com/blog/blog-i",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/ds_logo_light.png",
