@@ -245,6 +245,7 @@
                 "icon": "phone",
                 "pages": [
                   "en/phone-ai/configuration",
+                  "en/phone-ai/configuration-v2",
                   "en/phone-ai/voice-selection",
                   "en/phone-ai/sip-integration",
                   "en/phone-ai/call-forwarding-integration",

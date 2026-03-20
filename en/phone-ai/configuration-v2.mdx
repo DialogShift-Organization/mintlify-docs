@@ -1,0 +1,57 @@
+---
+title: "Phone AI Configuration V2"
+description: "Configure the Phone AI settings including greetings, forwarding, and time scheduling"
+---
+
+You can find the Phone AI configuration page under: **Settings** >> **Phone AI**
+
+The Phone AI settings are divided into three areas:
+
+## General Settings (for the entire client)
+
+Here you can define, among other things:
+
+- Pronunciation of numbers in email addresses (e.g., “524” as “five two four” instead of “five hundred twenty-four”)
+- Time until the AI asks again during silence (“Are you still there?”)
+- Minimum delay for responses after the caller finishes speaking
+- SMS sender ID (max. 11 characters, no special characters)
+
+## Settings per Phone AI
+
+Here you configure, among other things:
+
+### Greeting
+
+The greeting is the text that welcomes callers at the beginning of the conversation. The spelling can be phonetically adjusted, especially for brand names.
+
+<Note>
+  Our Customer Success team can help you find the right spelling if the pronunciation doesn’t meet your expectations.
+</Note>
+
+### Forward Duplicate Calls
+
+If a caller calls again within X seconds, the call is forwarded directly to the stored phone number. The configured value determines the time period in seconds during which a repeated call from the same number is automatically redirected to the defined target number.
+
+### Booking Request Template
+
+This SMS and WhatsApp template is used when callers with a mobile number express a booking request. Templates can be customized under **Journey Messaging** >> **Message Templates**.
+
+### Phone Number for Forwarding
+
+Default forwarding number for cases where no specific department applies or a technical error occurs. Upon customer request or in case of technical issues with the Phone AI, callers are automatically forwarded to this number.
+
+## Settings per Department / Forwarding Number
+
+### Forwarding Targets
+
+You can provide either a single internal target number (extension or group) or department-specific target numbers (e.g., Reservations, Reception, Spa, Restaurant). The Phone AI decides contextually during the conversation which of the stored targets to forward to. This configuration is set up by our Customer Success team ([support@dialogshift.com](mailto:support@dialogshift.com)).
+
+## Time Scheduling for Phone AI
+
+For each department, you can configure, for example:
+
+- Whisper function (a short summary for staff before they take over the call)
+- Call retrieval if no one answers (including an optional callback request or continuation of the conversation). You can define the time (in seconds) the Phone AI should try to connect the call before retrieving it. If a forwarding number is busy, the call is retrieved immediately by the Phone AI.
+- A schedule that flexibly defines whether calls are forwarded, a callback is offered, no staff are available, or calls are forwarded to a different number at a different time.
+
+Depending on the time of day or day of the week, different forwarding targets can be defined.
