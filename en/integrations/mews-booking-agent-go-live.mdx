@@ -7,7 +7,7 @@ This checklist is for hotels that have just connected their MEWS property to Dia
 
 ## Before you start
 
-- Your MEWS property must already be connected to DialogShift. If it isn't yet, follow the connection guide on [docs.dialogshift.com](https://docs.dialogshift.com) first.
+- Your MEWS property must already be connected to DialogShift. To connect it, start the integration with DialogShift from the **MEWS Marketplace**. Our team is then automatically notified by MEWS and sets up the integration within 12 to 48 hours, so that data starts flowing between MEWS and DialogShift.
 - A small terminology note. In Mews Operations, what most hotels call a "room type" is called a **Space category**, and an individual room is called a **Space**. We use the Mews wording throughout this document so the navigation paths match what you see on screen.
 
 ## Step 1 — Whitelist the room categories the agent may sell
@@ -41,7 +41,7 @@ This checklist is for hotels that have just connected their MEWS property to Dia
 
 ## Step 4 — Add a description for every guest language on every Space category
 
-**Why this matters.** When a guest asks "Tell me about the Junior Suite", the agent reads the **Description** field of that Space category straight from MEWS and uses it. If the description is missing in the guest's language, the agent falls back to your English text and machine-translates it on the fly — the result is noticeably worse than a description you wrote yourself.
+**Why this matters.** When a guest asks "Tell me about the Junior Suite", the agent reads the **Description** field of that Space category straight from MEWS and uses it. If the description is only available in English, the agent translates it on the fly — and the translation quality is usually fine. The real reason to maintain a dedicated language version is control over terminology: it's the only way to lock in the wording your hotel wants to present to the guest — your own room names, marketing language, or specific terms — instead of leaving those choices to a machine translation.
 
 Important: **Mews does not auto-translate** Space category fields. You have to enter every translation manually. This is confirmed in the [Mews community](https://community.mews.com/mews-pms-property-operations-83/why-can-t-mews-auto-translate-all-fields-on-booking-engine-including-rates-and-rooms-943).
 
@@ -69,7 +69,7 @@ A good description is typically 4–8 sentences per language. Avoid vague phrase
 
 ## Step 5 — Add a description for every guest language on every Rate
 
-**Why this matters.** Same logic as Step 4, but for rates. The agent uses the rate **Description** to explain to the guest what's included, what the cancellation policy is, and whether a deposit is required. A missing or English-only description forces a machine-translated fallback in chat and on the phone.
+**Why this matters.** Same logic as Step 4, but for rates. The agent uses the rate **Description** to explain to the guest what's included, what the cancellation policy is, and whether a deposit is required. If only the English version exists, it will be translated on the fly — quality-wise that's usually fine. What matters is control over the terminology: by maintaining the description yourself in every guest language, you decide exactly how key terms like "buffet breakfast", "late cancellation" or "deposit" are presented to the guest, instead of leaving the wording to the machine.
 
 **Where in Mews Operations.** **Settings → Services → [bookable service] → Rates → [pick the rate] → Edit** (or **Edit details**). Use the **Add translation** dropdown to add a language and fill in the localized **Description**.
 
@@ -129,13 +129,12 @@ Reference: [Image sizing (product and rooms) — Mews Community](https://communi
 
 - **Per room:**
   - The room **name** is correct and reads naturally in this language.
-  - The **description** is your own text, not a machine translation. (If it looks awkward or like a literal translation of your English copy, that language is missing in MEWS — go back to Step 4.)
-  - The **image gallery** is present and shows the right photos in a sensible order.
+  - The **description** uses the wording and terminology your hotel wants to present to the guest. If it doesn't, add a dedicated language version in MEWS (Step 4).
+  - The **first uploaded image** is in place and represents the room well — DialogShift uses only this one image.
   - The **available units**, **size**, and **bed sizes** look right.
 - **Per rate (shown next to each room):**
   - The rate **name** reads naturally.
   - The **description** covers board basis, cancellation policy and any prepayment terms — and is in the right language.
-  - The **price** matches what you'd expect MEWS to quote.
 
 If anything is wrong:
 
