@@ -1,0 +1,152 @@
+---
+title: "Mews Booking Agent Go-Live Checklist"
+description: "Step-by-step checklist for hotels to prepare their MEWS property before activating the DialogShift booking agents in chat and on the phone."
+---
+
+This checklist is for hotels that have just connected their MEWS property to DialogShift and want to roll out the **DialogShift booking agents** in chat and on the phone. Walk through it once before you ask us to switch the agents on. It usually takes 1–2 hours, depending on how many room categories and rates you sell.
+
+## Before you start
+
+- Your MEWS property must already be connected to DialogShift. If it isn't yet, follow the connection guide on [docs.dialogshift.com](https://docs.dialogshift.com) first.
+- A small terminology note. In Mews Operations, what most hotels call a "room type" is called a **Space category**, and an individual room is called a **Space**. We use the Mews wording throughout this document so the navigation paths match what you see on screen.
+
+## Step 1 — Whitelist the room categories the agent may sell
+
+**Why this matters.** The booking agents will only quote rooms you have explicitly enabled. If you leave the list empty, every Space category that exists in MEWS becomes sellable, including ones you may not want to expose (staff rooms, long-stay categories, event spaces, etc.).
+
+**Where.** In DialogShift, go to **Integrations → MEWS**. Scroll to the **Room types** section. Tick every room category you want the agent to be allowed to sell.
+
+**How to verify.** The list of room categories on this page is loaded live from MEWS. If a category is missing, it doesn't exist in MEWS yet — create it there first, then reload the page.
+
+## Step 2 — Whitelist the rates the agent may sell
+
+**Why this matters.** Same idea as Step 1, but for rates. If you leave the list empty, every active rate is fair game. Tick only the rates you actually want the agent to sell to chat and phone guests (typically your public rates — not corporate, group, or staff rates).
+
+**Where.** In DialogShift, on the same **Integrations → MEWS** page, scroll to the **Rates** section and tick the rates you want to enable.
+
+**How to verify.** Rates are also loaded live from MEWS. Private and inactive rates are visible too, marked with a label, so you can decide which ones to include.
+
+## Step 3 — Open up availability and stay restrictions in MEWS
+
+**Why this matters.** The agent can only sell what MEWS reports as available. If a date range is fully blocked, hits a min-stay rule, or is closed-to-arrival in MEWS, the agent will (correctly) say "no rooms available" — even if guests are asking.
+
+**Where in Mews Operations.**
+
+- For min-stay, max-stay, closed-to-arrival, and similar rules: **Settings → Services → [your bookable service, e.g. "Stay"] → Restrictions**. Both list and calendar views are available.
+- For per-day availability adjustments: **Reports → Availability & occupancy report → Adjust**.
+
+**Help.** [Managing restrictions in Mews Operations](https://help.mews.com/s/article/managing-restrictions), [Understanding restrictions](https://help.mews.com/s/article/Understanding-restrictions-in-Mews-Operations), [Creating availability adjustments](https://help.mews.com/s/article/Creating-availability-adjustments).
+
+**How to verify.** Pick a few representative dates over the next 6–12 months (a midweek night, a weekend, a high-season week) and check that the categories and rates you whitelisted in Steps 1–2 are open and bookable on those dates. You will verify this end-to-end in Step 7 with the Availability Analyzer.
+
+## Step 4 — Add a description for every guest language on every Space category
+
+**Why this matters.** When a guest asks "Tell me about the Junior Suite", the agent reads the **Description** field of that Space category straight from MEWS and uses it. If the description is missing in the guest's language, the agent falls back to your English text and machine-translates it on the fly — the result is noticeably worse than a description you wrote yourself.
+
+Important: **Mews does not auto-translate** Space category fields. You have to enter every translation manually. This is confirmed in the [Mews community](https://community.mews.com/mews-pms-property-operations-83/why-can-t-mews-auto-translate-all-fields-on-booking-engine-including-rates-and-rooms-943).
+
+**Where in Mews Operations.** **Settings → Services → [bookable service] → Space categories → [pick the category]**. Use the **Add translation** dropdown to add a language; new fields for **Name**, **Short name** and **Description** appear in that language. Fill them in and save. Repeat for every language your guests speak.
+
+**Help.** [Modify a space category](https://help.mews.com/s/article/modify-a-space-category), [How to create a space category](https://help.mews.com/s/article/create-or-delete-a-space-category).
+
+**What to put in the description.** The agent uses this text both to *describe* the room to the guest and to *answer questions* about it. Treat the description as two layers — a short, atmospheric pitch followed by hard facts the agent can quote verbatim.
+
+- **A short pitch (1–2 sentences):** the feel of the room, what makes it special.
+- **Hard facts (always include all of these, even if they feel repetitive):**
+  - **Maximum occupancy** — how many adults and how many children the room can sleep, including any extra-bed option.
+  - **Bed configuration** — e.g. "one king-size bed", "two single beds that can be joined", "one queen bed plus one sofa bed for one child". Be specific; the agent will be asked.
+  - **Room size in square metres** (or square feet for US properties).
+  - **View** — sea view, mountain view, garden, inner courtyard, street side. If the view depends on the specific room within the category, say so ("most rooms in this category face the sea, a few face the courtyard").
+  - **Floor / location in the building** if relevant (ground floor, top floor, in the annex, etc.).
+  - **Bathroom** — shower, bathtub, or both; separate WC; etc.
+  - **Outdoor space** — balcony, terrace, garden access, none.
+  - **Key in-room amenities** — air conditioning, minibar, safe, kettle, kitchenette, work desk, Nespresso machine, smart TV, etc.
+  - **Accessibility** — accessible / step-free, if applicable.
+
+A good description is typically 4–8 sentences per language. Avoid vague phrases like "nicely appointed" without saying *what* is in the room.
+
+**How to verify.** Step 7.
+
+## Step 5 — Add a description for every guest language on every Rate
+
+**Why this matters.** Same logic as Step 4, but for rates. The agent uses the rate **Description** to explain to the guest what's included, what the cancellation policy is, and whether a deposit is required. A missing or English-only description forces a machine-translated fallback in chat and on the phone.
+
+**Where in Mews Operations.** **Settings → Services → [bookable service] → Rates → [pick the rate] → Edit** (or **Edit details**). Use the **Add translation** dropdown to add a language and fill in the localized **Description**.
+
+**Help.** [Create and configure a rate](https://help.mews.com/s/article/create-a-rate), [Editing or removing a rate](https://help.mews.com/s/article/update-or-remove-a-rate).
+
+**What to put in the description.** The agent has to be able to answer "What does this rate include?" without guessing. State every one of the following explicitly — even when the answer is *no*. Ambiguity here is the single most common cause of bad bookings.
+
+- **Board / meals** — be unambiguous:
+  - If breakfast is included, say so and add what kind ("buffet breakfast included for all guests", "continental breakfast for two adults").
+  - If breakfast is *not* included, **say so explicitly** ("breakfast is not included; it can be added at check-in for EUR X per person"). Do not leave this open.
+  - If half-board or full-board applies, name the meals included and any drinks allowance.
+  - Mention any other allowances or perks tied to the rate: welcome drink, spa credit, late check-out, free parking, airport shuttle, room upgrade on availability, etc.
+- **Cancellation policy** — be precise with timing and fees:
+  - Until when can the guest cancel free of charge? (e.g. "free cancellation until 6 pm local time, 3 days before arrival").
+  - What is charged after that deadline? (e.g. "first night charged for late cancellation; full stay charged for no-show").
+  - If the rate is fully non-refundable, state it clearly ("non-refundable: the full amount is charged at booking and cannot be refunded").
+- **Prepayment / deposit** — say what happens at booking:
+  - Is anything charged at the time of booking? How much (full amount, first night, percentage)?
+  - Or is it pay-at-the-property with only a card guarantee?
+  - If a deposit is required, when and how is it taken?
+
+**How to verify.** Step 7.
+
+## Step 6 — Upload images for every Space category
+
+**Why this matters.** The chat agent shows a room carousel with images. If a Space category has no images in MEWS, that room shows up without a picture, which hurts conversion considerably.
+
+**Where in Mews Operations.** Same screen as Step 4: **Settings → Services → [bookable service] → Space categories → [pick the category]**. The image upload section is on this screen.
+
+**Help.** [Add images to your Mews Booking Engine](https://help.mews.com/s/article/add-images-for-your-mews-booking-engine).
+
+**Image specs that work well.**
+
+- 4–6 images per category (Mews recommends not going beyond 6, to keep the gallery focused).
+- Landscape orientation, minimum **1920 × 1080 px**.
+- Keep the main subject centered — Mews crops automatically for the booking engine, the kiosk and the guest portal, and DialogShift uses the same resized URLs.
+- The image you upload **first** becomes the hero image in the chat carousel; the rest are shown in the room gallery.
+
+Reference: [Image sizing (product and rooms) — Mews Community](https://community.mews.com/mews-pms-property-operations-83/image-sizing-product-and-rooms-2177).
+
+**How to verify.** Step 7.
+
+## Step 7 — Verify everything in the DialogShift Availability Analyzer
+
+**Why this matters.** This is your final dry run. The Availability Analyzer queries MEWS exactly the same way the booking agents do, and shows you the data the agents will actually have to work with — per language. Any gap you fix here saves a guest from seeing it in production.
+
+**Where.** In DialogShift, go to **Integrations → Availability Analyzer**.
+
+**How to run a check.**
+
+1. Pick an arrival and departure date a few weeks out (or any sample date you care about).
+2. Set the number of adults and children that match a typical booking inquiry.
+3. If your hotel supports more than one guest language, use the **language picker** to switch through every language one by one.
+4. Hit **Query Availability**.
+
+**What to verify on every result page**, for every language:
+
+- **Per room:**
+  - The room **name** is correct and reads naturally in this language.
+  - The **description** is your own text, not a machine translation. (If it looks awkward or like a literal translation of your English copy, that language is missing in MEWS — go back to Step 4.)
+  - The **image gallery** is present and shows the right photos in a sensible order.
+  - The **available units**, **size**, and **bed sizes** look right.
+- **Per rate (shown next to each room):**
+  - The rate **name** reads naturally.
+  - The **description** covers board basis, cancellation policy and any prepayment terms — and is in the right language.
+  - The **price** matches what you'd expect MEWS to quote.
+
+If anything is wrong:
+
+- Copy or image issue → fix it in MEWS (Steps 4–6) and re-run.
+- Wrong room or rate appearing → adjust the whitelist (Steps 1–2) and re-run.
+- No rooms at all on dates you expect to sell → check restrictions and availability (Step 3).
+
+Repeat until every language looks the way you'd want a guest to see it.
+
+## Step 8 — Tell DialogShift you're ready
+
+Once Step 7 looks clean in every guest language, send a quick message to your DialogShift contact (or write to support) and say: "Hotel [name] is ready for the booking agents in chat and phone." We'll switch the agents on and stay on standby for the first day in case anything needs tuning.
+
+Welcome to live booking.

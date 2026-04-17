@@ -148,7 +148,8 @@
                 "icon": "plug",
                 "pages": [
                   "de/integrations/hns-integration",
-                  "de/integrations/dirs21-integration"
+                  "de/integrations/dirs21-integration",
+                  "de/integrations/mews-booking-agent-go-live"
                 ]
               },
               {
@@ -299,7 +300,8 @@
                 "icon": "plug",
                 "pages": [
                   "en/integrations/hns-integration",
-                  "en/integrations/dirs21-integration"
+                  "en/integrations/dirs21-integration",
+                  "en/integrations/mews-booking-agent-go-live"
                 ]
               },
               {
