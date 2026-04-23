@@ -118,7 +118,16 @@
                   "de/journey-messaging/uebersicht",
                   "de/journey-messaging/journey-quickstart",
                   "de/journey-messaging/template-erstellen",
-                  "de/journey-messaging/chat-button-whatsapp"
+                  "de/journey-messaging/chat-button-whatsapp",
+                  {
+                    "group": "Make.com Integration",
+                    "icon": "bolt",
+                    "pages": [
+                      "de/journey-messaging/make-com-einrichten",
+                      "de/journey-messaging/make-com-ausgehend",
+                      "de/journey-messaging/make-com-eingehend"
+                    ]
+                  }
                 ]
               },
               {
@@ -270,7 +279,16 @@
                   "en/journey-messaging/overview",
                   "en/journey-messaging/journey-quickstart",
                   "en/journey-messaging/create-template",
-                  "en/journey-messaging/chat-button-whatsapp"
+                  "en/journey-messaging/chat-button-whatsapp",
+                  {
+                    "group": "Make.com Integration",
+                    "icon": "bolt",
+                    "pages": [
+                      "en/journey-messaging/make-com-setup",
+                      "en/journey-messaging/make-com-outgoing",
+                      "en/journey-messaging/make-com-incoming"
+                    ]
+                  }
                 ]
               },
               {

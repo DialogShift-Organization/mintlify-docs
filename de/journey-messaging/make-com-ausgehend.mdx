@@ -1,0 +1,100 @@
+---
+title: "Make.com: Ausgehender Trigger"
+description: "Ein Journey-Messaging-Flow startet ein Szenario bei Make.com und übergibt optional Buchungs- und Primärgastdaten"
+---
+
+Mit dem ausgehenden Trigger startet ein DialogShift Journey-Flow ein Szenario in Make.com. Ab diesem Moment kann das Make-Szenario beliebige weitere Schritte übernehmen — Daten in eine Tabelle schreiben, einen externen Service aufrufen, einen Slack-Kanal benachrichtigen und vieles mehr.
+
+<Info>
+  Diese Anleitung setzt voraus, dass du die [Make.com-Integration bereits eingerichtet](/de/journey-messaging/make-com-einrichten) hast und die Verbindung zwischen Make.com und DialogShift steht.
+</Info>
+
+## Beispielszenario
+
+In dieser Anleitung bauen wir folgenden Anwendungsfall:
+
+> **3 Tage nach Abreise** eines Gastes soll seine Buchungsnummer an Make.com übermittelt werden — z. B. um sie dort in eine Tabelle einzutragen.
+
+## Schritt 1 — Szenario in Make.com aufsetzen
+
+<Steps>
+  <Step title="Neues Szenario anlegen">
+    Erstelle ein neues Szenario in Make.com oder öffne ein bestehendes.
+  </Step>
+  <Step title="DialogShift-Modul hinzufügen">
+    Klicke im Szenario auf **+**. Suche im Popup nach **DialogShift** und wähle die App aus.
+  </Step>
+  <Step title="Trigger-Aktion wählen">
+    Wähle die Trigger-Aktion **Watch external flow action**.
+  </Step>
+  <Step title="Webhook erstellen">
+    Im Popup kannst du einen bestehenden Webhook auswählen oder mit **Create a webhook** einen neuen anlegen. Wir legen einen neuen an.
+
+    <Tip>
+      Falls die Verbindung zu DialogShift noch nicht besteht, kannst du sie hier direkt anlegen. Anleitung dazu in der [Einrichtung der Make.com-Integration](/de/journey-messaging/make-com-einrichten#schritt-3-—-verbindung-in-make-com-herstellen).
+    </Tip>
+  </Step>
+  <Step title="Webhook und Trigger benennen">
+    Benenne Webhook und Trigger — in unserem Beispiel `3 Tage nach Abreise`. Für den Anfang empfiehlt es sich, identische Namen zu verwenden. Wer mag, kann in Make.com einen anderen Anzeigenamen (**Webhook Name**) als den Namen in DialogShift (**Trigger Name**) wählen.
+
+    ![Webhook in Make.com erstellen und Trigger benennen](/images/make/create_webhook.png)
+
+    Klicke auf **Save** — der Webhook ist automatisch verbunden. Ab sofort können DialogShift-Flows dieses Szenario starten.
+  </Step>
+</Steps>
+
+## Schritt 2 — Flow in Journey Messaging verknüpfen
+
+Zurück bei DialogShift findest du den eben erstellten Webhook in den Journey-Messaging-Einstellungen unter **ScenarioTrigger** — also den `3 Tage nach Abreise`-Trigger.
+
+<Steps>
+  <Step title="Flow bearbeiten oder neu anlegen">
+    Dein Flow braucht einen Auslöser. Für unser Beispiel nehmen wir das Ereignis **Abreise** und verzögern um **3 Tage**.
+  </Step>
+  <Step title="Externe Aktion hinzufügen">
+    Füge eine neue Aktion hinzu und wähle **Externe Aktion (Make.com)**.
+  </Step>
+  <Step title="Endpunkt wählen">
+    Als **Trigger-Endpunkt** wählst du den gerade erstellten ScenarioTrigger — in unserem Beispiel `3 Tage nach Abreise`.
+  </Step>
+  <Step title="Daten konfigurieren">
+    Wähle, welche Daten an Make.com gesendet werden sollen:
+
+    - Nur **Buchungsdaten**
+    - Nur **Primärgastdaten**
+    - **Beides**
+
+    Vorhandene Felder sind in Make.com strukturiert abrufbar; nicht vorhandene Felder bleiben leer.
+  </Step>
+  <Step title="Flow speichern und aktivieren">
+    Speichere den Flow und vergiss nicht, ihn zu **aktivieren**. Ab sofort startet das Make-Szenario für jeden Gast 3 Tage nach Abreise.
+  </Step>
+</Steps>
+
+Der fertige Flow sieht so aus:
+
+![Externe Aktion (Make.com) im Flow-Editor](/images/make/flow_three_days_after.png)
+
+Sobald die externe Aktion ausgeführt wird, sendet DialogShift das Ereignis `3 Tage nach Abreise` mit den konfigurierten Daten an Make.com — und das Szenario dort startet.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Welche Daten kommen bei Make.com an?">
+    Je nach Konfiguration der **Externen Aktion (Make.com)** im Flow:
+
+    - **Buchungsdaten**
+    - **Primärgastdaten**
+    - oder **beides**
+
+    Vorhandene Felder sind strukturiert abrufbar, fehlende Felder bleiben leer. Im Make-Szenario-Editor kannst du dir nach dem ersten Trigger-Lauf alle übermittelten Felder ansehen.
+  </Accordion>
+  <Accordion title="Das Szenario wird nicht ausgelöst">
+    Checkliste:
+
+    - Ist der Flow im Journey Messaging **aktiviert**?
+    - Ist der **API Key** in den JM-Einstellungen noch gültig?
+    - Stimmt der ausgewählte **Trigger-Endpunkt** mit dem Webhook im Make-Szenario überein?
+    - Ist das Make-Szenario in Make.com selbst aktiv geschaltet?
+  </Accordion>
+</AccordionGroup>

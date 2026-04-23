@@ -1,0 +1,106 @@
+---
+title: "Make.com Integration einrichten"
+description: "Verbinde dein DialogShift Journey Messaging mit Make.com, um Flows mit beliebigen externen Diensten zu kombinieren"
+---
+
+[Make.com](https://make.com) ist eine Automatisierungsplattform zur Integration verschiedener Services. Mit der Make.com-Integration kannst du dein Journey Messaging in beide Richtungen mit nahezu jedem externen System verbinden:
+
+- **Ausgehend**: Ein Journey-Messaging-Flow startet ein Szenario in Make.com — optional mit Buchungs- und/oder Primärgastdaten.
+- **Eingehend**: Ein Make.com-Szenario startet einen Journey-Messaging-Flow — optional gefiltert auf eine bestimmte Buchungs-ID.
+
+<Info>
+  **Begriffe**: Was bei DialogShift „Flow" heißt, nennt Make.com „Szenario". Da sich Funktionalitäten teils überlappen, gibt es oft mehrere Wege, eine Anforderung mit der Integration umzusetzen.
+</Info>
+
+Diese Seite beschreibt die einmalige Einrichtung. Sobald die Verbindung steht, kannst du mit den Tutorials zu [ausgehenden Triggern](/de/journey-messaging/make-com-ausgehend) und [eingehenden Triggern](/de/journey-messaging/make-com-eingehend) loslegen.
+
+## Voraussetzungen
+
+<CardGroup cols={2}>
+  <Card title="DialogShift Journey Messaging" icon="route">
+    Ein DialogShift-Account mit Journey Messaging vollständig eingerichtet und aktiviert
+  </Card>
+  <Card title="Make.com-Account" icon="bolt">
+    Ein eigener Account bei [Make.com](https://make.com)
+  </Card>
+</CardGroup>
+
+## Schritt 1 — Make.com-App zur Organisation hinzufügen
+
+Die DialogShift-App muss einmalig zur Make.com-Organisation hinzugefügt werden. Da sich die App aktuell in der Beta befindet, ist sie noch nicht öffentlich im Make-App-Store verfügbar — wir stellen dir auf Anfrage einen persönlichen Installations-Link bereit.
+
+<Card title="Installations-Link anfragen" icon="envelope" href="mailto:support@dialogshift.com?subject=Make.com%20Installations-Link" horizontal>
+  Schreibe uns an [support@dialogshift.com](mailto:support@dialogshift.com) und wir senden dir den Installations-Link zu.
+</Card>
+
+Der Link muss anschließend von einem **Administrator der Make.com-Organisation** geöffnet und bestätigt werden — danach ist die App für alle Nutzer der Organisation verfügbar.
+
+<Note>
+  Sobald die App im offiziellen Make-App-Store verfügbar ist, reicht eine einfache Suche in Make und der Installations-Link wird nicht mehr benötigt.
+</Note>
+
+## Schritt 2 — API-Key in DialogShift erstellen
+
+<Steps>
+  <Step title="Zu den Journey-Messaging-Einstellungen navigieren">
+    Öffne in der DialogShift-App **Einstellungen** \>\> **Journey Messaging**. Direkt unter den DSGVO-Einstellungen findest du den Abschnitt **Make.com Integration**.
+  </Step>
+  <Step title="Neuen Schlüssel registrieren">
+    Klicke auf **Neuen Schlüssel registrieren**. Im Dialog wählst du — falls nicht schon vorausgewählt — **Make.com** als Dienstleister und bestätigst mit **Neuen Schlüssel generieren**.
+
+    ![API-Key in den Make.com Integration Einstellungen erstellen](/images/make/create_key.png)
+  </Step>
+  <Step title="Schlüssel sicher speichern">
+    <Warning>
+      Der Schlüssel ist wie ein Passwort zu behandeln und wird **nur ein einziges Mal** angezeigt. Speichere ihn am besten direkt in einem Passwortmanager. Mit dem Button im Ansichtsfeld kannst du den Key bequem in die Zwischenablage kopieren.
+    </Warning>
+  </Step>
+</Steps>
+
+## Schritt 3 — Verbindung in Make.com herstellen
+
+Egal in welche Richtung die Integration genutzt werden soll — bei der **ersten** Nutzung der DialogShift-App in Make.com muss einmalig eine Verbindung zu DialogShift hergestellt werden.
+
+In allen DialogShift-Modulen findest du im Setup-Popup den Button **Create a Connection**:
+
+<Steps>
+  <Step title="Create a Connection klicken">
+    Klicke im DialogShift-Modul auf **Create a Connection**.
+  </Step>
+  <Step title="Verbindung benennen und API-Key einfügen">
+    Vergib einen Namen für die Verbindung (z. B. `DialogShift`) und füge bei **API Key** den eben erstellten API-Zugangsschlüssel ein.
+  </Step>
+  <Step title="Speichern">
+    Mit **Save** ist DialogShift als Verbindung in Make.com hinterlegt. Diese Verbindung kannst du in allen weiteren Szenarien wiederverwenden.
+  </Step>
+</Steps>
+
+In den weiterführenden Tutorials gehen wir davon aus, dass diese Verbindung bereits existiert.
+
+## Wie geht es weiter?
+
+<CardGroup cols={2}>
+  <Card title="Ausgehender Trigger" icon="arrow-up-right-from-square" href="/de/journey-messaging/make-com-ausgehend">
+    Ein Journey-Flow startet ein Make.com-Szenario — z. B. um Buchungsdaten an eine externe Tabelle weiterzugeben.
+  </Card>
+  <Card title="Eingehender Trigger" icon="arrow-down-to-bracket" href="/de/journey-messaging/make-com-eingehend">
+    Ein Make.com-Szenario startet einen Journey-Flow — z. B. wenn ein Zahlungsdienstleister eine Zahlung verarbeitet hat.
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="API Key verloren oder kompromittiert">
+    Erzeuge in den JM-Einstellungen unter **Make.com Integration** einfach einen neuen Schlüssel und hinterlege ihn anschließend in Make.com. Den alten Schlüssel kannst du über den Löschen-Button deaktivieren.
+  </Accordion>
+  <Accordion title="Make meldet Rate-Limit oder ausgeschöpftes Kontingent">
+    Make-Accounts haben eigene Rate Limits und Kontingente — kostenlose Accounts stoßen hier schnell an Grenzen. Diese Limits werden direkt von Make.com gesetzt und müssen ggf. über deinen Make-Tarif erweitert werden.
+  </Accordion>
+  <Accordion title="Events kommen erst nach Minuten an">
+    Make.com hat einen eigenen Scheduler. Normalerweise liegt die Latenz im Sekundenbereich; bei hohem Durchsatz kann Make absichtlich verzögern, um seine Plattform zu schonen.
+  </Accordion>
+  <Accordion title="Warum ist die Make.com-App auf Englisch?">
+    Make.com ist primär englischsprachig. Für Custom Apps gibt es aktuell keine Lokalisierung — eine deutschsprachige Version würde dann nur auf Deutsch existieren.
+  </Accordion>
+</AccordionGroup>

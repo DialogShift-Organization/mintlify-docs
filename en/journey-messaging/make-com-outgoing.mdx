@@ -1,0 +1,100 @@
+---
+title: "Make.com: Outgoing trigger"
+description: "A Journey Messaging flow starts a scenario on Make.com and optionally hands over booking and primary-guest data"
+---
+
+With the outgoing trigger, a DialogShift Journey flow starts a scenario in Make.com. From that point on the Make scenario can do whatever you want — write data to a spreadsheet, call an external service, notify a Slack channel, and much more.
+
+<Info>
+  This guide assumes that you have [already set up the Make.com integration](/en/journey-messaging/make-com-setup) and that the connection between Make.com and DialogShift is in place.
+</Info>
+
+## Example scenario
+
+In this guide we will build the following use case:
+
+> **3 days after departure** of a guest, their booking number should be sent to Make.com — for example to insert it into a spreadsheet.
+
+## Step 1 — Create the scenario in Make.com
+
+<Steps>
+  <Step title="Create a new scenario">
+    Create a new scenario in Make.com or open an existing one.
+  </Step>
+  <Step title="Add the DialogShift module">
+    Click **+** in the scenario. Search for **DialogShift** in the popup and select the app.
+  </Step>
+  <Step title="Pick the trigger action">
+    Choose the trigger action **Watch external flow action**.
+  </Step>
+  <Step title="Create a webhook">
+    In the popup you can pick an existing webhook or create a new one with **Create a webhook**. We will create a new one.
+
+    <Tip>
+      If the connection to DialogShift does not yet exist, you can create it right here. Find the instructions in [Set up the Make.com integration](/en/journey-messaging/make-com-setup#step-3-—-create-a-connection-inside-make-com).
+    </Tip>
+  </Step>
+  <Step title="Name the webhook and the trigger">
+    Give the webhook and trigger a name — in our example `3 days after departure`. We recommend identical names to begin with. If you prefer, you can pick a different display name in Make.com (**Webhook Name**) than the one shown in DialogShift (**Trigger Name**).
+
+    ![Creating a webhook in Make.com and naming the trigger](/images/make/create_webhook.png)
+
+    Click **Save** — the webhook is wired up automatically. From now on DialogShift flows can start this scenario.
+  </Step>
+</Steps>
+
+## Step 2 — Connect the flow inside Journey Messaging
+
+Back in DialogShift you will find the webhook you just created in the Journey Messaging settings under **ScenarioTrigger** — the `3 days after departure` trigger.
+
+<Steps>
+  <Step title="Edit or create a flow">
+    Your flow needs a trigger. For our example we use the **Departure** event with a **3 day** delay.
+  </Step>
+  <Step title="Add an external action">
+    Add a new action and pick **External action (Make.com)**.
+  </Step>
+  <Step title="Pick the endpoint">
+    For **Trigger endpoint** choose the ScenarioTrigger you just created — in our example `3 days after departure`.
+  </Step>
+  <Step title="Configure the data">
+    Choose which data to send to Make.com:
+
+    - **Booking data** only
+    - **Primary guest data** only
+    - **Both**
+
+    Available fields can be referenced as structured data in Make.com; missing fields stay empty.
+  </Step>
+  <Step title="Save and activate the flow">
+    Save the flow and don't forget to **activate** it. From now on the Make scenario will start for every guest 3 days after their departure.
+  </Step>
+</Steps>
+
+The finished flow looks like this:
+
+![External action (Make.com) inside the flow editor](/images/make/flow_three_days_after.png)
+
+As soon as the external action is executed, DialogShift sends the `3 days after departure` event together with the configured data to Make.com — and the scenario over there starts running.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Which data ends up at Make.com?">
+    Depending on how you configure the **External action (Make.com)** in the flow:
+
+    - **Booking data**
+    - **Primary guest data**
+    - or **both**
+
+    Available fields are accessible as structured data, missing fields stay empty. After the first trigger run you can inspect every transmitted field directly in the Make scenario editor.
+  </Accordion>
+  <Accordion title="The scenario does not get triggered">
+    Checklist:
+
+    - Is the flow **activated** in Journey Messaging?
+    - Is the **API key** in the JM settings still valid?
+    - Does the selected **trigger endpoint** match the webhook in your Make scenario?
+    - Is the Make scenario itself switched to active inside Make.com?
+  </Accordion>
+</AccordionGroup>

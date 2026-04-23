@@ -1,0 +1,122 @@
+---
+title: "Make.com: Eingehender Trigger"
+description: "Ein Make.com-Szenario startet einen Journey-Messaging-Flow — optional gefiltert auf eine bestimmte Buchungs-ID"
+---
+
+Mit dem eingehenden Trigger startet ein Make.com-Szenario einen Journey-Messaging-Flow in DialogShift. Damit kannst du Nachrichten anhand beliebiger externer Ereignisse versenden — etwa wenn ein Zahlungsdienstleister Zahlungsdaten verarbeitet hat oder ein Drittsystem ein Event auslöst.
+
+<Info>
+  Diese Anleitung setzt voraus, dass du die [Make.com-Integration bereits eingerichtet](/de/journey-messaging/make-com-einrichten) hast und die Verbindung zwischen Make.com und DialogShift steht.
+</Info>
+
+## Beispielszenario
+
+In dieser Anleitung bauen wir folgenden Anwendungsfall:
+
+> Sobald ein Zahlungsdienstleister die Zahlung eines Gastes verarbeitet hat, soll der Gast eine Bestätigungs­nachricht erhalten.
+
+Wir konzentrieren uns dabei auf die DialogShift-Seite und setzen voraus, dass das restliche Make-Szenario (z. B. der Webhook vom Zahlungsdienstleister) bereits existiert.
+
+## Schritt 1 — Externen FlowTrigger in Journey Messaging anlegen
+
+<Steps>
+  <Step title="Flow wählen oder neu anlegen">
+    Erstelle einen neuen Flow oder wähle einen bestehenden, der von Make.com aus gestartet werden soll.
+  </Step>
+  <Step title="Externen FlowTrigger hinzufügen">
+    Wähle oben im Flow beim Auslöser **Neuen externen FlowTrigger hinzufügen**.
+  </Step>
+  <Step title="Trigger benennen">
+    Vergib dem FlowTrigger einen aussagekräftigen Namen — dieser Name erscheint später in Make.com. Für unser Beispiel: `Make: Zahlungsdaten verarbeitet`.
+  </Step>
+  <Step title="Aktionen konfigurieren und Flow speichern">
+    Füge dem Flow die gewünschten Aktionen hinzu (z. B. das Senden einer Vorlage) und speichere ihn.
+  </Step>
+</Steps>
+
+Der fertige Flow sieht so aus:
+
+![Externer FlowTrigger im Flow-Editor, gekennzeichnet mit EXT](/images/make/ext_trigger_set.png)
+
+Der externe Trigger ist im Flow-Editor mit **EXT** gekennzeichnet. Dieser Flow startet, sobald Make.com das entsprechende Event sendet.
+
+<Tip>
+  Ein und derselbe externe Auslöser lässt sich auch für **mehrere Flows** verwenden, falls ein Make-Szenario mehrere JM-Flows starten soll. Wähle dazu beim Anlegen einfach einen bereits existierenden externen Auslöser aus.
+</Tip>
+
+## Schritt 2 — Trigger in Make.com senden
+
+<Steps>
+  <Step title="Szenario anlegen oder öffnen">
+    Erstelle ein neues Szenario in Make.com oder öffne das bestehende, das den DialogShift-Flow auslösen soll.
+  </Step>
+  <Step title="DialogShift-Modul hinzufügen">
+    Klicke auf **+**, suche nach **DialogShift** und wähle die App.
+  </Step>
+  <Step title="Aktion wählen">
+    Wähle die Aktion **Start DS Flow**.
+
+    <Tip>
+      Falls die Verbindung zu DialogShift noch nicht besteht, kannst du sie hier direkt anlegen. Anleitung dazu in der [Einrichtung der Make.com-Integration](/de/journey-messaging/make-com-einrichten#schritt-3-—-verbindung-in-make-com-herstellen).
+    </Tip>
+  </Step>
+  <Step title="FlowTrigger wählen">
+    Unter **DS FlowTrigger** erscheinen alle Trigger, die du im Flow-Editor angelegt hast — also auch `Make: Zahlungsdaten verarbeitet`.
+  </Step>
+  <Step title="Buchungs-ID angeben">
+    Im Feld **Booking ID of guest** trägst du die vollständige Buchungs-ID ein. Der Flow startet dann ausschließlich für die Journeys, die zu dieser Buchung gehören.
+
+    <Warning>
+      Die Buchungs-ID ist entscheidend: Nur darüber weiß Journey Messaging, für welche Journeys die Anweisung gelten soll.
+    </Warning>
+
+    In unserem Beispiel kommen die Buchungsdaten aus dem Webhook des Zahlungsdienstleisters — wir können die Buchungsnummer mit einem Klick direkt von dort referenzieren. Bei einer anderen Datenquelle kannst du die Buchungsnummer selbstverständlich auch auf anderem Weg eintragen.
+
+    ![Start DS Flow Modul in Make.com mit ausgewähltem FlowTrigger und Buchungs-ID](/images/make/start_flow.png)
+  </Step>
+  <Step title="Speichern">
+    Speichere das Modul ab — fertig. Sobald das Modul im Make-Szenario ausgeführt wird, startet auch der Journey-Flow.
+  </Step>
+</Steps>
+
+## Erweiterte Funktion: Flow ohne Buchungs-ID starten
+
+In bestimmten Fällen — z. B. bei einer Werbenachricht an alle gerade eingecheckten Gäste — möchtest du den Flow für mehrere Buchungen gleichzeitig starten.
+
+Ohne Buchungs-ID wird standardmäßig ein Fehler geworfen (im Make-Szenario-Editor sichtbar). Du kannst den Flow stattdessen für **alle gerade eingecheckten Gäste** starten:
+
+<Steps>
+  <Step title="Buchungs-ID leer lassen">
+    Lasse das Feld **Booking ID of guest** unausgefüllt.
+  </Step>
+  <Step title="Advanced settings öffnen">
+    Klappe in den Modul-Einstellungen den Bereich **Advanced settings** aus.
+  </Step>
+  <Step title="Trigger for all checked-in guests aktivieren">
+    Aktiviere die Option **Trigger for all checked-in guests**.
+  </Step>
+</Steps>
+
+<Warning>
+  „Alle eingecheckten Gäste" können potenziell sehr viele Gäste sein — und damit eine Menge Nachrichten. Deshalb muss diese Option bewusst über die erweiterten Einstellungen aktiviert werden. Der Filter nach Buchungs-ID und die „für alle eingecheckten Gäste"-Option lassen sich **nicht kombinieren**.
+</Warning>
+
+<Note>
+  Durch Verzögerungen im Make-Scheduler kann der Filter nicht immer perfekt sein: Der Check-in-Status wird auf Basis der Aktionsuhrzeit bestimmt.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Der Flow wird nicht gestartet">
+    Checkliste:
+
+    - Ist der Flow im Journey Messaging **aktiviert**?
+    - Ist der **API Key** in den JM-Einstellungen noch gültig?
+    - Wird die **Buchungs-ID** korrekt von Make.com übermittelt? Im Make-Szenario-Editor sichtbar.
+    - Stimmt der ausgewählte **DS FlowTrigger** mit dem externen FlowTrigger im DialogShift-Flow überein?
+  </Accordion>
+  <Accordion title="Fehler: Buchungs-ID fehlt">
+    Ohne Buchungs-ID wird der Flow standardmäßig nicht ausgeführt. Entweder die Buchungs-ID einfügen oder bewusst die Option **Trigger for all checked-in guests** in den Advanced settings aktivieren — siehe Abschnitt oben.
+  </Accordion>
+</AccordionGroup>
