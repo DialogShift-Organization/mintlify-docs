@@ -1,5 +1,5 @@
 ---
-title: "Konfiguration Phone AI V2"
+title: "Steuerung für Phone AI"
 description: "Konfiguriere die Einstellungen für die Phone AI inklusive Begrüßung, Weiterleitungen und Zeitsteuerung"
 ---
 
@@ -12,15 +12,12 @@ Die Einstellungen der Phone AI sind in drei Bereiche unterteilt:
 Hier können u. a. folgende Punkte festgelegt werden:
 
 - Aussprache von Zahlen in E-Mail-Adressen (z. B. „524“ als „fünf zwei vier“ statt „fünfhundertvierundzwanzig“)
-
-
 - Zeit bis zur Rückfrage bei Stille („Sind Sie noch da?“)
-
-
 - Mindestverzögerung für Antworten nach dem Sprechen des Anrufers
-
-
 - SMS-Absender (max. 11 Zeichen, keine Sonderzeichen)
+  <Frame>
+    ![Screenshot 2026 04 21 At 15 53 51](/images/Screenshot-2026-04-21-at-15.53.51.png)
+  </Frame>
 
 ## Einstellungen pro Phone AI
 
@@ -38,9 +35,13 @@ Die Begrüßung ist der Text, der die Anruferin oder den Anrufer am Anfang der U
 
 Wenn ein Anrufer innerhalb von X Sekunden erneut anruft, wird der Anruf direkt an die hinterlegte Telefonnummer weitergeleitet. Der konfigurierte Wert bestimmt den Zeitraum in Sekunden, in dem ein wiederholter Anruf von derselben Nummer automatisch zur definierten Zielnummer umgeleitet wird.
 
+<Frame>
+  ![Screenshot 2026 04 21 At 15 54 50](/images/Screenshot-2026-04-21-at-15.54.50.png)
+</Frame>
+
 ### Vorlage für Buchungswünsche
 
-Diese SMS und WhatsApp-Vorlage wird benutzt, wenn Anrufer mit einer Mobilfunknummer einen Buchungswunsch äußern. Vorlagen können unter **Journey Messaging** \>\> **Nachrichtenvorlagen** angepasst werden.
+Diese SMS und WhatsApp-Vorlage wird benutzt, wenn Anrufer mit einer Mobilfunknummer einen Buchungswunsch äußern. Vorlagen können unter **Journey Messaging** \>\> **Nachrichtenvorlagen** in der Phone AI Design Vorlage angepasst werden.
 
 ### Telefonnummer für Weiterleitung
 
@@ -52,12 +53,19 @@ Standard-Weiterleitungsnummer für Fälle, in denen keine spezifische Abteilung 
 
 Du kannst entweder eine einzelne interne Zielnummer (Nebenstelle oder Gruppe) hinterlegen oder abteilungsbezogene Zielnummern (z. B. Reservierung, Rezeption, Spa, Restaurant). Die Phone AI entscheidet während des Gesprächs kontextbasiert, an welche der hinterlegten Zielnummern weitergeleitet wird. Diese Konfiguration wird von unserem Customer Success Team eingerichtet ([support@dialogshift.com](mailto:support@dialogshift.com)).
 
-## Zeitsteuerung für Phone AI
+## St
+
+## euerung für Phone AI
 
 Für jede Abteilung lassen sich z. B. einstellen:
 
 - Whisper-Funktion (kurze Zusammenfassung für Mitarbeitende vor Gesprächsübernahme)
 - Anrufrücknahme, falls kein Mitarbeiter abhebt (inkl. optionalem Rückrufwunsch oder Fortführung des Gesprächs). Es lässt sich die Zeit (in Sekunden) hinterlegen, für die die Phone AI versucht durchzustellen und bis sie den Anruf zurückholt. Bei einer Weiterleitungsnummer die besetzt ist, wird der Anruf direkt von der Phone AI zurückgeholt.
+  <Frame>
+    ![Screenshot 2026 04 21 At 15 56 03](/images/Screenshot-2026-04-21-at-15.56.03.png)
+  </Frame>
 - Zeitplan, der flexibel festlegt, ob Anrufe weitergeleitet werden, ein Rückruf angeboten wird, keine Mitarbeitenden verfügbar sind oder an eine andere Nummer zu einer anderen Zeit weitergeleitet wird.
-
   Je nach Uhrzeit oder Wochentag können dabei unterschiedliche Weiterleitungsziele definiert werden.
+  <Frame>
+    ![Screenshot 2026 04 21 At 15 56 54](/images/Screenshot-2026-04-21-at-15.56.54.png)
+  </Frame>
