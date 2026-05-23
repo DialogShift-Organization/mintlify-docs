@@ -3,10 +3,10 @@ title: 'Tracking mit URL-Parametern'
 description: 'Chatbot-Traffic in Booking Engines und Google Analytics nachverfolgen'
 ---
 
-DialogShift markiert weitergeleiteten Traffic, um Buchungen aus dem Chatbot in Ihrer Booking Engine und Analytics nachzuvollziehen.
+DialogShift markiert weitergeleiteten Traffic, um Buchungen aus dem Chatbot in deiner Booking Engine und Analytics nachzuvollziehen.
 
 <Warning>
-**Wichtiger Hinweis (Mai 2024):** Google hat die Auswertung von UTM-Parametern verändert. Ein zuverlässiges E-Commerce Tracking über Chatbot UTM-Parameter ist nicht mehr möglich. Nutzen Sie stattdessen den `ref`-Parameter.
+**Wichtiger Hinweis (Mai 2024):** Google hat die Auswertung von UTM-Parametern verändert. Ein zuverlässiges E-Commerce Tracking über Chatbot UTM-Parameter ist nicht mehr möglich. Nutze stattdessen den `ref`-Parameter.
 </Warning>
 
 ## Tracking-Methoden
@@ -29,13 +29,13 @@ Als Alternative kann die Referrer-Domain genutzt werden:
 
 <Steps>
   <Step title="Statistik öffnen">
-    Öffnen Sie die Statistik Ihrer Web Booking Engine (WBE)
+    Öffne die Statistik deiner Web Booking Engine (WBE)
   </Step>
   <Step title="Traffic-Herkunft prüfen">
-    Suchen Sie nach Aufschlüsselung nach Traffic-Quelle
+    Suche nach Aufschlüsselung nach Traffic-Quelle
   </Step>
   <Step title="Chatbot-Traffic identifizieren">
-    Filtern Sie nach `ref=dialogshift` oder Referrer `dialogshift.com`
+    Filtere nach `ref=dialogshift` oder Referrer `dialogshift.com`
   </Step>
 </Steps>
 
@@ -62,19 +62,19 @@ Als Alternative kann die Referrer-Domain genutzt werden:
 
 <Tabs>
   <Tab title="Universal Analytics">
-    1. Erstellen Sie einen Custom Report
-    2. Filtern Sie E-Commerce Umsätze
+    1. Erstelle einen Custom Report
+    2. Filtere E-Commerce Umsätze
     3. Bedingung: URL enthält `ref=dialogshift`
   </Tab>
   <Tab title="GA4">
-    1. Öffnen Sie Explorative Datenanalyse
-    2. Erstellen Sie einen Filter für Page Path
+    1. Öffne Explorative Datenanalyse
+    2. Erstelle einen Filter für Page Path
     3. Bedingung: enthält `ref=dialogshift`
   </Tab>
 </Tabs>
 
 <Note>
-Die genaue Implementierung hängt von Ihrem E-Commerce Tracking Setup ab. Sprechen Sie mit Ihrem Analytics-Dienstleister.
+Die genaue Implementierung hängt von deinem E-Commerce Tracking Setup ab. Sprich mit deinem Analytics-Dienstleister.
 </Note>
 
 ## Kanalbeschränkungen
@@ -86,19 +86,19 @@ Aus technischen Gründen funktioniert URL-Parameter Tracking nicht bei:
 - Google's Business Messages
 - WhatsApp
 
-Nutzen Sie für diese Kanäle das Tracking Pixel für indikative Zahlen.
+Nutze für diese Kanäle das Tracking Pixel für indikative Zahlen.
 </Info>
 
 ## Best Practices
 
 <AccordionGroup>
   <Accordion title="WBE-Anbieter kontaktieren">
-    Sprechen Sie mit Ihrem Booking Engine Anbieter über die Integration des `ref=dialogshift` Parameters in deren Statistiken.
+    Sprich mit deinem Booking Engine Anbieter über die Integration des `ref=dialogshift` Parameters in deren Statistiken.
   </Accordion>
   <Accordion title="Kombiniertes Tracking">
-    Nutzen Sie sowohl URL-Parameter als auch Tracking Pixel für maximale Abdeckung.
+    Nutze sowohl URL-Parameter als auch Tracking Pixel für maximale Abdeckung.
   </Accordion>
   <Accordion title="Regelmäßige Überprüfung">
-    Kontrollieren Sie monatlich, ob das Tracking korrekt funktioniert.
+    Kontrolliere monatlich, ob das Tracking korrekt funktioniert.
   </Accordion>
 </AccordionGroup> 

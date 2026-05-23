@@ -67,38 +67,38 @@ a=sendrecv
 
 Die Telefonanlage muss so konfiguriert sein, dass sie den von unserem Trunk gesendeten SIP-Headern vertraut. Nur wenn der Trunk als vertrauenswürdige Quelle (Trusted Source) gilt, wird die Anlage die darin enthaltene P-Asserted-Identity (PAI) für die weitere Anrufsignalisierung verwenden.
 
-- **Zu prüfende Einstellung:** Suchen Sie in den Trunk-Einstellungen nach Optionen wie:
+- **Zu prüfende Einstellung:** Suche in den Trunk-Einstellungen nach Optionen wie:
   - Trust PAI / PAI vertrauen
   - Trust RPID/PAI
   - Vertrauenswürdige Identität / Trusted Identity
   - Connected Line ID / PAI annehmen
-- **Aktion:** Aktivieren Sie diese Einstellung für den SIP-Trunk von Dialog Shift.
+- **Aktion:** Aktiviere diese Einstellung für den SIP-Trunk von Dialog Shift.
 
 #### **2. Regeln für Anrufweiterleitung prüfen**
 
 Die Telefonanlage entscheidet, welche Rufnummer bei einer Weiterleitung signalisiert wird. Diese Logik ist oft pro Nebenstelle oder global einstellbar.
 
-- **Zu prüfende Einstellung:** Überprüfen Sie die Regeln zur Anrufbehandlung oder Weiterleitung. Oft gibt es hier eine Auswahlmöglichkeit:
+- **Zu prüfende Einstellung:** Überprüfe die Regeln zur Anrufbehandlung oder Weiterleitung. Oft gibt es hier eine Auswahlmöglichkeit:
   - Ursprünglichen Anrufer anzeigen (oder "Original Caller") \<-- **Dies ist das gewünschte Verhalten.**
   - Weiterleitenden Teilnehmer anzeigen (oder "Forwarding Party") \<-- Dies ist wahrscheinlich die aktuelle Einstellung.
-- **Aktion:** Stellen Sie sicher, dass die Regelung die Anzeige des ursprünglichen Anrufers vorsieht.
+- **Aktion:** Stell sicher, dass die Regelung die Anzeige des ursprünglichen Anrufers vorsieht.
 
 #### **3. Rufnummern-Übernahme (Passthrough) sicherstellen**
 
 Einige Systeme haben eine globale Einstellung, die es erlaubt, die eingehende Anrufer-ID für ausgehende Anrufe (wie bei einer Weiterleitung) zu übernehmen.
 
-- **Zu prüfende Einstellung:** Suchen Sie nach Begriffen wie:
+- **Zu prüfende Einstellung:** Suche nach Begriffen wie:
   - Passthrough Caller ID
   - Rufnummernübernahme bei Weiterleitung
   - Ursprungsrufnummer verwenden
-- **Aktion:** Aktivieren Sie diese Funktion, falls vorhanden.
+- **Aktion:** Aktiviere diese Funktion, falls vorhanden.
 
 #### **4. Konfiguration der ausgehenden Anrufrouten prüfen**
 
 Ein weitergeleiteter Anruf nutzt eine ausgehende Route der Telefonanlage. Wenn auf dieser Route eine feste Rufnummer (Outbound CallerID) konfiguriert ist, überschreibt diese alle anderen Informationen.
 
-- **Zu prüfende Einstellung:** Überprüfen Sie die ausgehende Route, die für die Weiterleitung genutzt wird.
-- **Aktion:** Stellen Sie sicher, dass das Feld für die "Outbound CallerID" auf dieser Route **leer** ist oder explizit so eingestellt ist, dass es die Rufnummer vom anrufenden Kanal übernimmt und keine feste Nummer erzwingt.
+- **Zu prüfende Einstellung:** Überprüfe die ausgehende Route, die für die Weiterleitung genutzt wird.
+- **Aktion:** Stell sicher, dass das Feld für die "Outbound CallerID" auf dieser Route **leer** ist oder explizit so eingestellt ist, dass es die Rufnummer vom anrufenden Kanal übernimmt und keine feste Nummer erzwingt.
 
 ### Nicht kompatible Telefonanlagen
     
