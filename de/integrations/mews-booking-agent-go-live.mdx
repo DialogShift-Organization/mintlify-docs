@@ -3,202 +3,86 @@ title: "Mews Buchungsagenten Go-Live-Checkliste"
 description: "Schritt-für-Schritt-Checkliste für Hotels zur Vorbereitung des MEWS-Property, bevor die DialogShift-Buchungsagenten in Chat und Telefon aktiviert werden."
 ---
 
-Diese Checkliste richtet sich an Hotels, die ihr MEWS-Property soeben mit DialogShift verbunden haben und nun die **DialogShift-Buchungsagenten** im Chat und am Telefon aktivieren möchten. Bitte geh sie einmal vollständig durch, bevor du uns die Freigabe für den Go-Live gibst. Erfahrungsgemäß nehmen die Vorbereitungen ein bis zwei Stunden in Anspruch – abhängig davon, wie viele Zimmerkategorien und Raten du anbietest.
+Diese Checkliste richtet sich an Hotels, die ihr MEWS-Property mit DialogShift verbunden haben und nun die **DialogShift-Buchungsagenten** in Chat und Telefon aktivieren möchten. Geh sie einmal durch, bevor du uns die Freigabe für den Go-Live gibst.
 
 ## Bevor du beginnst
 
-- dein MEWS-Property muss bereits mit DialogShift verbunden sein. Die Verbindung initiierst du selbst, indem du im MEWS Marketplace die Integration [DialogShift Chatbots](https://www.mews.com/en/products/marketplace/dialogshift-chatbots) startest. Wir werden anschließend automatisch von MEWS benachrichtigt und richten die Anbindung innerhalb von 12 bis 48 Stunden ein, sodass Daten zwischen MEWS und DialogShift fließen.
-- Es handelt sich technisch um eine einzige Integration, die zugleich die Grundlage für **DialogShift Journey Messaging** bildet. Auch wenn du Journey Messaging aktuell nicht einsetzt, ist es dieselbe Anbindung – ein gesonderter Aktivierungsschritt ist daher nicht erforderlich.
-- Eine kurze Anmerkung zur Terminologie: Was im Hotelalltag meist „Zimmertyp" heißt, wird in Mews Operations als **Space category** (Bereichskategorie) bezeichnet; ein einzelnes Zimmer ist ein **Space**. Wir verwenden in diesem Dokument durchgängig die Mews-Begriffe, damit die genannten Klickpfade exakt mit dem übereinstimmen, was du auf dem Bildschirm siehst.
+- Dein MEWS-Property muss bereits mit DialogShift verbunden sein. Die Verbindung startest du über die [DialogShift-Chatbots-Integration im MEWS Marketplace](https://www.mews.com/en/products/marketplace/dialogshift-chatbots); die Anbindung wird innerhalb von 12 bis 48 Stunden eingerichtet.
+- Es ist eine einzige Integration, die zugleich DialogShift Journey Messaging speist. Ein gesonderter Aktivierungsschritt ist nicht erforderlich.
+- Terminologie: Was im Hotelalltag „Zimmertyp" heißt, ist in Mews eine **Space category**; ein einzelnes Zimmer ist ein **Space**. Dieses Dokument nutzt die Mews-Begriffe, damit die Klickpfade exakt mit deinem Bildschirm übereinstimmen.
 
 ## Schritt 1 — Zimmerkategorien für den Agenten freigeben
 
-**Warum ist das wichtig?**
+**Warum.** Der Agent verkauft nur Zimmer, die du freigegeben hast. Bleibt die Liste leer, gelten alle in MEWS angelegten Space categories als verkäuflich – auch Personalzimmer, Long-Stay-Kategorien oder Veranstaltungsflächen.
 
-Die Buchungsagenten verkaufen ausschließlich jene Zimmer, die du ausdrücklich freigegeben hast. Bleibt die Liste leer, gelten sämtliche in MEWS angelegten Space categories als verkäuflich – also auch solche, die du womöglich gar nicht öffentlich anbieten möchtest, etwa Personalzimmer, Long-Stay-Kategorien oder Veranstaltungsflächen.
+**Wo.** DialogShift: **Integrationen → MEWS → Zimmerkategorien**. Setze bei jeder Kategorie ein Häkchen, die der Agent verkaufen darf.
 
-**Wo finde ich das?**
-
-Die Buchungsagenten verkaufen ausschließlich jene Zimmer, die du ausdrücklich freigegeben hast. Bleibt die Liste leer, gelten sämtliche in MEWS angelegten Space categories als verkäuflich – also auch solche, die du womöglich gar nicht öffentlich anbieten möchtest, etwa Personalzimmer, Long-Stay-Kategorien oder Veranstaltungsflächen.
-
-Öffne in DialogShift **Integrationen > MEWS** und navigiere zum Abschnitt **Zimmerkategorie-Whitelist Konfiguration**. Setze bei jeder Zimmerkategorie ein Häkchen, die der Agent verkaufen darf.
-
-**Wie überprüfe ich das?**
-
-Die Liste der Zimmerkategorien wird live aus MEWS geladen. Fehlt eine Kategorie, ist sie noch nicht in MEWS angelegt – lege sie dort an und lade die Seite anschließend neu.
+**Prüfen.** Die Liste wird live aus MEWS geladen. Fehlt eine Kategorie, lege sie in MEWS an und lade die Seite neu.
 
 ## Schritt 2 — Raten für den Agenten freigeben
 
-**Warum ist das wichtig?**
+**Warum.** Wie Schritt 1, nur für Raten. Bleibt die Liste leer, sind alle aktiven Raten freigeschaltet. Gib nur deine öffentlichen Raten frei (keine Firmen-, Gruppen- oder Personalraten).
 
-Es gilt dasselbe Prinzip wie in Schritt 1, nur eben für Raten. Bleibt die Liste leer, sind alle aktiven Raten freigeschaltet. Aktiviere ausschließlich jene Raten, die der Agent tatsächlich an Chat- und Telefongäste verkaufen soll – in der Regel deine öffentlichen Raten, also keine Firmen-, Gruppen- oder Personalraten.
+**Wo.** DialogShift: **Integrationen → MEWS → Raten**. Wähle die freizugebenden Raten aus.
 
-**Wo finde ich das?**
-
-Auf derselben Seite **Integrationen > MEWS** findest du weiter unten den Abschnitt **Rates**. Wähle hier die freizugebenden Raten aus.
-
-**Wie überprüfe ich das?**
-
-Auch die Raten werden live aus MEWS geladen. Private und inaktive Raten werden ebenfalls angezeigt und entsprechend gekennzeichnet, sodass du bewusst entscheiden kannst, welche du freigibst.
+**Prüfen.** Auch die Raten werden live aus MEWS geladen; private und inaktive Raten werden gekennzeichnet angezeigt.
 
 ## Schritt 3 — Verfügbarkeiten und Aufenthaltsregeln in MEWS öffnen
 
-**Warum ist das wichtig?**
+**Warum.** Der Agent kann nur verkaufen, was MEWS als verfügbar zurückmeldet. Geblockte Zeiträume, Mindestaufenthaltsregeln oder „Closed to arrival" führen korrekt zu „keine Zimmer verfügbar".
 
-Der Agent kann nur das verkaufen, was MEWS als verfügbar zurückmeldet. Ist ein Zeitraum vollständig geblockt, durch eine Mindestaufenthaltsregel eingeschränkt oder als „Closed to arrival" markiert, antwortet der Agent korrekterweise mit „keine Zimmer verfügbar" – auch dann, wenn Gäste anfragen.
+**Wo (Mews Operations).**
 
-**Wo finde ich das in Mews Operations?**
+- Restriktionen (Mindest-/Höchstaufenthalt, Anreisesperren): **Settings → Services → [dein buchbarer Service] → Restrictions**.
+- Tagesgenaue Verfügbarkeit: **Reports → Availability & occupancy report → Adjust**.
 
-- Mindest- und Höchstaufenthalt, Anreisesperren und vergleichbare Regeln findest du unter **Settings > Services > [dein buchbarer Service, z. B. „Stay"] > Restrictions**. Es stehen dir sowohl eine Listen- als auch eine Kalenderansicht zur Verfügung.
-- Tagesgenaue Verfügbarkeitsanpassungen nimmst du über **Reports > Availability & occupancy report > Adjust** vor.
+**Prüfen.** Wähle einige repräsentative Termine in den nächsten 6 bis 12 Monaten und stelle sicher, dass die freigegebenen Kategorien und Raten offen und buchbar sind. Die End-to-End-Prüfung folgt in Schritt 7.
 
-**Hilfreiche Mews-Artikel.**
+## Schritt 4 — Beschreibung für jede Space category in jeder Gastsprache hinterlegen
 
-[Managing restrictions in Mews Operations](https://help.mews.com/s/article/managing-restrictions), [Understanding restrictions](https://help.mews.com/s/article/Understanding-restrictions-in-Mews-Operations), [Creating availability adjustments](https://help.mews.com/s/article/Creating-availability-adjustments).
+**Warum.** Der Agent liest das Feld **Description** der Space category aus MEWS. Nur englische Beschreibungen werden live übersetzt; pflegst du jede Sprache selbst, behältst du die Kontrolle über die Begriffe. Mews übersetzt diese Felder nicht automatisch.
 
-**Wie überprüfe ich das?**
+**Wo (Mews Operations).** **Settings → Services → [buchbarer Service] → Space categories → [Kategorie]**. Über **Add translation** eine Sprache hinzufügen, **Name**, **Short name** und **Description** ausfüllen, speichern.
 
-Wähle einige repräsentative Termine in den nächsten 6 bis 12 Monaten aus – etwa eine Wochennacht, ein Wochenende und eine Hochsaisonwoche – und vergewissere dich, dass die in den Schritten 1 und 2 freigegebenen Kategorien und Raten an diesen Tagen offen und buchbar sind. Die abschließende End-to-End-Prüfung folgt in Schritt 7 mit dem Availability Analyzer.
+**Was hinein gehört (4–8 Sätze):** eine kurze Einleitung, dann die harten Fakten – maximale Belegung, Bettenkonfiguration, Zimmergröße, Aussicht, Etage/Lage, Bad, Außenbereich, wesentliche Ausstattung, Barrierefreiheit.
 
-## Schritt 4 — Beschreibungen für jede Space category in jeder Gastsprache hinterlegen
+**Prüfen.** Schritt 7.
 
-**Warum ist das wichtig?**
+## Schritt 5 — Beschreibung für jede Rate in jeder Gastsprache hinterlegen
 
-Wenn ein Gast nach der Junior Suite fragt, liest der Agent das Feld **Description** dieser Space category direkt aus MEWS aus und gibt es wieder. Liegt die Beschreibung nur auf Englisch vor, übersetzt der Agent sie live – qualitativ ist das in der Regel einwandfrei. Der eigentliche Grund, eine Sprachversion selbst zu hinterlegen, ist die Kontrolle über die Terminologie: Nur so legst du verbindlich fest, mit welchen Begriffen und Formulierungen dein Hotel beim Gast auftritt – etwa hoteleigene Bezeichnungen, Marketingsprache oder spezifische Fachbegriffe, die eine maschinelle Übersetzung andernfalls selbständig wählt.
+**Warum.** Der Agent erläutert über die **Description** der Rate, was enthalten ist, wie die Stornobedingungen lauten und ob eine Anzahlung fällig wird. Pflegst du jede Sprache selbst, behältst du die Kontrolle über die Begriffe.
 
-Wichtig: **Mews übersetzt die Felder einer Space category nicht automatisch.** Du musst jede Sprachversion manuell pflegen. Bestätigt wird dies auch im [Mews-Community-Forum](https://community.mews.com/mews-pms-property-operations-83/why-can-t-mews-auto-translate-all-fields-on-booking-engine-including-rates-and-rooms-943).
+**Wo (Mews Operations).** **Settings → Services → [buchbarer Service] → Rates → [Rate] → Edit**. Über **Add translation** eine Sprache hinzufügen und die **Description** eintragen.
 
-**Wo finde ich das in Mews Operations?**
+**Was hinein gehört (jeden Punkt ausdrücklich nennen, auch wenn die Antwort „nein" lautet):** Verpflegung, Stornobedingungen (Frist und Gebühren), Anzahlung/Vorauszahlung bei Buchung.
 
-**Settings > Services > [buchbarer Service] > Space categories > [Kategorie auswählen]**. Über das Dropdown **Add translation** fügst du eine weitere Sprache hinzu; daraufhin erscheinen die Felder **Name**, **Short name** und **Description** zusätzlich in dieser Sprache. Trage die Inhalte ein und speichere. Wiederhole diesen Schritt für jede Sprache, in der deine Gäste anfragen.
-
-**Hilfreiche Mews-Artikel.**
-
-[Modify a space category](https://help.mews.com/s/article/modify-a-space-category), [How to create a space category](https://help.mews.com/s/article/create-or-delete-a-space-category).
-
-**Was gehört in eine gute Beschreibung?**
-
-Der Agent verwendet diesen Text sowohl, um das Zimmer zu beschreiben, als auch, um Fragen dazu zu beantworten. Baue die Beschreibung daher in zwei Ebenen auf: zunächst eine kurze, atmosphärische Einleitung, anschließend die harten Fakten, die der Agent wörtlich zitieren kann.
-
-- **Atmosphärische Einleitung (1–2 Sätze):** das Lebensgefühl des Zimmers, das Besondere an dieser Kategorie.
-- **Harte Fakten (bitte stets vollständig nennen, auch wenn es sich wiederholt anfühlt):**
-  - **Maximale Belegung** – wie viele Erwachsene und Kinder das Zimmer aufnehmen kann, einschließlich einer möglichen Zustellbett-Option.
-  - **Bettenkonfiguration** – etwa „ein Kingsize-Bett", „zwei zusammenstellbare Einzelbetten" oder „ein Queensize-Bett zuzüglich Schlafsofa für ein Kind". Bitte konkret, denn genau danach werden Gäste fragen.
-  - **Zimmergröße in Quadratmetern.**
-  - **Aussicht** – Meer-, Berg- oder Gartenblick, Innenhof oder Straßenseite. Variiert die Aussicht innerhalb der Kategorie, halte auch das fest („die meisten Zimmer dieser Kategorie blicken aufs Meer, einige in den Innenhof").
-  - **Etage und Lage im Gebäude**, sofern relevant (Erdgeschoss, oberste Etage, Anbau und so weiter).
-  - **Bad** – Dusche, Badewanne oder beides; separates WC und Ähnliches.
-  - **Außenbereich** – Balkon, Terrasse, Gartenzugang oder kein Außenbereich.
-  - **Wesentliche Zimmerausstattung** – Klimaanlage, Minibar, Safe, Wasserkocher, Küche, Schreibtisch, Nespresso-Maschine, Smart-TV und Vergleichbares.
-  - **Barrierefreiheit**, sofern zutreffend.
-
-Eine gelungene Beschreibung umfasst pro Sprache typischerweise vier bis acht Sätze. Vermeide schwammige Formulierungen wie „geschmackvoll eingerichtet", ohne konkret zu benennen, was sich tatsächlich im Zimmer befindet.
-
-**Wie überprüfe ich das?**
-
-Siehe Schritt 7.
-
-## Schritt 5 — Beschreibungen für jede Rate in jeder Gastsprache hinterlegen
-
-**Warum ist das wichtig?**
-
-Es gilt dasselbe Prinzip wie in Schritt 4, nur für Raten. Der Agent nutzt die **Description** der Rate, um dem Gast zu erläutern, was im Preis enthalten ist, wie die Stornobedingungen aussehen und ob eine Anzahlung fällig wird. Liegt nur die englische Fassung vor, wird sie live übersetzt – die Übersetzungsqualität ist dabei in der Regel gut. Entscheidend ist die Kontrolle über die Begriffe: Indem du die Beschreibung selbst in jeder Gastsprache pflegst, bestimmst du verbindlich, wie zentrale Begriffe wie „Frühstücksbuffet", „Spätstornierung" oder „Anzahlung" beim Gast ankommen, und vermeidest, dass die Maschine eigene Wortwahlen einsetzt, die nicht zu deinem Haus passen.
-
-**Wo finde ich das in Mews Operations?**
-
-**Settings > Services > [buchbarer Service] > Rates > [Rate auswählen] > Edit** beziehungsweise **Edit details**. Über **Add translation** fügst du eine weitere Sprache hinzu und trägst die übersetzte **Description** ein.
-
-**Hilfreiche Mews-Artikel.**
-
-[Create and configure a rate](https://help.mews.com/s/article/create-a-rate), [Editing or removing a rate](https://help.mews.com/s/article/update-or-remove-a-rate).
-
-**Was gehört in eine gute Beschreibung?**
-
-Der Agent muss die Frage „Was ist in dieser Rate enthalten?" beantworten können, ohne raten zu müssen. Nenne daher jeden der folgenden Punkte ausdrücklich – auch dann, wenn die Antwort „nein" lautet. Mehrdeutigkeiten an dieser Stelle sind die häufigste Ursache für Fehlbuchungen.
-
-- **Verpflegung** – bitte unmissverständlich formulieren:
-  - Ist Frühstück enthalten, gib das an und konkretisiere die Art („Frühstücksbuffet für alle Gäste inklusive" oder „kontinentales Frühstück für zwei Erwachsene").
-  - Ist Frühstück *nicht* enthalten, **schreibe genau das ausdrücklich** („Frühstück ist nicht inklusive; es kann an der Rezeption für EUR X pro Person hinzugebucht werden"). Lass diesen Punkt nicht offen.
-  - Bei Halb- oder Vollpension: nenne die enthaltenen Mahlzeiten und gegebenenfalls ein Getränkekontingent.
-  - Erwähne weitere Leistungen, die zur Rate gehören: Begrüßungsdrink, Spa-Guthaben, spätes Check-out, kostenfreies Parken, Flughafentransfer, Upgrade nach Verfügbarkeit und Ähnliches.
-- **Stornobedingungen** – Fristen und Gebühren bitte präzise angeben:
-  - Bis wann kann der Gast kostenfrei stornieren? (z. B. „kostenfreie Stornierung bis 18 Uhr Ortszeit, drei Tage vor Anreise").
-  - Was wird nach Ablauf dieser Frist berechnet? (z. B. „bei verspäteter Stornierung wird die erste Nacht in Rechnung gestellt, bei Nichtanreise der gesamte Aufenthalt").
-  - Ist die Rate vollständig nicht erstattbar, formuliere es eindeutig („nicht erstattbar: Der gesamte Betrag wird bei Buchung eingezogen und kann nicht zurückerstattet werden").
-- **Anzahlung und Vorauszahlung** – beschreibe, was im Moment der Buchung geschieht:
-  - Wird bei der Buchung etwas abgebucht? Wenn ja, wie viel (Gesamtbetrag, erste Nacht, prozentualer Anteil)?
-  - Oder zahlt der Gast vor Ort, lediglich mit einer Kartengarantie?
-  - Falls eine Anzahlung erforderlich ist: wann und auf welchem Weg wird sie eingezogen?
-
-**Wie überprüfe ich das?**
-
-Siehe Schritt 7.
+**Prüfen.** Schritt 7.
 
 ## Schritt 6 — Bilder für jede Space category hochladen
 
-**Warum ist das wichtig?**
+**Warum.** Der Chat-Agent zeigt ein Karussell mit Zimmerbildern. Eine Space category ohne Bilder erscheint ohne Foto, was die Conversion senkt.
 
-Der Chat-Agent zeigt den Gästen ein Karussell mit Zimmerbildern. Hat eine Space category in MEWS keine Bilder hinterlegt, erscheint dieses Zimmer ohne Foto – und das senkt die Conversion erheblich.
+**Wo (Mews Operations).** Derselbe Bildschirm wie in Schritt 4 (**Space categories → [Kategorie]**), Bereich Bild-Upload.
 
-**Wo finde ich das in Mews Operations?**
+**Vorgaben:** 4–6 Bilder pro Kategorie, Querformat, mindestens **1920 × 1080 Pixel**, Hauptmotiv mittig. Das **zuerst** hochgeladene Bild wird zum Titelbild im Chat-Karussell.
 
-Auf demselben Bildschirm wie in Schritt 4: **Settings > Services > [buchbarer Service] > Space categories > [Kategorie auswählen]**. Den Bereich für den Bild-Upload findest du auf dieser Seite.
-
-**Hilfreicher Mews-Artikel.**
-
-[Add images to your Mews Booking Engine](https://help.mews.com/s/article/add-images-for-your-mews-booking-engine).
-
-**Sinnvolle Bildvorgaben.**
-
-- Vier bis sechs Bilder pro Kategorie. Mews empfiehlt, nicht mehr als sechs hochzuladen, damit die Galerie übersichtlich bleibt.
-- Querformat, mindestens **1920 × 1080 Pixel**.
-- Hauptmotiv möglichst mittig platzieren – Mews schneidet die Bilder für Booking Engine, Kiosk und Guest Portal automatisch zu, und DialogShift verwendet dieselben skalierten URLs.
-- Das **zuerst** hochgeladene Bild wird zum Titelbild im Chat-Karussell; alle weiteren erscheinen in der Zimmergalerie.
-
-Weiterführend: [Image sizing (product and rooms) — Mews Community](https://community.mews.com/mews-pms-property-operations-83/image-sizing-product-and-rooms-2177).
-
-**Wie überprüfe ich das?**
-
-Siehe Schritt 7.
+**Prüfen.** Schritt 7.
 
 ## Schritt 7 — Alles im DialogShift Availability Analyzer prüfen
 
-**Warum ist das wichtig?**
+**Warum.** Dies ist dein Probelauf. Der Availability Analyzer fragt MEWS exakt so ab wie die Buchungsagenten und zeigt dir pro Sprache die Daten, mit denen sie arbeiten.
 
-Dies ist dein Probelauf. Der Availability Analyzer fragt MEWS exakt so ab, wie es die Buchungsagenten im Live-Betrieb tun, und zeigt dir pro Sprache jene Daten, mit denen die Agenten später tatsächlich arbeiten werden. Jede Lücke, die du hier schließt, bekommt der Gast später nicht zu sehen.
+**Wo.** DialogShift: **Integrationen → Availability Analyzer**.
 
-**Wo finde ich das?**
+**Wie.** Wähle ein Anreise- und Abreisedatum, trage Erwachsene und Kinder ein, schalte über die Sprachauswahl jede Gastsprache durch und klicke auf **Query Availability**.
 
-Öffne in DialogShift **Integrationen > Availability Analyzer**.
+**Pro Sprache prüfen.**
 
-**So führst du eine Prüfung durch.**
+- Pro Zimmer: Name liest sich natürlich, Beschreibung nutzt deine Begriffe, das erste Bild ist hinterlegt (DialogShift nutzt nur dieses), und verfügbare Einheiten, Größe und Bettenkonfiguration stimmen.
+- Pro Rate: Name liest sich natürlich; Beschreibung deckt Verpflegung, Storno und ggf. Anzahlung ab.
 
-1. Wähle ein Anreise- und ein Abreisedatum einige Wochen in der Zukunft – oder ein beliebiges anderes Beispieldatum.
-2. Trage die Anzahl an Erwachsenen und Kindern ein, die einer typischen Anfrage entspricht.
-3. Unterstützt dein Hotel mehr als eine Gastsprache, schalte über die **Sprachauswahl** alle Sprachen nacheinander durch.
-4. Klicke anschließend auf **Query Availability**.
-
-**Was solltest du pro Ergebnisseite und pro Sprache prüfen?**
-
-- **Pro Zimmer:**
-  - Der **Name** des Zimmers ist korrekt und liest sich in der jeweiligen Sprache natürlich.
-  - Die **Beschreibung** verwendet die Begriffe und Formulierungen, mit denen dein Hotel beim Gast auftreten möchte. Falls nicht, hinterlege eine eigene Sprachversion in MEWS (Schritt 4).
-  - Das **erste hochgeladene Bild** ist hinterlegt und repräsentiert das Zimmer treffend – DialogShift verwendet ausschließlich dieses eine Bild.
-  - **Verfügbare Einheiten**, **Größe** und **Bettenkonfiguration** stimmen.
-- **Pro Rate (jeweils neben dem zugehörigen Zimmer angezeigt):**
-  - Der **Name** der Rate liest sich natürlich.
-  - Die **Beschreibung** deckt Verpflegung, Stornobedingungen und gegebenenfalls Anzahlung ab – und steht in der richtigen Sprache.
-
-Sollte etwas nicht passen:
-
-- Text- oder Bildproblem → in MEWS korrigieren (Schritte 4 bis 6) und erneut prüfen.
-- Falsches Zimmer oder falsche Rate erscheint → Freigabeliste anpassen (Schritte 1 und 2) und erneut prüfen.
-- Keine Zimmer an Tagen, an denen du eigentlich verkaufen möchtest → Restriktionen und Verfügbarkeiten überprüfen (Schritt 3).
-
-Wiederhole diesen Vorgang, bis jede Sprache so aussieht, wie du sie einem Gast präsentieren möchtest.
+Stimmt etwas nicht: Text- oder Bildproblem → in MEWS korrigieren (Schritte 4–6); falsches Zimmer oder falsche Rate → Freigabeliste anpassen (Schritte 1–2); keine Zimmer an Tagen, an denen du verkaufen willst → Restriktionen prüfen (Schritt 3). Wiederhole, bis jede Sprache korrekt ist.
 
 ## Schritt 8 — DialogShift Bescheid geben
 
-Sobald Schritt 7 in jeder Gastsprache ein einwandfreies Ergebnis liefert, genügt eine kurze Nachricht an deinen DialogShift-Ansprechpartner oder an unseren Support: „Hotel [Name] ist bereit für die Buchungsagenten in Chat und Telefon." Wir schalten die Agenten anschließend frei und stehen am ersten Tag für eventuelle Feinjustierungen bereit.
-
-Willkommen im Live-Buchungsbetrieb.
+Sobald Schritt 7 in jeder Gastsprache einwandfrei ist, gib deinem DialogShift-Ansprechpartner Bescheid: „Hotel [Name] ist bereit für die Buchungsagenten in Chat und Telefon." Die Agenten werden anschließend freigeschaltet.

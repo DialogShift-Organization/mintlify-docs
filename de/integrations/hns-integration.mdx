@@ -3,90 +3,28 @@ title: "HNS Integration - Zimmerbuchung & Umsatz-Tracking "
 description: "Wie du die Integration mit Hotel Net Solutions aktivierst, um KI Buchungen zu ermöglichen und Umsätze durch Chat und Telefon in DialogShift zu verfolgen"
 ---
 
-## Über Hotel Net Solutions (HNS)
+Die Integration mit Hotel Net Solutions (HNS) verbindet DialogShift mit deiner OnePageBooking-Engine. Chat AI und Phone AI rufen Verfügbarkeiten, Preise und Raten in Echtzeit ab, ermöglichen Buchungen und erfassen die darüber erzielten Umsätze in der DialogShift-App.
 
-Hotel Net Solutions ist einer der führenden Technologiepartner für Hotels im deutschsprachigen Raum. Das 2006 gegründete Berliner Unternehmen entwickelt provisionsfrei arbeitende Buchungssysteme und unterstützt über 2.000 Hotels bei ihrer Online-Vermarktung.
+Genutzt wird die Anbindung von:
 
-### OnePageBooking - Die Buchungsmaschine
-
-<Card title="OnePageBooking" icon="browser" color="#0369a1">
-  Das Flaggschiff-Produkt von HNS ist OnePageBooking - eine intuitive Buchungsmaschine, die den gesamten Buchungsprozess auf einer einzigen Seite abwickelt und dabei höchste Benutzerfreundlichkeit bietet.
-</Card>
-
-## DialogShift Integration mit HNS
-
-Die Integration zwischen DialogShift und Hotel Net Solutions bietet eine umfassende Verbindung, die Hotels folgende Möglichkeiten eröffnet:
-
-1. **Umsatz-Messung** - Verfolgung und Analyse der durch Chat- und Telefon-Services generierten Umsätze
-2. **Echtzeit-Verfügbarkeit & Preise** - Zugriff auf Live-Inventar, Verfügbarkeits- und Preisinformationen aus der HNS OnePageBooking-Engine
-
-Die Integration bezieht Verfügbarkeits-, Inventar- und Preisdaten direkt aus deiner HNS-Buchungsmaschine, sodass die KI-Assistenten von DialogShift Gästeanfragen mit aktuellen Informationen zu Zimmerverfügbarkeiten und Preisen beantworten können.
-
-<Info>
-  **In Kürze verfügbar:** Ein vollständiger Buchungsprozess basierend auf OnePageBooking wird für Chat AI und Phone AI aktiviert, der es Gästen ermöglicht, Reservierungen direkt über diese Kanäle abzuschließen.
-</Info>
-
-### Verwendung
-
-Die Daten aus HNS werden aktuell herangezogen für:
-
-- **Chat Dialog Quickbooker** - Verfügbarkeitsabfragen und Buchungen direkt im Chat
-- **Phone Availability Info v1 und v2** - Zimmerverfügbarkeit bei Telefonanfragen
-- **Vollständiger Buchungsworkflow** - Ab Q1 2026
-
-### Funktionsweise
-
-<Steps>
-  <Step title="Verfügbarkeits- und Preisdaten">
-    DialogShift ruft in Echtzeit Verfügbarkeiten, Preise und Rateninformationen aus der HNS OnePageBooking-Engine ab. Diese Daten werden von Chat AI und Phone AI genutzt, um Gästen präzise Auskunft über verfügbare Zimmer und aktuelle Tarife zu geben
-  </Step>
-  <Step title="Datenübertragung">
-    HNS aktiviert ein spezielles Tracking-System, das Buchungen identifiziert, die durch DialogShift-Services unterstützt wurden
-  </Step>
-  <Step title="Reporting">
-    Umsatzdaten werden in der DialogShift-App angezeigt und ermöglichen detaillierte ROI-Analysen
-  </Step>
-</Steps>
+- **Availability Agent** – Verfügbarkeits- und Preisauskünfte in Chat und Telefon.
+- **Full Booking Agent** – vollständige Buchung in Chat und Telefon.
 
 ## Voraussetzungen
 
-<CardGroup cols={3}>
-  <Card title="✅ HNS Kunde" icon="check-circle" color="#22c55e">
-    dein Hotel muss bereits OnePageBooking von HNS nutzen
-  </Card>
-  <Card title="✅ DialogShift Client-ID" icon="key" color="#3b82f6">
-Du benötigst deine DialogShift Client-ID aus der App
-  </Card>
-  <Card title="✅ Integration beauftragt" icon="file-contract" color="#f59e0b">
-    Beauftragung der DialogShift Integration bei HNS (kostenpflichtig bei HNS)
-  </Card>
-</CardGroup>
-
-### Client-ID in DialogShift finden
-
-1. Melde dich in deiner DialogShift-App an
-2. Navigiere zu **Einstellungen** → **Integration**
-3. Kopiere deine **Client-ID** aus dem Integrationsbereich
-
-<Tip>
-  Die Client-ID ist eine eindeutige Kennung deines Hotels und wird für die Zuordnung der Tracking-Daten benötigt.
-</Tip>
+- Dein Hotel nutzt OnePageBooking von HNS.
+- Die Integration ist bei HNS beauftragt (kostenpflichtig bei HNS).
+- Deine DialogShift Client-ID (in der App unter **Einstellungen → Integration**).
 
 ## Integration aktivieren
 
-Die Integration wird durch Beauftragung bei HNS gestartet. HNS leitet dann an Dialogshift  entsprechenden Informationen weiter. In beiden Systemen wird die Integration konfiguriert und kann danach genutzt werden.
+1. Beauftrage die DialogShift-Integration bei HNS.
+2. HNS übermittelt die API-Credentials an dich oder direkt an DialogShift.
+3. Die Credentials werden in der DialogShift-App auf der HNS-Integrationsseite eingetragen.
+4. DialogShift übermittelt deine Client-ID an HNS.
 
-## Support und Kontakt
+Danach ist die Integration aktiv.
 
-Bei Fragen zur Integration wende dich an:
+## Konfiguration
 
-### Hotel Net Solutions
-
-- **Website:** https://hotelnetsolutions.de
-- **Telefon:** +49 30 770 193 000
-- **E-Mail:** [info@hotelnetsolutions.de](mailto:info@hotelnetsolutions.de)
-- **Support:** Montag bis Freitag, 9-17 Uhr
-
-### DialogShift Support
-
-Bei technischen Fragen zu DialogShift kontaktiere unser Support-Team über [support@dialogshift.com](mailto:support@dialogshift.com)
+Auf der HNS-Integrationsseite in der DialogShift-App legst du fest, welche Zimmertypen und Raten die Booking Agents verkaufen, und hinterlegst die zugehörigen Bilder.

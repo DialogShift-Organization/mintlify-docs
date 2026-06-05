@@ -1,31 +1,84 @@
 ---
 title: "Benutzerkonto erstellen"
-description: "Du bist eingeladen, Deinen User für die DialogShift Plattform zu erstellen (Sign-up & Login). "
+description: "Vom Einladen durch den Admin bis zum ersten Login: So legst du einen neuen Nutzer für die DialogShift Plattform an."
 ---
 
+Dieser Artikel beschreibt den kompletten Ablauf, um einen neuen Nutzer anzulegen – von der Einladung durch den Admin über die Registrierung bis zum ersten Login.
+
 <Note>
-  Um ein Nutzerkonto bei Dialogshift zu erstellen, musst du von einem Admin Deiner Organisation in der Dialogshift-App eingeladen worden sein. [Hier](https://app.dialogshift.com/user-management) können neue Nutzer eingeladen werden.
+  Um ein Nutzerkonto bei DialogShift zu erstellen, musst du von einem Admin deiner Organisation eingeladen worden sein. Admins können neue Nutzer [hier](https://app.dialogshift.com/user-management) einladen.
 </Note>
-
-## Die Schritte im Einzelnen: 
-
-<Steps>
-  <Step title="Du erhältst eine Einladung zu DialogShift per E-Mail">
-    Folge dem link in der E-Mail zur Registrierungsseite der DialogShift App
-  </Step>
-  <Step title="Username und Passwort vergeben">
-    Vergebe jetzt ein Passwort und einen Nutzernamen, der im Chat auftaucht.
-  </Step>
-  <Step title="Code aus E-Mail eintragen">
-    Unser System hat dir eine E-Mail mit einem sechsstelligen Code zugesandt, um deine E-Mail-Adresse zu überprüfen. Trage ihn jetzt ein.
-  </Step>
-  <Step title="Bei DialogShift Anmelden">
-    Fast geschafft! Du kannst dich nun bei der Dialogshift App mit deiner E-Mail-Adresse und deinem vergebenen Passwort anmelden.
-  </Step>
-</Steps>
 
 ## Der gesamte Workflow im Video
 
-Das folgende Video zeigt die Schritte, mit denen sich ein eingeladener Nutzer erstmalig anmeldet
+Das Video zeigt den kompletten Ablauf: vom Versenden der Einladung bis zum ersten erfolgreichen Login.
 
-<iframe className="w-full aspect-video rounded-xl" src="https://player.vimeo.com/video/1097959517?badge=0&autopause=0&player_id=0&app_id=58479" title="Vimeo video player" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
+<video controls className="w-full aspect-video rounded-xl" src="/images/create-new-user.mp4"></video>
+
+## Schritt 1: Einladung versenden (Admin)
+
+<Steps>
+  <Step title="Zur Nutzerverwaltung navigieren">
+    Öffne in der DialogShift-App den Menüpunkt `User management` (Nutzerverwaltung).
+  </Step>
+  <Step title="E-Mail-Adresse eingeben">
+    Klicke im Bereich `Invite new users` (Neue Nutzer einladen) in das Feld `Enter email` und gib die E-Mail-Adresse des neuen Nutzers ein.
+  </Step>
+  <Step title="Organisation zuordnen">
+    Wähle im Dropdown `Organisationen` mindestens einen Kunden bzw. ein Projekt aus.
+
+    <Warning>
+      Die Zuordnung ist Pflicht. Klickst du auf `Einladen`, ohne eine Organisation gewählt zu haben, erscheint die Fehlermeldung *„Please select at least one client."*
+    </Warning>
+  </Step>
+  <Step title="Einladung versenden">
+    Klicke auf den blauen Button `Einladen`. Unten rechts bestätigt eine grüne Meldung *„User has been invited."*, dass der Nutzer erfolgreich eingeladen wurde.
+  </Step>
+</Steps>
+
+## Schritt 2: Einladung annehmen (neuer Nutzer)
+
+<Steps>
+  <Step title="E-Mail öffnen">
+    Der neue Nutzer öffnet sein E-Mail-Postfach und die eingegangene E-Mail mit dem Betreff *„Einladung zu … auf der DialogShift AI Platform"*.
+  </Step>
+  <Step title="Registrierung starten">
+    In der E-Mail auf den blauen Button `Neues Nutzerkonto` klicken. Es öffnet sich automatisch ein neuer Browser-Tab mit der Registrierungsseite.
+  </Step>
+</Steps>
+
+## Schritt 3: Registrierung abschließen
+
+<Steps>
+  <Step title="Nickname vergeben">
+    Auf der Seite `Registrieren` ist die E-Mail-Adresse bereits korrekt vorausgefüllt. Gib im Feld `Nickname` deinen gewünschten Namen ein – dieser erscheint später im Chat.
+  </Step>
+  <Step title="Passwort festlegen">
+    Vergib im Feld `Passwort` ein sicheres Passwort.
+
+    <Tip>
+      Das Passwort muss bestimmte Kriterien erfüllen (z. B. mindestens 8 Zeichen, ein Klein- und ein Großbuchstabe). Erfüllte Kriterien werden während der Eingabe grün abgehakt.
+    </Tip>
+  </Step>
+  <Step title="Registrieren">
+    Klicke auf den Button `Registrieren`. Du wirst anschließend automatisch zur Login-Seite weitergeleitet.
+  </Step>
+</Steps>
+
+## Schritt 4: Der erste Login
+
+<Steps>
+  <Step title="Registrierung bestätigt">
+    Auf der Login-Seite (`Sign in to the DialogShift AI Platform`) bestätigt ein grüner Banner die erfolgreiche Registrierung.
+
+    <Note>
+      Pop-ups deines Browsers oder Passwort-Managers zum Speichern des Passworts kannst du bestätigen oder mit `Not Now` überspringen.
+    </Note>
+  </Step>
+  <Step title="Anmelden">
+    Die E-Mail-Adresse ist bereits hinterlegt. Gib dein soeben erstelltes Passwort in das Feld `Password` ein und klicke auf den blauen Button `Sign in`.
+  </Step>
+  <Step title="Fertig">
+    Du bist nun eingeloggt und landest auf dem Startbildschirm (dem Messaging Dashboard). Oben rechts ist dein Profil mit dem gewählten Nicknamen sichtbar.
+  </Step>
+</Steps>
