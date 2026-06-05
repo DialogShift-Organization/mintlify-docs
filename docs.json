@@ -131,6 +131,16 @@
                 ]
               },
               {
+                "group": "Statistiken",
+                "icon": "chart-column",
+                "pages": [
+                  "de/statistiken/chatbot-ai-statistik",
+                  "de/statistiken/email-ai-statistik",
+                  "de/statistiken/phone-ai-statistik",
+                  "de/statistiken/buchungsstatistik"
+                ]
+              },
+              {
                 "group": "Compliance",
                 "icon": "shield",
                 "pages": [
@@ -289,6 +299,16 @@
                       "en/journey-messaging/make-com-incoming"
                     ]
                   }
+                ]
+              },
+              {
+                "group": "Statistics",
+                "icon": "chart-column",
+                "pages": [
+                  "en/statistics/chatbot-ai-statistics",
+                  "en/statistics/email-ai-statistics",
+                  "en/statistics/phone-ai-statistics",
+                  "en/statistics/booking-statistics"
                 ]
               },
               {

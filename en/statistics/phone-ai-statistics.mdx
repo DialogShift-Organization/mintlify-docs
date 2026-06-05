@@ -1,0 +1,64 @@
+---
+title: 'Phone AI Statistics'
+description: 'Explanation of every metric on the Phone AI statistics page in your DialogShift app'
+---
+
+The **Statistics → Phone AI** page shows you how your AI phone assistant is being used. This page explains what each number means.
+
+<Info>
+Use the **date range** in the top right (default: last month). All metrics always refer to the selected period.
+</Info>
+
+## Basic KPIs
+
+| Metric | Meaning |
+|---|---|
+| **Calls** | Total number of calls to the Phone AI. |
+| **Conversations** | Calls that turned into a real conversation (no immediate hang-up). |
+| **Conversation conversion** | Share of calls that became a conversation. |
+| **Redirects** | Share of conversations that were forwarded to a human. |
+| **Distribution callers** | Split of callers by landline, mobile and anonymous. |
+| **Minutes** | Sum of all conversation minutes. |
+| **Conversation length (min)** | Average length of a conversation. |
+| **Conversations (trend)** | Development of conversations over the period. |
+| **Minutes per day** | Conversation minutes per day (per week for long ranges). |
+
+<Note>
+"Anonymous" means the caller's number was withheld or could not be identified. A call without a real conversation (caller hangs up immediately) counts towards **Calls** but not **Conversations**.
+</Note>
+
+## Booking KPIs
+
+| Metric | Meaning |
+|---|---|
+| **Booking links** | Number of booking links sent during the call via SMS or WhatsApp. |
+| **WhatsApp** | Share of booking links sent via WhatsApp (only shown if WhatsApp is active). |
+| **Booking EUR** | Revenue from bookings by callers (only shown if booking revenue is tracked). |
+
+<Info>
+**Booking EUR** only appears if booking revenue is tracked for your hotel – via the DialogShift tracking pixel in your booking engine or via an integration (e.g. HNS).
+</Info>
+
+## Conversation content
+
+| Chart | Meaning |
+|---|---|
+| **Intents** | Distribution of callers' main requests (e.g. requested human, booking, spa / wellness, hotel information). |
+| **Sentiments** | Mood of the conversations: positive, neutral or negative. |
+
+<Note>
+Intents and sentiments are detected automatically by the AI for each conversation.
+</Note>
+
+## Example
+
+How to read the numbers together:
+
+- **2437 calls**, of which **2032 conversations** → conversation conversion = **83%**: 83% of calls turned into a real conversation.
+- **2336 minutes** across 2032 conversations → conversation length = **1.15 min** on average.
+- **Redirects 66%**: two out of three conversations were forwarded to a human.
+- **Distribution callers:** mobile 66%, landline 32%, anonymous 3%.
+
+## Support
+
+If you have questions about your numbers, contact DialogShift support at [support@dialogshift.com](mailto:support@dialogshift.com).

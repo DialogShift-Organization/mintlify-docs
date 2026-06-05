@@ -1,0 +1,134 @@
+---
+title: 'Buchungsstatistik'
+description: 'Die Buchungsstatistik und der Tab Buchungslinks: Liste der vom Bot erzeugten Links in deine Buchungsstrecke'
+---
+
+Auf der Seite **Statistiken → Buchungsstatistik** siehst du einzelne Buchungs-Vorgänge als Liste. Diese Seite erklärt vor allem den Tab **Buchungslinks** – die vom Chatbot oder von der Phone AI erzeugten Links in deine Buchungsstrecke (Quickbooker).
+
+<Info>
+Die Buchungsstatistik zeigt immer die **letzten 90 Tage**. Welche Tabs erscheinen, hängt davon ab, welche Funktionen für dein Hotel aktiv sind.
+</Info>
+
+## Der Tab „Buchungen"
+
+Jede Zeile ist ein **echter Buchungsvorgang** über den Buchungs-Agenten – der Gast bucht direkt bei DialogShift (im Chat mit dem Full Booking Agent oder am Telefon mit der Phone AI). Die Spalten sind identisch mit den anderen Tabs, nur der **Status** zeigt den Buchungs-Fortschritt:
+
+| Status | Bedeutung |
+|---|---|
+| **Zimmerauswahl** | Der Gast hat die Buchung begonnen und wählt ein Zimmer. |
+| **Reisedaten** | Der Gast gibt seine Reise- und Gästedaten ein (Checkout). |
+| **Buchung abgeschlossen** | Die Buchung wurde tatsächlich an die Booking Engine übermittelt – gebucht. |
+| **Angebot gesendet** | Es wurde ein Zahlungs-/Checkout-Link erzeugt und dem Gast geschickt. |
+| **Angebot geöffnet** | Der Gast hat diesen Link geöffnet. |
+
+<Note>
+„Buchung abgeschlossen" ist der Endzustand und bedeutet eine echte Buchung. Viele Zeilen bleiben bei „Zimmerauswahl", wenn der Gast den Vorgang nicht beendet.
+</Note>
+
+### Beispiel
+
+Ein Gast bucht im Chatbot:
+
+1. Er wählt nach der Verfügbarkeitsprüfung ein Zimmer → **Zimmerauswahl**.
+2. Er gibt seine Reisedaten ein → **Reisedaten**.
+3. Die Buchung wird übermittelt → **Buchung abgeschlossen**.
+
+## Der Tab „Buchungslinks"
+
+Jede Zeile ist **ein erzeugter Buchungslink**: Der Bot hat im Gespräch einen Link in deine Web Booking Engine vorbereitet – mit bereits ausgewählten Reisedaten und Gästezahl. Es ist eine **angeteaserte Buchung, keine abgeschlossene Buchung**.
+
+| Spalte | Bedeutung |
+|---|---|
+| **Zeitpunkt** | Wann der Link erzeugt wurde (Datum und Uhrzeit). |
+| **Anreise** | Vom Gast gewünschtes Anreisedatum. |
+| **Abreise** | Vom Gast gewünschtes Abreisedatum. |
+| **Status** | `Link erzeugt` oder `Weitergeleitet` (siehe unten). |
+| **Erwachsene** | Anzahl der Erwachsenen aus der Anfrage. |
+| **Kinder** | Anzahl der Kinder aus der Anfrage. |
+| **Kanal** | Über welches Produkt der Link entstand: 💬 Chat, 📞 Phone AI oder ✉️ Email AI. |
+| **Konversation** | Button **Öffnen** – zeigt das zugehörige Gespräch. |
+
+### Status
+
+| Status | Bedeutung |
+|---|---|
+| **Link erzeugt** | Der Link wurde dem Gast geschickt, aber noch nicht geklickt. |
+| **Weitergeleitet** | Der Gast hat den Link geklickt und wurde in die Buchungsstrecke geleitet. |
+
+<Note>
+„Weitergeleitet" bedeutet, dass der Gast den Link **genutzt** hat – nicht, dass er gebucht hat. Tatsächliche Buchungen und Umsätze findest du im Tab **Tracking** bzw. in den kommerziellen Kennzahlen der Chatbot- und Phone-AI-Statistik.
+</Note>
+
+## Beispiel
+
+Ein Gast fragt im Chat: „Habt ihr vom 5. bis 7. Juni ein Doppelzimmer für 2 Personen?"
+
+1. Der Chatbot erzeugt einen Buchungslink mit vorausgefüllten Daten (Anreise 05.06., Abreise 07.06., 2 Erwachsene, 0 Kinder).
+   → Neue Zeile, **Status: Link erzeugt**, Kanal: 💬 Chat.
+2. Der Gast klickt den Link und landet in deiner Buchungsstrecke.
+   → Status wechselt auf **Weitergeleitet**.
+3. Über **Öffnen** kannst du das komplette Gespräch nachlesen.
+
+## Der Tab „Verfügbarkeitsanfragen"
+
+Jede Zeile ist eine **Verfügbarkeitsabfrage** des Gastes für konkrete Reisedaten und Gästezahl. Die **Spalten sind identisch** mit dem Tab „Buchungslinks". Solche Anfragen entstehen am Telefon (Phone AI prüft die Verfügbarkeit) oder im Chat (Quickbooker).
+
+Der Status zeigt, wie weit die Anfrage gekommen ist:
+
+| Status | Bedeutung |
+|---|---|
+| *(leer)* | Es wurde nur die Verfügbarkeit geprüft – noch kein Buchungslink versendet. |
+| **Link erzeugt** | Ein Buchungslink wurde dem Gast geschickt, aber noch nicht geklickt. |
+| **Weitergeleitet** | Der Gast hat den Link geklickt und wurde in die Buchungsstrecke geleitet. |
+
+<Note>
+Eine Zeile kann sich entwickeln: erst nur geprüft (leer), dann **Link erzeugt**, dann **Weitergeleitet**.
+</Note>
+
+### Beispiel
+
+Ein Gast ruft an und fragt die Phone AI: „Habt ihr vom 5. auf den 6. Juni ein Zimmer für 2 Personen?"
+
+1. Die Phone AI prüft die Verfügbarkeit → neue Zeile, **Status leer**, Kanal 📞.
+2. Die Phone AI schickt einen Buchungslink per SMS/WhatsApp → **Link erzeugt**.
+3. Der Gast klickt den Link → **Weitergeleitet**.
+
+## Der Tab „Angebotsanfragen"
+
+Jede Zeile ist eine **personalisierte Angebotsanfrage** über den Smart-Host-Agent im Chat – der Gast lässt sich ein individuelles Angebot erstellen. Die Spalten sind identisch mit dem Tab „Buchungen"; der Status zeigt den Fortschritt:
+
+| Status | Bedeutung |
+|---|---|
+| **Zimmerauswahl** | Die Anfrage wurde begonnen (Zimmer-/Verfügbarkeitsauswahl). |
+| **Reisedaten** | Der Gast gibt seine Reise- und Gästedaten ein. |
+| **Buchung abgeschlossen** | Die Angebotsanfrage wurde abgeschickt. |
+
+<Note>
+Im Tab „Angebotsanfragen" bedeutet der grüne Status „Buchung abgeschlossen", dass die **Angebotsanfrage abgeschickt** wurde – nicht, dass eine bezahlte Buchung erfolgte.
+</Note>
+
+## Der Tab „Tracking"
+
+Dieser Tab zeigt **tatsächlich abgeschlossene Buchungen mit Umsatz** – also das, was per Tracking-Pixel in deiner Booking Engine oder über eine Integration (z. B. HNS) zurückgemeldet wurde. Er hat eigene Spalten:
+
+| Spalte | Bedeutung |
+|---|---|
+| **Zeitpunkt** | Zeitpunkt der gemeldeten Buchung. |
+| **Kanal** | Produkt: 💬 Chat, 📞 Phone AI oder ✉️ Email AI. |
+| **Chat-Kanal** | Konkreter Kanal, über den gebucht wurde (z. B. Web Buchung, Website). |
+| **Betrag IBE** | Buchungsbetrag in der Währung der Booking Engine. |
+| **Betrag EUR** | Betrag umgerechnet in EUR. |
+| **Währung** | Währung der Booking Engine. |
+| **Zimmer** | Anzahl gebuchter Zimmer. |
+| **Nächte** | Anzahl gebuchter Nächte. |
+| **Personen** | Anzahl Personen (sofern übermittelt). |
+| **Referrer** | Seite, auf der die Buchung erfasst wurde. |
+| **Konversation** | Button **Öffnen** – zeigt das zugehörige Gespräch. |
+
+<Note>
+Dies ist der einzige Tab mit **echten Umsätzen**. Die anderen Tabs zeigen den Buchungs-Funnel bzw. erzeugte Links, nicht den tatsächlichen Umsatz. Die Summen entsprechen den Umsatz-Kennzahlen in der Chatbot- und Phone-AI-Statistik.
+</Note>
+
+## Support
+
+Bei Fragen kontaktiere den DialogShift Support unter [support@dialogshift.com](mailto:support@dialogshift.com).
