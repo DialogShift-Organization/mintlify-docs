@@ -24,11 +24,18 @@ The video shows the entire process: from sending the invitation to the first suc
   <Step title="Enter the email address">
     In the `Invite new users` section, click into the `Enter email` field and type the email address of the new user.
   </Step>
-  <Step title="Assign an organization">
-    Select at least one client or project from the `Organizations` dropdown.
+  <Step title="Select a role">
+    Choose the appropriate user role from the `Role` dropdown. The role determines which access rights the new user receives.
+  </Step>
+  <Step title="Assign access">
+    Depending on the selected role, you define what the user can access:
+
+    * **`Member`, `Editor`, and `Hotel admin`:** Select the clients (hotels) the user should have access to.
+    * **`Brand admin`:** Select the brand for which the user should receive admin rights.
+    * **`Admin`:** No selection needed – an admin automatically has access to all clients and brands of the organization.
 
     <Warning>
-      The assignment is mandatory. If you click `Invite` without selecting an organization, the error message *"Please select at least one client."* appears.
+      For the `Member`, `Editor`, and `Hotel admin` roles, at least one client must be selected. Otherwise, the error message *"Please select at least one client."* appears when you click `Invite`.
     </Warning>
   </Step>
   <Step title="Send the invitation">

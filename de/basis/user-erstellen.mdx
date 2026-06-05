@@ -24,11 +24,18 @@ Das Video zeigt den kompletten Ablauf: vom Versenden der Einladung bis zum erste
   <Step title="E-Mail-Adresse eingeben">
     Klicke im Bereich `Invite new users` (Neue Nutzer einladen) in das Feld `Enter email` und gib die E-Mail-Adresse des neuen Nutzers ein.
   </Step>
-  <Step title="Organisation zuordnen">
-    Wähle im Dropdown `Organisationen` mindestens einen Kunden bzw. ein Projekt aus.
+  <Step title="Rolle auswählen">
+    Wähle im Dropdown `Role` die passende Nutzerrolle aus. Die Rolle bestimmt, welche Zugriffsrechte der neue Nutzer erhält.
+  </Step>
+  <Step title="Zugriff zuweisen">
+    Je nach gewählter Rolle legst du fest, worauf der Nutzer Zugriff hat:
+
+    * **`Member`, `Editor` und `Hotel admin`:** Wähle die Clients (Hotels) aus, auf die der Nutzer zugreifen darf.
+    * **`Brand admin`:** Wähle die Brand aus, für die der Nutzer Admin-Rechte erhalten soll.
+    * **`Admin`:** Keine Auswahl nötig – ein Admin hat automatisch Zugriff auf alle Clients und Brands der Organisation.
 
     <Warning>
-      Die Zuordnung ist Pflicht. Klickst du auf `Einladen`, ohne eine Organisation gewählt zu haben, erscheint die Fehlermeldung *„Please select at least one client."*
+      Für die Rollen `Member`, `Editor` und `Hotel admin` muss mindestens ein Client ausgewählt werden. Andernfalls erscheint beim Klick auf `Einladen` die Fehlermeldung *„Please select at least one client."*
     </Warning>
   </Step>
   <Step title="Einladung versenden">
