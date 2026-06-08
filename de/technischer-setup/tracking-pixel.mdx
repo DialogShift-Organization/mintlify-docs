@@ -1,170 +1,61 @@
 ---
-title: 'DialogShift Tracking Pixel'
-description: 'Implementierung des DialogShift Tracking Pixels zur Erfassung von Buchungsabschlüssen'
+title: 'Tracking-Pixel'
+description: 'Abgeschlossene Buchungen an DialogShift melden, damit Conversions dem Gast und der Konversation zugeordnet werden.'
 ---
 
-Das DialogShift Tracking Pixel erfasst Buchungsabschlüsse und muss auf der Buchungsbestätigungsseite implementiert werden.
+Das Tracking-Pixel meldet abgeschlossene Buchungen an DialogShift. Du baust es auf der Buchungsbestätigungsseite ein – entweder als Pixel im Browser oder als direkten Aufruf des Endpoints von deinem Server.
 
-## Pixel-URL
+## Endpoint
 
 ```
-https://ibe.prod.co25.net/pixel?clientid=${clientid}&conversionType=${conversionType}&amount=${amount}&currency=${currency}&rooms=${rooms}&nights=${nights}
+https://ibe.prod.co25.net/pixel?clientid=DEINE_CLIENT_ID&amount=234.56&currency=EUR&custid=GAST_ID
 ```
 
 ## Parameter
 
-<Table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Pflicht</th>
-      <th>Beschreibung</th>
-      <th>Beispiel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>`clientid`</td>
-      <td>✅</td>
-      <td>Von DialogShift bereitgestellte Client-ID</td>
-      <td>`pro123`</td>
-    </tr>
-    <tr>
-      <td>`conversionType`</td>
-      <td>✅</td>
-      <td>Während Beta-Phase immer `ibe`</td>
-      <td>`ibe`</td>
-    </tr>
-    <tr>
-      <td>`amount`</td>
-      <td>✅</td>
-      <td>Buchungsbetrag ohne Tausendertrennzeichen</td>
-      <td>`234.56`</td>
-    </tr>
-    <tr>
-      <td>`currency`</td>
-      <td>✅</td>
-      <td>Währungscode (ISO 4217)</td>
-      <td>`EUR`</td>
-    </tr>
-    <tr>
-      <td>`rooms`</td>
-      <td>Optional</td>
-      <td>Anzahl gebuchter Zimmer</td>
-      <td>`2`</td>
-    </tr>
-    <tr>
-      <td>`nights`</td>
-      <td>Optional</td>
-      <td>Anzahl Übernachtungen</td>
-      <td>`3`</td>
-    </tr>
-    <tr>
-      <td>`url`</td>
-      <td>Optional</td>
-      <td>Host und URL der IBE-Seite</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>`custid`</td>
-      <td>Optional</td>
-      <td>GET-Parameter für erhöhte Genauigkeit</td>
-      <td>-</td>
-    </tr>
-  </tbody>
-</Table>
+| Parameter | Pflicht | Beschreibung | Beispiel |
+| --- | --- | --- | --- |
+| `clientid` | Pflicht | Von DialogShift bereitgestellte Client-ID | `pro123` |
+| `amount` | Pflicht | Buchungsbetrag, Punkt als Dezimaltrennzeichen, ohne Tausendertrennzeichen | `234.56` |
+| `currency` | Empfohlen | Währungscode (ISO 4217); ohne Angabe wird `EUR` angenommen | `EUR` |
+| `custid` | Empfohlen | Von DialogShift an die Buchungs-URL angehängte Gast-ID – unverändert zurückgeben | `c8f2a1` |
+| `conversionType` | Optional | Standard ist `ibe` | `ibe` |
+| `rooms` | Optional | Anzahl gebuchter Zimmer | `2` |
+| `nights` | Optional | Anzahl Übernachtungen | `3` |
+| `persons` | Optional | Anzahl Personen | `4` |
+| `url` | Optional | URL der Buchungsbestätigungsseite | `https://...` |
 
-## Google Tag Manager Integration
+## Gastzuordnung mit `custid`
 
-### Voraussetzungen
+DialogShift hängt beim Weiterleiten in die Buchungsstrecke einen `custid`-Parameter an die URL an (z. B. `…?…&custid=c8f2a1`). Lies diesen Wert aus der aufgerufenen URL aus, behalte ihn über die gesamte Buchungsstrecke und gib ihn im Pixel-Aufruf als `custid` zurück. Damit ordnet DialogShift die Buchung exakt diesem Gast zu.
 
-<Steps>
-  <Step title="Client-ID">
-    DialogShift Client-ID erhalten
-  </Step>
-  <Step title="E-Commerce Tracking">
-    Funktionierendes GTM/GA Setup mit Data Layer
-  </Step>
-  <Step title="Data Layer">
-    Buchungsdaten im Data Layer verfügbar
-  </Step>
-</Steps>
+Ohne `custid` erfolgt die Zuordnung über fingerprinting und ist deutlich ungenauer.
 
-### Implementierung
+## Einbau
 
-```javascript
+### Option A: Tracking-Pixel im Browser
+
+Baue auf der Bestätigungsseite ein verstecktes Bild ein. Setze die Werte aus deiner Buchung ein:
+
+```html
 <script>
-var pixel = document.createElement("img"); 
-pixel.src = "https://ibe.prod.co25.net/pixel?clientid=IHRE_CLIENT_ID&conversionType=ibe&amount={{TotalCost}}&currency={{SelectedCurrCode}}&rooms={{RmQty}}&nights={{nights}}"; 
-pixel.style = "display: none;"; 
+var pixel = document.createElement("img");
+pixel.src = "https://ibe.prod.co25.net/pixel?clientid=DEINE_CLIENT_ID&amount=" + betrag + "&currency=" + waehrung + "&custid=" + custid;
+pixel.style = "display:none;";
 document.body.appendChild(pixel);
 </script>
 ```
 
-<Warning>
-Ersetze `IHRE_CLIENT_ID` mit deiner tatsächlichen DialogShift Client-ID
-</Warning>
+Du kannst dieses Snippet auch über den Google Tag Manager ausspielen.
 
-### Data Layer Beispiel
+### Option B: Endpoint direkt aufrufen
 
-```javascript
-dataLayer.push({
-    'event': 'booking_complete',
-    'TotalCost': '299.50',
-    'SelectedCurrCode': 'EUR',
-    'RmQty': 2,
-    'nights': 3
-});
+Rufe dieselbe URL serverseitig per `GET` auf, sobald die Buchung feststeht:
+
+```
+GET https://ibe.prod.co25.net/pixel?clientid=DEINE_CLIENT_ID&amount=234.56&currency=EUR&custid=c8f2a1
 ```
 
-## Alternative Implementierungen
-
-### Server-Side Rendering
-
-<CodeGroup>
-  ```php PHP
-  <script>
-  var pixel = document.createElement("img"); 
-  pixel.src = "https://ibe.prod.co25.net/pixel?clientid=<?php echo $clientid; ?>&conversionType=ibe&amount=<?php echo $amount; ?>&currency=<?php echo $currency; ?>&rooms=<?php echo $rooms; ?>&nights=<?php echo $nights; ?>"; 
-  pixel.style = "display: none;"; 
-  document.body.appendChild(pixel);
-  </script>
-  ```
-  
-  ```javascript JavaScript
-  <script>
-  var pixel = document.createElement("img"); 
-  pixel.src = "https://ibe.prod.co25.net/pixel?clientid=" + clientId + "&conversionType=ibe&amount=" + bookingAmount + "&currency=" + currencyCode + "&rooms=" + roomCount + "&nights=" + nightCount; 
-  pixel.style = "display: none;";
-  document.body.appendChild(pixel);
-  </script>
-  ```
-</CodeGroup>
-
-## Testing
-
-<CardGroup cols={3}>
-  <Card title="GTM Preview" icon="eye">
-    Preview Mode aktivieren und Testbuchung durchführen
-  </Card>
-  <Card title="Network Tab" icon="network-wired">
-    Requests an `ibe.prod.co25.net` prüfen
-  </Card>
-  <Card title="Parameter Check" icon="check-circle">
-    Übermittelte Werte verifizieren
-  </Card>
-</CardGroup>
-
-## Limitationen
-
 <Note>
-Aus technischen Gründen können mittls des Tracking Pixels keine Umsätze von Instagram, Facebook oder WhatsApp Nutzern erfasst werden.
+Beim serverseitigen Aufruf kommt die IP deines Servers an, nicht die des Gastes. Gib deshalb immer `custid` mit – sonst kann DialogShift die Buchung nicht zuordnen.
 </Note>
-
-## Support
-
-Bei Fragen kontaktiere den DialogShift Support mit:
-- deiner Client-ID
-- URL der Buchungsbestätigungsseite
-- Screenshots der GTM Konfiguration
-- Screenshot des Tracking Requests (Network Tab) 
