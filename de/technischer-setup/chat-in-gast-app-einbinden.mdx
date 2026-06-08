@@ -7,7 +7,7 @@ Für die Einbindung des Webchats in eine gästeseitige Web-App (z. B. eine PWA o
 
 ## Voraussetzungen
 
-- **Client-ID** deiner App. Du findest sie im [DialogShift-Dashboard](https://app.dialogshift.com). Zum Entwickeln und Testen kannst du die Demo-Client-ID `pro3107` verwenden.
+- **Client-ID** deiner App. Du findest sie im [DialogShift-Dashboard](https://app.dialogshift.com). Zum Entwickeln und Testen kannst du die Demo-Client-ID `pro12bd` verwenden.
 - **Channel-Code** der Quelle. Für eine Gäste-App muss exakt `pwa-guestapp` gesetzt werden. Über den Channel-Code ordnen wir die Konversationen der richtigen Quelle zu.
 
 <Note>
@@ -41,14 +41,14 @@ npm i dialogshift-webchat-sdk --save
 
 ### Initialisierung
 
-Setze deine Client-ID als `id` und den Channel-Code über `context.channel`. Das Beispiel verwendet die Demo-Client-ID `pro3107`.
+Setze deine Client-ID als `id` und den Channel-Code über `context.channel`. Das Beispiel verwendet die Demo-Client-ID `pro12bd`.
 
 ```javascript
 import * as Dialogshift from 'dialogshift-webchat-sdk'
 import 'dialogshift-webchat-sdk/bundles/dialogshift-webchat-sdk.min.css'
 
 const chat = Dialogshift.instance({
-  id: 'pro3107',
+  id: 'pro12bd',
   locale: 'de',
   context: {
     channel: 'pwa-guestapp',
@@ -103,7 +103,7 @@ Der Webchat ist unter `https://webchat.dialogshift.com` als eigenständige Anwen
 
 ```html
 <iframe
-  src="https://webchat.dialogshift.com?clid=pro3107&source=pwa-guestapp&locale=de"
+  src="https://webchat.dialogshift.com?clid=pro12bd&source=pwa-guestapp&locale=de"
   style="width: 100%; height: 100%; border: 0;"
   allow="microphone; clipboard-write"
 ></iframe>

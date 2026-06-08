@@ -1,0 +1,42 @@
+---
+title: "Embed the chat via code snippet on your website"
+description: "How to add the DialogShift chat to your hotel website using the code snippet we provide"
+---
+
+As part of the setup, DialogShift provides you with a code snippet tailored to your [Client ID](/en/platform/client-id). Once you add it to your website, the chat button appears automatically.
+
+## Add the snippet
+
+Add the code towards the end of the `<body>` section of every page where the chat should appear.
+
+```html
+<script>
+  ;(function() {
+    var script = document.createElement('script');
+    script.src = 'https://assets.dialogshift.com/code/pro12bd.js';
+    document.getElementsByTagName('head')[0].appendChild(script);
+  })()
+</script>
+```
+
+<Note>
+The snippet above uses the demo Client ID `pro12bd` and can be embedded for testing. The snippet provided by DialogShift already contains your own Client ID – always use the snippet we deliver for production. If you receive multiple snippets, add the one intended for the indicated domain or page.
+</Note>
+
+## Alternative: integration via Google Tag Manager
+
+Instead of placing the snippet directly in your page code, you can also deliver it through Google Tag Manager (GTM). The procedure is described in the [GTM documentation](https://support.google.com/tagmanager/answer/6107167?hl=en).
+
+## Adjust the chat button position
+
+The best way to adjust the chat button position is directly in the live chat app:
+
+**Settings → Chatbot Settings → Chat Design**
+
+We strongly recommend setting the position through the live chat app. **Please do not override CSS values directly.** Alternatively, the following CSS variables can be overridden:
+
+| CSS variable | Effect |
+| --- | --- |
+| `--base-margin-left` / `--base-margin-left-mobile` | Distance to the left screen border (effective when the chat button is on the left) |
+| `--base-margin-right` / `--base-margin-right-mobile` | Distance to the right screen border (effective when the chat button is on the right) |
+| `--base-margin-bottom` / `--base-margin-bottom-mobile` | Distance to the bottom screen border |

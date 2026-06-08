@@ -177,6 +177,7 @@
                 "pages": [
                   "de/technischer-setup/tracking-pixel",
                   "de/technischer-setup/url-parameter-tracking",
+                  "de/technischer-setup/chat-snippet-einbinden",
                   "de/technischer-setup/snippet-einbindung-pruefen",
                   "de/technischer-setup/integration-mit-der-booking-website",
                   "de/technischer-setup/chat-in-gast-app-einbinden",
@@ -349,6 +350,7 @@
                 "pages": [
                   "en/technical-setup/tracking-pixel",
                   "en/technical-setup/url-parameter-tracking",
+                  "en/technical-setup/embed-chat-snippet",
                   "en/technical-setup/snippet-integration-check",
                   "en/technical-setup/booking-website-integration",
                   "en/technical-setup/embed-chat-in-guest-app",

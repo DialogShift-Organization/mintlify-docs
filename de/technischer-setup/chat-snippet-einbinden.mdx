@@ -1,0 +1,42 @@
+---
+title: "Chat per Code-Snippet auf der Website einbinden"
+description: "So bindest du den DialogShift-Chat mit dem von uns bereitgestellten Code-Snippet auf deiner Hotel-Website ein"
+---
+
+Im Rahmen des Setups stellt dir DialogShift ein auf deine [Client-ID](/de/platform/client-id) zugeschnittenes Code-Snippet bereit. Sobald du es auf deiner Website einbaust, erscheint der Chat-Button automatisch.
+
+## Snippet einbauen
+
+Füge den Code möglichst weit unten im `<body>`-Bereich jeder Seite ein, auf der der Chat erscheinen soll.
+
+```html
+<script>
+  ;(function() {
+    var script = document.createElement('script');
+    script.src = 'https://assets.dialogshift.com/code/pro12bd.js';
+    document.getElementsByTagName('head')[0].appendChild(script);
+  })()
+</script>
+```
+
+<Note>
+Das oben gezeigte Snippet nutzt die Demo-Client-ID `pro12bd` und kann testweise eingebunden werden. Das von DialogShift bereitgestellte Snippet enthält bereits deine eigene Client-ID – setze für den Live-Betrieb immer das von uns gelieferte Snippet ein. Erhältst du mehrere Snippets, baue jeweils das für die angegebene Domain bzw. Seite vorgesehene Snippet ein.
+</Note>
+
+## Alternative: Einbindung über den Google Tag Manager
+
+Statt das Snippet direkt im Seiten-Code zu hinterlegen, kannst du es auch über den Google Tag Manager (GTM) ausspielen. Die Vorgehensweise ist in der [GTM-Dokumentation](https://support.google.com/tagmanager/answer/6107167?hl=de) beschrieben.
+
+## Position des Chat-Buttons anpassen
+
+Die Position des Chat-Buttons passt du am besten direkt in der Live-Chat-App an:
+
+**Einstellungen → Chatbot-Einstellungen → Chat-Design**
+
+Wir empfehlen ausdrücklich, die Positionierung über die Live-Chat-App vorzunehmen. **Bitte überschreibe keine CSS-Werte direkt.** Alternativ lassen sich die folgenden CSS-Variablen überschreiben:
+
+| CSS-Variable | Wirkung |
+| --- | --- |
+| `--base-margin-left` / `--base-margin-left-mobile` | Abstand zum linken Bildschirmrand (wirksam, wenn der Chat-Button links steht) |
+| `--base-margin-right` / `--base-margin-right-mobile` | Abstand zum rechten Bildschirmrand (wirksam, wenn der Chat-Button rechts steht) |
+| `--base-margin-bottom` / `--base-margin-bottom-mobile` | Abstand zum unteren Bildschirmrand |
