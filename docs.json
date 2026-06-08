@@ -179,6 +179,7 @@
                   "de/technischer-setup/url-parameter-tracking",
                   "de/technischer-setup/snippet-einbindung-pruefen",
                   "de/technischer-setup/integration-mit-der-booking-website",
+                  "de/technischer-setup/chat-in-gast-app-einbinden",
                   {
                     "group": "Social Media",
                     "icon": "share-nodes",
@@ -350,6 +351,7 @@
                   "en/technical-setup/url-parameter-tracking",
                   "en/technical-setup/snippet-integration-check",
                   "en/technical-setup/booking-website-integration",
+                  "en/technical-setup/embed-chat-in-guest-app",
                   {
                     "group": "Social Media",
                     "icon": "share-nodes",

@@ -1,0 +1,129 @@
+---
+title: "Embed the chat in a guest app"
+description: "How to integrate the DialogShift webchat into a guest-facing web app - via SDK or direct URL"
+---
+
+To embed the webchat in a guest-facing web app (e.g. a PWA or a web view embedded in an app), there are two paths: the **Webchat SDK** and **loading the webchat URL directly** in an iframe. Use the SDK when you need the full widget behavior and programmatic control. Use the direct URL when you want to drop the chat into any web view or iframe as simply as possible.
+
+## Prerequisites
+
+- The **Client ID** of your app. You find it in the [DialogShift dashboard](https://livechat.dialogshift.com/).
+- The **channel code** for the source. Use `pwa-guestapp` for a generic guest app. If the surface is a booking engine, use `pwa-ibe`. The channel code lets us attribute conversations to the correct source.
+
+## Option 1: Integration via SDK
+
+The SDK renders the toggle button and the chat window, loads the chat inside an iframe, and exposes methods to control it. It is available as a `UMD` and `ES2015` bundle.
+
+### Installation
+
+<CodeGroup>
+
+```bash npm
+npm i dialogshift-webchat-sdk --save
+```
+
+```html CDN
+<script
+  type="text/javascript"
+  src="https://cdn.dialogshift.com/sdk/latest/dialogshift-webchat-sdk.umd.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.dialogshift.com/sdk/latest/dialogshift-webchat-sdk.min.css"/>
+```
+
+</CodeGroup>
+
+### Initialization
+
+Replace `%id%` with your Client ID and set the channel code through `context.channel`.
+
+```javascript
+import * as Dialogshift from 'dialogshift-webchat-sdk'
+import 'dialogshift-webchat-sdk/bundles/dialogshift-webchat-sdk.min.css'
+
+const chat = Dialogshift.instance({
+  id: '%id%',
+  locale: 'en',
+  context: {
+    channel: 'pwa-guestapp',
+    email: 'guest@example.com',
+    name: 'John Doe',
+  },
+})
+```
+
+`Dialogshift.instance()` returns a singleton: calling it again without arguments returns the same instance.
+
+### Key options
+
+| Option            | Type              | Description                                                                  |
+| ----------------- | ----------------- | ---------------------------------------------------------------------------- |
+| id                | string            | Client ID from the dashboard.                                                |
+| locale            | string            | Chat locale. Defaults to `en`.                                               |
+| position          | 'left' \| 'right' | Position on the page. Defaults to `right`.                                   |
+| isChatboxVisible  | boolean           | Opens the chat window immediately if `true`. Defaults to `false`.            |
+| renderButton      | boolean           | Renders the toggle button. If it is not rendered, it cannot be shown or hidden later. Defaults to `true`. |
+| context           | object            | Context variables for the visitor (including `channel`).                     |
+
+<Note>
+If the app screen should show only the chat (without a floating button), set `renderButton: false` and `isChatboxVisible: true`.
+</Note>
+
+### Controlling at runtime
+
+```javascript
+const chat = Dialogshift.instance()
+
+// Wait for the connection before triggering messages
+chat.on('ready', () => {
+  chat.triggerElement({ successor: 'welcome-message' })
+})
+
+// Open the chat window
+chat.showChatbox()
+
+// Set context later
+chat.setContext('currentUser', { firstName: 'John', lastName: 'Doe' })
+
+// Tear down the instance (e.g. when leaving the view)
+chat.destroy()
+```
+
+## Option 2: Direct URL in an iframe
+
+The webchat is available as a standalone application at `https://webchat.dialogshift.com` and can be loaded into any iframe or web view. Control happens exclusively through URL parameters.
+
+### Example
+
+```html
+<iframe
+  src="https://webchat.dialogshift.com?clid=%id%&source=pwa-guestapp&locale=en"
+  style="width: 100%; height: 100%; border: 0;"
+  allow="microphone; clipboard-write"
+></iframe>
+```
+
+The webchat is responsive and fills the container you place the iframe in.
+
+### URL parameters
+
+| Parameter | Required | Description                                                                              |
+| --------- | -------- | ---------------------------------------------------------------------------------------- |
+| clid      | yes      | Client ID from the dashboard.                                                            |
+| source    | no       | Channel code, e.g. `pwa-guestapp` or `pwa-ibe`.                                          |
+| locale    | no       | Chat locale. Without it, the browser language is used.                                   |
+| cid       | no       | Existing customer ID to resume a conversation.                                           |
+| context   | no       | Context variables as URL-encoded JSON.                                                   |
+| init      | no       | Initial message (element) triggered on load.                                             |
+| ctrl      | no       | `forcenew` forces a new visitor and ignores a stored customer ID.                        |
+
+<Info>
+Any additional URL parameter not listed above is automatically merged into the visitor context. `?email=guest@example.com&name=John` is therefore equivalent to a matching `context` JSON.
+</Info>
+
+## Which option?
+
+- **SDK**: Full widget behavior (button, teaser, unread counter) and programmatic control through methods and events.
+- **Direct URL**: Simplest integration without a JavaScript setup; ideal to render the chat as a full view or inside an iframe.

@@ -1,0 +1,129 @@
+---
+title: "Chat in eine Gäste-App einbinden"
+description: "So integrierst du den DialogShift-Webchat in eine gästeseitige Web-App – per SDK oder direkter URL"
+---
+
+Für die Einbindung des Webchats in eine gästeseitige Web-App (z. B. eine PWA oder eine in der App eingebettete Webansicht) gibt es zwei Wege: das **Webchat-SDK** und das **direkte Laden der Webchat-URL** in einem iframe. Nutze das SDK, wenn du das vollständige Widget-Verhalten und programmatische Steuerung brauchst. Nutze die direkte URL, wenn du den Chat möglichst einfach in eine beliebige Webansicht oder ein iframe einsetzen willst.
+
+## Voraussetzungen
+
+- **Client-ID** deiner App. Du findest sie im [DialogShift-Dashboard](https://livechat.dialogshift.com/).
+- **Channel-Code** für die Quelle. Verwende `pwa-guestapp` für eine generische Gäste-App. Handelt es sich um eine Booking Engine, verwende `pwa-ibe`. Über den Channel-Code ordnen wir die Konversationen der richtigen Quelle zu.
+
+## Option 1: Einbindung per SDK
+
+Das SDK rendert den Toggle-Button und das Chatfenster, lädt den Chat in einem iframe und stellt Methoden zur Steuerung bereit. Es ist als `UMD`- und `ES2015`-Bundle verfügbar.
+
+### Installation
+
+<CodeGroup>
+
+```bash npm
+npm i dialogshift-webchat-sdk --save
+```
+
+```html CDN
+<script
+  type="text/javascript"
+  src="https://cdn.dialogshift.com/sdk/latest/dialogshift-webchat-sdk.umd.js"></script>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.dialogshift.com/sdk/latest/dialogshift-webchat-sdk.min.css"/>
+```
+
+</CodeGroup>
+
+### Initialisierung
+
+Ersetze `%id%` durch deine Client-ID und setze den Channel-Code über `context.channel`.
+
+```javascript
+import * as Dialogshift from 'dialogshift-webchat-sdk'
+import 'dialogshift-webchat-sdk/bundles/dialogshift-webchat-sdk.min.css'
+
+const chat = Dialogshift.instance({
+  id: '%id%',
+  locale: 'de',
+  context: {
+    channel: 'pwa-guestapp',
+    email: 'gast@example.com',
+    name: 'John Doe',
+  },
+})
+```
+
+`Dialogshift.instance()` liefert eine Singleton-Instanz: Ein erneuter Aufruf ohne Argumente gibt dieselbe Instanz zurück.
+
+### Wichtige Optionen
+
+| Option            | Typ               | Beschreibung                                                                 |
+| ----------------- | ----------------- | ---------------------------------------------------------------------------- |
+| id                | string            | Client-ID aus dem Dashboard.                                                 |
+| locale            | string            | Sprache des Chats. Standard: `en`.                                           |
+| position          | 'left' \| 'right' | Position auf der Seite. Standard: `right`.                                    |
+| isChatboxVisible  | boolean           | Öffnet das Chatfenster direkt, wenn `true`. Standard: `false`.               |
+| renderButton      | boolean           | Rendert den Toggle-Button. Wird er nicht gerendert, lässt er sich später nicht mehr ein- oder ausblenden. Standard: `true`. |
+| context           | object            | Kontextvariablen für den Besucher (u. a. `channel`).                         |
+
+<Note>
+Soll in der App-Ansicht ausschließlich der Chat erscheinen (ohne schwebenden Button), setze `renderButton: false` und `isChatboxVisible: true`.
+</Note>
+
+### Steuerung zur Laufzeit
+
+```javascript
+const chat = Dialogshift.instance()
+
+// Auf Verbindung warten, bevor du Nachrichten triggerst
+chat.on('ready', () => {
+  chat.triggerElement({ successor: 'welcome-message' })
+})
+
+// Chatfenster öffnen
+chat.showChatbox()
+
+// Kontext nachträglich setzen
+chat.setContext('currentUser', { firstName: 'John', lastName: 'Doe' })
+
+// Instanz abbauen (z. B. beim Verlassen der Ansicht)
+chat.destroy()
+```
+
+## Option 2: Direkte URL im iframe
+
+Der Webchat ist unter `https://webchat.dialogshift.com` als eigenständige Anwendung erreichbar und lässt sich in jedes iframe oder jede Webansicht laden. Steuerung erfolgt ausschließlich über URL-Parameter.
+
+### Beispiel
+
+```html
+<iframe
+  src="https://webchat.dialogshift.com?clid=%id%&source=pwa-guestapp&locale=de"
+  style="width: 100%; height: 100%; border: 0;"
+  allow="microphone; clipboard-write"
+></iframe>
+```
+
+Der Webchat ist responsiv und füllt den Container, in den du das iframe einsetzt.
+
+### URL-Parameter
+
+| Parameter | Pflicht | Beschreibung                                                                                 |
+| --------- | ------- | -------------------------------------------------------------------------------------------- |
+| clid      | ja      | Client-ID aus dem Dashboard.                                                                 |
+| source    | nein    | Channel-Code, z. B. `pwa-guestapp` oder `pwa-ibe`.                                           |
+| locale    | nein    | Sprache des Chats. Ohne Angabe wird die Sprache des Browsers verwendet.                      |
+| cid       | nein    | Bestehende Customer-ID, um eine Konversation fortzusetzen.                                   |
+| context   | nein    | Kontextvariablen als URL-kodiertes JSON.                                                     |
+| init      | nein    | Initiale Nachricht (Element), die beim Laden ausgelöst wird.                                 |
+| ctrl      | nein    | `forcenew` erzwingt einen neuen Besucher und ignoriert eine gespeicherte Customer-ID.       |
+
+<Info>
+Jeder weitere, nicht aufgeführte URL-Parameter wird automatisch in den Besucher-Kontext übernommen. `?email=gast@example.com&name=John` ist damit gleichwertig zu einem entsprechenden `context`-JSON.
+</Info>
+
+## Welche Option?
+
+- **SDK**: Volles Widget-Verhalten (Button, Teaser, ungelesene Nachrichten) und programmatische Steuerung über Methoden und Events.
+- **Direkte URL**: Einfachste Einbindung ohne JavaScript-Integration; ideal, um den Chat als ganze Ansicht oder im iframe darzustellen.
