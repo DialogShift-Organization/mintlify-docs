@@ -8,7 +8,11 @@ To embed the webchat in a guest-facing web app (e.g. a PWA or a web view embedde
 ## Prerequisites
 
 - The **Client ID** of your app. You find it in the [DialogShift dashboard](https://app.dialogshift.com). For development and testing you can use the demo Client ID `pro3107`.
-- The **channel code** for the source. Use `pwa-guestapp` for a generic guest app. If the surface is a booking engine, use `pwa-ibe`. The channel code lets us attribute conversations to the correct source.
+- The **channel code** of the source. For a guest app it must be set to exactly `pwa-guestapp`. The channel code lets us attribute conversations to the correct source.
+
+<Note>
+The channel code cannot be chosen freely. For a guest app, set it to exactly `pwa-guestapp`. Additional channel codes only in coordination with DialogShift Support.
+</Note>
 
 ## Option 1: Integration via SDK
 
@@ -112,7 +116,7 @@ The webchat is responsive and fills the container you place the iframe in.
 | Parameter | Required | Description                                                                              |
 | --------- | -------- | ---------------------------------------------------------------------------------------- |
 | clid      | yes      | Client ID from the dashboard.                                                            |
-| source    | no       | Channel code, e.g. `pwa-guestapp` or `pwa-ibe`.                                          |
+| source    | yes      | Channel code. For a guest app exactly `pwa-guestapp`.                                    |
 | locale    | no       | Chat locale. Without it, the browser language is used.                                   |
 | cid       | no       | Existing customer ID to resume a conversation.                                           |
 | context   | no       | Context variables as URL-encoded JSON.                                                   |
