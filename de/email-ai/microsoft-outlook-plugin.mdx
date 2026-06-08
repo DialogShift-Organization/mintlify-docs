@@ -3,28 +3,16 @@ title: 'Email AI Plugin für Microsoft Outlook'
 description: 'Email AI Funktionen direkt in Microsoft Outlook nutzen - Installation und Voraussetzungen'
 ---
 
-Erweitere dein Microsoft Outlook um intelligente Email AI Funktionen mit dem DialogShift Plugin.
-
-## Installation im Video
-
 <iframe className="w-full aspect-video rounded-xl" src="https://player.vimeo.com/video/1106452797?badge=0&autopause=0&player_id=0&app_id=58479" title="Vimeo video player" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
 
-<Warning>
-Microsoft erlaubt nicht in allen Outlook Versionen die Nutzung von modernen Add-ins.
-</Warning>
+<Note>
+Microsoft erlaubt nicht in allen Outlook-Versionen die Nutzung von modernen Add-ins.
+</Note>
 
 ## Voraussetzungen
 
-Um das Plugin der Email AI in Microsoft Outlook zu nutzen, müssen folgende Voraussetzungen erfüllt sein:
-
-<CardGroup cols={2}>
-  <Card title="DialogShift Account" icon="user">
-    Nutzer muss bei DialogShift registriert sein
-  </Card>
-  <Card title="Exchange Server" icon="server">
-    Exchange-Server erforderlich (Exchange Online oder Exchange 2016+)
-  </Card>
-</CardGroup>
+- Ein DialogShift-Account
+- Exchange-Server (Exchange Online oder Exchange 2016+)
 
 <Note>
 IMAP-Konten werden nicht unterstützt.
@@ -32,85 +20,39 @@ IMAP-Konten werden nicht unterstützt.
 
 ### Kompatible Outlook-Versionen
 
-<Tabs>
-  <Tab title="Windows">
-    **Unterstützt:**
-    - Outlook 2021 oder neuer
-    - Outlook 365 auf Windows 10 20H2 oder neuer
-    - Neues Outlook
+**Windows:**
+- Outlook 2021 oder neuer
+- Outlook 365 auf Windows 10 20H2 oder neuer
+- Neues Outlook
 
-    **NICHT unterstützt:**
-    - Outlook 2019 oder älter
-    - Outlook 365 (nicht regelmäßig aktualisiert oder auf Windows 10 2004 oder älter)
-  </Tab>
-  
-  <Tab title="Mac">
-    **Unterstützt:**
-    - Outlook-App & Outlook 2024
+Nicht unterstützt: Outlook 2019 oder älter; Outlook 365, das nicht regelmäßig aktualisiert wird oder auf Windows 10 2004 oder älter läuft.
 
-    **NICHT unterstützt:**
-    - Outlook mit Jahreszahl (außer 2024)
-  </Tab>
-  
-  <Tab title="Web">
-    **Unterstützt:**
-    - Outlook online (Firefox, Safari, Chrome & Derivate)
+**Mac:**
+- Outlook-App & Outlook 2024
 
-    **NICHT unterstützt:**
-    - Outlook Web Access
-  </Tab>
-</Tabs>
+Nicht unterstützt: Outlook mit Jahreszahl (außer 2024).
+
+**Web:**
+- Outlook online (Firefox, Safari, Chrome und Derivate)
+
+Nicht unterstützt: Outlook Web Access.
 
 ## Installation
 
 ### Mit Exchange Online
 
-<Steps>
-  <Step title="Outlook öffnen">
-    Starte Outlook auf deinem Computer
-  </Step>
-  
-  <Step title="Apps-Menü öffnen">
-    Klicke oben rechts auf „Alle Apps" und wähle „Add-Ins abrufen"
-  </Step>
-  
-  <Step title="Plugin suchen">
-    Gib im Suchfeld oben rechts „DialogShift" ein
-  </Step>
-  
-  <Step title="Plugin installieren">
-    Wähle „DialogShift Email Assistant" aus und klicke auf „Hinzufügen"
-  </Step>
-  
-  <Step title="Plugin verwenden">
-    Das Plugin findest du anschließend in der Registerkarte „Add-Ins" unter „Meine Add-Ins"
-  </Step>
-</Steps>
+1. Starte Outlook auf deinem Computer
+2. Klicke oben rechts auf **Alle Apps** und wähle **Add-Ins abrufen**
+3. Gib im Suchfeld **DialogShift** ein
+4. Wähle **DialogShift Email Assistant** aus und klicke auf **Hinzufügen**
+5. Das Plugin ist jetzt in der Registerkarte **Add-Ins** unter **Meine Add-Ins** verfügbar
 
 ### Mit Exchange On-Premise
 
-<Steps>
-  <Step title="Outlook Web Access öffnen">
-    Starte die Weboberfläche von Outlook im Browser und melde dich mit einem Account mit ausreichenden Rechten an
-  </Step>
-  
-  <Step title="Apps-Übersicht öffnen">
-    Navigiere zur Übersicht aller installierten Apps
-  </Step>
-  
-  <Step title="Plugin über URL hinzufügen">
-    Wähle die Option, ein neues Plugin mittels URL hinzuzufügen und gib folgende URL ein:
-    
-    ```
-    https://store.office.com/app/download?assetid=WA200006927&cmu=en-001&ClientSessionId=9e50467e-3598-4440-b754-797ccc61f5b1
-    ```
-  </Step>
-</Steps>
+1. Starte die Weboberfläche von Outlook im Browser und melde dich mit einem Account mit ausreichenden Rechten an
+2. Navigiere zur Übersicht aller installierten Apps
+3. Wähle die Option, ein neues Plugin per URL hinzuzufügen, und gib folgende URL ein:
 
-<Success>
-Das Plugin ist jetzt installiert und einsatzbereit! 🎉
-</Success>
-
-<Info>
-Bei Problemen mit der Installation wende dich an den DialogShift Support.
-</Info> 
+```
+https://store.office.com/app/download?assetid=WA200006927&cmu=en-001&ClientSessionId=9e50467e-3598-4440-b754-797ccc61f5b1
+```

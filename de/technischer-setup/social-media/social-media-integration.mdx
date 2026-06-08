@@ -1,353 +1,48 @@
 ---
 title: "Social Media Integration"
-description: "Facebook und Instagram gemeinsam mit DialogShift verbinden"
+description: "Facebook und Instagram mit DialogShift verbinden"
 icon: "share-nodes"
 ---
 
-## Überblick
-
-Diese Anleitung zeigt Dir, wie Du sowohl Facebook als auch Instagram gleichzeitig mit DialogShift verbindest. Die Kombination beider Kanäle ermöglicht eine umfassende Social Media Chat-Strategie.
-
-<Note>
-Facebook und Instagram nutzen die gleiche Messenger-Infrastruktur von Meta, daher ist die Integration eng miteinander verbunden.
-</Note>
+Facebook und Instagram nutzen dieselbe Messenger-Infrastruktur von Meta, daher werden beide Kanäle über einen gemeinsamen Login in DialogShift verbunden.
 
 ## Voraussetzungen
 
-### Für die gemeinsame Integration benötigst Du:
+**Facebook:**
+- Eine professionelle Facebook-Seite für dein Hotel
+- Admin-Rechte auf der Seite
+- Alle automatischen Antworten deaktiviert – gehe zu [Facebook Business Inbox](https://business.facebook.com/latest/inbox/automated_responses) und schalte alle Begrüßungen und FAQ-Funktionen aus
 
-<Steps>
-  <Step title="Facebook-Seite">
-    - Eine professionelle Facebook-Seite für Dein Hotel
-    - Admin-Rechte auf dieser Seite
-    - Deaktivierte automatische Antworten
-  </Step>
-  
-  <Step title="Instagram Business-Konto">
-    - Ein Instagram Business-Konto (kein persönliches Konto)
-    - Verknüpfung mit der Facebook-Seite
-    - Aktivierte Nachrichtenberechtigung
-  </Step>
-  
-  <Step title="DialogShift Setup">
-    - Zugang zur DialogShift Live Chat App
-    - Konfigurierte Hotel-Einstellungen
-    - Admin-Rechte in DialogShift
-  </Step>
-</Steps>
+**Instagram:**
+- Ein Instagram Business-Konto (kein persönliches Konto)
+- Das Konto muss mit der Facebook-Seite verknüpft sein (Facebook-Seite → Einstellungen → Instagram → Konto verbinden)
+- Nachrichtenzugriff aktiviert (Instagram → Einstellungen → Datenschutz → Nachrichten → Zugriff auf Nachrichten gestatten)
 
-## Komplette Einrichtung
+**DialogShift:**
+- Admin-Rechte in der DialogShift Live Chat App
 
-### Schritt 1: Facebook vorbereiten
+## In DialogShift verbinden
 
-<Accordion title="Facebook-Seite konfigurieren">
-  1. **Automatische Antworten deaktivieren**
-     - Gehe zu [Facebook Business Inbox](https://business.facebook.com/latest/inbox/automated_responses)
-     - Deaktiviere alle automatischen Begrüßungen
-     - Deaktiviere FAQ-Funktionen
-  
-  2. **Admin-Rechte überprüfen**
-     - Stelle sicher, dass Du Admin-Rechte auf der Facebook-Seite hast
-     - Überprüfe, ob andere Admins informiert sind
-</Accordion>
+1. Öffne die DialogShift Live Chat App
+2. Gehe zu **Einstellungen → Integrationen**
+3. Klicke im Facebook/Instagram-Bereich auf **Login** oder **Login erneuern**
+4. Melde dich mit einem Facebook-Account an, der Admin-Rechte auf der Seite hat
+5. Wähle bei der Abfrage sowohl die Facebook-Seite als auch das Instagram-Konto aus
+6. Erteile alle angeforderten Berechtigungen
+7. Unter **Facebook-Kanal**: Facebook-Seite auswählen und speichern
+8. Unter **Instagram-Kanal**: Das verknüpfte Instagram-Konto auswählen und speichern
 
-### Schritt 2: Instagram einrichten
-
-<Accordion title="Instagram Business-Konto">
-  1. **Kontotyp überprüfen**
-     - Öffne Instagram > Einstellungen
-     - Suche nach "Unternehmen"-Bereich
-     - Falls nicht vorhanden: Wechsle zu professionellem Konto
-  
-  2. **Facebook-Verknüpfung erstellen**
-     - Gehe zu Facebook-Seite > Einstellungen > Instagram
-     - Verbinde Instagram Business-Konto
-     - Bestätige 1-zu-1 Verknüpfung
-  
-  3. **Nachrichtenzugriff aktivieren**
-     - Instagram > Einstellungen > Privatsphäre > Nachrichten
-     - Aktiviere "Zugriff auf Nachrichten gestatten"
-</Accordion>
-
-### Schritt 3: DialogShift-Integration
-
-<Steps>
-  <Step title="Integration starten">
-    1. Öffne DialogShift Live Chat App
-    2. Gehe zu **"Einstellungen" >> "Integrationen"**
-    3. Suche Facebook/Instagram-Bereich
-  </Step>
-  
-  <Step title="Login durchführen">
-    1. Klicke auf **"Login"** oder **"Login erneuern"**
-    2. Logge Dich mit Facebook-Account ein (Admin-Rechte erforderlich)
-    3. **Wichtig:** Wähle sowohl Facebook-Seite als auch Instagram-Konto aus
-    4. Aktiviere alle angefragten Berechtigungen
-  </Step>
-  
-  <Step title="Kanäle konfigurieren">
-    1. **Facebook-Kanal:** Wähle Facebook-Seite aus und speichere
-    2. **Instagram-Kanal:** Wähle verknüpftes Instagram-Konto aus und speichere
-    3. Teste beide Verbindungen
-  </Step>
-</Steps>
-
-## Konfiguration nach Unternehmensgröße
-
-### Einzelhotels
-
-<Tabs>
-  <Tab title="Vollautomatischer Betrieb">
-    **Empfehlung für kleinere Hotels:**
-    
-    - Chatbot beantwortet automatisch alle Anfragen
-    - Live Chat als Backup bei komplexen Fragen
-    - Einheitliche Begrüßung auf beiden Kanälen
-    
-    **Einstellungen:**
-    - Chatbot-Modus: "Vollautomatisch"
-    - Übergabe-Regeln: Bei Buchungsanfragen an Live Chat
-    - Arbeitszeiten: Außerhalb Live Chat aktivieren
-  </Tab>
-  
-  <Tab title="Hybrid-Betrieb">
-    **Empfehlung für mittlere Hotels:**
-    
-    - Chatbot für Standard-FAQs
-    - Schnelle Übergabe an Live Chat bei Bedarf
-    - Kanalspezifische Anpassungen
-    
-    **Einstellungen:**
-    - Chatbot-Modus: "Hybrid"
-    - Facebook: Fokus auf Buchungsanfragen
-    - Instagram: Fokus auf Hotel-Informationen
-  </Tab>
-</Tabs>
-
-### Hotelketten
-
-<Accordion title="Setup für Marken-Accounts">
-  **Wenn Du Social Media nur auf Markenebene betreibst:**
-  
-  1. **Zentrale Inbox-Einrichtung**
-     - Verbinde Marken-Accounts mit beliebigem Hotel-Chatbot
-     - Deaktiviere Chatbot-Funktionen ("Chatbot active" = false)
-     - Aktiviere nur Begrüßungsnachrichten
-  
-  2. **Team-Setup**
-     - Alle Hotels können zentrale Social Media Inbox sehen
-     - Gemeinsame Bearbeitung von Anfragen
-     - Weiterleitung an jeweilige Hotels bei Bedarf
-  
-  3. **Support kontaktieren**
-     - E-Mail an support@dialogshift.com senden
-     - Bitte um Einrichtung zentraler Social Media Inbox
-     - Angabe aller beteiligten Hotels
-</Accordion>
-
-## Erweiterte Konfiguration
-
-### Chatbot-Verhalten anpassen
-
-<CardGroup cols={2}>
-  <Card title="Facebook-spezifisch" icon="facebook">
-    - Reagiert nicht auf Media-Uploads
-    - Button-basierte Übergaben
-    - Story-Features deaktiviert
-    - Fokus auf transaktionale Nachrichten
-  </Card>
-  
-  <Card title="Instagram-spezifisch" icon="instagram">
-    - Keine Story-Antworten
-    - Keine Story-Erwähnungen
-    - Begrenzte Media-Verarbeitung
-    - Direktnachrichten-Fokus
-  </Card>
-</CardGroup>
-
-### Kanalspezifische Einstellungen
-
-<Tabs>
-  <Tab title="Begrüßungen">
-    **Individuelle Begrüßungen pro Kanal:**
-    
-    - **Facebook:** Geschäftlich und direkt
-    - **Instagram:** Visuell ansprechend und freundlich
-    - **Gemeinsam:** Einheitlicher Markenton
-    
-    **Konfiguration:** Einstellungen > Kanaleinstellungen > Begrüßung bearbeiten
-  </Tab>
-  
-  <Tab title="Arbeitszeiten">
-    **Unterschiedliche Verfügbarkeit:**
-    
-    - **Facebook:** Erweiterte Geschäftszeiten (B2B-Fokus)
-    - **Instagram:** Social Media Zeiten (Community-Fokus)
-    - **Live Chat:** Rezeptionszeiten
-    
-    **Einrichtung:** Hoteleinstellungen > Arbeitszeiten > Kanalspezifisch
-  </Tab>
-  
-  <Tab title="Eskalation">
-    **Übergabe-Strategien:**
-    
-    - **Sofort:** Bei Beschwerden oder komplexen Anfragen
-    - **Verzögert:** Nach 2-3 Chatbot-Interaktionen
-    - **Geplant:** Während Live Chat-Zeiten
-    
-    **Setup:** Chatbot-Einstellungen > Übergabe-Regeln
-  </Tab>
-</Tabs>
-
-## Social Media Team Integration
-
-### Trennung von Chat und Social Media
-
-<Warning>
-Social Media bedeutet mehr als nur Chat - Likes, Stories, Posts und Community-Management haben andere Anforderungen.
-</Warning>
-
-#### Konfiguration für getrennte Teams:
-
-<Steps>
-  <Step title="Chat-Team Einstellungen">
-    - **Zuständig für:** Direktnachrichten, Buchungsanfragen, Support
-    - **Tools:** DialogShift Live Chat App
-    - **Arbeitszeiten:** Geschäftszeiten + erweiterte Verfügbarkeit
-  </Step>
-  
-  <Step title="Social Media Team Einstellungen">
-    - **Zuständig für:** Stories, Posts, Community-Interaktionen, Markenaufbau
-    - **Tools:** Native Facebook/Instagram Business Tools
-    - **Arbeitszeiten:** Social Media Prime Time
-  </Step>
-  
-  <Step title="Überschneidungen managen">
-    **DialogShift-Einstellungen für bessere Trennung:**
-    
-    - Chatbot reagiert nicht auf Story-Antworten
-    - Chatbot reagiert nicht auf Story-Erwähnungen
-    - Media-Uploads gehen direkt an Live Chat
-    - Emotionale Nachrichten (Emojis) werden weitergeleitet
-  </Step>
-</Steps>
-
-### Workflow-Optimierung
-
-<Accordion title="Empfohlener Arbeitsablauf">
-  1. **Eingehende Nachrichten triagieren**
-     - Transaktional → DialogShift Chatbot/Live Chat
-     - Emotional/Community → Social Media Team
-     - Beschwerden → Sofort an Live Chat
-  
-  2. **Wöchentliche Abstimmung**
-     - Chat-Trends mit Social Media Team teilen
-     - Häufige Fragen in Social Media Content einbauen
-     - Feedback aus beiden Kanälen sammeln
-  
-  3. **Eskalations-Protokoll**
-     - Klare Zuständigkeiten definieren
-     - Schnelle interne Weiterleitung
-     - Dokumentation für beide Teams
-</Accordion>
-
-## Monitoring und Optimierung
-
-### KPIs überwachen
-
-<CardGroup cols={3}>
-  <Card title="Response Zeit" icon="clock">
-    - Facebook: < 15 Minuten
-    - Instagram: < 30 Minuten
-    - Live Chat: < 5 Minuten
-  </Card>
-  
-  <Card title="Conversion Rate" icon="chart-line">
-    - Chatbot → Buchung
-    - Live Chat → Buchung
-    - Social Media → Website
-  </Card>
-  
-  <Card title="Zufriedenheit" icon="star">
-    - Chat-Bewertungen
-    - Follow-up Feedback
-    - Social Media Engagement
-  </Card>
-</CardGroup>
-
-### Regelmäßige Wartung
-
-<AccordionGroup>
-  <Accordion title="Monatliche Tasks">
-    - Facebook Login-Status überprüfen
-    - Instagram-Verknüpfung testen
-    - Chatbot-Performance analysieren
-    - Response-Zeiten auswerten
-  </Accordion>
-  
-  <Accordion title="Vierteljährliche Tasks">
-    - Facebook Login erneuern (erforderlich)
-    - Chatbot-Inhalte aktualisieren
-    - Team-Workflows überprüfen
-    - KPI-Trends analysieren
-  </Accordion>
-  
-  <Accordion title="Jährliche Reviews">
-    - Gesamtstrategie bewerten
-    - Tool-Effizienz prüfen
-    - Team-Training planen
-    - Budget-Optimierung
-  </Accordion>
-</AccordionGroup>
+<Note>
+Das Facebook-Login-Token läuft regelmäßig ab. Wenn keine Nachrichten mehr ankommen, erneuere den Login unter Einstellungen → Integrationen.
+</Note>
 
 ## Fehlerbehebung
 
-### Häufige Integration-Probleme
+**Login schlägt bei der Einrichtung fehl**
+Browser-Cache leeren, VPN deaktivieren und sicherstellen, dass Pop-ups im Browser nicht blockiert werden.
 
-<AccordionGroup>
-  <Accordion title="Login-Fehler bei der Einrichtung">
-    **Symptome:** Facebook/Instagram Login schlägt fehl
-    
-    **Lösungen:**
-    - Browser-Cache löschen
-    - Anderen Browser verwenden
-    - Facebook-Session erneuern
-    - VPN deaktivieren
-    - Pop-up Blocker prüfen
-  </Accordion>
-  
-  <Accordion title="Instagram zeigt nicht alle Konten">
-    **Symptome:** Nicht alle Instagram-Konten werden in DialogShift angezeigt
-    
-    **Ursachen & Lösungen:**
-    - Konto-Typ prüfen (nur Business-Konten funktionieren)
-    - Facebook-Verknüpfung überprüfen
-    - Admin-Rechte bestätigen
-    - Nachrichtenzugriff aktivieren
-  </Accordion>
-  
-  <Accordion title="Nachrichten kommen nicht an">
-    **Debugging-Schritte:**
-    1. Chatbot-Status für jeweiligen Kanal prüfen
-    2. Arbeitszeiten-Einstellungen überprüfen
-    3. Test-Nachricht von externem Konto senden
-    4. DialogShift-Logs in Live Chat App einsehen
-    5. Bei anhaltendem Problem: support@dialogshift.com kontaktieren
-  </Accordion>
-</AccordionGroup>
+**Instagram-Konto wird nicht angezeigt**
+Das Konto muss auf den Typ Business eingestellt und mit der Facebook-Seite verknüpft sein. Überprüfe, ob der Nachrichtenzugriff unter Instagram → Einstellungen → Datenschutz → Nachrichten aktiviert ist.
 
-## Support und Hilfe
-
-### DialogShift Support
-- **E-Mail:** [support@dialogshift.com](mailto:support@dialogshift.com)
-- **Live Chat:** In der DialogShift App verfügbar
-- **Dokumentation:** Umfassende Setup-Guides verfügbar
-
-### Meta/Facebook Support
-- **Facebook Business Support:** Für Account- und Verknüpfungsprobleme
-- **Instagram Business Hilfe:** Für Instagram-spezifische Themen
-- **Meta Developer Docs:** Für technische API-Details
-
-<Tip>
-Bei Problemen, die sowohl DialogShift als auch Meta-Plattformen betreffen, starte immer mit dem DialogShift Support - wir können oft bei der Diagnose helfen und ggf. direkt an Meta weiterleiten.
-</Tip> 
+**Nachrichten kommen nicht an**
+Prüfe, ob der Chatbot für den jeweiligen Kanal auf aktiv gesetzt ist und ob die Geschäftszeiten korrekt konfiguriert sind. Sende eine Testnachricht von einem externen Account, um den Empfang zu bestätigen.
