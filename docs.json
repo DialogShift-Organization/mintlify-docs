@@ -95,7 +95,6 @@
                 "icon": "phone",
                 "pages": [
                   "de/phone-ai/konfiguration",
-                  "de/phone-ai/konfiguration-V2",
                   "de/phone-ai/stimmen-auswahl",
                   "de/phone-ai/sip-integration",
                   "de/phone-ai/anrufweiterleitung-integration",
@@ -268,7 +267,6 @@
                 "icon": "phone",
                 "pages": [
                   "en/phone-ai/configuration",
-                  "en/phone-ai/configuration-v2",
                   "en/phone-ai/voice-selection",
                   "en/phone-ai/sip-integration",
                   "en/phone-ai/call-forwarding-integration",
