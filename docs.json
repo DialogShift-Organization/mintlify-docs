@@ -60,6 +60,7 @@
                 "icon": "robot",
                 "pages": [
                   "de/chat-ai/chatbot-modi",
+                  "de/chat-ai/antwortverhalten-wissensdatenbank",
                   {
                     "group": "Live Chat",
                     "icon": "comments",
@@ -232,6 +233,7 @@
                 "icon": "robot",
                 "pages": [
                   "en/chat-ai/chatbot-modes",
+                  "en/chat-ai/answer-behavior-knowledge-base",
                   {
                     "group": "Live Chat",
                     "icon": "comments",

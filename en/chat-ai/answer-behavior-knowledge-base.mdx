@@ -1,0 +1,81 @@
+---
+title: "How Chat AI handles knowledge and missing information"
+description: "Learn when Chat AI answers a question and when it says that information is missing."
+icon: "messages-question"
+---
+
+Chat AI is designed for questions about the stay, the hotel, and travel-related topics. It should provide helpful answers without inventing hotel-specific information.
+
+It distinguishes between general travel-related knowledge, information from the knowledge base, and requests that are outside the hotel or travel context.
+
+## When the information is in the knowledge base
+
+If matching information is available in the knowledge base or connected sources, Chat AI uses that information as the basis for its answer.
+
+**Example**
+
+Guest: "Does the hotel have a hotel entrance?"
+
+Chat AI: "Yes, the hotel has a hotel entrance. According to the available information, the hotel entrance is closed from 11:00 PM..."
+
+The answer is based on information that was provided for the hotel.
+
+## When hotel-specific information is missing
+
+As soon as a question asks for a concrete statement about your hotel, Chat AI relies on the information provided by the hotel.
+
+If that information is missing, Chat AI should not guess or invent an answer.
+
+**Examples**
+
+Guest: "Are there chairs in the hotel restaurant?"
+
+Chat AI: "Unfortunately, I do not have any information about that in the available sources."
+
+Guest: "Does the hotel have windows you can look out of?"
+
+Chat AI: "Unfortunately, I could not find any information about that in the available sources."
+
+Even if the answer may seem obvious to a person, Chat AI must not guess when the question is hotel-specific. If guests should reliably receive this information, it needs to be added to the knowledge base.
+
+## General knowledge in a travel context
+
+Some questions are not directly about the hotel, but still fit the travel or local context.
+
+**Example**
+
+Guest: "Is Oberstdorf close to the Alps?"
+
+Chat AI: "Yes, Oberstdorf is close to the Alps."
+
+Chat AI can usually answer this kind of general geographic question because it fits the travel context and does not make a specific claim about your hotel.
+
+Simple general-knowledge questions may also be answered:
+
+Guest: "If I let go of a stone, will it fall to the ground?"
+
+Chat AI: "Yes, a stone will normally fall to the ground."
+
+This is general world knowledge. However, it is not the main purpose of Chat AI.
+
+## Off-topic requests
+
+Some tasks could technically be answered by a language model, but they have nothing to do with travel, the stay, or hotel service.
+
+**Example**
+
+Guest: "Create a recipe for dinner tonight with rice and vegetables."
+
+Even though a language model could write a recipe, this is not the task of the hotel chatbot. Chat AI should stay within the travel and hotel context.
+
+## Difference to Phone AI
+
+Phone AI is stricter because phone conversations need to be short, clear, and free of speculation.
+
+Phone AI only uses the stored knowledge sources and the current conversation context. If no matching information is available, Phone AI says that it does not have that information.
+
+## Rule of thumb
+
+Everything guests should reliably learn about your hotel should be stored in the knowledge base.
+
+The more clearly the information is provided, the more reliably Chat AI can answer.
