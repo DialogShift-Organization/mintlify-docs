@@ -66,8 +66,12 @@ You need **one** of the following options:
 - **Dynamic DNS** (there may be brief interruptions during IP changes)
  - **Failover reliability** Our softphone always registers with **two** softphones to the phone system.
 
+The Phone AI was designed for modern cloud phone systems that are already accessible via the internet. Older hardware phone systems are also compatible, provided they **fully** support the SIP 2.0 standard and have been configured correctly for operation with a phone connected via the internet. In particular, this means that the phone system knows its public IP address (e.g. via a STUN server) and advertises it as the target for audio transmission during call setup, and that all ports required for audio transmission are open.
+
+For security reasons, we recommend limiting port openings to our IP addresses. These can be requested from support.
+
 <Info>
-  Cloud phone systems are already accessible via the internet.
+  DialogShift can neither guarantee compatibility nor estimate the setup effort.
 </Info>
 
 ### Internal transfers
@@ -75,10 +79,12 @@ You need **one** of the following options:
 Please provide the internal target number (extension or group). Alternatively, you can provide up to four department-specific target numbers. The Phone AI decides contextually which target to transfer to.
 
 <Info>
-  Important: At any given time, only one behavior is active — either forwarding to the target number <em>or</em> taking a callback request / no forwarding. A combination is not possible.
+  The behavior (forwarding to the target, taking a callback request, or no forwarding) can be configured flexibly per department on a schedule in the DialogShift app.
 </Info>
 
-Optionally, time-based activation of forwarding can be configured via the schedule in the settings.
+The Phone AI does not perform a technical transfer (Refer). Instead, it creates a new call to the internal target number and connects this call with the calling customer. This is necessary to implement the "call reclaim" and "whisper" features. A Refer is not possible, even if neither "call reclaim" nor "whisper" is to be used.
+
+It must be ensured that the Phone AI's extensions are allowed to initiate calls to the internal target number. If the phone system rejects these calls, the Phone AI will end the customer's call.
 
 ## Next Steps
 
