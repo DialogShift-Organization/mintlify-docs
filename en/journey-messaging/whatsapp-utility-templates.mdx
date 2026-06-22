@@ -1,0 +1,128 @@
+---
+title: "Creating WhatsApp Utility Templates Safely"
+description: "How to write WhatsApp templates in Journey Messaging so they match Meta's Utility criteria"
+---
+
+WhatsApp templates in Journey Messaging are reviewed by Meta. During this review, Meta can assign a different category than the one selected during submission, for example from **Utility** to **Marketing**.
+
+This article shows how to write Utility templates for booking, check-in, and service messages as clearly as possible.
+
+<Note>
+Meta decides the final category. Good wording reduces the risk of reclassification, but it cannot guarantee a specific decision.
+</Note>
+
+## Why the Category Matters
+
+WhatsApp uses three template categories: **Utility**, **Authentication**, and **Marketing**. In Journey Messaging, Utility and Marketing templates are the most relevant.
+
+- **Utility**: non-promotional information about a specific booking, request, transaction, or booked service.
+- **Marketing**: offers, recommendations, re-engagement, relationship-building, or content with promotional intent.
+
+Marketing templates may be billed differently than Utility templates and can have stricter requirements. Only submit a template as Utility if it is truly transactional.
+
+## When a Hotel Message Is Utility
+
+A Utility template must meet both conditions:
+
+- It is non-promotional and does not contain persuasive or sales-oriented intent.
+- It is clearly tied to a guest action, request, booking, or booked service.
+
+Typical Utility cases for hotels:
+
+- Booking confirmation or booking update
+- Online check-in reminder for an existing booking
+- Check-in information such as arrival date, address, or access information
+- Payment, cancellation, or modification information for a specific booking
+- Feedback request for a specific stay or interaction
+
+An access code for an existing booking is usually not an Authentication template. Meta reserves Authentication templates for login, verification, and one-time-password scenarios. A door code or check-in code is service information for the booking.
+
+## What to Avoid
+
+Meta is more likely to classify templates as Marketing if they do not read like factual service notifications.
+
+Avoid these in Utility templates:
+
+- Offers, discounts, upgrades, or upsells
+- Words such as "secure", "discover", "benefit", "exclusive", "offer", or "special"
+- Mixed content, for example check-in information plus a spa offer
+- Very generic messages without a booking reference
+- Overly warm or enthusiastic wording
+- Emojis, exclamation marks, or promotional button labels
+
+If you want to combine service information and promotional content, create two separate templates: one Utility template for the service information and one Marketing template for the promotional part.
+
+## Safer Wording Rules
+
+Write Utility templates like system notifications:
+
+- State the specific reason, such as booking, arrival, check-in, or cancellation.
+- Use concrete placeholders such as booking number, arrival date, hotel name, or stay date.
+- Keep the tone neutral and factual.
+- Use functional button labels such as "Start online check-in", "View booking", or "View access information".
+- Remove anything that sounds like selling, recommendation, or excitement.
+
+## Examples
+
+### Online Check-In
+
+**Risky**
+
+```text
+We are so excited to welcome you! Secure your express check-in now and start your stay relaxed.
+```
+
+**Better**
+
+```text
+Your booking {{booking_number}} at {{hotel_name}} starts on {{arrival_date}}. Please complete online check-in before arrival.
+```
+
+Button: **Start online check-in**
+
+### Access Code
+
+**Risky**
+
+```text
+Your exclusive access code is here! Discover all the benefits of your digital stay now.
+```
+
+**Better**
+
+```text
+Access information is available for your booking {{booking_number}} at {{hotel_name}}. It applies to your arrival on {{arrival_date}}.
+```
+
+Button: **View access information**
+
+### Booking Update
+
+**Risky**
+
+```text
+Your booking has been updated. Take the opportunity to add an upgrade now.
+```
+
+**Better**
+
+```text
+Your booking {{booking_number}} has been updated. The new stay dates are {{arrival_date}} to {{departure_date}}.
+```
+
+Button: **View booking**
+
+## If Meta Changes the Category
+
+If Meta reclassifies a template from Utility to Marketing, first review the template text and buttons.
+
+1. Remove promotional, emotional, or generic wording.
+2. Add concrete booking or stay details.
+3. Resubmit the updated WhatsApp variant for review.
+4. If the template clearly matches Meta's Utility criteria, you can request a category review in WhatsApp Manager.
+
+Always edit Journey Messaging WhatsApp templates in DialogShift. Editing them directly in WhatsApp Manager can cause the template state in DialogShift to differ from the template at Meta.
+
+## Official Meta Guideline
+
+Meta explains the categories and automatic category checks in the official [template categorization guideline](https://developers.facebook.com/docs/whatsapp/updates-to-pricing/new-template-guidelines/).

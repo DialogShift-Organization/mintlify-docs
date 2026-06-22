@@ -118,6 +118,7 @@
                   "de/journey-messaging/uebersicht",
                   "de/journey-messaging/journey-quickstart",
                   "de/journey-messaging/template-erstellen",
+                  "de/journey-messaging/whatsapp-utility-templates",
                   "de/journey-messaging/chat-button-whatsapp",
                   {
                     "group": "Make.com Integration",
@@ -291,6 +292,7 @@
                   "en/journey-messaging/overview",
                   "en/journey-messaging/journey-quickstart",
                   "en/journey-messaging/create-template",
+                  "en/journey-messaging/whatsapp-utility-templates",
                   "en/journey-messaging/chat-button-whatsapp",
                   {
                     "group": "Make.com Integration",

@@ -1,0 +1,128 @@
+---
+title: "WhatsApp Utility-Templates sicher erstellen"
+description: "So formulierst du WhatsApp-Vorlagen im Journey Messaging so, dass sie zu Metas Utility-Kriterien passen"
+---
+
+WhatsApp-Vorlagen im Journey Messaging werden von Meta geprüft. Dabei kann Meta eine Vorlage anders einstufen als beim Einreichen ausgewählt, zum Beispiel von **Utility** zu **Marketing**.
+
+Dieser Artikel zeigt dir, wie du Utility-Vorlagen für Buchungs-, Check-in- und Service-Nachrichten möglichst klar formulierst.
+
+<Note>
+Meta entscheidet die finale Kategorie. Eine passende Formulierung reduziert das Risiko einer Umklassifizierung, garantiert aber keine bestimmte Entscheidung.
+</Note>
+
+## Warum die Kategorie wichtig ist
+
+WhatsApp unterscheidet bei Vorlagen zwischen **Utility**, **Authentication** und **Marketing**. Im Journey Messaging sind vor allem Utility- und Marketing-Vorlagen relevant.
+
+- **Utility**: nicht-werbliche Informationen zu einer konkreten Buchung, Anfrage, Transaktion oder einem gebuchten Service.
+- **Marketing**: Angebote, Empfehlungen, Reaktivierung, Beziehungspflege oder Inhalte mit werblicher Absicht.
+
+Marketing-Vorlagen können anders abgerechnet werden als Utility-Vorlagen und unterliegen strengeren Anforderungen. Deshalb sollte eine Vorlage nur als Utility eingereicht werden, wenn sie wirklich rein transaktional ist.
+
+## Wann eine Hotelnachricht Utility ist
+
+Eine Utility-Vorlage muss beide Bedingungen erfüllen:
+
+- Sie ist nicht werblich und enthält keine überzeugende oder verkaufsfördernde Absicht.
+- Sie bezieht sich konkret auf eine Handlung, Anfrage, Buchung oder einen gebuchten Service des Gastes.
+
+Typische Utility-Fälle im Hotel:
+
+- Buchungsbestätigung oder Buchungsänderung
+- Erinnerung an den Online-Check-in für eine bestehende Buchung
+- Check-in-Informationen wie Anreisedatum, Adresse oder Zugangsinformationen
+- Zahlungs-, Storno- oder Änderungsinformationen zu einer konkreten Buchung
+- Feedback zu einem konkreten Aufenthalt oder Kontakt
+
+Ein Zugangscode für eine bestehende Buchung ist in der Regel keine Authentication-Vorlage. Authentication ist bei Meta für Login-, Verifizierungs- und Einmalcode-Szenarien vorgesehen. Ein Tür- oder Check-in-Code ist eine Service-Information zur Buchung.
+
+## Was du vermeiden solltest
+
+Meta stuft Vorlagen schneller als Marketing ein, wenn sie nicht wie eine sachliche Service-Nachricht wirken.
+
+Vermeide in Utility-Vorlagen:
+
+- Angebote, Rabatte, Upgrades oder Zusatzverkäufe
+- Formulierungen wie „sichern“, „entdecken“, „profitieren“, „exklusiv“, „Angebot“ oder „Special“
+- gemischte Inhalte, zum Beispiel Check-in-Information plus Spa-Angebot
+- sehr allgemeine Nachrichten ohne Buchungsbezug
+- übertrieben warme oder begeisterte Sprache
+- Emojis, Ausrufezeichen oder werbliche Button-Texte
+
+Wenn du Service-Information und Werbung kombinieren möchtest, erstelle zwei getrennte Vorlagen: eine Utility-Vorlage für die Service-Information und eine Marketing-Vorlage für den werblichen Teil.
+
+## Sichere Formulierungsregeln
+
+Schreibe Utility-Vorlagen wie eine Systembenachrichtigung:
+
+- Nenne den konkreten Anlass, zum Beispiel Buchung, Anreise, Check-in oder Stornierung.
+- Verwende konkrete Platzhalter wie Buchungsnummer, Anreisedatum, Hotelname oder Aufenthaltsdatum.
+- Halte den Ton neutral und sachlich.
+- Verwende funktionale Button-Texte wie „Online-Check-in starten“, „Buchung anzeigen“ oder „Zugangsinformationen anzeigen“.
+- Entferne alles, was wie Verkauf, Empfehlung oder Begeisterung klingt.
+
+## Beispiele
+
+### Online-Check-in
+
+**Riskant**
+
+```text
+Wir freuen uns riesig auf dich! Sichere dir jetzt deinen Express-Check-in und starte entspannt in deinen Aufenthalt.
+```
+
+**Besser**
+
+```text
+Ihre Buchung {{buchungsnummer}} im {{hotelname}} beginnt am {{anreisedatum}}. Bitte schließen Sie den Online-Check-in vor der Anreise ab.
+```
+
+Button: **Online-Check-in starten**
+
+### Zugangscode
+
+**Riskant**
+
+```text
+Dein exklusiver Zugangscode ist da! Entdecke jetzt alle Vorteile deines digitalen Aufenthalts.
+```
+
+**Besser**
+
+```text
+Für Ihre Buchung {{buchungsnummer}} im {{hotelname}} sind die Zugangsinformationen verfügbar. Sie gelten für Ihre Anreise am {{anreisedatum}}.
+```
+
+Button: **Zugangsinformationen anzeigen**
+
+### Buchungsänderung
+
+**Riskant**
+
+```text
+Deine Buchung wurde aktualisiert. Nutze die Gelegenheit und buche direkt ein Upgrade dazu.
+```
+
+**Besser**
+
+```text
+Ihre Buchung {{buchungsnummer}} wurde aktualisiert. Der neue Reisezeitraum ist {{anreisedatum}} bis {{abreisedatum}}.
+```
+
+Button: **Buchung anzeigen**
+
+## Wenn Meta die Kategorie ändert
+
+Wenn Meta eine Vorlage von Utility zu Marketing umklassifiziert, prüfe zuerst den Text und die Buttons der Vorlage.
+
+1. Entferne werbliche, emotionale oder allgemeine Formulierungen.
+2. Ergänze konkrete Buchungs- oder Aufenthaltsdetails.
+3. Reiche die überarbeitete WhatsApp-Variante erneut zur Prüfung ein.
+4. Wenn die Vorlage nach Metas Kriterien eindeutig Utility ist, kann im WhatsApp Manager eine Kategorieprüfung beantragt werden.
+
+Bearbeite WhatsApp-Vorlagen für Journey Messaging immer in DialogShift. Änderungen direkt im WhatsApp Manager können dazu führen, dass der Stand in DialogShift nicht mehr zur Meta-Vorlage passt.
+
+## Offizielle Meta-Richtlinie
+
+Meta beschreibt die Kategorien und die automatische Kategorieprüfung in der offiziellen [Template-Kategorisierung](https://developers.facebook.com/docs/whatsapp/updates-to-pricing/new-template-guidelines/).
