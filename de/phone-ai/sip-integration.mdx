@@ -69,8 +69,12 @@ Die Phone AI wird als SIP-Endgerät in deine bestehende Telefonanlage integriert
   Beginnt die IP-Adresse mit "192.168.", "10." oder "172.16." bis "172.31." handelt es sich um eine lokale, nicht aus dem Internet erreichbare IP-Adresse, welche nicht zur SIP-Integration geeignet ist.
 </Info>
 
+Die Phone AI wurde für moderne Cloud-Telefonanlagen entwickelt, welche bereits über das Internet erreichbar sind. Ältere Hardware-Telefonanlagen sind ebenfalls kompatibel, sofern sie den SIP2.0-Standard **vollständig** unterstützen und für den Betrieb mit einem Telefon, welches über das Internet angeschlossen ist, korrekt konfiguriert wurden. Dies bedeutet insbesondere, dass der Telefonanlage ihre öffentliche IP-Adresse bekannt ist (z.B. über einen STUN-Server) und sie diese als Ziel für Audio-Übertragungen beim Gesprächsaufbau bekannt gibt, sowie alle notwendigen Ports für die Audioübertragung freigegeben sind.
+
+Aus Sicherheitsgründen empfehlen wir, Portfreigaben auf unsere IP-Adressen zu limitieren. Diese können beim Support angefragt werden.
+
 <Info>
-  Cloud-Telefonanlagen sind bereits über das Internet erreichbar.
+  DialogShift kann die Kompatibilität weder garantieren, noch den Einrichtungsaufwand abschätzen.
 </Info>
 
 ### Interne Weiterleitungen
@@ -78,11 +82,12 @@ Die Phone AI wird als SIP-Endgerät in deine bestehende Telefonanlage integriert
 Bitte teile uns die interne Zielnummer (Nebenstelle oder Gruppe) mit. Alternativ können bis zu vier abteilungsbezogene Zielnummern hinterlegt werden. Die Phone AI entscheidet kontextbasiert, an welche Zielnummer übergeben wird.
 
 <Info>
-  Wichtig: Zu jedem Zeitpunkt ist nur eine der folgenden Verhaltensweisen aktiv – entweder Weiterleitung an die Zielnummer <em>oder</em>
-   Rückrufbitte aufnehmen bzw. keine Weiterleitung. Eine Kombination ist nicht möglich.
+  Die Verhaltensweise (Weiterleitung an das Ziel, Rückrufbitte aufnehmen bzw. keine Weiterleitung) kann in der DialogShift App flexibel nach einem Zeitplan pro Abteilung konfiguriert werden.
 </Info>
 
-Optional kann eine zeitbasierte Aktivierung der Weiterleitung über den Zeitplan in der Konfiguration erfolgen.
+Die Phone AI führt keine technische Weiterleitung (Refer) durch, sondern erstellt einen neuen Anruf an die interne Zielnummer und verbindet diesen Anruf mit dem anrufenden Kunden. Dies ist notwendig, um die Features "Anrufe zurücknehmen" und "Whispern" umzusetzen. Ein Refer ist nicht möglich, auch nicht wenn weder "Anrufe zurücknehmen" noch "Whispern" genutzzt werden soll.
+
+Es muss sicher gestellt sein, dass die Nebenstellen der Phone AI Anrufe an die interne Zielnummer initiieren dürfen. Sollte die Telefonanlage diese Anrufe ablehnen, wird die Phone AI den Anruf des Kunden beenden.
 
 ## Nächste Schritte
 
