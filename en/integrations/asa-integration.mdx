@@ -1,0 +1,39 @@
+---
+title: "ASA Integration"
+description: "How to use ASA with DialogShift Journey Messaging to provide guest and booking data for automated messages."
+---
+
+The ASA integration connects DialogShift to your ASA PMS. It is used for Journey Messaging so booking and guest data can trigger automated messages.
+
+## Prerequisites
+
+- Your hotel uses ASA.
+- Journey Messaging is enabled for your DialogShift account.
+- Customer Success has the ASA reservation endpoint and, if needed, credentials.
+
+## Activate the integration
+
+There is no ASA integration page in the DialogShift app. Customer Success activates the PMS connection for your hotel.
+
+1. Provide the ASA reservation endpoint to Customer Success.
+2. If ASA uses Basic Auth, also provide username and password.
+3. Customer Success activates the ASA connection for Journey Messaging.
+4. Then check in Journey Messaging whether journeys are created from PMS bookings.
+
+## Booking agents
+
+ASA is not used as a booking engine for DialogShift booking agents. Chat AI and Phone AI cannot use ASA to query availability, create a booking or generate a checkout link.
+
+## Journey Messaging
+
+| Topic | Behavior |
+|:------|:---------|
+| Supported | Yes, ASA is a Journey Messaging integration. |
+| Data flow | DialogShift retrieves booking and guest data from ASA and creates journeys and events from it. |
+| Updates | Polling, about every 15 minutes. Changes are therefore not visible immediately. |
+| Pre-check-in link | If ASA returns a pre-check-in link, it can be used in Journey Messaging templates. |
+| Multi-room bookings | A multi-room booking can create multiple journeys, typically one per room. |
+
+## Configuration
+
+Customer Success sets up the ASA connection. You then maintain Journey Messaging flows and templates in DialogShift under **Journey Messaging**.

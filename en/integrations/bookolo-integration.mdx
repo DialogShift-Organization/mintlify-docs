@@ -1,11 +1,24 @@
 ---
 title: "Bookolo Integration"
-description: "How to use Bookolo with DialogShift to show availability and rates in chat and on the phone."
+description: "How to use Bookolo with DialogShift for availability and rates in chat and on the phone."
 ---
 
-The Bookolo integration connects DialogShift to Bookolo for availability and rate lookup. Checkout through DialogShift is not available.
+The Bookolo integration connects DialogShift to Bookolo for availability and rate lookup. Journey Messaging and checkout through DialogShift are not supported for Bookolo.
 
-## Booking capabilities
+## Prerequisites
+
+- Your hotel uses Bookolo.
+- You have the Bookolo credentials.
+
+## Activate the integration
+
+Because there is a Bookolo integration page in the DialogShift app, the hotel can activate the integration itself.
+
+1. Enter the Bookolo credentials in the DialogShift app.
+2. Activate Bookolo as the booking engine.
+3. Check availability and rates in the DialogShift Availability Analyzer.
+
+## Booking agents
 
 | Topic | Behavior |
 |:------|:---------|
@@ -19,18 +32,9 @@ The Bookolo integration connects DialogShift to Bookolo for availability and rat
 | Offer/quote function | No. |
 | Required guest data | None in DialogShift checkout because there is no DialogShift checkout. |
 
-## Prerequisites
+## Journey Messaging
 
-- Your hotel uses Bookolo.
-- DialogShift has the Bookolo credentials.
-
-## Activate the integration
-
-Because there is a Bookolo integration page in the DialogShift app, the hotel can activate the integration itself.
-
-1. Enter the Bookolo credentials in the DialogShift app.
-2. Activate Bookolo as the booking engine.
-3. Check availability and rates in the DialogShift Availability Analyzer.
+Bookolo is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 

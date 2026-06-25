@@ -1,11 +1,24 @@
 ---
 title: "HotelPartner Integration"
-description: "How to use HotelPartner with DialogShift to enable availability, bookings and offer links in chat and on the phone."
+description: "How to use HotelPartner with DialogShift for availability, bookings and offer links in chat and on the phone."
 ---
 
-The HotelPartner integration connects DialogShift to your HotelPartner booking engine. Chat AI and Phone AI can retrieve availability and rates and, depending on the selected rate, either book directly or send an offer link.
+The HotelPartner integration connects DialogShift to your HotelPartner booking engine. Chat AI and Phone AI can retrieve availability and rates and, depending on the selected rate, either book directly or send an offer link. Journey Messaging is not supported for HotelPartner.
 
-## Booking capabilities
+## Prerequisites
+
+- Your hotel uses HotelPartner.
+- You have the HotelPartner credentials.
+
+## Activate the integration
+
+Because there is a HotelPartner integration page in the DialogShift app, the hotel can activate the integration itself.
+
+1. Enter the HotelPartner credentials in the DialogShift app.
+2. Activate HotelPartner as the booking engine for your DialogShift client.
+3. Enable the room categories and rates the agent may sell.
+
+## Booking agents
 
 | Topic | Behavior |
 |:------|:---------|
@@ -19,18 +32,9 @@ The HotelPartner integration connects DialogShift to your HotelPartner booking e
 | Offer/quote function | Yes. Payment-required rates are made bookable through the HotelPartner offer function. |
 | Required guest data | First name and last name are required. Email is optional. A mobile number is needed for phone link delivery. |
 
-## Prerequisites
+## Journey Messaging
 
-- Your hotel uses HotelPartner.
-- The HotelPartner credentials are set up for DialogShift.
-
-## Activate the integration
-
-Because there is a HotelPartner integration page in the DialogShift app, the hotel can activate the integration itself.
-
-1. Enter the HotelPartner credentials in the DialogShift app.
-2. Activate HotelPartner as the booking engine for your DialogShift client.
-3. Enable the room categories and rates the agent may sell.
+HotelPartner is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 

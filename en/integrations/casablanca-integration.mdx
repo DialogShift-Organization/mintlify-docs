@@ -1,11 +1,24 @@
 ---
 title: "Casablanca Integration"
-description: "How to use Casablanca with DialogShift to show availability and rates in chat and on the phone."
+description: "How to use Casablanca with DialogShift for booking agents and Journey Messaging."
 ---
 
-The Casablanca integration connects DialogShift to the Casablanca Cloud REST API. Chat AI and Phone AI can show availability and rates; checkout through DialogShift is not available.
+The Casablanca integration can connect DialogShift to the Casablanca Cloud REST API for availability and rates and can also provide PMS data for Journey Messaging. Checkout through DialogShift is not available.
 
-## Booking capabilities
+## Prerequisites
+
+- Your hotel uses Casablanca.
+- Customer Success has the Casablanca credentials and the correct hotel/tenant configuration.
+
+## Activate the integration
+
+There is no Casablanca integration page in the DialogShift app. Customer Success activates the booking engine and PMS connection for your hotel.
+
+1. Provide the Casablanca credentials to Customer Success.
+2. Customer Success activates Casablanca as a booking engine or Journey Messaging integration.
+3. If you use booking agents, check availability and rates in the DialogShift Availability Analyzer.
+
+## Booking agents
 
 | Topic | Behavior |
 |:------|:---------|
@@ -19,19 +32,16 @@ The Casablanca integration connects DialogShift to the Casablanca Cloud REST API
 | Offer/quote function | Booking-offer data is used for availability and rates, not for a payment link. |
 | Required guest data | None in DialogShift checkout because there is no DialogShift checkout. |
 
-## Prerequisites
+## Journey Messaging
 
-- Your hotel uses Casablanca.
-- DialogShift has the Casablanca Cloud API credentials.
-
-## Activate the integration
-
-There is no Casablanca integration page in the DialogShift app. Customer Success activates the engine for your hotel.
-
-1. Provide the Casablanca credentials to Customer Success.
-2. Customer Success activates Casablanca as the booking engine.
-3. Then check availability and rates in the DialogShift Availability Analyzer.
+| Topic | Behavior |
+|:------|:---------|
+| Supported | Yes. Casablanca can provide booking and guest data for Journey Messaging. |
+| Data flow | Casablanca pushes PMS changes to DialogShift via webhooks. |
+| Updates | Webhook-based; updates are processed after the PMS update. |
+| Activation | Customer Success sets up the PMS connection. |
+| Limitation | Separate Cloud REST credentials may be needed for booking-agent availability. |
 
 ## Configuration
 
-Casablanca requires Cloud API credentials and the correct hotel/tenant configuration.
+Casablanca requires Cloud API credentials and the correct hotel/tenant configuration. If you use booking agents, the enabled rooms and rates are maintained separately.

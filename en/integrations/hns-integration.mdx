@@ -1,28 +1,9 @@
 ---
-title: "HNS Integration - Room Booking & Revenue Tracking"
-description: "How to activate the integration with Hotel Net Solutions to enable AI bookings and track revenue from chat and phone in DialogShift"
+title: "HNS Integration"
+description: "How to use HNS with DialogShift for availability, rates and checkout links in chat and on the phone."
 ---
 
-The integration with Hotel Net Solutions (HNS) connects DialogShift to your OnePageBooking engine. Chat AI and Phone AI retrieve real-time availability, prices and rates, enable bookings, and record the revenue generated through them in the DialogShift app.
-
-The connection is used by:
-
-- **Availability Agent** – availability and price information in chat and on the phone.
-- **Full Booking Agent** – complete booking in chat and on the phone.
-
-## Booking capabilities
-
-| Topic | Behavior |
-|:------|:---------|
-| Company code / coupons / discount codes | Not supported. |
-| Minimum stay in the dialog | Not explicitly communicated by DialogShift. |
-| Checkout workflow | Always an HNS OnePageBooking checkout link. The guest completes the booking on the HNS page. |
-| Payment link in chat | The HNS checkout link is shown in chat. |
-| Payment link by phone | The HNS checkout link is sent by SMS/WhatsApp. |
-| Cancellation of unpaid bookings | No. |
-| Payment variants | Payment and card guarantee are handled in the HNS checkout. |
-| Offer/quote function | No. |
-| Required guest data | None in the DialogShift dialog; the guest enters the data in the HNS checkout. |
+The Hotel Net Solutions (HNS) integration connects DialogShift to your OnePageBooking engine. Chat AI and Phone AI can retrieve availability, prices and rates and send guests to the HNS checkout link. Journey Messaging is not supported for HNS.
 
 ## Prerequisites
 
@@ -39,7 +20,23 @@ Because there is an HNS integration page in the DialogShift app, the hotel can a
 3. The credentials are entered on the HNS integration page in the DialogShift app.
 4. DialogShift sends your Client ID to HNS.
 
-The integration is then active.
+## Booking agents
+
+| Topic | Behavior |
+|:------|:---------|
+| Company code / coupons / discount codes | Not supported. |
+| Minimum stay in the dialog | Not explicitly communicated by DialogShift. |
+| Checkout workflow | Always an HNS OnePageBooking checkout link. The guest completes the booking on the HNS page. |
+| Payment link in chat | The HNS checkout link is shown in chat. |
+| Payment link by phone | The HNS checkout link is sent by SMS/WhatsApp. |
+| Cancellation of unpaid bookings | No. |
+| Payment variants | Payment and card guarantee are handled in the HNS checkout. |
+| Offer/quote function | No. |
+| Required guest data | None in the DialogShift dialog; the guest enters the data in the HNS checkout. |
+
+## Journey Messaging
+
+HNS is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 

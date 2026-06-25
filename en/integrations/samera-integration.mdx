@@ -1,11 +1,24 @@
 ---
 title: "Samera Integration"
-description: "How to use Samera with DialogShift to retrieve availability and send checkout links to guests."
+description: "How to use Samera with DialogShift for availability and checkout links in chat and on the phone."
 ---
 
-The Samera integration connects DialogShift to your Samera booking engine. Chat AI and Phone AI can retrieve availability and rates and send a prepared Samera checkout link to the guest.
+The Samera integration connects DialogShift to your Samera booking engine. Chat AI and Phone AI can retrieve availability and rates and send a prepared Samera checkout link to the guest. Journey Messaging is not supported for Samera.
 
-## Booking capabilities
+## Prerequisites
+
+- Your hotel uses Samera.
+- Customer Success knows the `oneIdentifier` of your Samera subdomain.
+
+## Activate the integration
+
+There is no Samera integration page in the DialogShift app. Customer Success activates the engine for your hotel.
+
+1. Provide the Samera `oneIdentifier` to Customer Success.
+2. Customer Success activates Samera as the booking engine.
+3. Then enable the room categories and rates the agent may show.
+
+## Booking agents
 
 | Topic | Behavior |
 |:------|:---------|
@@ -19,18 +32,9 @@ The Samera integration connects DialogShift to your Samera booking engine. Chat 
 | Offer/quote function | DialogShift adds offers to a Samera cart; there is no separate offer link. |
 | Required guest data | None in the dialog. Already collected contact details can optionally prefill the Samera checkout. |
 
-## Prerequisites
+## Journey Messaging
 
-- Your hotel uses Samera.
-- DialogShift knows the `oneIdentifier` of your Samera subdomain.
-
-## Activate the integration
-
-There is no Samera integration page in the DialogShift app. Customer Success activates the engine for your hotel.
-
-1. Provide the Samera `oneIdentifier` to Customer Success.
-2. Customer Success activates Samera as the booking engine.
-3. Then enable the room categories and rates the agent may show.
+Samera is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 

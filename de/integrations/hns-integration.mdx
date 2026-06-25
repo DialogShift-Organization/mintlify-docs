@@ -1,28 +1,9 @@
 ---
-title: "HNS Integration - Zimmerbuchung & Umsatz-Tracking "
-description: "Wie du die Integration mit Hotel Net Solutions aktivierst, um KI Buchungen zu ermöglichen und Umsätze durch Chat und Telefon in DialogShift zu verfolgen"
+title: "HNS Integration"
+description: "Wie du HNS mit DialogShift für Verfügbarkeiten, Raten und Checkout-Links in Chat und Telefon nutzt."
 ---
 
-Die Integration mit Hotel Net Solutions (HNS) verbindet DialogShift mit deiner OnePageBooking-Engine. Chat AI und Phone AI rufen Verfügbarkeiten, Preise und Raten in Echtzeit ab, ermöglichen Buchungen und erfassen die darüber erzielten Umsätze in der DialogShift-App.
-
-Genutzt wird die Anbindung von:
-
-- **Availability Agent** – Verfügbarkeits- und Preisauskünfte in Chat und Telefon.
-- **Full Booking Agent** – vollständige Buchung in Chat und Telefon.
-
-## Buchungsfunktionen
-
-| Thema | Verhalten |
-|:------|:----------|
-| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
-| Mindestaufenthalt im Dialog | Nicht explizit durch DialogShift kommuniziert. |
-| Checkout-Workflow | Immer Checkout-Link zu HNS OnePageBooking. Die Buchung wird auf der HNS-Seite abgeschlossen. |
-| Payment-Link im Chat | Der HNS-Checkout-Link wird im Chat ausgegeben. |
-| Payment-Link im Phone | Der HNS-Checkout-Link wird per SMS/WhatsApp versendet. |
-| Stornierung unbezahlter Buchungen | Nein. |
-| Zahlungsvarianten | Zahlung und Kartengarantie laufen im HNS-Checkout. |
-| Angebots-/Quote-Funktion | Nein. |
-| Benötigte Gastdaten | Im Dialog keine; die Daten werden im HNS-Checkout eingegeben. |
+Die Integration mit Hotel Net Solutions (HNS) verbindet DialogShift mit deiner OnePageBooking-Engine. Chat AI und Phone AI können Verfügbarkeiten, Preise und Raten abrufen und Gäste per Checkout-Link zur HNS-Buchungsstrecke führen. Journey Messaging wird für HNS nicht unterstützt.
 
 ## Voraussetzungen
 
@@ -36,10 +17,26 @@ Da es eine HNS-Integrationsseite in der DialogShift App gibt, kann das Hotel die
 
 1. Beauftrage die DialogShift-Integration bei HNS.
 2. HNS übermittelt die API-Credentials an dich oder direkt an DialogShift.
-3. Die Credentials werden in der DialogShift-App auf der HNS-Integrationsseite eingetragen.
+3. Die Credentials werden in der DialogShift App auf der HNS-Integrationsseite eingetragen.
 4. DialogShift übermittelt deine Client-ID an HNS.
 
-Danach ist die Integration aktiv.
+## Buchungsagenten
+
+| Thema | Verhalten |
+|:------|:----------|
+| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
+| Mindestaufenthalt im Dialog | Nicht explizit durch DialogShift kommuniziert. |
+| Checkout-Workflow | Immer Checkout-Link zu HNS OnePageBooking. Die Buchung wird auf der HNS-Seite abgeschlossen. |
+| Payment-Link im Chat | Der HNS-Checkout-Link wird im Chat ausgegeben. |
+| Payment-Link im Phone | Der HNS-Checkout-Link wird per SMS/WhatsApp versendet. |
+| Stornierung unbezahlter Buchungen | Nein. |
+| Zahlungsvarianten | Zahlung und Kartengarantie laufen im HNS-Checkout. |
+| Angebots-/Quote-Funktion | Nein. |
+| Benötigte Gastdaten | Im Dialog keine; die Daten werden im HNS-Checkout eingegeben. |
+
+## Journey Messaging
+
+HNS wird aktuell nicht als PMS-Integration für Journey Messaging unterstützt. Für automatische Journey-Flows brauchst du eine unterstützte PMS-Integration.
 
 ## Konfiguration
 

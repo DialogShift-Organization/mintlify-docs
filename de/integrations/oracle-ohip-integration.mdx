@@ -1,11 +1,24 @@
 ---
 title: "Oracle OHIP Integration"
-description: "Wie du Oracle OPERA Cloud/OHIP mit DialogShift nutzt, um Verfügbarkeiten und Raten in Chat und Telefon anzuzeigen."
+description: "Wie du Oracle OPERA Cloud/OHIP mit DialogShift für Buchungsagenten und Journey Messaging nutzt."
 ---
 
-Die Oracle-OHIP-Integration verbindet DialogShift mit Oracle OPERA Cloud über die Oracle Hospitality Integration Platform. Chat AI und Phone AI können Verfügbarkeiten und Raten anzeigen; ein Buchungsabschluss über DialogShift ist nicht verfügbar.
+Die Oracle-OHIP-Integration verbindet DialogShift mit Oracle OPERA Cloud über die Oracle Hospitality Integration Platform. Chat AI und Phone AI können Verfügbarkeiten und Raten anzeigen; Journey Messaging kann PMS-Daten aus Oracle OHIP nutzen. Ein Buchungsabschluss über DialogShift ist nicht verfügbar.
 
-## Buchungsfunktionen
+## Voraussetzungen
+
+- Dein Hotel nutzt Oracle OPERA Cloud/OHIP.
+- Customer Success hat Gateway-URL, App-Key, OAuth-Zugangsdaten und Hotel-ID.
+
+## Integration aktivieren
+
+Für Oracle OHIP gibt es keine Integrationsseite in der DialogShift App. Customer Success aktiviert die Engine und die PMS-Verbindung für dein Hotel.
+
+1. Stelle Customer Success die OHIP-Zugangsdaten bereit.
+2. Customer Success aktiviert Oracle OHIP als Booking Engine oder Journey-Messaging-Integration.
+3. Prüfe bei Booking-Agent-Nutzung die Verfügbarkeiten und Raten im DialogShift Availability Analyzer.
+
+## Buchungsagenten
 
 | Thema | Verhalten |
 |:------|:----------|
@@ -19,18 +32,15 @@ Die Oracle-OHIP-Integration verbindet DialogShift mit Oracle OPERA Cloud über d
 | Angebots-/Quote-Funktion | Nein. |
 | Benötigte Gastdaten | Keine im DialogShift-Checkout, da kein Checkout über DialogShift stattfindet. |
 
-## Voraussetzungen
+## Journey Messaging
 
-- Dein Hotel nutzt Oracle OPERA Cloud/OHIP.
-- DialogShift hat die OHIP-Zugangsdaten und Hotel-ID.
-
-## Integration aktivieren
-
-Für Oracle OHIP gibt es keine Integrationsseite in der DialogShift App. Customer Success aktiviert die Engine für dein Hotel.
-
-1. Stelle Customer Success die OHIP-Zugangsdaten bereit.
-2. Customer Success aktiviert Oracle OHIP als Booking Engine.
-3. Prüfe anschließend die Verfügbarkeiten und Raten im DialogShift Availability Analyzer.
+| Thema | Verhalten |
+|:------|:----------|
+| Unterstützt | Beta. Oracle OHIP kann Journey Messaging mit Buchungs- und Gästedaten versorgen. |
+| Datenfluss | DialogShift liest Reservierungen regelmäßig über OHIP. |
+| Aktualisierung | Polling, ungefähr alle 15 Minuten. Änderungen sind deshalb nicht sofort sichtbar. |
+| Aktivierung | Customer Success richtet die PMS-Verbindung ein. |
+| Erste Synchronisierung | Die erste Synchronisierung kann manuell oder kontrolliert gestartet werden, damit bestehende Reservierungen sauber übernommen werden. |
 
 ## Konfiguration
 

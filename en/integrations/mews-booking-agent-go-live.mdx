@@ -1,18 +1,26 @@
 ---
-title: "Mews Booking Agent Go-Live Checklist"
-description: "Step-by-step checklist for hotels to prepare their MEWS property before activating the DialogShift booking agents in chat and on the phone."
+title: "MEWS Integration"
+description: "How to use MEWS with DialogShift for booking agents and Journey Messaging."
 ---
 
-This checklist is for hotels that have connected their MEWS property to DialogShift and want to roll out the **DialogShift booking agents** in chat and on the phone. Walk through it before you ask us to switch the agents on.
+The MEWS integration connects DialogShift to your MEWS property. It can power booking agents in chat and on the phone with availability, rates and bookings, and it also provides booking and guest data for Journey Messaging.
 
-## Before you start
+## Prerequisites
 
-- Your MEWS property must already be connected to DialogShift. To connect it, start the [DialogShift Chatbots integration in the MEWS Marketplace](https://www.mews.com/en/products/marketplace/dialogshift-chatbots); the connection is set up within 12 to 48 hours.
-- This is a single integration that also powers DialogShift Journey Messaging. No separate activation step is required.
-- Because there is a MEWS integration page in the DialogShift app, the hotel can maintain the booking-agent configuration there itself.
-- Terminology: in Mews, a "room type" is a **Space category** and an individual room is a **Space**. This document uses the Mews wording so the navigation paths match your screen.
+- Your MEWS property is connected to DialogShift through the [DialogShift Chatbots integration in the MEWS Marketplace](https://www.mews.com/en/products/marketplace/dialogshift-chatbots).
+- The connection has been set up; this usually takes 12 to 48 hours.
+- Terminology: in Mews, a "room type" is a **Space category** and an individual room is a **Space**.
 
-## Booking capabilities
+## Activate the integration
+
+The MEWS connection is started through the MEWS Marketplace. Because there is also a MEWS integration page in the DialogShift app, the hotel can maintain the booking-agent configuration there itself.
+
+1. Start the DialogShift Chatbots integration in the MEWS Marketplace.
+2. Wait until the MEWS connection has been set up.
+3. Maintain the booking-agent configuration in the DialogShift app under **Integrations → MEWS**.
+4. Check the enabled categories, rates and content in the DialogShift Availability Analyzer.
+
+## Booking agents
 
 | Topic | Behavior |
 |:------|:---------|
@@ -26,7 +34,9 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 | Offer/quote function | No. |
 | Required guest data | Email, first name and last name are required. Phone number is optional. |
 
-## Step 1 — Whitelist the room categories the agent may sell
+### Go-live checklist
+
+#### Step 1 — Whitelist the room categories the agent may sell
 
 **Why.** The agent only quotes rooms you enable. If the list is empty, every Space category in MEWS becomes sellable, including staff rooms, long-stay categories or event spaces.
 
@@ -34,7 +44,7 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 
 **Verify.** The list loads live from MEWS. If a category is missing, create it in MEWS and reload.
 
-## Step 2 — Whitelist the rates the agent may sell
+#### Step 2 — Whitelist the rates the agent may sell
 
 **Why.** Same as Step 1, for rates. If the list is empty, every active rate is sellable. Enable only your public rates (not corporate, group or staff rates).
 
@@ -42,7 +52,7 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 
 **Verify.** Rates load live from MEWS; private and inactive rates are shown with a label.
 
-## Step 3 — Open availability and stay restrictions in MEWS
+#### Step 3 — Open availability and stay restrictions in MEWS
 
 **Why.** The agent can only sell what MEWS reports as available. Blocked dates, min-stay rules or closed-to-arrival make the agent correctly answer "no rooms available".
 
@@ -53,7 +63,7 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 
 **Verify.** Check a few representative dates over the next 6–12 months and confirm the whitelisted categories and rates are open and bookable. The full check follows in Step 7.
 
-## Step 4 — Add a description for every Space category in every guest language
+#### Step 4 — Add a description for every Space category in every guest language
 
 **Why.** The agent reads the **Description** field of the Space category from MEWS. English-only descriptions are translated on the fly; maintaining each language yourself gives you control over the wording. Mews does not auto-translate these fields.
 
@@ -63,7 +73,7 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 
 **Verify.** Step 7.
 
-## Step 5 — Add a description for every rate in every guest language
+#### Step 5 — Add a description for every rate in every guest language
 
 **Why.** The agent uses the rate **Description** to explain what's included, the cancellation policy and any deposit. Maintaining each language gives you control over key terms.
 
@@ -73,7 +83,7 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 
 **Verify.** Step 7.
 
-## Step 6 — Upload images for every Space category
+#### Step 6 — Upload images for every Space category
 
 **Why.** The chat agent shows a room carousel. A Space category without images appears without a picture, which hurts conversion.
 
@@ -83,7 +93,7 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 
 **Verify.** Step 7.
 
-## Step 7 — Verify everything in the DialogShift Availability Analyzer
+#### Step 7 — Verify everything in the DialogShift Availability Analyzer
 
 **Why.** This is your dry run. The Availability Analyzer queries MEWS exactly like the booking agents and shows the data they will use, per language.
 
@@ -98,6 +108,20 @@ This checklist is for hotels that have connected their MEWS property to DialogSh
 
 If something is wrong: text or image issue → fix in MEWS (Steps 4–6); wrong room or rate → adjust the whitelist (Steps 1–2); no rooms on dates you expect to sell → check restrictions (Step 3). Re-run until every language is correct.
 
-## Step 8 — Tell DialogShift you're ready
+#### Step 8 — Tell DialogShift you're ready
 
 Once Step 7 is clean in every guest language, tell your DialogShift contact: "Hotel [name] is ready for the booking agents in chat and phone." The agents are then switched on.
+
+## Journey Messaging
+
+| Topic | Behavior |
+|:------|:---------|
+| Supported | Yes. The same MEWS connection powers Journey Messaging. |
+| Data flow | MEWS sends booking and guest data to DialogShift via webhooks. |
+| Updates | Webhook-based; changes are usually processed shortly after the PMS update. |
+| Activation | The MEWS connection is shared. No additional MEWS activation step is required for Journey Messaging. |
+| Limitation | Booking-agent settings for categories and rates do not control which Journey Messaging flows are triggered. |
+
+## Configuration
+
+Booking-agent categories, rates and images are maintained in the DialogShift app under **Integrations → MEWS**. Journey Messaging flows and templates are maintained separately under **Journey Messaging**.

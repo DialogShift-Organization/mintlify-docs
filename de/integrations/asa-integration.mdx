@@ -1,0 +1,39 @@
+---
+title: "ASA Integration"
+description: "Wie du ASA mit DialogShift Journey Messaging nutzt, um Gästedaten und Buchungen für automatische Nachrichten bereitzustellen."
+---
+
+Die ASA-Integration verbindet DialogShift mit deinem ASA PMS. Sie wird für Journey Messaging genutzt, damit Buchungs- und Gästedaten automatische Nachrichten auslösen können.
+
+## Voraussetzungen
+
+- Dein Hotel nutzt ASA.
+- Journey Messaging ist für dein DialogShift-Konto aktiviert.
+- Customer Success hat den ASA-Reservierungsendpunkt und optional die Zugangsdaten.
+
+## Integration aktivieren
+
+Für ASA gibt es keine Integrationsseite in der DialogShift App. Customer Success aktiviert die PMS-Verbindung für dein Hotel.
+
+1. Stelle Customer Success den ASA-Reservierungsendpunkt bereit.
+2. Falls ASA Basic Auth nutzt, stelle zusätzlich Benutzername und Passwort bereit.
+3. Customer Success aktiviert die ASA-Verbindung für Journey Messaging.
+4. Prüfe anschließend in Journey Messaging, ob Journeys aus PMS-Buchungen entstehen.
+
+## Buchungsagenten
+
+ASA wird nicht als Booking Engine für DialogShift Buchungsagenten genutzt. Chat AI und Phone AI können über ASA keine Verfügbarkeiten abfragen, keine Buchung anlegen und keinen Checkout-Link erzeugen.
+
+## Journey Messaging
+
+| Thema | Verhalten |
+|:------|:----------|
+| Unterstützt | Ja, ASA ist eine Journey-Messaging-Integration. |
+| Datenfluss | DialogShift ruft Buchungs- und Gästedaten aus ASA ab und erstellt daraus Journeys und Ereignisse. |
+| Aktualisierung | Polling, ungefähr alle 15 Minuten. Änderungen sind deshalb nicht sofort sichtbar. |
+| Pre-Check-in-Link | Wenn ASA einen Pre-Check-in-Link liefert, kann er in Journey-Messaging-Vorlagen genutzt werden. |
+| Mehrzimmerbuchungen | Eine Mehrzimmerbuchung kann mehrere Journeys erzeugen, typischerweise eine pro Zimmer. |
+
+## Konfiguration
+
+Die ASA-Verbindung wird durch Customer Success eingerichtet. Die Journey-Messaging-Flows und Vorlagen pflegst du anschließend in DialogShift unter **Journey Messaging**.

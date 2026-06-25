@@ -1,25 +1,9 @@
 ---
 title: "DIRS21 Integration"
-description: "How to activate the integration with DIRS21 to use availability and prices in DialogShift"
+description: "How to use DIRS21 with DialogShift for availability and rates in chat and on the phone."
 ---
 
-The integration with DIRS21 connects DialogShift to your DIRS21 One booking engine. Chat AI and Phone AI retrieve real-time availability, prices and rates to answer guest inquiries about rooms and rates.
-
-The connection is used by the **Availability Agent** in chat and on the phone.
-
-## Booking capabilities
-
-| Topic | Behavior |
-|:------|:---------|
-| Company code / coupons / discount codes | Not supported. |
-| Minimum stay in the dialog | Not explicitly communicated by DialogShift. |
-| Checkout workflow | No DialogShift checkout. DIRS21 is used for availability and rates. |
-| Payment link in chat | Not supported. |
-| Payment link by phone | Not supported. |
-| Cancellation of unpaid bookings | Not applicable because DialogShift does not create a DIRS21 booking. |
-| Payment variants | DIRS21 can report whether a credit card is required; checkout does not happen through DialogShift. |
-| Offer/quote function | Offers are used only for rates/prices. |
-| Required guest data | None in DialogShift checkout because there is no DialogShift checkout. |
+The DIRS21 integration connects DialogShift to your DIRS21 One booking engine. Chat AI and Phone AI can retrieve availability, prices and rates. Journey Messaging and checkout through DialogShift are not supported for DIRS21.
 
 ## Prerequisites
 
@@ -33,7 +17,25 @@ Because there is a DIRS21 integration page in the DialogShift app, the hotel can
 
 1. Commission the DialogShift integration with DIRS21.
 2. DIRS21 sends the credentials to you or directly to DialogShift.
-3. Enter the values in the DialogShift app under **Settings → Integration** (see Configuration).
+3. Enter the values in the DialogShift app under **Settings → Integration**.
+
+## Booking agents
+
+| Topic | Behavior |
+|:------|:---------|
+| Company code / coupons / discount codes | Not supported. |
+| Minimum stay in the dialog | Not explicitly communicated by DialogShift. |
+| Checkout workflow | No DialogShift checkout. DIRS21 is used for availability and rates. |
+| Payment link in chat | Not supported. |
+| Payment link by phone | Not supported. |
+| Cancellation of unpaid bookings | Not applicable because DialogShift does not create a DIRS21 booking. |
+| Payment variants | DIRS21 can report whether a credit card is required; checkout does not happen through DialogShift. |
+| Offer/quote function | Offers are used only for rates/prices. |
+| Required guest data | None in DialogShift checkout because there is no DialogShift checkout. |
+
+## Journey Messaging
+
+DIRS21 is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 

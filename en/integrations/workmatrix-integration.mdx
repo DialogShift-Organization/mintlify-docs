@@ -1,11 +1,24 @@
 ---
 title: "Workmatrix Integration"
-description: "How to use Workmatrix with DialogShift to show availability and rates in chat and on the phone."
+description: "How to use Workmatrix with DialogShift for availability and rates in chat and on the phone."
 ---
 
-The Workmatrix integration connects DialogShift to Workmatrix for availability and rate lookup. Checkout through DialogShift is not available.
+The Workmatrix integration connects DialogShift to Workmatrix for availability and rate lookup. Journey Messaging and checkout through DialogShift are not supported for Workmatrix.
 
-## Booking capabilities
+## Prerequisites
+
+- Your hotel uses Workmatrix.
+- Customer Success has the Workmatrix credentials.
+
+## Activate the integration
+
+There is no Workmatrix integration page in the DialogShift app. Customer Success activates the engine for your hotel.
+
+1. Provide the Workmatrix credentials to Customer Success.
+2. Customer Success activates Workmatrix as the booking engine.
+3. Then check availability and rates in the DialogShift Availability Analyzer.
+
+## Booking agents
 
 | Topic | Behavior |
 |:------|:---------|
@@ -19,18 +32,9 @@ The Workmatrix integration connects DialogShift to Workmatrix for availability a
 | Offer/quote function | No. |
 | Required guest data | None in DialogShift checkout because there is no DialogShift checkout. |
 
-## Prerequisites
+## Journey Messaging
 
-- Your hotel uses Workmatrix.
-- DialogShift has the Workmatrix credentials.
-
-## Activate the integration
-
-There is no Workmatrix integration page in the DialogShift app. Customer Success activates the engine for your hotel.
-
-1. Provide the Workmatrix credentials to Customer Success.
-2. Customer Success activates Workmatrix as the booking engine.
-3. Then check availability and rates in the DialogShift Availability Analyzer.
+Workmatrix is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 

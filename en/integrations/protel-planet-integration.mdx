@@ -1,11 +1,26 @@
 ---
-title: "Protel (Planet) Integration"
-description: "How to use the Protel/Planet integration with DialogShift to retrieve availability and create pay-at-hotel bookings."
+title: "Protel / Planet Integration"
+description: "How to use Protel/Planet with DialogShift for booking agents and Journey Messaging."
 ---
 
-The Protel/Planet integration connects DialogShift to the Protel Cloud API. Chat AI and Phone AI can retrieve availability and rates and create pay-at-hotel bookings directly.
+The Protel/Planet integration connects DialogShift to the Protel Cloud API. Chat AI and Phone AI can retrieve availability and rates and create pay-at-hotel bookings directly. Journey Messaging can also use PMS data from Protel/Planet.
 
-## Booking capabilities
+## Prerequisites
+
+- Your hotel uses the Protel/Planet Cloud API.
+- API key and API base URL are available.
+- For Journey Messaging, the correct PMS context for your hotel is known.
+
+## Activate the integration
+
+Because there is a Protel/Planet integration page in the DialogShift app, the hotel can enter the credentials itself. For Journey Messaging, Customer Success also confirms the PMS context.
+
+1. Enter the API key and base URL in the DialogShift app.
+2. Activate the Protel/Planet integration.
+3. For booking agents, enable only room categories and rates that can be booked without prepayment.
+4. For Journey Messaging, Customer Success sets up the PMS context.
+
+## Booking agents
 
 | Topic | Behavior |
 |:------|:---------|
@@ -19,19 +34,16 @@ The Protel/Planet integration connects DialogShift to the Protel Cloud API. Chat
 | Offer/quote function | No. |
 | Required guest data | Email, first name and last name are required. Phone number is optional. |
 
-## Prerequisites
+## Journey Messaging
 
-- Your hotel uses the Protel/Planet Cloud API.
-- DialogShift has the API key and API base URL.
-
-## Activate the integration
-
-Because there is a Protel/Planet integration page in the DialogShift app, the hotel can activate the integration itself.
-
-1. Enter the API key and base URL in the DialogShift app.
-2. Activate the Protel/Planet integration.
-3. Enable only room categories and rates that can be booked without prepayment.
+| Topic | Behavior |
+|:------|:---------|
+| Supported | Beta. Protel/Planet can provide booking and guest data for Journey Messaging. |
+| Data flow | DialogShift reads reservations from Protel/Planet regularly. |
+| Updates | Polling, about every 15 minutes. Changes are therefore not visible immediately. |
+| Activation | Credentials can be maintained in the DialogShift app; Customer Success adds the PMS context. |
+| Limitation | Booking-agent rate settings do not automatically control Journey Messaging flows. |
 
 ## Configuration
 
-Check the enabled rates carefully. Prepaid or payment-required rates are not suitable for this integration.
+Check the enabled booking-agent rates carefully. Prepaid or payment-required rates are not suitable for direct Protel/Planet bookings. Journey Messaging flows and templates are maintained separately under **Journey Messaging**.

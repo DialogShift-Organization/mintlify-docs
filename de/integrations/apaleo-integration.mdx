@@ -1,23 +1,9 @@
 ---
 title: "apaleo Integration"
-description: "Wie du apaleo mit DialogShift nutzt, um Verfügbarkeiten, Buchungen und Zahlungslinks in Chat und Telefon zu ermöglichen."
+description: "Wie du apaleo mit DialogShift für Buchungsagenten und Journey Messaging nutzt."
 ---
 
-Die apaleo-Integration verbindet DialogShift mit deinem apaleo-Property. Chat AI und Phone AI können Verfügbarkeiten und Raten abrufen und Buchungen direkt in apaleo anlegen.
-
-## Buchungsfunktionen
-
-| Thema | Verhalten |
-|:------|:----------|
-| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
-| Mindestaufenthalt im Dialog | Nicht explizit durch DialogShift kommuniziert. |
-| Checkout-Workflow | Direkte Buchung in apaleo. Bei Raten mit Kreditkarte oder Vorauszahlung erstellt DialogShift danach einen apaleo/Adyen-Zahlungslink. |
-| Payment-Link im Chat | Der apaleo-Zahlungslink wird im Chat ausgegeben. |
-| Payment-Link im Phone | Wenn apaleo im Phone Full Booking Agent aktiviert ist, wird der apaleo-Zahlungslink per SMS/WhatsApp versendet. |
-| Stornierung unbezahlter Buchungen | Ja. Unbezahlte Zahlungslink-Buchungen werden nach aktuell 75 Minuten automatisch storniert. |
-| Zahlungsvarianten | Keine Vorauszahlung: direkte Bestätigung. Kreditkarten-Garantie und Vorauszahlung: Zahlung/Karte über apaleo/Adyen-Link. |
-| Angebots-/Quote-Funktion | Die apaleo-Angebots-API wird für Verfügbarkeit und technische Buchungsdaten genutzt; es gibt keinen separaten Angebotslink. |
-| Benötigte Gastdaten | E-Mail, Vorname und Nachname sind Pflicht. Telefonnummer ist optional. |
+Die apaleo-Integration verbindet DialogShift mit deinem apaleo-Property. Sie kann sowohl Booking Agents als auch Journey Messaging mit Daten versorgen.
 
 ## Voraussetzungen
 
@@ -31,8 +17,32 @@ Da es eine apaleo-Integrationsseite in der DialogShift App gibt, kann das Hotel 
 
 1. Verbinde apaleo in der DialogShift App über **Connect**.
 2. Ordne die apaleo-Property dem richtigen DialogShift Client zu.
-3. Wähle apaleo im Cockpit als Booking Engine für den Agenten aus.
+3. Wähle bei Bedarf apaleo als Booking Engine für den Agenten aus.
+
+## Buchungsagenten
+
+| Thema | Verhalten |
+|:------|:----------|
+| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
+| Mindestaufenthalt im Dialog | Nicht explizit durch DialogShift kommuniziert. |
+| Checkout-Workflow | Direkte Buchung in apaleo. Bei Raten mit Kreditkarte oder Vorauszahlung erstellt DialogShift danach einen apaleo/Adyen-Zahlungslink. |
+| Payment-Link im Chat | Der apaleo-Zahlungslink wird im Chat ausgegeben. |
+| Payment-Link im Phone | Wenn apaleo im Phone Full Booking Agent aktiviert ist, wird der apaleo-Zahlungslink per SMS/WhatsApp versendet. |
+| Stornierung unbezahlter Buchungen | Ja. Unbezahlte Zahlungslink-Buchungen werden nach aktuell 75 Minuten automatisch storniert. |
+| Zahlungsvarianten | Keine Vorauszahlung: direkte Bestätigung. Kreditkarten-Garantie und Vorauszahlung: Zahlung/Karte über apaleo/Adyen-Link. |
+| Angebots-/Quote-Funktion | Die apaleo-Angebots-API wird für Verfügbarkeit und technische Buchungsdaten genutzt; es gibt keinen separaten Angebotslink. |
+| Benötigte Gastdaten | E-Mail, Vorname und Nachname sind Pflicht. Telefonnummer ist optional. |
+
+## Journey Messaging
+
+| Thema | Verhalten |
+|:------|:----------|
+| Unterstützt | Ja. Dieselbe apaleo-Verbindung kann Journey Messaging mit Buchungs- und Gästedaten versorgen. |
+| Datenfluss | apaleo sendet Reservierungs-Updates per Webhook an DialogShift. |
+| Aktualisierung | Nahezu in Echtzeit, sobald die Property korrekt zugeordnet ist. |
+| Aktivierung | Die apaleo-Verbindung und Property-Zuordnung sind gemeinsam. Journey-Messaging-Flows und Vorlagen werden separat in DialogShift gepflegt. |
+| Einschränkung | Booking-Agent-Einstellungen wie Kanal, Ratepläne und Bilder sind separat und betreffen Journey Messaging nicht. |
 
 ## Konfiguration
 
-Lege in der DialogShift App fest, welche apaleo-Kanäle, Ratepläne und Zimmerbilder die Booking Agents verwenden.
+Lege in der DialogShift App fest, welche apaleo-Kanäle, Ratepläne und Zimmerbilder die Booking Agents verwenden. Für Journey Messaging pflegst du anschließend die Flows und Vorlagen unter **Journey Messaging**.

@@ -167,7 +167,10 @@
                 "group": "Integrationen",
                 "icon": "plug",
                 "pages": [
+                  "de/integrations/booking-engine-integrationen",
+                  "de/integrations/journey-messaging-integrationen",
                   "de/integrations/apaleo-integration",
+                  "de/integrations/asa-integration",
                   "de/integrations/bookolo-integration",
                   "de/integrations/casablanca-integration",
                   "de/integrations/dirs21-integration",
@@ -350,7 +353,10 @@
                 "group": "Integrations",
                 "icon": "plug",
                 "pages": [
+                  "en/integrations/booking-engine-integrations",
+                  "en/integrations/journey-messaging-integrations",
                   "en/integrations/apaleo-integration",
+                  "en/integrations/asa-integration",
                   "en/integrations/bookolo-integration",
                   "en/integrations/casablanca-integration",
                   "en/integrations/dirs21-integration",
