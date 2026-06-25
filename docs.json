@@ -167,9 +167,18 @@
                 "group": "Integrationen",
                 "icon": "plug",
                 "pages": [
-                  "de/integrations/hns-integration",
+                  "de/integrations/apaleo-integration",
+                  "de/integrations/bookolo-integration",
+                  "de/integrations/casablanca-integration",
                   "de/integrations/dirs21-integration",
-                  "de/integrations/mews-booking-agent-go-live"
+                  "de/integrations/ennismore-integration",
+                  "de/integrations/hns-integration",
+                  "de/integrations/hotelpartner-integration",
+                  "de/integrations/mews-booking-agent-go-live",
+                  "de/integrations/oracle-ohip-integration",
+                  "de/integrations/protel-planet-integration",
+                  "de/integrations/samera-integration",
+                  "de/integrations/workmatrix-integration"
                 ]
               },
               {
@@ -341,9 +350,18 @@
                 "group": "Integrations",
                 "icon": "plug",
                 "pages": [
-                  "en/integrations/hns-integration",
+                  "en/integrations/apaleo-integration",
+                  "en/integrations/bookolo-integration",
+                  "en/integrations/casablanca-integration",
                   "en/integrations/dirs21-integration",
-                  "en/integrations/mews-booking-agent-go-live"
+                  "en/integrations/ennismore-integration",
+                  "en/integrations/hns-integration",
+                  "en/integrations/hotelpartner-integration",
+                  "en/integrations/mews-booking-agent-go-live",
+                  "en/integrations/oracle-ohip-integration",
+                  "en/integrations/protel-planet-integration",
+                  "en/integrations/samera-integration",
+                  "en/integrations/workmatrix-integration"
                 ]
               },
               {

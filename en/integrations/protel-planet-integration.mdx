@@ -1,0 +1,37 @@
+---
+title: "Protel (Planet) Integration"
+description: "How to use the Protel/Planet integration with DialogShift to retrieve availability and create pay-at-hotel bookings."
+---
+
+The Protel/Planet integration connects DialogShift to the Protel Cloud API. Chat AI and Phone AI can retrieve availability and rates and create pay-at-hotel bookings directly.
+
+## Booking capabilities
+
+| Topic | Behavior |
+|:------|:---------|
+| Company code / coupons / discount codes | Not supported. |
+| Minimum stay in the dialog | Not explicitly communicated by DialogShift. |
+| Checkout workflow | Direct booking in Protel/Planet, without a DialogShift checkout link. |
+| Payment link in chat | Not supported. |
+| Payment link by phone | Not supported. |
+| Cancellation of unpaid bookings | No. During a technical partial failure in a multi-room booking, DialogShift attempts a rollback. |
+| Payment variants | Only pay-at-hotel/flexible rates. Prepaid rates should not be enabled for the agent. |
+| Offer/quote function | No. |
+| Required guest data | Email, first name and last name are required. Phone number is optional. |
+
+## Prerequisites
+
+- Your hotel uses the Protel/Planet Cloud API.
+- DialogShift has the API key and API base URL.
+
+## Activate the integration
+
+Because there is a Protel/Planet integration page in the DialogShift app, the hotel can activate the integration itself.
+
+1. Enter the API key and base URL in the DialogShift app.
+2. Activate the Protel/Planet integration.
+3. Enable only room categories and rates that can be booked without prepayment.
+
+## Configuration
+
+Check the enabled rates carefully. Prepaid or payment-required rates are not suitable for this integration.

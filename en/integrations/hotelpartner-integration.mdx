@@ -1,0 +1,37 @@
+---
+title: "HotelPartner Integration"
+description: "How to use HotelPartner with DialogShift to enable availability, bookings and offer links in chat and on the phone."
+---
+
+The HotelPartner integration connects DialogShift to your HotelPartner booking engine. Chat AI and Phone AI can retrieve availability and rates and, depending on the selected rate, either book directly or send an offer link.
+
+## Booking capabilities
+
+| Topic | Behavior |
+|:------|:---------|
+| Company code / coupons / discount codes | Supported when the code is enabled for your hotel. |
+| Minimum stay in the dialog | Not explicitly communicated by DialogShift. |
+| Checkout workflow | Hybrid: direct reservation for rates without credit-card requirement; offer link for rates with credit-card requirement or unknown payment status. |
+| Payment link in chat | The HotelPartner offer or confirmation link is shown in chat. |
+| Payment link by phone | The HotelPartner link is sent by SMS/WhatsApp. |
+| Cancellation of unpaid bookings | No. |
+| Payment variants | Direct booking without credit-card requirement; offer link for credit-card requirement or prepayment. |
+| Offer/quote function | Yes. Payment-required rates are made bookable through the HotelPartner offer function. |
+| Required guest data | First name and last name are required. Email is optional. A mobile number is needed for phone link delivery. |
+
+## Prerequisites
+
+- Your hotel uses HotelPartner.
+- The HotelPartner credentials are set up for DialogShift.
+
+## Activate the integration
+
+Because there is a HotelPartner integration page in the DialogShift app, the hotel can activate the integration itself.
+
+1. Enter the HotelPartner credentials in the DialogShift app.
+2. Activate HotelPartner as the booking engine for your DialogShift client.
+3. Enable the room categories and rates the agent may sell.
+
+## Configuration
+
+Configure the allowed rooms, rates and, if needed, enabled company codes in DialogShift.

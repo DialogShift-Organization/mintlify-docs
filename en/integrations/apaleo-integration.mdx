@@ -1,0 +1,38 @@
+---
+title: "apaleo Integration"
+description: "How to use apaleo with DialogShift to enable availability, bookings and payment links in chat and on the phone."
+---
+
+The apaleo integration connects DialogShift to your apaleo property. Chat AI and Phone AI can retrieve availability and rates and create bookings directly in apaleo.
+
+## Booking capabilities
+
+| Topic | Behavior |
+|:------|:---------|
+| Company code / coupons / discount codes | Not supported. |
+| Minimum stay in the dialog | Not explicitly communicated by DialogShift. |
+| Checkout workflow | Direct booking in apaleo. For rates requiring a credit card or prepayment, DialogShift creates an apaleo/Adyen payment link afterwards. |
+| Payment link in chat | The apaleo payment link is shown in chat. |
+| Payment link by phone | When apaleo is enabled for the Phone Full Booking Agent, the apaleo payment link is sent by SMS/WhatsApp. |
+| Cancellation of unpaid bookings | Yes. Unpaid payment-link bookings are automatically cancelled after currently 75 minutes. |
+| Payment variants | No prepayment: direct confirmation. Credit-card guarantee and prepayment: payment/card details through the apaleo/Adyen link. |
+| Offer/quote function | The apaleo offers API is used for availability and technical booking data; there is no separate offer link. |
+| Required guest data | Email, first name and last name are required. Phone number is optional. |
+
+## Prerequisites
+
+- Your hotel uses apaleo.
+- The apaleo integration is connected in the DialogShift app.
+- The correct property is mapped to your DialogShift client.
+
+## Activate the integration
+
+Because there is an apaleo integration page in the DialogShift app, the hotel can activate the integration itself.
+
+1. Connect apaleo in the DialogShift app via **Connect**.
+2. Map the apaleo property to the correct DialogShift client.
+3. Select apaleo as the booking engine for the agent in Cockpit.
+
+## Configuration
+
+In the DialogShift app, define which apaleo channels, rate plans and room images the booking agents use.

@@ -10,6 +10,20 @@ Genutzt wird die Anbindung von:
 - **Availability Agent** – Verfügbarkeits- und Preisauskünfte in Chat und Telefon.
 - **Full Booking Agent** – vollständige Buchung in Chat und Telefon.
 
+## Buchungsfunktionen
+
+| Thema | Verhalten |
+|:------|:----------|
+| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
+| Mindestaufenthalt im Dialog | Nicht explizit durch DialogShift kommuniziert. |
+| Checkout-Workflow | Immer Checkout-Link zu HNS OnePageBooking. Die Buchung wird auf der HNS-Seite abgeschlossen. |
+| Payment-Link im Chat | Der HNS-Checkout-Link wird im Chat ausgegeben. |
+| Payment-Link im Phone | Der HNS-Checkout-Link wird per SMS/WhatsApp versendet. |
+| Stornierung unbezahlter Buchungen | Nein. |
+| Zahlungsvarianten | Zahlung und Kartengarantie laufen im HNS-Checkout. |
+| Angebots-/Quote-Funktion | Nein. |
+| Benötigte Gastdaten | Im Dialog keine; die Daten werden im HNS-Checkout eingegeben. |
+
 ## Voraussetzungen
 
 - Dein Hotel nutzt OnePageBooking von HNS.
@@ -17,6 +31,8 @@ Genutzt wird die Anbindung von:
 - Deine DialogShift Client-ID (in der App unter **Einstellungen → Integration**).
 
 ## Integration aktivieren
+
+Da es eine HNS-Integrationsseite in der DialogShift App gibt, kann das Hotel die Integration selbst aktivieren, sobald HNS die Zugangsdaten bereitgestellt hat.
 
 1. Beauftrage die DialogShift-Integration bei HNS.
 2. HNS übermittelt die API-Credentials an dich oder direkt an DialogShift.

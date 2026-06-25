@@ -9,7 +9,22 @@ Diese Checkliste richtet sich an Hotels, die ihr MEWS-Property mit DialogShift v
 
 - Dein MEWS-Property muss bereits mit DialogShift verbunden sein. Die Verbindung startest du über die [DialogShift-Chatbots-Integration im MEWS Marketplace](https://www.mews.com/en/products/marketplace/dialogshift-chatbots); die Anbindung wird innerhalb von 12 bis 48 Stunden eingerichtet.
 - Es ist eine einzige Integration, die zugleich DialogShift Journey Messaging speist. Ein gesonderter Aktivierungsschritt ist nicht erforderlich.
+- Da es eine MEWS-Integrationsseite in der DialogShift App gibt, kann das Hotel die Booking-Agent-Konfiguration dort selbst pflegen.
 - Terminologie: Was im Hotelalltag „Zimmertyp" heißt, ist in Mews eine **Space category**; ein einzelnes Zimmer ist ein **Space**. Dieses Dokument nutzt die Mews-Begriffe, damit die Klickpfade exakt mit deinem Bildschirm übereinstimmen.
+
+## Buchungsfunktionen
+
+| Thema | Verhalten |
+|:------|:----------|
+| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. Gib keine Firmen-, Gruppen- oder Personalraten für den Agenten frei. |
+| Mindestaufenthalt im Dialog | Ja. Wenn MEWS nur Mindestaufenthalte meldet, kommuniziert der Agent die Mindestnächte. |
+| Checkout-Workflow | Direkte Einbuchung in MEWS. Je nach Ratenkonfiguration erstellt DialogShift danach eine MEWS-Zahlungsanforderung. |
+| Payment-Link im Chat | DialogShift gibt keinen Zahlungslink aus. MEWS erzeugt und verschickt die Zahlungs-E-Mail selbst. |
+| Payment-Link im Phone | Kein SMS-/WhatsApp-Zahlungslink von DialogShift; MEWS sendet die Zahlungs-E-Mail. |
+| Stornierung unbezahlter Buchungen | Nein. |
+| Zahlungsvarianten | Zahlung beim Check-in, Vorauszahlung (`Payment`) und Kreditkarten-Garantie (`Preauthorization`). |
+| Angebots-/Quote-Funktion | Nein. |
+| Benötigte Gastdaten | E-Mail, Vorname und Nachname sind Pflicht. Telefonnummer ist optional. |
 
 ## Schritt 1 — Zimmerkategorien für den Agenten freigeben
 

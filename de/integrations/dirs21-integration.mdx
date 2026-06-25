@@ -7,6 +7,20 @@ Die Integration mit DIRS21 verbindet DialogShift mit deiner DIRS21 One-Buchungss
 
 Genutzt wird die Anbindung vom **Availability Agent** in Chat und Telefon.
 
+## Buchungsfunktionen
+
+| Thema | Verhalten |
+|:------|:----------|
+| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
+| Mindestaufenthalt im Dialog | Nicht explizit durch DialogShift kommuniziert. |
+| Checkout-Workflow | Kein Checkout über DialogShift. DIRS21 wird für Verfügbarkeiten und Raten genutzt. |
+| Payment-Link im Chat | Nicht unterstützt. |
+| Payment-Link im Phone | Nicht unterstützt. |
+| Stornierung unbezahlter Buchungen | Nicht relevant, da DialogShift keine DIRS21-Buchung anlegt. |
+| Zahlungsvarianten | DIRS21 kann Kreditkartenpflicht melden; der Abschluss passiert nicht über DialogShift. |
+| Angebots-/Quote-Funktion | Angebote werden nur für Raten/Preise genutzt. |
+| Benötigte Gastdaten | Keine im DialogShift-Checkout, da kein Checkout über DialogShift stattfindet. |
+
 ## Voraussetzungen
 
 - Dein Hotel nutzt DIRS21 One.
@@ -14,6 +28,8 @@ Genutzt wird die Anbindung vom **Availability Agent** in Chat und Telefon.
 - Deine DialogShift Client-ID (in der App unter **Einstellungen → Integration**).
 
 ## Integration aktivieren
+
+Da es eine DIRS21-Integrationsseite in der DialogShift App gibt, kann das Hotel die Integration selbst aktivieren, sobald DIRS21 die Zugangsdaten bereitgestellt hat.
 
 1. Beauftrage die DialogShift-Integration bei DIRS21.
 2. DIRS21 übermittelt die Credentials an dich oder direkt an DialogShift.

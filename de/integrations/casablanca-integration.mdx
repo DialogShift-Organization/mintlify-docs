@@ -1,0 +1,37 @@
+---
+title: "Casablanca Integration"
+description: "Wie du Casablanca mit DialogShift nutzt, um Verfügbarkeiten und Raten in Chat und Telefon anzuzeigen."
+---
+
+Die Casablanca-Integration verbindet DialogShift mit der Casablanca Cloud REST API. Chat AI und Phone AI können Verfügbarkeiten und Raten anzeigen; ein Buchungsabschluss über DialogShift ist nicht verfügbar.
+
+## Buchungsfunktionen
+
+| Thema | Verhalten |
+|:------|:----------|
+| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
+| Mindestaufenthalt im Dialog | Ja. Mindestaufenthalte oder nicht buchbare Aufenthaltslängen werden im Dialog kommuniziert. |
+| Checkout-Workflow | Kein Checkout über DialogShift. |
+| Payment-Link im Chat | Nicht unterstützt. |
+| Payment-Link im Phone | Nicht unterstützt. |
+| Stornierung unbezahlter Buchungen | Nicht relevant, da DialogShift keine Casablanca-Buchung anlegt. |
+| Zahlungsvarianten | Kreditkartenpflicht kann als Rateninformation sichtbar sein, ist aber nicht über DialogShift buchbar. |
+| Angebots-/Quote-Funktion | Booking-Offer-Daten werden für Verfügbarkeit und Raten genutzt, nicht für einen Zahlungslink. |
+| Benötigte Gastdaten | Keine im DialogShift-Checkout, da kein Checkout über DialogShift stattfindet. |
+
+## Voraussetzungen
+
+- Dein Hotel nutzt Casablanca.
+- DialogShift hat die Casablanca Cloud-API-Zugangsdaten.
+
+## Integration aktivieren
+
+Für Casablanca gibt es keine Integrationsseite in der DialogShift App. Customer Success aktiviert die Engine für dein Hotel.
+
+1. Stelle Customer Success die Casablanca-Zugangsdaten bereit.
+2. Customer Success aktiviert Casablanca als Booking Engine.
+3. Prüfe anschließend die Verfügbarkeiten und Raten im DialogShift Availability Analyzer.
+
+## Konfiguration
+
+Für Casablanca werden Cloud-API-Zugangsdaten und die passende Hotel-/Tenant-Konfiguration benötigt.

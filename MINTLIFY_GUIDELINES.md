@@ -25,8 +25,9 @@ How-to- und Checklisten-Artikel folgen derselben Struktur; die "Inhaltlichen Abs
 
 1. **Einleitung** – was die Integration leistet (Datenfluss und welche Funktionen/Agenten sie ermöglicht).
 2. **Voraussetzungen** – z. B. Kunde des Anbieters, Beauftragung, Client-ID.
-3. **Integration aktivieren** – wer initiiert, welche Credentials, wo sie eingetragen werden.
-4. **Konfiguration** – nur falls es Felder/Einstellungen gibt: die konkreten Felder.
+3. **Buchungsfunktionen** – nur bei Booking-Engine-Integrationen: eine kurze Tabelle mit Checkout, Zahlungslink, Zahlungsvarianten, Rabattcodes und benötigten Gastdaten.
+4. **Integration aktivieren** – wer initiiert, ob das Hotel die Integration selbst in der DialogShift App aktivieren kann oder Customer Success die Engine aktivieren muss, welche Credentials wo eingetragen werden.
+5. **Konfiguration** – nur falls es Felder/Einstellungen gibt: die konkreten Felder.
 
 ## Komponenten
 

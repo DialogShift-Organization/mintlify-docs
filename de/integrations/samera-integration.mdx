@@ -1,0 +1,37 @@
+---
+title: "Samera Integration"
+description: "Wie du Samera mit DialogShift nutzt, um Verfügbarkeiten abzufragen und Checkout-Links an Gäste zu senden."
+---
+
+Die Samera-Integration verbindet DialogShift mit deiner Samera-Booking-Engine. Chat AI und Phone AI können Verfügbarkeiten und Raten abrufen und einen vorbereiteten Samera-Checkout-Link an den Gast senden.
+
+## Buchungsfunktionen
+
+| Thema | Verhalten |
+|:------|:----------|
+| Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
+| Mindestaufenthalt im Dialog | Ja. Wenn Samera eine Mindestaufenthaltsdauer meldet, kommuniziert der Agent die Mindestnächte. |
+| Checkout-Workflow | Checkout via Link. DialogShift legt einen Samera-Warenkorb an und sendet den Checkout-Link. |
+| Payment-Link im Chat | Der Samera-Checkout-Link wird im Chat ausgegeben. |
+| Payment-Link im Phone | Der Samera-Checkout-Link wird per SMS/WhatsApp versendet. |
+| Stornierung unbezahlter Buchungen | Nein. |
+| Zahlungsvarianten | Zahlung und Kartengarantie laufen im Samera-Checkout. |
+| Angebots-/Quote-Funktion | DialogShift legt Angebote in einen Samera-Warenkorb; es gibt keinen separaten Angebotslink. |
+| Benötigte Gastdaten | Im Dialog keine. Bereits erfasste Kontaktdaten können optional in Samera vorbefüllt werden. |
+
+## Voraussetzungen
+
+- Dein Hotel nutzt Samera.
+- DialogShift kennt den `oneIdentifier` deiner Samera-Subdomain.
+
+## Integration aktivieren
+
+Für Samera gibt es keine Integrationsseite in der DialogShift App. Customer Success aktiviert die Engine für dein Hotel.
+
+1. Stelle Customer Success den Samera `oneIdentifier` bereit.
+2. Customer Success aktiviert Samera als Booking Engine.
+3. Gib anschließend die Zimmertypen und Raten frei, die der Agent anzeigen darf.
+
+## Konfiguration
+
+Optional können erlaubte Zimmer, erlaubte Raten und Zimmerbilder konfiguriert werden.
