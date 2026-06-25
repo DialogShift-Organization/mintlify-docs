@@ -34,9 +34,9 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 | Offer/quote function | No. |
 | Required guest data | Email, first name and last name are required. Phone number is optional. |
 
-### Go-live checklist
+## Booking agent configuration
 
-#### Step 1 — Whitelist the room categories the agent may sell
+### Step 1 — Whitelist the room categories the agent may sell
 
 **Why.** The agent only quotes rooms you enable. If the list is empty, every Space category in MEWS becomes sellable, including staff rooms, long-stay categories or event spaces.
 
@@ -44,7 +44,7 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 
 **Verify.** The list loads live from MEWS. If a category is missing, create it in MEWS and reload.
 
-#### Step 2 — Whitelist the rates the agent may sell
+### Step 2 — Whitelist the rates the agent may sell
 
 **Why.** Same as Step 1, for rates. If the list is empty, every active rate is sellable. Enable only your public rates (not corporate, group or staff rates).
 
@@ -52,7 +52,7 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 
 **Verify.** Rates load live from MEWS; private and inactive rates are shown with a label.
 
-#### Step 3 — Open availability and stay restrictions in MEWS
+### Step 3 — Open availability and stay restrictions in MEWS
 
 **Why.** The agent can only sell what MEWS reports as available. Blocked dates, min-stay rules or closed-to-arrival make the agent correctly answer "no rooms available".
 
@@ -63,7 +63,7 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 
 **Verify.** Check a few representative dates over the next 6–12 months and confirm the whitelisted categories and rates are open and bookable. The full check follows in Step 7.
 
-#### Step 4 — Add a description for every Space category in every guest language
+### Step 4 — Add a description for every Space category in every guest language
 
 **Why.** The agent reads the **Description** field of the Space category from MEWS. English-only descriptions are translated on the fly; maintaining each language yourself gives you control over the wording. Mews does not auto-translate these fields.
 
@@ -73,7 +73,7 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 
 **Verify.** Step 7.
 
-#### Step 5 — Add a description for every rate in every guest language
+### Step 5 — Add a description for every rate in every guest language
 
 **Why.** The agent uses the rate **Description** to explain what's included, the cancellation policy and any deposit. Maintaining each language gives you control over key terms.
 
@@ -83,7 +83,7 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 
 **Verify.** Step 7.
 
-#### Step 6 — Upload images for every Space category
+### Step 6 — Upload images for every Space category
 
 **Why.** The chat agent shows a room carousel. A Space category without images appears without a picture, which hurts conversion.
 
@@ -93,7 +93,7 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 
 **Verify.** Step 7.
 
-#### Step 7 — Verify everything in the DialogShift Availability Analyzer
+### Step 7 — Verify everything in the DialogShift Availability Analyzer
 
 **Why.** This is your dry run. The Availability Analyzer queries MEWS exactly like the booking agents and shows the data they will use, per language.
 
@@ -108,7 +108,7 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 
 If something is wrong: text or image issue → fix in MEWS (Steps 4–6); wrong room or rate → adjust the whitelist (Steps 1–2); no rooms on dates you expect to sell → check restrictions (Step 3). Re-run until every language is correct.
 
-#### Step 8 — Tell DialogShift you're ready
+### Step 8 — Tell DialogShift you're ready
 
 Once Step 7 is clean in every guest language, tell your DialogShift contact: "Hotel [name] is ready for the booking agents in chat and phone." The agents are then switched on.
 
@@ -120,7 +120,6 @@ Once Step 7 is clean in every guest language, tell your DialogShift contact: "Ho
 | Data flow | MEWS sends booking and guest data to DialogShift via webhooks. |
 | Updates | Webhook-based; changes are usually processed shortly after the PMS update. |
 | Activation | The MEWS connection is shared. No additional MEWS activation step is required for Journey Messaging. |
-| Limitation | Booking-agent settings for categories and rates do not control which Journey Messaging flows are triggered. |
 
 ## Configuration
 

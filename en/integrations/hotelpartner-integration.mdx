@@ -32,10 +32,18 @@ Because there is a HotelPartner integration page in the DialogShift app, the hot
 | Offer/quote function | Yes. Payment-required rates are made bookable through the HotelPartner offer function. |
 | Required guest data | First name and last name are required. Email is optional. A mobile number is needed for phone link delivery. |
 
+## Booking agent configuration
+
+**Rooms.** Rooms are configurable so the agent only offers categories that guests should request or book in the dialog. Enable only public, bookable categories and exclude internal or non-sellable categories.
+
+**Rates.** Rates are configurable because HotelPartner uses direct bookings or offer links depending on the payment status. Enable only rates whose conditions can be explained clearly in the dialog.
+
+**Company codes.** Company codes are configurable because not every code should be visible to every guest. Enable only codes that are explicitly intended for use in the dialog.
+
 ## Journey Messaging
 
 HotelPartner is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 
-Configure the allowed rooms, rates and, if needed, enabled company codes in DialogShift.
+The technical HotelPartner connection is maintained in the DialogShift app.

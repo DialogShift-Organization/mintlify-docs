@@ -33,14 +33,18 @@ Da es eine DIRS21-Integrationsseite in der DialogShift App gibt, kann das Hotel 
 | Angebots-/Quote-Funktion | Angebote werden nur für Raten/Preise genutzt. |
 | Benötigte Gastdaten | Keine im DialogShift-Checkout, da kein Checkout über DialogShift stattfindet. |
 
+## Konfiguration Buchungsagenten
+
+**Channel ID.** Die Channel ID verbindet DialogShift mit der richtigen DIRS21-Anbindung. Trage den Wert ein, den DIRS21 für dein Hotel bereitstellt, damit der Agent Verfügbarkeiten und Raten aus der korrekten Buchungsstrecke abfragt.
+
+**DIRS21 Verzeichnis.** Das Verzeichnis ist optional und nur nötig, wenn DIRS21 eine separate Kopie der Booking Engine für DialogShift auswertet. Nutze dieses Feld nur nach Vorgabe von DIRS21 oder Customer Success.
+
+**Booking Engine Version.** Die Version steuert, welche DIRS21-Schnittstelle DialogShift abfragt. Lass die Voreinstellung unverändert, sofern DIRS21 oder Customer Success nichts anderes vorgibt.
+
 ## Journey Messaging
 
 DIRS21 wird aktuell nicht als PMS-Integration für Journey Messaging unterstützt. Für automatische Journey-Flows brauchst du eine unterstützte PMS-Integration.
 
 ## Konfiguration
 
-Folgende Felder werden vom DIRS21 Support Team bereitgestellt und in der DialogShift App eingetragen:
-
-- **Channel ID** – die Verbindungskennung zu DIRS21.
-- **DIRS21 Verzeichnis** (optional) – nur nötig, wenn DIRS21 eine separat ausgewertete Kopie der Booking Engine mit gleichen Preisen und Verfügbarkeiten betreibt.
-- **Booking Engine Version** – voreingestellt; in der Regel nicht ändern (im Zweifel ONE).
+Die DIRS21-Werte werden vom DIRS21 Support Team bereitgestellt und in der DialogShift App eingetragen.

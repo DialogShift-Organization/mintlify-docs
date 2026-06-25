@@ -32,6 +32,16 @@ There is no Oracle OHIP integration page in the DialogShift app. Customer Succes
 | Offer/quote function | No. |
 | Required guest data | None in DialogShift checkout because there is no DialogShift checkout. |
 
+## Booking agent configuration
+
+**Gateway URL.** The gateway URL is configurable so DialogShift queries the correct Oracle OHIP environment. Customer Success enters the URL that belongs to your OPERA Cloud instance.
+
+**App key.** The app key identifies the enabled OHIP application. Provide Customer Success with the key that was enabled for the DialogShift connection.
+
+**OAuth credentials.** OAuth credentials are required so DialogShift can retrieve availability and rates with authorization. Use only credentials that are enabled for the interface and the correct hotel.
+
+**Hotel ID.** The hotel ID controls which property Oracle OHIP returns data for. After setup, verify in the Availability Analyzer that the correct rooms and rates appear.
+
 ## Journey Messaging
 
 | Topic | Behavior |

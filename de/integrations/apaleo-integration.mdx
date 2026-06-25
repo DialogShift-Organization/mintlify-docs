@@ -33,6 +33,14 @@ Da es eine apaleo-Integrationsseite in der DialogShift App gibt, kann das Hotel 
 | Angebots-/Quote-Funktion | Die apaleo-Angebots-API wird für Verfügbarkeit und technische Buchungsdaten genutzt; es gibt keinen separaten Angebotslink. |
 | Benötigte Gastdaten | E-Mail, Vorname und Nachname sind Pflicht. Telefonnummer ist optional. |
 
+## Konfiguration Buchungsagenten
+
+**Kanal.** Der apaleo-Kanal entscheidet, welche Verfügbarkeiten, Preise und Buchungsregeln der Agent verwendet. Wähle den Kanal, der auch für die öffentliche Buchungsstrecke gedacht ist, damit Gäste im Dialog dieselben buchbaren Angebote sehen.
+
+**Ratepläne.** Ratepläne sind konfigurierbar, damit der Agent nur Tarife anbietet, die im Chat oder Telefon sinnvoll erklärbar und buchbar sind. Gib nur öffentliche Gästeraten frei und schließe Firmen-, Gruppen- oder interne Raten aus.
+
+**Zimmerbilder.** Zimmerbilder sind konfigurierbar, weil sie im Chat-Karussell die Auswahl für den Gast verständlicher machen. Hinterlege pro buchbarer Kategorie ein klares Hauptbild im Querformat und prüfe im Availability Analyzer, ob es passend angezeigt wird.
+
 ## Journey Messaging
 
 | Thema | Verhalten |
@@ -41,8 +49,7 @@ Da es eine apaleo-Integrationsseite in der DialogShift App gibt, kann das Hotel 
 | Datenfluss | apaleo sendet Reservierungs-Updates per Webhook an DialogShift. |
 | Aktualisierung | Nahezu in Echtzeit, sobald die Property korrekt zugeordnet ist. |
 | Aktivierung | Die apaleo-Verbindung und Property-Zuordnung sind gemeinsam. Journey-Messaging-Flows und Vorlagen werden separat in DialogShift gepflegt. |
-| Einschränkung | Booking-Agent-Einstellungen wie Kanal, Ratepläne und Bilder sind separat und betreffen Journey Messaging nicht. |
 
 ## Konfiguration
 
-Lege in der DialogShift App fest, welche apaleo-Kanäle, Ratepläne und Zimmerbilder die Booking Agents verwenden. Für Journey Messaging pflegst du anschließend die Flows und Vorlagen unter **Journey Messaging**.
+Für Journey Messaging pflegst du die Flows und Vorlagen unter **Journey Messaging**.

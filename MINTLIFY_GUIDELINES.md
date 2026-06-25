@@ -27,8 +27,9 @@ How-to- und Checklisten-Artikel folgen derselben Struktur; die "Inhaltlichen Abs
 2. **Voraussetzungen** – z. B. Kunde des Anbieters, Beauftragung, Client-ID.
 3. **Integration aktivieren** – gemeinsamer Aktivierungsteil für die Vendor-Integration: wer initiiert, ob das Hotel die Integration selbst in der DialogShift App aktivieren kann oder Customer Success die Engine aktivieren muss, welche Credentials wo eingetragen werden.
 4. **Buchungsagenten** – nur bei Booking-Engine-Integrationen: kurze Tabelle mit Checkout, Zahlungslink, Zahlungsvarianten, Rabattcodes und benötigten Gastdaten. Wenn bei diesem System keine Booking Engine unterstützt wird, sage das kurz.
-5. **Journey Messaging** – bei PMS-/Journey-Messaging-Integrationen: kurze Übersicht zu Datenfluss, Aktualisierung (Webhook/Polling), Aktivierung und Einschränkungen. Wenn Journey Messaging für dieses System nicht unterstützt wird, sage das kurz.
-6. **Konfiguration** – nur falls es Felder/Einstellungen gibt: die konkreten Felder.
+5. **Konfiguration Buchungsagenten** – nur bei Booking-Engine-Integrationen: pro konfigurierbarem Element kurz erklären, warum es konfigurierbar ist und wie das Hotel es pflegen soll.
+6. **Journey Messaging** – bei PMS-/Journey-Messaging-Integrationen: kurze Übersicht zu Datenfluss, Aktualisierung (Webhook/Polling), Aktivierung und Einschränkungen. Wenn Journey Messaging für dieses System nicht unterstützt wird, sage das kurz.
+7. **Konfiguration** – nur falls es weitere Felder/Einstellungen gibt: konkrete technische Felder oder Journey-Messaging-Konfiguration, keine Wiederholung der Buchungsagenten-Konfiguration.
 
 ## Integrations-Übersichten
 

@@ -32,6 +32,12 @@ Für Casablanca gibt es keine Integrationsseite in der DialogShift App. Customer
 | Angebots-/Quote-Funktion | Booking-Offer-Daten werden für Verfügbarkeit und Raten genutzt, nicht für einen Zahlungslink. |
 | Benötigte Gastdaten | Keine im DialogShift-Checkout, da kein Checkout über DialogShift stattfindet. |
 
+## Konfiguration Buchungsagenten
+
+**Cloud-REST-Zugangsdaten.** Die Cloud-REST-Zugangsdaten sind konfigurierbar, weil die Buchungsagenten Verfügbarkeiten und Raten aus der Casablanca Cloud REST API lesen. Customer Success richtet die Zugangsdaten ein und ordnet sie dem richtigen Hotel/Tenant zu.
+
+**Hotel-/Tenant-Konfiguration.** Die Hotel-/Tenant-Zuordnung ist wichtig, damit der Agent nur Angebote des richtigen Betriebs anzeigt. Prüfe nach der Einrichtung im Availability Analyzer, ob die erwarteten Zimmer und Raten zurückkommen.
+
 ## Journey Messaging
 
 | Thema | Verhalten |
@@ -40,8 +46,7 @@ Für Casablanca gibt es keine Integrationsseite in der DialogShift App. Customer
 | Datenfluss | Casablanca pusht PMS-Änderungen per Webhook an DialogShift. |
 | Aktualisierung | Webhook-basiert; Änderungen werden nach dem PMS-Update verarbeitet. |
 | Aktivierung | Customer Success richtet die PMS-Verbindung ein. |
-| Einschränkung | Für Booking-Agent-Verfügbarkeiten können separate Cloud-REST-Zugangsdaten nötig sein. |
 
 ## Konfiguration
 
-Für Casablanca werden Cloud-API-Zugangsdaten und die passende Hotel-/Tenant-Konfiguration benötigt. Bei Booking-Agent-Nutzung werden zusätzlich die freizugebenden Zimmer und Raten gepflegt.
+Für Journey Messaging richtet Customer Success die PMS-Verbindung separat ein.

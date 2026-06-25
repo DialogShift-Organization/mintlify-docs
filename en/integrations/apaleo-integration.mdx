@@ -33,6 +33,14 @@ Because there is an apaleo integration page in the DialogShift app, the hotel ca
 | Offer/quote function | The apaleo offers API is used for availability and technical booking data; there is no separate offer link. |
 | Required guest data | Email, first name and last name are required. Phone number is optional. |
 
+## Booking agent configuration
+
+**Channel.** The apaleo channel determines which availability, prices and booking rules the agent uses. Select the channel that is meant for the public booking flow so guests see the same bookable offers in the dialog.
+
+**Rate plans.** Rate plans are configurable so the agent only offers rates that are suitable to explain and book in chat or on the phone. Enable only public guest rates and exclude corporate, group or internal rates.
+
+**Room images.** Room images are configurable because they make the chat carousel easier for guests to understand. Add a clear landscape hero image for each bookable category and verify in the Availability Analyzer that it is shown correctly.
+
 ## Journey Messaging
 
 | Topic | Behavior |
@@ -41,8 +49,7 @@ Because there is an apaleo integration page in the DialogShift app, the hotel ca
 | Data flow | apaleo sends reservation updates to DialogShift via webhooks. |
 | Updates | Near real-time once the property is mapped correctly. |
 | Activation | The apaleo connection and property mapping are shared. Journey Messaging flows and templates are configured separately in DialogShift. |
-| Limitation | Booking-agent settings such as channel, rate plans and images are separate and do not affect Journey Messaging. |
 
 ## Configuration
 
-In the DialogShift app, define which apaleo channels, rate plans and room images the booking agents use. For Journey Messaging, maintain flows and templates under **Journey Messaging**.
+For Journey Messaging, maintain flows and templates under **Journey Messaging**.

@@ -34,6 +34,12 @@ Because there is a Protel/Planet integration page in the DialogShift app, the ho
 | Offer/quote function | No. |
 | Required guest data | Email, first name and last name are required. Phone number is optional. |
 
+## Booking agent configuration
+
+**Room categories.** Room categories are configurable so the agent only books categories directly in Protel/Planet that are suitable for the dialog. Enable only public, available categories.
+
+**Rates.** Rates are configurable because Protel/Planet only supports direct pay-at-hotel bookings through DialogShift. Enable only flexible or pay-at-hotel rates and exclude prepaid or payment-required rates.
+
 ## Journey Messaging
 
 | Topic | Behavior |
@@ -42,8 +48,7 @@ Because there is a Protel/Planet integration page in the DialogShift app, the ho
 | Data flow | DialogShift reads reservations from Protel/Planet regularly. |
 | Updates | Polling, about every 15 minutes. Changes are therefore not visible immediately. |
 | Activation | Credentials can be maintained in the DialogShift app; Customer Success adds the PMS context. |
-| Limitation | Booking-agent rate settings do not automatically control Journey Messaging flows. |
 
 ## Configuration
 
-Check the enabled booking-agent rates carefully. Prepaid or payment-required rates are not suitable for direct Protel/Planet bookings. Journey Messaging flows and templates are maintained separately under **Journey Messaging**.
+Journey Messaging flows and templates are maintained separately under **Journey Messaging**.

@@ -34,9 +34,9 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 | Angebots-/Quote-Funktion | Nein. |
 | Benötigte Gastdaten | E-Mail, Vorname und Nachname sind Pflicht. Telefonnummer ist optional. |
 
-### Go-Live-Checkliste
+## Konfiguration Buchungsagenten
 
-#### Schritt 1 — Zimmerkategorien für den Agenten freigeben
+### Schritt 1 — Zimmerkategorien für den Agenten freigeben
 
 **Warum.** Der Agent verkauft nur Zimmer, die du freigegeben hast. Bleibt die Liste leer, gelten alle in MEWS angelegten Space categories als verkäuflich – auch Personalzimmer, Long-Stay-Kategorien oder Veranstaltungsflächen.
 
@@ -44,7 +44,7 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 
 **Prüfen.** Die Liste wird live aus MEWS geladen. Fehlt eine Kategorie, lege sie in MEWS an und lade die Seite neu.
 
-#### Schritt 2 — Raten für den Agenten freigeben
+### Schritt 2 — Raten für den Agenten freigeben
 
 **Warum.** Wie Schritt 1, nur für Raten. Bleibt die Liste leer, sind alle aktiven Raten freigeschaltet. Gib nur deine öffentlichen Raten frei (keine Firmen-, Gruppen- oder Personalraten).
 
@@ -52,7 +52,7 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 
 **Prüfen.** Auch die Raten werden live aus MEWS geladen; private und inaktive Raten werden gekennzeichnet angezeigt.
 
-#### Schritt 3 — Verfügbarkeiten und Aufenthaltsregeln in MEWS öffnen
+### Schritt 3 — Verfügbarkeiten und Aufenthaltsregeln in MEWS öffnen
 
 **Warum.** Der Agent kann nur verkaufen, was MEWS als verfügbar zurückmeldet. Geblockte Zeiträume, Mindestaufenthaltsregeln oder „Closed to arrival" führen korrekt zu „keine Zimmer verfügbar".
 
@@ -63,7 +63,7 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 
 **Prüfen.** Wähle einige repräsentative Termine in den nächsten 6 bis 12 Monaten und stelle sicher, dass die freigegebenen Kategorien und Raten offen und buchbar sind. Die End-to-End-Prüfung folgt in Schritt 7.
 
-#### Schritt 4 — Beschreibung für jede Space category in jeder Gastsprache hinterlegen
+### Schritt 4 — Beschreibung für jede Space category in jeder Gastsprache hinterlegen
 
 **Warum.** Der Agent liest das Feld **Description** der Space category aus MEWS. Nur englische Beschreibungen werden live übersetzt; pflegst du jede Sprache selbst, behältst du die Kontrolle über die Begriffe. Mews übersetzt diese Felder nicht automatisch.
 
@@ -73,7 +73,7 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 
 **Prüfen.** Schritt 7.
 
-#### Schritt 5 — Beschreibung für jede Rate in jeder Gastsprache hinterlegen
+### Schritt 5 — Beschreibung für jede Rate in jeder Gastsprache hinterlegen
 
 **Warum.** Der Agent erläutert über die **Description** der Rate, was enthalten ist, wie die Stornobedingungen lauten und ob eine Anzahlung fällig wird. Pflegst du jede Sprache selbst, behältst du die Kontrolle über die Begriffe.
 
@@ -83,7 +83,7 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 
 **Prüfen.** Schritt 7.
 
-#### Schritt 6 — Bilder für jede Space category hochladen
+### Schritt 6 — Bilder für jede Space category hochladen
 
 **Warum.** Der Chat-Agent zeigt ein Karussell mit Zimmerbildern. Eine Space category ohne Bilder erscheint ohne Foto, was die Conversion senkt.
 
@@ -93,7 +93,7 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 
 **Prüfen.** Schritt 7.
 
-#### Schritt 7 — Alles im DialogShift Availability Analyzer prüfen
+### Schritt 7 — Alles im DialogShift Availability Analyzer prüfen
 
 **Warum.** Dies ist dein Probelauf. Der Availability Analyzer fragt MEWS exakt so ab wie die Buchungsagenten und zeigt dir pro Sprache die Daten, mit denen sie arbeiten.
 
@@ -108,7 +108,7 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 
 Stimmt etwas nicht: Text- oder Bildproblem → in MEWS korrigieren (Schritte 4–6); falsches Zimmer oder falsche Rate → Freigabeliste anpassen (Schritte 1–2); keine Zimmer an Tagen, an denen du verkaufen willst → Restriktionen prüfen (Schritt 3). Wiederhole, bis jede Sprache korrekt ist.
 
-#### Schritt 8 — DialogShift Bescheid geben
+### Schritt 8 — DialogShift Bescheid geben
 
 Sobald Schritt 7 in jeder Gastsprache einwandfrei ist, gib deinem DialogShift-Ansprechpartner Bescheid: „Hotel [Name] ist bereit für die Buchungsagenten in Chat und Telefon." Die Agenten werden anschließend freigeschaltet.
 
@@ -120,7 +120,6 @@ Sobald Schritt 7 in jeder Gastsprache einwandfrei ist, gib deinem DialogShift-An
 | Datenfluss | MEWS sendet Buchungs- und Gästedaten per Webhook an DialogShift. |
 | Aktualisierung | Webhook-basiert; Änderungen werden meist kurz nach dem PMS-Update verarbeitet. |
 | Aktivierung | Die MEWS-Verbindung ist gemeinsam. Für Journey Messaging ist kein zusätzlicher MEWS-Aktivierungsschritt nötig. |
-| Einschränkung | Booking-Agent-Freigaben für Kategorien und Raten steuern nicht, welche Journey-Messaging-Flows ausgelöst werden. |
 
 ## Konfiguration
 

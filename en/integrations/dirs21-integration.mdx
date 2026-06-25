@@ -33,14 +33,18 @@ Because there is a DIRS21 integration page in the DialogShift app, the hotel can
 | Offer/quote function | Offers are used only for rates/prices. |
 | Required guest data | None in DialogShift checkout because there is no DialogShift checkout. |
 
+## Booking agent configuration
+
+**Channel ID.** The Channel ID connects DialogShift to the correct DIRS21 connection. Enter the value provided by DIRS21 for your hotel so the agent queries availability and rates from the correct booking flow.
+
+**DIRS21 directory.** The directory is optional and only needed if DIRS21 evaluates a separate copy of the booking engine for DialogShift. Use this field only when DIRS21 or Customer Success tells you to.
+
+**Booking Engine Version.** The version controls which DIRS21 interface DialogShift queries. Leave the default unchanged unless DIRS21 or Customer Success tells you otherwise.
+
 ## Journey Messaging
 
 DIRS21 is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 
-The following fields are provided by the DIRS21 support team and entered in the DialogShift app:
-
-- **Channel ID** – the connection identifier for DIRS21.
-- **DIRS21 directory** (optional) – only needed if DIRS21 runs a separately evaluated copy of the booking engine with the same prices and availability.
-- **Booking Engine Version** – preset; usually leave unchanged (choose ONE if in doubt).
+The DIRS21 values are provided by the DIRS21 support team and entered in the DialogShift app.

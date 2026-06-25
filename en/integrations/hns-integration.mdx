@@ -34,10 +34,18 @@ Because there is an HNS integration page in the DialogShift app, the hotel can a
 | Offer/quote function | No. |
 | Required guest data | None in the DialogShift dialog; the guest enters the data in the HNS checkout. |
 
+## Booking agent configuration
+
+**Room categories.** Room categories are configurable so the agent only offers categories that should be sold in chat and on the phone. Do not enable internal, non-public or hard-to-explain categories.
+
+**Rates.** Rates are configurable so the agent only sends guests to suitable public offers in the HNS checkout. Enable only rates whose conditions can be explained clearly in the dialog and completed correctly on the HNS page.
+
+**Images.** Images are configurable because they help guests choose a category in chat. Add a suitable image for every enabled room category and verify in the Availability Analyzer that it appears correctly.
+
 ## Journey Messaging
 
 HNS is not currently supported as a PMS integration for Journey Messaging. To run automated journey flows, you need a supported PMS integration.
 
 ## Configuration
 
-On the HNS integration page in the DialogShift app you define which room categories and rates the booking agents may sell, and add the corresponding images.
+The technical HNS connection is maintained on the HNS integration page in the DialogShift app.
