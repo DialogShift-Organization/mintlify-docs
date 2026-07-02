@@ -27,12 +27,26 @@ Die MEWS-Verbindung wird über den MEWS Marketplace gestartet. Da es zusätzlich
 | Company-Code / Coupons / Rabattcodes | Nicht unterstützt. Gib keine Firmen-, Gruppen- oder Personalraten für den Agenten frei. |
 | Mindestaufenthalt im Dialog | Ja. Wenn MEWS nur Mindestaufenthalte meldet, kommuniziert der Agent die Mindestnächte. |
 | Checkout-Workflow | Direkte Einbuchung in MEWS. Je nach Ratenkonfiguration erstellt DialogShift danach eine MEWS-Zahlungsanforderung. |
-| Payment-Link im Chat | DialogShift gibt keinen Zahlungslink aus. MEWS erzeugt und verschickt die Zahlungs-E-Mail selbst. |
-| Payment-Link im Phone | Kein SMS-/WhatsApp-Zahlungslink von DialogShift; MEWS sendet die Zahlungs-E-Mail. |
-| Stornierung unbezahlter Buchungen | Nein. |
+| Payment-Link im Chat | Je nach Einstellung gibt DialogShift den MEWS-Zahlungslink im Chat aus oder MEWS verschickt die Zahlungs-E-Mail selbst. |
+| Payment-Link im Phone | Je nach Einstellung sendet DialogShift den MEWS-Zahlungslink per SMS/WhatsApp oder MEWS verschickt die Zahlungs-E-Mail selbst. |
+| Stornierung unbezahlter Buchungen | Ja. Unbezahlte Zahlungslink-Buchungen können nach Ablauf der konfigurierten Zahlungsfrist automatisch storniert werden. |
 | Zahlungsvarianten | Zahlung beim Check-in, Vorauszahlung (`Payment`) und Kreditkarten-Garantie (`Preauthorization`). |
 | Angebots-/Quote-Funktion | Nein. |
-| Benötigte Gastdaten | E-Mail, Vorname und Nachname sind Pflicht. Telefonnummer ist optional. |
+| Benötigte Gastdaten | Vorname, Nachname und eine erreichbare Kontaktangabe. MEWS akzeptiert Buchungen auch mit Mobilnummer statt E-Mail-Adresse. |
+
+## Zahlungslinks und Gästekontakt
+
+Für Raten mit Vorauszahlung oder Kreditkarten-Garantie erstellt DialogShift nach der Buchung eine MEWS-Zahlungsanforderung. Auf der MEWS-Integrationsseite steuerst du:
+
+- **Zahlungsfrist (Stunden):** wie lange der Gast Zeit hat, die Zahlung oder Kartenprüfung abzuschließen.
+- **Zahlungslink-Zustellung:** ob DialogShift den MEWS-Zahlungslink an den Gast weitergibt oder MEWS die Zahlungs-E-Mail selbst verschickt.
+- **MEWS-Buchungsbestätigung unterdrücken:** ob MEWS keine eigene Buchungsbestätigungs-E-Mail senden soll.
+- **Phone AI Gästekontakt:** ob die Phone AI E-Mail-Adresse oder Mobilnummer abfragt.
+- **Sicherstellen, dass jede Buchung eine E-Mail-Adresse hat:** wenn die Phone AI keine E-Mail-Adresse abfragt, kann DialogShift zusätzlich eine Relay-E-Mail-Adresse für die Buchung erstellen.
+
+Direkt bestätigte Buchungen ohne Zahlungslink erhalten ihre Buchungsbestätigung von MEWS per E-Mail, sofern diese nicht unterdrückt wurde.
+
+Wenn die Phone AI nur eine Mobilnummer abfragt und keine Relay-E-Mail-Adresse erstellt wird, muss DialogShift den Zahlungslink zustellen. MEWS kann in diesem Fall keine Zahlungs-E-Mail an den Gast senden.
 
 ## Konfiguration Buchungsagenten
 

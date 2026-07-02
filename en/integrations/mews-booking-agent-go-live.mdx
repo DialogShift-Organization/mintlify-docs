@@ -27,12 +27,26 @@ The MEWS connection is started through the MEWS Marketplace. Because there is al
 | Company code / coupons / discount codes | Not supported. Do not enable corporate, group or staff rates for the agent. |
 | Minimum stay in the dialog | Yes. If MEWS only reports minimum-stay options, the agent communicates the minimum nights. |
 | Checkout workflow | Direct booking in MEWS. Depending on the rate configuration, DialogShift creates a MEWS payment request afterwards. |
-| Payment link in chat | DialogShift does not display a payment link. MEWS creates and sends the payment email itself. |
-| Payment link by phone | No SMS/WhatsApp payment link from DialogShift; MEWS sends the payment email. |
-| Cancellation of unpaid bookings | No. |
+| Payment link in chat | Depending on the setting, DialogShift shows the MEWS payment link in chat or MEWS sends the payment email itself. |
+| Payment link by phone | Depending on the setting, DialogShift sends the MEWS payment link by SMS/WhatsApp or MEWS sends the payment email itself. |
+| Cancellation of unpaid bookings | Yes. Unpaid payment-link bookings can be cancelled automatically after the configured payment deadline. |
 | Payment variants | Pay at check-in, prepayment (`Payment`) and credit-card guarantee (`Preauthorization`). |
 | Offer/quote function | No. |
-| Required guest data | Email, first name and last name are required. Phone number is optional. |
+| Required guest data | First name, last name and a reachable contact detail. MEWS also accepts bookings with a mobile number instead of an email address. |
+
+## Payment links and guest contact
+
+For rates with prepayment or credit-card guarantee, DialogShift creates a MEWS payment request after the booking. On the MEWS integration page, you control:
+
+- **Payment deadline (hours):** how long the guest has to complete payment or card verification.
+- **Payment link delivery:** whether DialogShift forwards the MEWS payment link to the guest or MEWS sends the payment email itself.
+- **Suppress MEWS booking confirmation:** whether MEWS should not send its own booking confirmation email.
+- **Phone AI guest contact:** whether Phone AI asks for the email address or mobile phone number.
+- **Ensure every booking has an email address:** if Phone AI does not ask for an email address, DialogShift can additionally create a relay email address for the booking.
+
+Directly confirmed bookings without a payment link receive their booking confirmation from MEWS by email, unless that email is suppressed.
+
+If Phone AI only asks for a mobile number and no relay email address is created, DialogShift must deliver the payment link. In that case, MEWS cannot send a payment email to the guest.
 
 ## Booking agent configuration
 
