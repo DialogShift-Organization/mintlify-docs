@@ -1,0 +1,63 @@
+---
+title: "Booking Agent"
+description: "How the Booking Agent uses booking limits for occupancy, child ages and multi-room bookings."
+---
+
+The Booking Agent guides the guest through the booking process: travel dates, occupancy, room selection, rate selection and checkout. Depending on the connected booking engine or PMS, the booking is completed directly or confirmed through a checkout link.
+
+## How it works
+
+The Booking Agent works room by room:
+
+1. The guest provides arrival and departure dates.
+2. The agent asks for the occupancy of the first room.
+3. The guest selects a room and rate.
+4. The agent asks whether another room should be added.
+5. At the end, the agent guides the guest to checkout.
+
+All rooms in one booking share the same travel dates.
+
+## Booking limits
+
+Limits are configured in the DialogShift app under **Settings → Booking mask**. An empty field means: no limit. The exceptions are **Max. child age** and **Max. rooms (group threshold)**, which have fixed default values.
+
+| Setting | Meaning | Behavior when empty |
+|---|---|---|
+| Max. adults | Maximum number of adults per room | No limit |
+| Max. children | Maximum number of children per room. `0` means children cannot be booked | No limit |
+| Max. total guests | Maximum total number of adults and children per room | No limit |
+| Min. child age | Minimum age from which a child can be booked | No minimum age |
+| Max. child age | Boundary between child and adult. Older guests count as adults | Default: 17 |
+| Max. rooms (group threshold) | Requests above this room count are treated as group bookings | Default: 3 |
+| Max. rooms (hard cap) | Absolute maximum number of rooms the agent may accept | No hard cap |
+
+## Occupancy per room
+
+Occupancy limits apply per room.
+
+If the guest provides an invalid occupancy, the Booking Agent does not accept it and asks for a valid value.
+
+Examples:
+
+- If a maximum of 2 adults per room is allowed, the agent does not accept 3 adults in one room.
+- If **Max. children** is set to `0`, children cannot be booked.
+- If **Max. total guests** is set to 4, 2 adults and 2 children are possible, but 2 adults and 3 children are not.
+- If **Max. child age** is set to 11, a 12-year-old guest counts as an adult.
+
+## Group threshold and hard cap
+
+**Max. rooms (group threshold)** and **Max. rooms (hard cap)** have different purposes.
+
+**Max. rooms (group threshold)** defines when a request becomes a group booking. The guest is not simply rejected. The request is handed over to the hotel team so it can be handled manually.
+
+**Max. rooms (hard cap)** defines how many rooms the agent may accept at most. When this limit is reached, no additional room can be added.
+
+| Example | Behavior |
+|---|---|
+| Only group threshold `3` is set | Up to 3 rooms, the regular Booking Agent flow continues. If the guest wants a 4th room, the request is handed over as a group booking. |
+| Group threshold `3`, hard cap `6` | Up to 3 rooms, the regular flow continues. Rooms 4 to 6 are treated as a group request. From room 7 onward, no additional room is accepted. |
+| Group threshold `3`, hard cap `3` | Up to 3 rooms, the regular flow continues. After that, no additional room can be added. |
+
+## Additional booking engine restrictions
+
+DialogShift limits control what the agent accepts in the conversation. The connected booking engine or PMS may still apply its own rules, such as availability, minimum stay, room capacity or payment conditions.

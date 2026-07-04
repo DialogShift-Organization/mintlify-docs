@@ -1,0 +1,47 @@
+---
+title: "Dialog Quickbooker"
+description: "So nutzt der Dialog Quickbooker Reisedaten, Belegung und Buchungslimits für Verfügbarkeitsanfragen."
+---
+
+Der Dialog Quickbooker fragt Reisedaten und die Belegung für ein Zimmer ab. Danach zeigt er verfügbare Zimmertypen und Preise an und führt den Gast über einen Link in die Booking Engine.
+
+## Funktionsweise
+
+Der Dialog Quickbooker sammelt:
+
+- Anreisedatum
+- Abreisedatum
+- Anzahl der Erwachsenen für ein Zimmer
+- Anzahl der Kinder für ein Zimmer
+- Alter der Kinder
+
+Der Gast schließt die Buchung nicht im Dialog Quickbooker ab. Der Agent bereitet die Anfrage vor und öffnet anschließend die Booking Engine mit den passenden Daten.
+
+## Buchungslimits
+
+Die Limits werden in der DialogShift App unter **Einstellungen → Buchungsmaske** gepflegt. Ein leeres Feld bedeutet: kein Limit.
+
+| Einstellung | Bedeutung | Verhalten, wenn leer |
+|---|---|---|
+| Max. Erwachsene | Maximale Anzahl Erwachsener pro Zimmer | Kein Limit |
+| Max. Kinder | Maximale Anzahl Kinder pro Zimmer. `0` bedeutet: Kinder können nicht gebucht werden | Kein Limit |
+| Max. Gäste Gesamt | Maximale Gesamtanzahl aus Erwachsenen und Kindern pro Zimmer | Kein Limit |
+| Min. Alter Kinder | Mindestalter, ab dem ein Kind buchbar ist | Kein Mindestalter |
+| Max. Alter Kinder | Grenze zwischen Kind und Erwachsenem. Ältere Gäste zählen als Erwachsene | Standard: 17 |
+
+## Was passiert bei ungültigen Angaben?
+
+Wenn eine Angabe ein Limit überschreitet, fragt der Dialog Quickbooker die Belegung erneut ab. Der Agent berücksichtigt dabei die konfigurierte Grenze.
+
+Beispiele:
+
+- Sind maximal 2 Erwachsene erlaubt und der Gast nennt 3 Erwachsene, fragt der Agent nach einer gültigen Belegung.
+- Sind Kinder deaktiviert (`Max. Kinder = 0`) und der Gast nennt Kinder, fragt der Agent nach einer Belegung ohne Kinder.
+- Überschreitet die Summe aus Erwachsenen und Kindern das Limit **Max. Gäste Gesamt**, fragt der Agent die gesamte Belegung erneut ab.
+- Ist ein angegebenes Kind älter als **Max. Alter Kinder**, zählt diese Person als Erwachsener. Der Agent fragt die Belegung erneut ab, damit Erwachsene und Kinder korrekt gezählt werden.
+
+## Keine Zimmeranzahl-Limits
+
+Der Dialog Quickbooker konfiguriert nur das erste Zimmer. Die Einstellungen **Max. Zimmer (Gruppengrenze)** und **Max. Zimmer (harte Obergrenze)** werden hier nicht angewendet.
+
+Wenn der Gast mehrere Zimmer buchen möchte, fügt er diese in der Booking Engine hinzu.

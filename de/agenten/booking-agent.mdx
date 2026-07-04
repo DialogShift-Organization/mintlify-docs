@@ -1,0 +1,63 @@
+---
+title: "Booking Agent"
+description: "So nutzt der Booking Agent Buchungslimits für Belegung, Kinderalter und Mehrzimmerbuchungen."
+---
+
+Der Booking Agent führt den Gast durch den Buchungsprozess: Reisedaten, Belegung, Zimmerauswahl, Rate und Checkout. Je nach angebundener Booking Engine oder PMS wird die Buchung direkt abgeschlossen oder über einen Checkout-Link bestätigt.
+
+## Funktionsweise
+
+Der Booking Agent arbeitet Zimmer für Zimmer:
+
+1. Der Gast nennt Anreise und Abreise.
+2. Der Agent fragt die Belegung für das erste Zimmer ab.
+3. Der Gast wählt Zimmer und Rate.
+4. Der Agent fragt, ob ein weiteres Zimmer hinzugefügt werden soll.
+5. Am Ende führt der Agent zum Checkout.
+
+Alle Zimmer einer Buchung haben denselben Reisezeitraum.
+
+## Buchungslimits
+
+Die Limits werden in der DialogShift App unter **Einstellungen → Buchungsmaske** gepflegt. Ein leeres Feld bedeutet: kein Limit. Ausnahmen sind **Max. Alter Kinder** und **Max. Zimmer (Gruppengrenze)**, die feste Standardwerte haben.
+
+| Einstellung | Bedeutung | Verhalten, wenn leer |
+|---|---|---|
+| Max. Erwachsene | Maximale Anzahl Erwachsener pro Zimmer | Kein Limit |
+| Max. Kinder | Maximale Anzahl Kinder pro Zimmer. `0` bedeutet: Kinder können nicht gebucht werden | Kein Limit |
+| Max. Gäste Gesamt | Maximale Gesamtanzahl aus Erwachsenen und Kindern pro Zimmer | Kein Limit |
+| Min. Alter Kinder | Mindestalter, ab dem ein Kind buchbar ist | Kein Mindestalter |
+| Max. Alter Kinder | Grenze zwischen Kind und Erwachsenem. Ältere Gäste zählen als Erwachsene | Standard: 17 |
+| Max. Zimmer (Gruppengrenze) | Ab mehr als dieser Zimmeranzahl wird die Anfrage als Gruppenbuchung behandelt | Standard: 3 |
+| Max. Zimmer (harte Obergrenze) | Absolute Obergrenze für Zimmer, die der Agent annehmen darf | Keine harte Obergrenze |
+
+## Belegung pro Zimmer
+
+Die Belegungslimits gelten pro Zimmer.
+
+Wenn der Gast eine ungültige Belegung nennt, akzeptiert der Booking Agent diese nicht und fragt nach einer gültigen Angabe.
+
+Beispiele:
+
+- Sind maximal 2 Erwachsene pro Zimmer erlaubt, akzeptiert der Agent keine 3 Erwachsenen in einem Zimmer.
+- Ist **Max. Kinder** auf `0` gesetzt, können keine Kinder gebucht werden.
+- Ist **Max. Gäste Gesamt** auf 4 gesetzt, sind 2 Erwachsene und 2 Kinder möglich, 2 Erwachsene und 3 Kinder aber nicht.
+- Ist **Max. Alter Kinder** auf 11 gesetzt, zählt ein 12-jähriger Gast als Erwachsener.
+
+## Gruppengrenze und harte Obergrenze
+
+**Max. Zimmer (Gruppengrenze)** und **Max. Zimmer (harte Obergrenze)** haben unterschiedliche Aufgaben.
+
+**Max. Zimmer (Gruppengrenze)** bestimmt, ab wann eine Anfrage als Gruppenbuchung gilt. Der Gast wird dann nicht einfach abgewiesen. Die Anfrage wird an das Hotelteam übergeben, damit sie manuell bearbeitet werden kann.
+
+**Max. Zimmer (harte Obergrenze)** bestimmt, wie viele Zimmer der Agent maximal annehmen darf. Wenn diese Grenze erreicht ist, kann kein weiteres Zimmer hinzugefügt werden.
+
+| Beispiel | Verhalten |
+|---|---|
+| Nur Gruppengrenze `3` gesetzt | Bis 3 Zimmer läuft der normale Booking-Agent-Prozess. Wenn der Gast ein 4. Zimmer möchte, wird die Anfrage als Gruppenbuchung übergeben. |
+| Gruppengrenze `3`, harte Obergrenze `6` | Bis 3 Zimmer normaler Prozess. Zimmer 4 bis 6 werden als Gruppenanfrage behandelt. Ab Zimmer 7 wird kein weiteres Zimmer angenommen. |
+| Gruppengrenze `3`, harte Obergrenze `3` | Bis 3 Zimmer normaler Prozess. Danach kann kein weiteres Zimmer hinzugefügt werden. |
+
+## Weitere Einschränkungen der Booking Engine
+
+Die DialogShift-Limits steuern, was der Agent im Gespräch akzeptiert. Die angebundene Booking Engine oder das PMS kann zusätzlich eigene Regeln haben, zum Beispiel Verfügbarkeit, Mindestaufenthalte, Zimmerkapazitäten oder Zahlungsbedingungen.

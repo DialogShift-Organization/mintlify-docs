@@ -52,6 +52,14 @@
             ]
           },
           {
+            "group": "Agenten",
+            "icon": "robot",
+            "pages": [
+              "de/agenten/dialog-quickbooker",
+              "de/agenten/booking-agent"
+            ]
+          },
+          {
             "group": "DialogShift Services",
             "icon": "sparkles",
             "pages": [
@@ -235,6 +243,14 @@
               "en/basics/password-reset",
               "en/basics/invite-new-user",
               "en/basics/notification-options"
+            ]
+          },
+          {
+            "group": "Agents",
+            "icon": "robot",
+            "pages": [
+              "en/agents/dialog-quickbooker",
+              "en/agents/booking-agent"
             ]
           },
           {

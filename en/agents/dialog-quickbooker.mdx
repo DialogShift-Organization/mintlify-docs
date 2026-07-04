@@ -1,0 +1,47 @@
+---
+title: "Dialog Quickbooker"
+description: "How the Dialog Quickbooker uses travel dates, occupancy and booking limits for availability requests."
+---
+
+The Dialog Quickbooker asks for travel dates and the occupancy for one room. It then shows available room types and prices and sends the guest to the booking engine with a link.
+
+## How it works
+
+The Dialog Quickbooker collects:
+
+- Arrival date
+- Departure date
+- Number of adults for one room
+- Number of children for one room
+- Children's ages
+
+The guest does not complete the booking inside the Dialog Quickbooker. The agent prepares the request and then opens the booking engine with the matching data.
+
+## Booking limits
+
+Limits are configured in the DialogShift app under **Settings → Booking mask**. An empty field means: no limit.
+
+| Setting | Meaning | Behavior when empty |
+|---|---|---|
+| Max. adults | Maximum number of adults per room | No limit |
+| Max. children | Maximum number of children per room. `0` means children cannot be booked | No limit |
+| Max. total guests | Maximum total number of adults and children per room | No limit |
+| Min. child age | Minimum age from which a child can be booked | No minimum age |
+| Max. child age | Boundary between child and adult. Older guests count as adults | Default: 17 |
+
+## What happens with invalid details?
+
+If a detail exceeds a limit, the Dialog Quickbooker asks for the occupancy again. The agent takes the configured limit into account.
+
+Examples:
+
+- If a maximum of 2 adults is allowed and the guest says 3 adults, the agent asks for a valid occupancy.
+- If children are disabled (`Max. children = 0`) and the guest mentions children, the agent asks for an occupancy without children.
+- If adults and children together exceed **Max. total guests**, the agent asks for the full occupancy again.
+- If a child is older than **Max. child age**, that guest counts as an adult. The agent asks for the occupancy again so adults and children are counted correctly.
+
+## No room-count limits
+
+The Dialog Quickbooker configures only the first room. The settings **Max. rooms (group threshold)** and **Max. rooms (hard cap)** are not applied here.
+
+If the guest wants to book multiple rooms, they add them in the booking engine.
