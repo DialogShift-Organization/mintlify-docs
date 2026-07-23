@@ -25,7 +25,7 @@ Die Phone AI wird als SIP-Endgerät in deine bestehende Telefonanlage integriert
 ## Was wir von dir benötigen
 
 <Note>
-  deine Telefonanlage muss SIP-fähig sein und Anmeldungen über das Internet erlauben. SIP-Zugänge, die nur über das Netz des Telefonanbieters erreichbar sind, können nicht verwendet werden.
+  Deine Telefonanlage muss SIP-fähig sein und Anmeldungen über das Internet erlauben. SIP-Zugänge, die nur über das Netz des Telefonanbieters erreichbar sind, können nicht verwendet werden.
 </Note>
 
 <Steps>
@@ -116,4 +116,20 @@ SIP-Verbindungen sowie RTP-Audioverbindungen sind standardmäßig nicht verschl�
   </Card>
 </CardGroup>
 
-Einrichtungsdauer: 1-2 Werktage nach Erhalt aller Informationen.
+Einrichtungsdauer: 1–2 Werktage nach Erhalt aller Informationen.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Warum registriert sich DialogShift an der Telefonanlage und nicht umgekehrt?">
+    Bei der DialogShift Phone AI handelt es sich um ein Telefon, nicht um eine Telefonanlage, und steht auf einer Ebene mit einem klassischen Hardware-Telefon. Die Phone AI übernimmt keine Telefonanlagen-Funktionen. Hardware-Telefone registrieren sich immer an der jeweiligen Telefonanlage. Um die Kompatibilität mit verschiedenen Telefonanlagen zu maximieren simuliert die Phone AI ein Hardware-Telefon.
+  </Accordion>
+
+  <Accordion title="Warum wird bei einer Weiterleitung an einen Mitarbeiter ein weiterer Anruf gestartet, statt den Anruf per REFER weiterzugeben?">
+    Die DialogShift Phone AI bietet fortschrittliche Funktionen wie die Rücknahme von weitergeleiteten Anrufen bei Nichtantwort und die Übergabe einer Anrufzusammenfassung an den Mitarbeiter (Whispering-Funktion), welche dynamisch in der DialogShift App aktiviert werden können. Diese Funktionalitäten können nicht per REFER umgesetzt werden. Um diese Funktionen zu ermöglichen und die Flexibilität in der Konfiguration zu gewährleisten nutzt die Phone AI immer einen neuen ausgehenden Anruf. Der SIP-Account der DialogShift Phone AI muss daher in der Lage sein und die notwendigen Rechte besitzen, um neue Anrufe an alle eingestellten Weiterleitungsziele zu initiieren.
+  </Accordion>
+
+  <Accordion title="Kann die DialogShift Phone AI auch über eine VPN-Verbindung registriert werden?">
+    Nein, dies ist nicht möglich. Die DialogShift Phone AI wurde im Hinblick auf moderne Cloud-Telefonanlagen entwickelt, welche eine klassische SIP-Anmeldung über das Internet verwenden. Mit einem starken Passwort sowie einer Firewall-Limitierung auf die DialogShift IP-Adressen ist ein ähnliches Sicherheitsniveau erreichbar wie mit einer VPN-Verbindung. Aufgrund des deutlich größeren Setup-Aufwandes sowie der großen Vielfalt an verfügbarer VPN-Softwarelösungen bieten wir daher keine Registrierung über ein VPN an.
+  </Accordion>
+</AccordionGroup>

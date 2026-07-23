@@ -113,4 +113,20 @@ SIP connections as well as RTP audio connections are not encrypted by default. W
   </Card>
 </CardGroup>
 
-Setup duration: 1-2 business days after receiving all information.
+Setup duration: 1–2 business days after receiving all information.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why does DialogShift register with the phone system and not the other way around?">
+    The DialogShift Phone AI is a phone, not a phone system, and operates on the same level as a classic hardware phone. The Phone AI does not take on any phone system functions. Hardware phones always register with their respective phone system. To maximize compatibility with different phone systems, the Phone AI simulates a hardware phone.
+  </Accordion>
+
+  <Accordion title="Why is a new call started when transferring to an employee instead of handing off the call via REFER?">
+    The DialogShift Phone AI offers advanced features such as reclaiming transferred calls when unanswered and handing over a call summary to the employee (whispering feature), which can be enabled dynamically in the DialogShift app. These features cannot be implemented via REFER. To enable them and ensure configuration flexibility, the Phone AI always initiates a new outgoing call. The SIP account of the DialogShift Phone AI must therefore be able to and have the necessary permissions to initiate new calls to all configured transfer destinations.
+  </Accordion>
+
+  <Accordion title="Can the DialogShift Phone AI also be registered over a VPN connection?">
+    No, this is not possible. The DialogShift Phone AI was developed with modern cloud phone systems in mind, which use a classic SIP registration over the internet. With a strong password and a firewall restriction to the DialogShift IP addresses, a security level similar to a VPN connection can be achieved. Due to the significantly greater setup effort and the wide variety of available VPN software solutions, we therefore do not offer registration over a VPN.
+  </Accordion>
+</AccordionGroup>
