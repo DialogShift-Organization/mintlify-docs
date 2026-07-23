@@ -86,6 +86,22 @@ The Phone AI does not perform a technical transfer (Refer). Instead, it creates 
 
 It must be ensured that the Phone AI's extensions are allowed to initiate calls to the internal target number. If the phone system rejects these calls, the Phone AI will end the customer's call.
 
+## Security Considerations
+
+<Info>
+  With a cloud phone system, the provider already takes care of the secure network configuration.
+</Info>
+
+The DialogShift Phone AI can be securely integrated into the phone system via a SIP connection. For this, the SIP endpoint must be reachable from the internet. For secure operation, we recommend:
+- Using a long and strong password (24-32 characters, uppercase, lowercase, and numbers)
+- Limiting the port forwarding in the firewall / router to the IPs of the DialogShift Phone AI. Please request the IPs from DialogShift Support. This prevents access from any system other than DialogShift.
+
+Since we cannot know the network setup at the hotel, we can only provide general recommendations. The implementation decision and responsibility lies with the hotel or the person responsible there.
+
+### Encrypted Connection
+
+SIP connections as well as RTP audio connections are not encrypted by default. We recommend using an encrypted connection, provided the phone system supports it. DialogShift can establish connections via TLSv1.3 (recommended) and TLSv1.2 (legacy). Older TLS versions are no longer considered secure and are therefore not supported by DialogShift. When providing the SIP access data, please indicate whether we should establish an encrypted connection (TLSv1.3 or TLSv1.2) or an unencrypted connection (UDP or TCP).
+
 ## Next Steps
 
 <CardGroup cols={2}>

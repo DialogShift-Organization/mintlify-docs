@@ -89,6 +89,22 @@ Die Phone AI führt keine technische Weiterleitung (Refer) durch, sondern erstel
 
 Es muss sicher gestellt sein, dass die Nebenstellen der Phone AI Anrufe an die interne Zielnummer initiieren dürfen. Sollte die Telefonanlage diese Anrufe ablehnen, wird die Phone AI den Anruf des Kunden beenden.
 
+## Sicherheitsaspekte
+
+<Info>
+  Bei einer Cloud-Telefonanlage kümmert sich der Anbieter bereits um die sichere Netzwerkkonfiguration.
+</Info>
+
+Die DialogShift Phone AI kann sicher über eine SIP-Verbindung in die Telefonanlage eingebunden werden. Der SIP-Endpunkt muss dazu aus dem Internet erreichbar sein. Für den sicheren Betrieb empfehlen wir:
+- Die Verwendung eines langen und starken Passwortes (24-32 Zeichen, Groß-, Kleinbuchstaben und Zahlen)
+- Die Limitierung der Portfreigabe in Firewall / Router auf die IPs der DialogShift Phone AI. Die IPs bitte beim DialogShift Support anfragen. So ist der Zugriff von einem anderen System als DialogShift ausgeschlossen.
+
+Da wir den Netzwerkaufbau im Hotel nicht kennen können wir nur allgemeine Empfehlungen geben. Die Implementierungsentscheidung und Verantwortung obliegt dem Hotel bzw. der dort zuständigen Person.
+
+### Verschlüsselte Verbindung
+
+SIP-Verbindungen sowie RTP-Audioverbindungen sind standardmäßig nicht verschlüsselt. Wir empfehlen die Verwendung einer verschlüsselten Verbindung, sofern die Telefonanlage dies unterstützt. DialogShift kann Verbindungen über TLSv1.3 (empfohlen) und TLSv1.2 (legacy) aufbauen. Ältere TLS-Versionen werden nicht mehr als sicher angesehen und daher von DialogShift nicht unterstützt. Bitte gib bei der Übermittlung der SIP-Zugangsdaten an, ob wir eine verschlüsselte Verbindung (TLSv1.3 oder TLSv1.2) oder eine unverschlüsselte Verbindung (UDP oder TCP) aufbauen sollen.
+
 ## Nächste Schritte
 
 <CardGroup cols={2}>
