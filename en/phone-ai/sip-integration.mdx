@@ -3,7 +3,23 @@ title: "Phone AI SIP Integration"
 description: "Technical requirements and prerequisites for setting up Phone AI as a SIP phone"
 ---
 
-The Phone AI is integrated into your existing phone system as a SIP endpoint.
+## Introduction
+
+Voice AI systems like the DialogShift Phone AI introduce a new way of accessing the phone system that has not previously been part of a hardware phone system setup: registering a phone from the internet. Until now, operating a hardware phone system only required an outgoing connection to the telephone provider, while all phones — whether hardware phones or softphones — were located within the hotel network.
+
+To connect the Phone AI to a hardware phone system within the hotel network, it is necessary to allow access to the phone system from the internet. This requires port forwarding in the firewall or router. Recommendations for securing this can be found in the "Security" section. For a successful SIP and voice connection, several ports or port ranges need to be opened:
+- One port for the SIP connection
+- A port range for the audio connections
+
+One audio port is required per simultaneous call, so we recommend allowing for a larger range for the audio connections.
+
+Beyond that, the correct configuration of the phone system is crucial. When establishing a call, both devices — i.e. the phone or Phone AI and the phone system — exchange the IP addresses on which they expect to receive audio data. The phone system must provide the hotel's public IP address here, because the Phone AI on the internet is not able to reach the phone system via its internal IP address. To do this, the phone system must know its public IP address, for example through a fixed configuration or a STUN server.
+
+Some routers / firewalls can dynamically adjust SIP communication to correct incorrect IP addresses or ports; this usually does not cause any problems. However, there are also routers / firewalls that send the data over different ports but do not correct the packets. In this case, a setting on the DialogShift side is required to use the actual ports instead of the communicated ports. For the IP address this is not possible; the IP address of the phone system must always be communicated correctly.
+
+<Info>
+  Anyone already using a modern cloud phone system connects all phones over the internet. Here there is no longer any difference between a local hardware phone and the Phone AI.
+</Info>
 
 <CardGroup cols={2}>
   <Card title="Seamless Integration" icon="plug">

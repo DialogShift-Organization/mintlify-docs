@@ -3,7 +3,23 @@ title: "Phone AI SIP-Integration"
 description: "Technische Voraussetzungen und Anforderungen für die Einrichtung der Phone AI als SIP-Telefon"
 ---
 
-Die Phone AI wird als SIP-Endgerät in deine bestehende Telefonanlage integriert.
+## Einleitung
+
+Voice AI Systeme wie die DialogShift Phone AI führen eine neue Zugriffsmethode auf die Telefonanlage ein, welche bislang nicht im Setup einer Hardware-Telefonanlage vorgekommen ist: Die Anmeldung eines Telefons aus dem Internet. Bislang war für den Betrieb einer Hardware-Telefonanlage lediglich eine ausgehende Verbindung zum Telefonanbieter notwendig, während sich alle Telefone, egal ob Hardware-Telefone oder Softphones, innerhalb des Hotel-Netzwerkes befunden haben.
+
+Um die Phone AI mit einer Hardware-Telefonanlage innerhalb des Hotel-Netzwerkes zu verbinden ist es notwendig, den Zugriff aus dem Internet auf die Telefonanlage zu erlauben. Dazu sind Portfreigaben in Firewall bzw. Router notwendig. Empfehlungen zur Absicherung befinden sich im Abschnitt "Sicherheit". Für eine erfolgreiche SIP- und Sprachverbindung ist die Freigabe mehrerer Ports bzw. Port-Spannen notwendig:
+- Ein Port für die SIP-Verbindung
+- Eine Port-Spanne für die Audioverbindungen
+
+Pro gleichzeitigem Gespräch ist ein Audio-Port notwendig, daher empfehlen wir eine größere Spanne für die Audioverbindungen vorzusehen.
+
+Darüber hinaus ist die korrekte Konfiguration der Telefonanlage entscheidend. Beim Gesprächsaufbau tauschen beide Geräte, also Telefon bzw. Phone AI und Telefonanlage, ihre IP-Adressen aus, auf der sie die Audiodaten erwarten. Die Telefonanlage muss hier die öffentliche IP-Adresse des Hotels angeben, da die Phone AI aus dem Internet nicht in der Lage ist, die Telefonanlage über ihre interne IP-Adresse zu erreichen. Dazu muss die Telefonanalge die öffentliche IP-Adresse kennen, beispielsweise per fester Konfiguration oder STUN-Server.
+
+Einige Router / Firewalls können die SIP-Kommunikation dynamisch anpassen, um falsche IP-Adressen oder Ports zu korrigieren, dies führt in der Regel nicht zu Problemen. Es gibt jedoch auch Router / Firewalls, welche die Daten über abweichende Ports versenden, jedoch nicht die Pakete korrigieren. In diesem Fall ist eine Einstellung seitens DialogShift notwendig um die tatsächlichen Ports statt der kommunizierten Ports zu verwenden. Bei der IP-Adresse ist dies nicht möglich, die IP-Adresse der Telefonanlage muss immer korrekt kommuniziert werden.
+
+<Info>
+  Wer bereits eine moderne Cloud-Telefonanlage einsetzt verbindet alle Telefone über das Internet. Hier besteht kein Unterschied mehr zwischen einem lokalen Hardware-Telefon und der Phone AI.
+</Info>
 
 <CardGroup cols={2}>
   <Card icon="plug" title="Nahtlose Integration">
