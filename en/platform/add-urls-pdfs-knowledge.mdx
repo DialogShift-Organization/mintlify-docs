@@ -39,7 +39,7 @@ You have activated GPT AI for your hotel.
     - Specify how often the data should be read from the source
     
     <Info>
-    **Example:** If it's a **weekly updated menu**, you can set the extraction frequency to **"daily"**.
+    By default, URLs are re-read **every 2 days**. **Example:** If it's a **weekly updated menu**, you can set the extraction frequency to **"daily"**.
     </Info>
   </Step>
 </Steps>
@@ -72,7 +72,7 @@ Only add pages that provide added value for a (potential) hotel guest, **quality
 </Warning>
 
 <Info>
-Images or maps cannot be read.
+Image files (`.jpg`, `.jpeg`, `.png`, `.webp`) can also be added as a source and are read via text recognition (e.g., a photographed menu). Images embedded in websites are not considered when the website is read.
 </Info>
 
 ### Special Notes for URLs
@@ -82,8 +82,8 @@ Images or maps cannot be read.
     Add **only individual URLs**. It's not sufficient to store the central website address (e.g., https://www.hotel.com).
   </Card>
   
-  <Card title="Consider AI limitations" icon="robot">
-    **Note that the AI cannot click.** This means only the content of the actual URL is read and no content that lies behind buttons there.
+  <Card title="How websites are read" icon="robot">
+    When a URL is read, **expandable elements** (e.g., accordions in FAQ sections) are automatically opened and included. However, the system does **not navigate to linked subpages** — add each subpage individually.
   </Card>
   
   <Card title="Legal aspects" icon="shield-check">

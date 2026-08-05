@@ -38,7 +38,7 @@ Du hast für dein Hotel die GPT KI aktiviert.
     - Lege fest, wie häufig die Daten aus der Quelle ausgelesen werden sollen
     
     <Info>
-    **Beispiel:** Wenn es sich um ein **wöchentlich aktualisiertes Menü** handelt, kannst du die Extraktionshäufigkeit auf **„täglich"** setzen.
+    Standardmäßig werden URLs **alle 2 Tage** neu ausgelesen. **Beispiel:** Wenn es sich um ein **wöchentlich aktualisiertes Menü** handelt, kannst du die Extraktionshäufigkeit auf **„täglich"** setzen.
     </Info>
   </Step>
 </Steps>
@@ -71,7 +71,7 @@ Füge nur solche Seiten hinzu, die einen Mehrwert für einen (potentiellen) Hote
 </Warning>
 
 <Info>
-Es können keine Bilder oder Karten ausgelesen werden.
+Auch Bilddateien (`.jpg`, `.jpeg`, `.png`, `.webp`) können als Quelle hinzugefügt werden und werden per Texterkennung ausgelesen (z. B. eine fotografierte Speisekarte). Bilder, die in Webseiten eingebettet sind, werden beim Auslesen der Webseite nicht berücksichtigt.
 </Info>
 
 ### Spezielle Hinweise für URLs
@@ -81,8 +81,8 @@ Es können keine Bilder oder Karten ausgelesen werden.
     Füge **nur einzelne URLs** hinzu. Es reicht nicht aus, die zentrale Website Adresse (z.B. https://www.hotel.com) zu hinterlegen.
   </Card>
   
-  <Card title="KI-Limitationen beachten" icon="robot">
-    **Beachte, dass die KI nicht klicken kann.** Bedeutet, dass nur der Inhalt der tatsächlichen URL ausgelesen wird und kein Inhalt, der dort hinter Buttons liegt.
+  <Card title="Auslesen von Webseiten" icon="robot">
+    Beim Auslesen einer URL werden **aufklappbare Elemente** (z. B. Akkordeons in FAQ-Bereichen) automatisch geöffnet und mit ausgelesen. Das System navigiert jedoch **nicht auf verlinkte Unterseiten** — hinterlege jede Unterseite einzeln.
   </Card>
   
   <Card title="Rechtliche Aspekte" icon="shield-check">
