@@ -116,7 +116,8 @@
                 "icon": "envelope",
                 "pages": [
                   "de/email-ai/microsoft-outlook-plugin",
-                  "de/email-ai/firefox-browser-plugin"
+                  "de/email-ai/firefox-browser-plugin",
+                  "de/email-ai/thunderbird-plugin"
                 ]
               },
               {
@@ -310,7 +311,8 @@
                 "icon": "envelope",
                 "pages": [
                   "en/email-ai/microsoft-outlook-plugin",
-                  "en/email-ai/firefox-browser-plugin"
+                  "en/email-ai/firefox-browser-plugin",
+                  "en/email-ai/thunderbird-plugin"
                 ]
               },
               {
