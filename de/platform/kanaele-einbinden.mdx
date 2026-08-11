@@ -1,0 +1,93 @@
+---
+title: "Kanäle einbinden"
+description: "Fertige Links, Buttons und QR-Codes, um den DialogShift Chat AI in E-Mails, WhatsApp, Printmedien und Gäste-Apps einzubinden."
+---
+
+Auf der Seite **Einstellungen → Kanäle einbinden** in der DialogShift App findest du fertige Links, Buttons und QR-Codes, mit denen du den DialogShift Chat AI außerhalb deiner Website einbindest — in E-Mail-Templates (inkl. MEWS- und Apaleo-Journey-E-Mails), über WhatsApp und Instagram, als QR-Code in Printmedien sowie in Gäste-Apps von Drittanbietern (HelloGuest, Gastfreund, Smarthost).
+
+<Note>
+Die Seite ist eine reine Informations- und Kopierseite: Es gibt keine Eingabefelder und keinen Speichern-Button. Alle Aktionen sind „Link kopieren" oder „Datei herunterladen" — nichts davon verändert deine Konfiguration.
+</Note>
+
+Solange das Setup deines Hotels noch nicht abgeschlossen ist, erscheint über den Karten ein gelber Hinweis: Die Links funktionieren erst nach erfolgreich abgeschlossenem Setup.
+
+## So sind die Links aufgebaut
+
+Jede Karte zeigt pro konfigurierter Sprache deines Hotels (z. B. Deutsch, Englisch, Französisch) eine Zeile mit einem Kopier-Button und dem Link. Die Links folgen alle demselben Muster:
+
+```
+https://webchat.dialogshift.com/?clid=<clientid>&locale=<sprache>&channel=<kanal-code>
+```
+
+- `clid`: deine [Client ID](/de/platform/client-id).
+- `locale`: der Sprachcode der Zeile (`de`, `en`, `fr`, …) — der Chat öffnet in dieser Sprache.
+- `channel`: der Kanal-Code der Karte (z. B. `pwa-mailing`, `pwa-qr`). Über ihn werden Konversationen in der Statistik dem richtigen Kanal zugeordnet, und pro Kanal kann eine eigene Begrüßung und ein eigener Teaser gepflegt werden.
+
+Der Link öffnet den Webchat als eigenständige Seite, nicht als Widget auf deiner Website.
+
+<Warning>
+Verwende die Links immer unverändert, inklusive des `channel`-Parameters. Nur so werden Konversationen in der Statistik dem richtigen Kanal zugeordnet.
+</Warning>
+
+## Die Karten im Einzelnen
+
+### Chat in E-Mail Templates
+
+Standard-Links für Mailings jeder Art, z. B. Pre-Stay-E-Mails aus deinem CRM. Hinterlege den Link als Text-Link oder hinter einem Call-To-Action-Button im Mailing.
+
+### MEWS Journey E-Mail und Apaleo Journey E-Mails
+
+Derselbe Link wie für E-Mail-Templates, ergänzt um den Parameter `confirmationNumber={confirmationNumber}`. `{confirmationNumber}` ist ein Template-Tag deines PMS: Beim Versand der Journey-E-Mail ersetzt MEWS bzw. Apaleo den Platzhalter automatisch durch die Buchungsnummer des Gastes. Der Chat kann den Gast so direkt seiner Buchung zuordnen und personalisiert antworten.
+
+<Warning>
+Kopiere den Link mit dem Platzhalter `{confirmationNumber}` unverändert in den E-Mail-Editor deines PMS. Ersetze den Platzhalter nicht manuell durch eine konkrete Buchungsnummer.
+</Warning>
+
+Die Karten für MEWS und Apaleo erzeugen denselben Link — der Template-Tag ist bei beiden PMS identisch.
+
+### WhatsApp
+
+Diese Karte erscheint nur, wenn für dein Hotel eine WhatsApp-Nummer eingerichtet ist. Sie enthält:
+
+- **„Chat on WhatsApp"-Buttons** (grün und weiß) als Grafiken zum Herunterladen (PNG und SVG) — für Website oder Mailings.
+- **Pro Sprache einen wa.me-Link** (`https://wa.me/<nummer>?text=<start-nachricht>`). Die Start-Nachricht ist der vorausgefüllte Text im WhatsApp-Eingabefeld des Gastes. Sie kann pro Sprache individuell hinterlegt sein; ist für eine Sprache kein Text gepflegt, wird die englische Fassung verwendet. Anpassungen übernimmt der [DialogShift Support](mailto:support@dialogshift.com).
+- **Pro Sprache einen QR-Code** auf den wa.me-Link.
+
+Mehr zur Einbindung von WhatsApp: [WhatsApp Integration & Darstellung](/de/chat-ai/whatsapp/einbindung-darstellung).
+
+### Instagram
+
+Diese Karte erscheint nur, wenn ein Instagram-Konto mit dem Chat verbunden ist. Sie zeigt „Chat on Instagram"-Buttongrafiken (farbig und schwarz-weiß, PNG/SVG) und den Direktlink `https://ig.me/m/<username>` mit Kopier-Button.
+
+### QR-Code und Zimmerservice
+
+Beide Karten sind für Print gedacht — Plakate, Aufsteller, Werbematerial — und zeigen pro Sprache den Webchat-Link plus QR-Code zum Herunterladen. Der Unterschied ist der Kanal-Code und damit die Zuordnung in der Statistik und die ansprechbare Begrüßung: **Zimmerservice** ist für Aushänge auf dem Zimmer gedacht (z. B. Speisekarte oder Roomservice-Bestellung als eigener Einstieg), **QR-Code** für allgemeines Werbematerial.
+
+### HelloGuest, Gastfreund, Smarthost
+
+Reine Link-Karten für Gäste-Apps von Drittanbietern. Sende die Links an deinen Ansprechpartner beim jeweiligen App-Anbieter — er hinterlegt den Chat dann in der Gäste-App (Web App, TV App etc.).
+
+Für die Einbindung in eine eigene Gäste-App siehe [Chat in eine Gäste-App einbinden](/de/technischer-setup/chat-in-gast-app-einbinden).
+
+## QR-Codes: dynamisch und druckfertig
+
+Die QR-Codes kodieren nicht die Ziel-URL direkt, sondern einen Kurzlink (`ds24.me`). Sie sind damit **dynamisch**: DialogShift kann das Ziel nachträglich ändern, ohne dass bereits gedruckte QR-Codes ungültig werden.
+
+Jeder QR-Code steht in drei Formaten zum Download bereit: **PNG**, **SVG** und **EPS**. EPS ist das Vektorformat für Druckereien.
+
+## Sichtbarkeit der Karten
+
+- **WhatsApp** und **Instagram** werden nur angezeigt, wenn der jeweilige Kanal eingerichtet ist.
+- Alle anderen Karten werden immer angezeigt. Ein kopierter Link funktioniert grundsätzlich — die kanalspezifische Begrüßung und der Teaser greifen aber nur, wenn der Kanal aktiviert und die Begrüßung unter **Kanaleinstellungen** gepflegt ist.
+
+## Troubleshooting
+
+| Symptom | Lösung |
+|---|---|
+| WhatsApp-Karte fehlt | Für dein Hotel ist noch keine WhatsApp-Nummer eingerichtet. Wende dich an den [DialogShift Support](mailto:support@dialogshift.com). |
+| Instagram-Karte fehlt | Es ist noch kein Instagram-Konto mit dem Chat verbunden. Wende dich an den [DialogShift Support](mailto:support@dialogshift.com). |
+| WhatsApp-Start-Text in falscher Sprache | Für diese Sprache ist keine eigene Start-Nachricht hinterlegt, daher wird die englische Fassung angezeigt. Der Support pflegt den Text pro Sprache nach. |
+| QR-Code lädt nicht | Lade die Seite neu. Bleibt das Problem bestehen, wende dich an den Support. |
+| Statistik ordnet Konversationen keinem Kanal zu | Prüfe, ob der Link unverändert (inklusive `channel`-Parameter) verwendet wurde. |
+| Kanalspezifische Begrüßung erscheint nicht | Prüfe, ob der Kanal aktiviert ist und die kanalspezifische Begrüßung unter **Kanaleinstellungen** eingeschaltet und mit Inhalt gepflegt ist. |
+| Gelber Hinweis „Links funktionieren erst nach Setup" | Das Onboarding-Setup deines Hotels ist noch nicht abgeschlossen. |

@@ -1,0 +1,93 @@
+---
+title: "Embed Channels"
+description: "Ready-made links, buttons, and QR codes to embed the DialogShift Chat AI in emails, WhatsApp, print media, and guest apps."
+---
+
+On the **Settings → Embed Channels** page in the DialogShift app you find ready-made links, buttons, and QR codes to embed the DialogShift Chat AI outside your website — in email templates (including MEWS and Apaleo journey emails), via WhatsApp and Instagram, as QR codes in print media, and in third-party guest apps (HelloGuest, Gastfreund, Smarthost).
+
+<Note>
+This page is purely informational: there are no input fields and no save button. All actions are "copy link" or "download file" — none of them change your configuration.
+</Note>
+
+As long as your hotel's setup is not yet completed, a yellow notice appears above the cards: the links only work after the setup has been completed successfully.
+
+## How the links are structured
+
+Each card shows one row per configured language of your hotel (e.g. German, English, French) with a copy button and the link. All links follow the same pattern:
+
+```
+https://webchat.dialogshift.com/?clid=<clientid>&locale=<language>&channel=<channel-code>
+```
+
+- `clid`: your [Client ID](/en/platform/client-id).
+- `locale`: the language code of the row (`de`, `en`, `fr`, …) — the chat opens in this language.
+- `channel`: the channel code of the card (e.g. `pwa-mailing`, `pwa-qr`). It attributes conversations to the correct channel in the statistics, and a dedicated greeting and teaser can be maintained per channel.
+
+The link opens the webchat as a standalone page, not as a widget on your website.
+
+<Warning>
+Always use the links unchanged, including the `channel` parameter. Only then are conversations attributed to the correct channel in the statistics.
+</Warning>
+
+## The cards in detail
+
+### Chat in email templates
+
+Standard links for mailings of any kind, e.g. pre-stay emails from your CRM. Place the link as a text link or behind a call-to-action button in your mailing.
+
+### MEWS journey email and Apaleo journey emails
+
+The same link as for email templates, extended by the parameter `confirmationNumber={confirmationNumber}`. `{confirmationNumber}` is a template tag of your PMS: when the journey email is sent, MEWS or Apaleo automatically replaces the placeholder with the guest's booking number. The chat can then match the guest directly to their booking and respond in a personalized way.
+
+<Warning>
+Copy the link with the `{confirmationNumber}` placeholder unchanged into your PMS email editor. Do not replace the placeholder manually with an actual booking number.
+</Warning>
+
+The MEWS and Apaleo cards produce the same link — the template tag is identical in both PMS.
+
+### WhatsApp
+
+This card only appears if a WhatsApp number is set up for your hotel. It contains:
+
+- **"Chat on WhatsApp" buttons** (green and white) as downloadable graphics (PNG and SVG) — for your website or mailings.
+- **One wa.me link per language** (`https://wa.me/<number>?text=<start-message>`). The start message is the pre-filled text in the guest's WhatsApp input field. It can be customized per language; if no text is maintained for a language, the English version is used. Contact [DialogShift support](mailto:support@dialogshift.com) for adjustments.
+- **One QR code per language** pointing to the wa.me link.
+
+More on embedding WhatsApp: [WhatsApp Integration & Display](/en/chat-ai/whatsapp/integration-display).
+
+### Instagram
+
+This card only appears if an Instagram account is connected to the chat. It shows "Chat on Instagram" button graphics (color and black-and-white, PNG/SVG) and the direct link `https://ig.me/m/<username>` with a copy button.
+
+### QR code and room service
+
+Both cards are meant for print — posters, displays, advertising material — and show the webchat link plus a downloadable QR code per language. The difference is the channel code and thus the attribution in the statistics and the addressable greeting: **Room service** is meant for notices in guest rooms (e.g. menu or room service ordering as a dedicated entry point), **QR code** for general advertising material.
+
+### HelloGuest, Gastfreund, Smarthost
+
+Link-only cards for third-party guest apps. Send the links to your contact person at the respective app provider — they will embed the chat in their guest app (web app, TV app, etc.).
+
+For embedding the chat in your own guest app, see [Embed chat in a guest app](/en/technical-setup/embed-chat-in-guest-app).
+
+## QR codes: dynamic and print-ready
+
+The QR codes do not encode the target URL directly but a short link (`ds24.me`). This makes them **dynamic**: DialogShift can change the target later without invalidating QR codes that have already been printed.
+
+Each QR code is available for download in three formats: **PNG**, **SVG**, and **EPS**. EPS is the vector format for print shops.
+
+## Card visibility
+
+- **WhatsApp** and **Instagram** are only shown if the respective channel is set up.
+- All other cards are always shown. A copied link always works — but the channel-specific greeting and teaser only apply if the channel is activated and the greeting is maintained under **Channel Settings**.
+
+## Troubleshooting
+
+| Symptom | Solution |
+|---|---|
+| WhatsApp card is missing | No WhatsApp number is set up for your hotel yet. Contact [DialogShift support](mailto:support@dialogshift.com). |
+| Instagram card is missing | No Instagram account is connected to the chat yet. Contact [DialogShift support](mailto:support@dialogshift.com). |
+| WhatsApp start message in the wrong language | No custom start message is maintained for this language, so the English version is shown. Support can maintain the text per language. |
+| QR code does not load | Reload the page. If the problem persists, contact support. |
+| Statistics do not attribute conversations to a channel | Check whether the link was used unchanged (including the `channel` parameter). |
+| Channel-specific greeting does not appear | Check whether the channel is activated and the channel-specific greeting is enabled and filled in under **Channel Settings**. |
+| Yellow notice "links only work after setup" | Your hotel's onboarding setup is not yet completed. |

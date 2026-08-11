@@ -166,10 +166,11 @@
                 "group": "Plattform",
                 "icon": "layer-group",
                 "pages": [
-                  "de/platform/new-faq-de",
-                  "de/platform/client-id",
-                  "de/platform/urls-pdfs-wissen-hinzufugen",
-                  "de/platform/chatbot-fur-hotelmitarbeitende"
+              "de/platform/new-faq-de",
+              "de/platform/client-id",
+              "de/platform/urls-pdfs-wissen-hinzufugen",
+              "de/platform/kanaele-einbinden",
+              "de/platform/chatbot-fur-hotelmitarbeitende"
                 ]
               },
               {
@@ -361,10 +362,11 @@
                 "group": "Platform",
                 "icon": "layer-group",
                 "pages": [
-                  "en/platform/new-faq",
-                  "en/platform/client-id",
-                  "en/platform/add-urls-pdfs-knowledge",
-                  "en/platform/chatbot-for-hotel-staff"
+              "en/platform/new-faq",
+              "en/platform/client-id",
+              "en/platform/add-urls-pdfs-knowledge",
+              "en/platform/embed-channels",
+              "en/platform/chatbot-for-hotel-staff"
                 ]
               },
               {
