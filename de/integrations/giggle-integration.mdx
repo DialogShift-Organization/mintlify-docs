@@ -1,0 +1,45 @@
+---
+title: "Giggle Integration"
+description: "Wie du Giggle mit DialogShift verbindest und Aktivitäten als Wissensquelle für Chat AI importierst."
+---
+
+Die Giggle-Integration übernimmt Aktivitäten und Erlebnisse aus deinem Giggle-Konto in die Wissensbasis von DialogShift. Chat AI kann diese Inhalte in Antworten verwenden. Giggle ist keine Booking Engine und wird nicht für Journey Messaging genutzt.
+
+## Voraussetzungen
+
+- Dein Hotel nutzt Giggle.
+- Du hast einen V2-API-Schlüssel von Giggle.
+- Du kennst deinen Hotel-Code. Du findest ihn in deiner Giggle-URL, zum Beispiel `giggle.tips/de/DEIN-HOTEL-CODE`.
+- In Giggle ist mindestens ein Stream konfiguriert.
+
+## Integration aktivieren
+
+1. Öffne in der DialogShift App **Einstellungen → Integrationen** und wähle **Giggle**.
+2. Wähle die Sprache der zu importierenden Inhalte.
+3. Trage unter **V2 Integration (Mehrere Streams)** den **API-Schlüssel** und den **Hotel-Code** ein.
+4. Wähle **Streams laden**.
+5. Wähle die Streams aus, deren Inhalte Chat AI verwenden soll. Wenn du keinen Stream auswählst, werden alle verfügbaren Streams importiert.
+6. Aktiviere die Integration und speichere die Einstellungen.
+
+## Importierte Inhalte
+
+DialogShift übernimmt pro Erlebnis:
+
+- Titel und Beschreibung
+- Ort
+- Bild und Direktlink zum Erlebnis
+- Kategorie und zugehörige Streams
+- feste Termine und wiederkehrende Verfügbarkeiten
+
+Die Inhalte werden automatisch mit Giggle synchronisiert.
+
+## Konfiguration
+
+| Feld | Verwendung |
+|:-----|:-----------|
+| Sprache | Legt die Sprache der importierten Inhalte fest. |
+| API-Schlüssel | Authentifiziert die Verbindung zur Giggle V2 API. |
+| Hotel-Code | Ordnet die Verbindung dem richtigen Hotel zu. |
+| Streams | Begrenzt den Import auf ausgewählte Streams. Ohne Auswahl werden alle verfügbaren Streams importiert. |
+
+Prüfe bei einer fehlgeschlagenen Verbindung zuerst den V2-API-Schlüssel und den Hotel-Code. Wenn keine Streams geladen werden, muss in deinem Giggle-Konto mindestens ein Stream konfiguriert sein.

@@ -1,0 +1,45 @@
+---
+title: "Giggle Integration"
+description: "How to connect Giggle to DialogShift and import activities as a knowledge source for Chat AI."
+---
+
+The Giggle integration imports activities and experiences from your Giggle account into the DialogShift knowledge base. Chat AI can use this content in its answers. Giggle is not a booking engine and is not used for Journey Messaging.
+
+## Prerequisites
+
+- Your hotel uses Giggle.
+- You have a V2 API key from Giggle.
+- You know your hotel code. You can find it in your Giggle URL, for example `giggle.tips/en/YOUR-HOTEL-CODE`.
+- At least one stream is configured in Giggle.
+
+## Activate the integration
+
+1. In the DialogShift app, open **Settings → Integrations** and select **Giggle**.
+2. Select the language of the content to import.
+3. Under **V2 Integration (Several Streams)**, enter the **API Key** and **Hotel Code**.
+4. Select **Load Streams**.
+5. Select the streams whose content Chat AI should use. If you do not select a stream, all available streams are imported.
+6. Activate the integration and save the settings.
+
+## Imported content
+
+For each experience, DialogShift imports:
+
+- title and description
+- location
+- image and direct link to the experience
+- category and associated streams
+- fixed dates and recurring availability
+
+The content is synchronized with Giggle automatically.
+
+## Configuration
+
+| Field | Purpose |
+|:------|:--------|
+| Language | Sets the language of the imported content. |
+| API Key | Authenticates the connection to the Giggle V2 API. |
+| Hotel Code | Assigns the connection to the correct hotel. |
+| Streams | Limits the import to selected streams. If none are selected, all available streams are imported. |
+
+If the connection fails, check the V2 API key and hotel code first. If no streams are loaded, at least one stream must be configured in your Giggle account.
