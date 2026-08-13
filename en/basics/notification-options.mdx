@@ -36,33 +36,39 @@ Push notifications via the DialogShift Mobile App.
   Prerequisite: Live Chat App must be open in a browser tab
 </Note>
 
+The audio signal is played by the Live Chat App itself and works in all supported browsers.
+
 <Tabs>
   <Tab title="Chrome ⭐">
     **Windows/Mac** (Recommended)
 
     - ✅ Notifications are displayed
     - ✅ Optional persistent notifications
-    - ✅ Audio signal (Windows only)
+    - ✅ Audio signal
   </Tab>
   <Tab title="Edge">
-    **Windows**
+    **Windows/Mac**
 
     - ✅ Notifications are displayed
-    - ❌ No persistent notifications
-    - ❌ No audio signal
+    - ✅ Optional persistent notifications
+    - ✅ Audio signal
   </Tab>
   <Tab title="Firefox">
-    **Windows**
+    **Windows/Mac**
 
-    - ✅ Notifications (manual permission required)
-    - ❌ No persistent notifications
-    - ❌ No audio signal
+    - ✅ Notifications (permission must be granted via click)
+    - ✅ Persistent notifications on Windows only
+    - ✅ Audio signal
   </Tab>
   <Tab title="Safari">
     **Mac**
 
-    - ✅ Notifications are displayed
-    - ❌ No persistent notifications
+    - ✅ Notifications (permission must be granted via click)
+    - ❌ No persistent notifications (see note on macOS)
     - ✅ Audio signal
   </Tab>
-</Tabs> 
+</Tabs>
+
+<Note>
+  By default, macOS displays notifications as "Banners" that disappear automatically after a few seconds. To keep notifications visible, set your browser's notification style to "Alerts" in the macOS System Settings under "Notifications".
+</Note>
