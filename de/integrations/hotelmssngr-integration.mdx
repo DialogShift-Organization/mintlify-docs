@@ -1,0 +1,47 @@
+---
+title: "Hotel MSSNGR Integration"
+description: "Wie du Hotel MSSNGR mit DialogShift verbindest und Aktivitäten sowie Hotelinformationen als Wissen für Chat AI importierst."
+---
+
+Die Hotel-MSSNGR-Integration übernimmt Aktivitäten und Hotelinformationen aus deinem Hotel-MSSNGR-Konto in die Wissensbasis von DialogShift. Chat AI kann diese Inhalte in Antworten verwenden. Hotel MSSNGR ist keine Booking Engine und wird nicht für Journey Messaging genutzt.
+
+## Voraussetzungen
+
+- Dein Hotel nutzt Hotel MSSNGR.
+- Du hast den API-Schlüssel, das Hotelgruppen-Schlüsselwort und das Hotel-Schlüsselwort von Hotel MSSNGR.
+
+## Integration aktivieren
+
+1. Öffne in der DialogShift App **Einstellungen → Integrationen** und wähle **Hotel MSSNGR**.
+2. Trage den **API-Schlüssel**, das **Hotelgruppen-Schlüsselwort** und das **Hotel-Schlüsselwort** ein.
+3. Wähle die Sprache der zu importierenden Inhalte.
+4. Aktiviere die Integration und speichere die Einstellungen.
+
+Alle vier Angaben sind erforderlich. Fehlt eine Angabe, können keine Inhalte importiert werden.
+
+## Importierte Inhalte
+
+DialogShift übernimmt aus den Aktivitäten:
+
+- Titel und Beschreibung
+- Ort
+- Termine mit Wochentag, Datum und Uhrzeit
+- Direktlinks, sofern vorhanden
+- eine Übersicht aller zukünftigen Termine
+
+Mehrere Termine mit demselben Aktivitätstitel werden in einem Wissenseintrag zusammengefasst.
+
+Aus dem Hotelverzeichnis übernimmt DialogShift jede Seite mit Titel und Text als eigenen Wissenseintrag. Ordner dienen nur zur Gliederung und werden nicht als eigene Inhalte importiert.
+
+Die Inhalte werden automatisch mit Hotel MSSNGR synchronisiert. Wenn du die Integration deaktivierst, werden die importierten Inhalte aus der Wissensbasis entfernt.
+
+## Konfiguration
+
+| Feld | Verwendung |
+|:-----|:-----------|
+| API-Schlüssel | Authentifiziert die Verbindung zu Hotel MSSNGR. |
+| Hotelgruppen-Schlüsselwort | Ordnet die Verbindung der richtigen Hotelgruppe zu. |
+| Hotel-Schlüsselwort | Ordnet die Verbindung dem richtigen Hotel innerhalb der Hotelgruppe zu. |
+| Sprache | Legt die Sprache der importierten Inhalte fest. |
+
+Wenn Inhalte fehlen, prüfe zuerst, ob alle vier Angaben korrekt eingetragen sind und die Integration aktiviert ist. Seiten ohne Titel und Aktivitäten ohne Titel werden nicht importiert.

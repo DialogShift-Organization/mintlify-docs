@@ -1,0 +1,42 @@
+---
+title: "GIATA Integration"
+description: "How to have GIATA hotel information activated as a knowledge source for Chat AI and Phone AI."
+---
+
+The GIATA integration provides Chat AI and Phone AI with master data and descriptive content about your hotel. GIATA is not a booking engine and is not used for Journey Messaging.
+
+## Prerequisites
+
+- Your hotel is listed in GIATA.
+- You know your hotel's GIATA ID.
+
+## Activate the integration
+
+There is no GIATA integration page in the DialogShift app. Customer Success activates the connection for your hotel.
+
+1. Provide Customer Success with your hotel's GIATA ID.
+2. Customer Success adds the GIATA ID to your DialogShift configuration.
+3. Ask questions about your hotel and rooms to verify that the information is used correctly.
+
+You do not need your own API key for DialogShift.
+
+## Content used
+
+DialogShift can use the following information from GIATA:
+
+- hotel name and location
+- address, phone numbers, and email addresses
+- hotel chain
+- room types, including category and view
+- amenities and other hotel features
+- descriptive content
+
+The information is retrieved directly from GIATA when needed. It therefore does not appear as individual knowledge entries in the DialogShift app.
+
+## Configuration
+
+| Field | Purpose |
+|:------|:--------|
+| GIATA ID | Assigns the connection to the correct hotel in GIATA. |
+
+If information is missing or incorrect, check your hotel's data in GIATA first.

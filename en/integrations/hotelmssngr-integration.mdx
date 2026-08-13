@@ -1,0 +1,47 @@
+---
+title: "Hotel MSSNGR Integration"
+description: "How to connect Hotel MSSNGR to DialogShift and import activities and hotel information as knowledge for Chat AI."
+---
+
+The Hotel MSSNGR integration imports activities and hotel information from your Hotel MSSNGR account into the DialogShift knowledge base. Chat AI can use this content in its answers. Hotel MSSNGR is not a booking engine and is not used for Journey Messaging.
+
+## Prerequisites
+
+- Your hotel uses Hotel MSSNGR.
+- You have the API key, hotel group keyword, and hotel keyword from Hotel MSSNGR.
+
+## Activate the integration
+
+1. In the DialogShift app, open **Settings → Integrations** and select **Hotel MSSNGR**.
+2. Enter the **API Key**, **Hotel Group Keyword**, and **Hotel Keyword**.
+3. Select the language of the content to import.
+4. Activate the integration and save the settings.
+
+All four values are required. If one is missing, no content can be imported.
+
+## Imported content
+
+DialogShift imports the following from activities:
+
+- title and description
+- location
+- dates with weekday, date, and time
+- direct links, if available
+- an overview of all upcoming dates
+
+Multiple dates with the same activity title are combined into one knowledge entry.
+
+From the hotel directory, DialogShift imports each page with a title and text as a separate knowledge entry. Folders are used only for organization and are not imported as separate content.
+
+The content is synchronized with Hotel MSSNGR automatically. If you deactivate the integration, the imported content is removed from the knowledge base.
+
+## Configuration
+
+| Field | Purpose |
+|:------|:--------|
+| API Key | Authenticates the connection to Hotel MSSNGR. |
+| Hotel Group Keyword | Assigns the connection to the correct hotel group. |
+| Hotel Keyword | Assigns the connection to the correct hotel within the hotel group. |
+| Language | Sets the language of the imported content. |
+
+If content is missing, check that all four values are correct and that the integration is active. Pages and activities without a title are not imported.

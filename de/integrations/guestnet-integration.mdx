@@ -1,0 +1,52 @@
+---
+title: "Guestnet Integration"
+description: "Wie du Guestnet mit DialogShift verbindest und Aktivitäten sowie Speisekarten als Wissen für Chat AI importierst."
+---
+
+Die Guestnet-Integration übernimmt Aktivitäten und Speisekarten aus deinem Guestnet-Konto in die Wissensbasis von DialogShift. Chat AI kann diese Inhalte in Antworten verwenden. Guestnet ist keine Booking Engine und wird nicht für Journey Messaging genutzt.
+
+## Voraussetzungen
+
+- Dein Hotel nutzt Guestnet.
+- Du hast die Client ID deines Hotels von Guestnet.
+
+## Integration aktivieren
+
+1. Öffne in der DialogShift App **Einstellungen → Integrationen** und wähle **Guestnet**.
+2. Wähle die Sprache der zu importierenden Inhalte.
+3. Trage die **Client ID** deines Hotels ein.
+4. Aktiviere die Integration und speichere die Einstellungen.
+
+Auf der Integrationsseite siehst du außerdem, wie viele Artikel gelesen wurden und wann die Inhalte zuletzt aktualisiert wurden.
+
+## Importierte Inhalte
+
+DialogShift übernimmt aus dem Aktivitätenkalender:
+
+- Titel und Beschreibung
+- Datum, Uhrzeit, Ort und Dauer
+- Kategorien und Anmeldeinformationen
+- Direktlink zur Aktivität
+- Übersichten für die nächsten sieben Tage und nach Kategorien
+
+Aus dem Tagesmenü übernimmt DialogShift:
+
+- Gänge und Gerichte
+- Beschreibungen und Preise
+- Weinpreise pro Glas oder Flasche
+- Allergeninformationen
+
+Die Inhalte werden automatisch mit Guestnet synchronisiert. Wenn du die Integration deaktivierst, werden die importierten Inhalte aus der Wissensbasis entfernt.
+
+## Chat in der Guestnet App
+
+Der Import der Guestnet-Inhalte und die Einbindung des DialogShift-Chats in die Guestnet App sind voneinander unabhängig. Der Chat kann zusätzlich als eigener Kanal in der Guestnet App bereitgestellt werden.
+
+## Konfiguration
+
+| Feld | Verwendung |
+|:-----|:-----------|
+| Client ID | Ordnet die Verbindung dem richtigen Hotel in Guestnet zu. |
+| Sprache | Legt die Sprache der importierten Inhalte fest. |
+
+Wenn Inhalte fehlen, prüfe zuerst die Client ID, die gewählte Sprache und ob die Integration aktiviert ist.

@@ -1,0 +1,52 @@
+---
+title: "Guestnet Integration"
+description: "How to connect Guestnet to DialogShift and import activities and menus as knowledge for Chat AI."
+---
+
+The Guestnet integration imports activities and menus from your Guestnet account into the DialogShift knowledge base. Chat AI can use this content in its answers. Guestnet is not a booking engine and is not used for Journey Messaging.
+
+## Prerequisites
+
+- Your hotel uses Guestnet.
+- You have your hotel's Client ID from Guestnet.
+
+## Activate the integration
+
+1. In the DialogShift app, open **Settings → Integrations** and select **Guestnet**.
+2. Select the language of the content to import.
+3. Enter your hotel's **Client ID**.
+4. Activate the integration and save the settings.
+
+The integration page also shows how many articles were read and when the content was last updated.
+
+## Imported content
+
+DialogShift imports the following from the activity calendar:
+
+- title and description
+- date, time, location, and duration
+- categories and registration information
+- direct link to the activity
+- overviews for the next seven days and by category
+
+DialogShift imports the following from the daily menu:
+
+- courses and dishes
+- descriptions and prices
+- wine prices per glass or bottle
+- allergen information
+
+The content is synchronized with Guestnet automatically. If you deactivate the integration, the imported content is removed from the knowledge base.
+
+## Chat in the Guestnet app
+
+Importing Guestnet content and embedding the DialogShift chat in the Guestnet app are independent of each other. The chat can also be provided as a separate channel in the Guestnet app.
+
+## Configuration
+
+| Field | Purpose |
+|:------|:--------|
+| Client ID | Assigns the connection to the correct hotel in Guestnet. |
+| Language | Sets the language of the imported content. |
+
+If content is missing, check the Client ID, selected language, and whether the integration is active.
