@@ -56,7 +56,8 @@
             "icon": "robot",
             "pages": [
               "de/agenten/dialog-quickbooker",
-              "de/agenten/booking-agent"
+              "de/agenten/booking-agent",
+              "de/agenten/smart-host-offer-agent"
             ]
           },
           {
@@ -256,7 +257,8 @@
             "icon": "robot",
             "pages": [
               "en/agents/dialog-quickbooker",
-              "en/agents/booking-agent"
+              "en/agents/booking-agent",
+              "en/agents/smart-host-offer-agent"
             ]
           },
           {
