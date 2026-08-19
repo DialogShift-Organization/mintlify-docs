@@ -75,7 +75,8 @@
                     "icon": "comments",
                     "pages": [
                       "de/chat-ai/live-chat/live-chat-modi",
-                      "de/chat-ai/live-chat/live-chats-beantworten"
+                      "de/chat-ai/live-chat/live-chats-beantworten",
+                      "de/chat-ai/live-chat/eigene-inboxen-erstellen"
                     ]
                   },
                   {
@@ -276,7 +277,8 @@
                     "icon": "comments",
                     "pages": [
                       "en/chat-ai/live-chat/live-chat-modes",
-                      "en/chat-ai/live-chat/answer-live-chats"
+                      "en/chat-ai/live-chat/answer-live-chats",
+                      "en/chat-ai/live-chat/create-custom-inboxes"
                     ]
                   },
                   {
