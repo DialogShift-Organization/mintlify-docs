@@ -172,6 +172,7 @@
               "de/platform/client-id",
               "de/platform/urls-pdfs-wissen-hinzufugen",
               "de/platform/kanaele-einbinden",
+              "de/platform/logos-und-icons",
               "de/platform/chatbot-fur-hotelmitarbeitende"
                 ]
               },
@@ -374,6 +375,7 @@
               "en/platform/client-id",
               "en/platform/add-urls-pdfs-knowledge",
               "en/platform/embed-channels",
+              "en/platform/logos-and-icons",
               "en/platform/chatbot-for-hotel-staff"
                 ]
               },
