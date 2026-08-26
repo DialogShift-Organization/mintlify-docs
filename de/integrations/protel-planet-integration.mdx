@@ -44,6 +44,19 @@ Da es eine Protel/Planet-Integrationsseite in der DialogShift App gibt, kann das
 
 **Raten.** Raten sind konfigurierbar, weil Protel/Planet über DialogShift nur direkte Pay-at-Hotel-Buchungen unterstützt. Gib ausschließlich Flexi- oder Pay-at-Hotel-Raten frei und schließe Prepaid- oder zahlungspflichtige Raten aus.
 
+## Bestätigungen und Benachrichtigungen
+
+| Thema | Verhalten |
+|:------|:----------|
+| Buchungsbestätigung an den Gast | DialogShift versendet keine Buchungsbestätigung. Der Versand erfolgt über Protel. |
+| Benachrichtigung der Rezeption | DialogShift versendet keine separate Benachrichtigung. Die Reservierung erscheint direkt in der Reservierungsliste in Protel. |
+
+**Buchungsbestätigung einrichten.** Richte im protel Messenger eine Versandregel ein, die beim Anlegen einer Reservierung automatisch eine Bestätigung versendet. Alternativ kannst du in Protel manuell **Reservierungsbestätigung erstellen** wählen. Kläre für den automatischen Versand mit dem Protel Support, dass die Regel auch für Reservierungen greift, die über die Schnittstelle angelegt werden.
+
+**Rezeption benachrichtigen.** Wenn deine Rezeption zusätzlich aktiv benachrichtigt werden soll, richte im protel Messenger eine passende Versandregel ein.
+
+Richte den Bestätigungsversand ein und teste ihn, bevor der Booking Agent produktiv geht.
+
 ## Journey Messaging
 
 | Thema | Verhalten |
