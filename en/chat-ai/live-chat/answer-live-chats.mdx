@@ -3,7 +3,7 @@ title: "Answer Live Chats"
 description: "How to handle incoming Live Chat requests in DialogShift"
 ---
 
-When the Live Chat option is activated, you can receive direct messages from guests.
+When the Live Chat option is activated, you can receive and answer direct messages from guests.
 
 <Info>
   Live Chats are created when:
@@ -15,39 +15,54 @@ When the Live Chat option is activated, you can receive direct messages from gue
 
 ## Access Live Chats
 
-Left navigation bar: >> **Live Chat**
+Open **Live Chat** in the navigation. In the sidebar, select your hotel under **Main inboxes** or a topic-based inbox under **Custom Inboxes**.
+
+## Chat List and Filters
+
+The chat list has two tabs:
+
+| Tab | Content |
+| --- | --- |
+| **ToDo** | All open Live Chats waiting for a response. |
+| **All** | All conversations in the inbox, regardless of status. |
+
+You can also search the list and filter by channel via the dropdown (**All**, **Chat**, **Phone**).
 
 ## Understanding Chat Status
 
-<CardGroup cols={3}>
-  <Card title="Open" icon="inbox">
-    Messages waiting for response
-  </Card>
-  <Card title="Parked" icon="pause">
-    The hotel has responded to the guest's chat request and parks the chat until the guest responds.
-  </Card>
-  <Card title="Closed" icon="check">
-    Chat closed, chatbot takes over again
-  </Card>
-</CardGroup>
+Every Live Chat has one of three statuses, shown as a badge in the list:
 
-<Warning>
-  **Parked chats** are still in Live Chat mode:
+| Status | Meaning |
+| --- | --- |
+| **Open** | The guest is waiting for a response. |
+| **Parked** | You have responded and are waiting for the guest's reaction. |
+| **Closed** | The chat is closed, the chatbot takes over again. |
 
-  - With new message → automatically **Open** again
-  - After 24h inactivity → automatically **Closed**
-</Warning>
+## Handle a Live Chat
 
-## Understanding "Park Chat"
+1. In the **ToDo** tab, select the chat you want to answer.
+2. Write your response in the text field and send it with the Enter key. Use Shift + Enter for a line break.
+3. After responding, click **Park chat** or — if the request is resolved — **End chat**.
 
-After the hotel team has responded to a guest's Live Chat request, we recommend parking the chat. In a parked chat, two things can happen:
+In a parked chat, two things can happen:
 
-1. The guest responds, for example with a follow-up question, and a notification to the hotel team is triggered again.
-2. The guest reads the message and their information need is satisfied. They don't respond anymore. Here the system automatically closes the chat after 24 hours.
+1. The guest responds, for example with a follow-up question. The chat automatically switches back to **Open** and your team is notified again.
+2. The guest doesn't respond anymore. After 24 hours of inactivity, the system closes the chat automatically.
 
-In both cases, the system manages the future state of the chat and allows systematic processing of open requests.
+This way the system manages the state of the chats and you can work through open requests systematically. You can resume a parked chat at any time via **Reopen chat**, and restart a closed chat via **Start chat**.
 
-## Additional Functions
+## Assign a Chat
 
-- **Assignments:** Chats can be assigned to specific inboxes or people (upper chat window)
-- **Text blocks:** Create pre-made responses via the three dots in the lower chat window 
+In the upper area of the chat window, you can assign a chat to one or more Custom Inboxes via **Assign inbox** and hand it over to a person via **Assign to**.
+
+## Functions in the Reply Field
+
+- **Text blocks:** Via the three dots in the lower chat window, you can open, create, and edit pre-made responses. Type `/` in the text field to search text blocks directly.
+- **Emojis and files:** Use the icons in the lower chat window to insert emojis and send files (JPG, PNG, PDF).
+- **Translation:** If the guest writes in a different language, you can have your response translated before sending.
+
+## Special Cases
+
+- **Guest details:** The profile next to the chat shows information about the guest and reservations. The data is read-only and cannot be edited.
+- **Callback request (Phone AI):** A callback request cannot be parked. After making the call, close it via **Callback done**.
+- **WhatsApp:** If the guest's last message is more than 24 hours old, the chat can no longer be answered from this window. This is a WhatsApp requirement.

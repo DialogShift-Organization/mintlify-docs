@@ -3,7 +3,7 @@ title: "Live Chats beantworten"
 description: "So bearbeitest du eingehende Live Chat Anfragen in DialogShift"
 ---
 
-Wenn die Live Chat Option aktiviert ist, kannst du direkte Nachrichten von Gästen empfangen.
+Wenn die Live Chat Option aktiviert ist, kannst du direkte Nachrichten von Gästen empfangen und beantworten.
 
 <Info>
   Live Chats entstehen wenn:
@@ -15,39 +15,54 @@ Wenn die Live Chat Option aktiviert ist, kannst du direkte Nachrichten von Gäst
 
 ## Zugriff auf Live Chats
 
-Linke Navigationsleiste: \>\> **Live Chat**
+Öffne **Live Chat** in der Navigation. In der Seitenleiste wählst du dein Hotel unter **Haupt-Inboxen** oder eine thematische Inbox unter **Eigene Inboxen**.
+
+## Chatliste und Filter
+
+Die Chatliste hat zwei Tabs:
+
+| Tab | Inhalt |
+| --- | --- |
+| **ToDo** | Alle offenen Live Chats, die auf eine Antwort warten. |
+| **Alle** | Alle Konversationen der Inbox, unabhängig vom Status. |
+
+Zusätzlich kannst du die Liste durchsuchen und über das Dropdown nach Kanal filtern (**Alle**, **Chat**, **Phone**).
 
 ## Chat-Status verstehen
 
-<CardGroup cols={3}>
-  <Card title="Offen" icon="inbox">
-    Nachrichten die auf Antwort warten
-  </Card>
-  <Card title="Geparkt" icon="pause">
-    Das Hotel hat auf die Chat-Anfrage des Gastes geantwortet und parkt den Chat, bis der Gast seinerseits antwortet.
-  </Card>
-  <Card title="Beendet" icon="check">
-    Chat geschlossen, Chatbot übernimmt wieder
-  </Card>
-</CardGroup>
+Jeder Live Chat hat einen der drei Status, die du in der Liste als Badge siehst:
 
-<Warning>
-  **Geparkte Chats** sind weiterhin im Live-Chat-Modus:
+| Status | Bedeutung |
+| --- | --- |
+| **Offen** | Der Gast wartet auf eine Antwort. |
+| **Geparkt** | Du hast geantwortet und wartest auf eine Reaktion des Gastes. |
+| **Beendet** | Der Chat ist geschlossen, der Chatbot übernimmt wieder. |
 
-  - Bei neuer Nachricht → automatisch wieder **Offen**
-  - Nach 24h Inaktivität → automatisch **Beendet**
-</Warning>
+## Live Chat bearbeiten
 
-## "Chat Parken" verstehen
+1. Wähle im Tab **ToDo** den Chat aus, den du beantworten möchtest.
+2. Schreibe deine Antwort in das Textfeld und sende sie mit der Eingabetaste. Einen Zeilenumbruch machst du mit Shift + Eingabetaste.
+3. Klicke nach deiner Antwort auf **Chat parken** oder — wenn das Anliegen erledigt ist — auf **Chat beenden**.
 
-Nachdem das Hotel-Team auf eine Live-Chat-Anfrage eines Gastes geantwortet hat, empfehlen wir, den Chat zu parken. In einem geparkten Chat können zwei Dinge passieren: 
+In einem geparkten Chat können zwei Dinge passieren:
 
-1. Der Gast antwortet, zum Beispiel mit einer Rückfrage, und eine Benachrichtigung an das Hotelteam wird erneut ausgelöst. 
-2. Der Gast liest die Nachricht, und sein Informationsbedürfnis ist gestellt. Er antwortet nicht mehr. Hier schließt das System den Chat automatisch nach 24 Stunden. 
+1. Der Gast antwortet, zum Beispiel mit einer Rückfrage. Der Chat wechselt automatisch zurück auf **Offen** und dein Team wird erneut benachrichtigt.
+2. Der Gast antwortet nicht mehr. Nach 24 Stunden Inaktivität beendet das System den Chat automatisch.
 
-In beiden Fällen übernimmt das System die Verwaltung des zukünftigen Zustands des Chats und erlaubt ein systematisches Abarbeiten von offenen Anfragen. 
+So verwaltet das System den Zustand der Chats und du kannst offene Anfragen systematisch abarbeiten. Einen geparkten Chat kannst du jederzeit über **Chat öffnen** wieder aufnehmen, einen beendeten Chat startest du über **Chat starten** neu.
 
-## Zusätzliche Funktionen
+## Chat zuweisen
 
-- **Zuweisungen:** Chats können bestimmten Inboxen oder Personen zugewiesen werden (oberes Chatfenster)
-- **Textbausteine:** Vorgefertigte Antworten über die drei Punkte im unteren Chatfenster erstellen
+Im oberen Bereich des Chatfensters kannst du einen Chat über **Inbox zuweisen** einer oder mehreren eigenen Inboxen zuordnen und über **Chat zuweisen** an eine Person übergeben.
+
+## Funktionen im Antwortfeld
+
+- **Textbausteine:** Über die drei Punkte im unteren Chatfenster kannst du vorgefertigte Antworten öffnen, erstellen und bearbeiten. Tippe `/` in das Textfeld, um Textbausteine direkt zu suchen.
+- **Emojis und Dateien:** Über die Symbole im unteren Chatfenster fügst du Emojis ein und versendest Dateien (JPG, PNG, PDF).
+- **Übersetzung:** Schreibt der Gast in einer anderen Sprache, kannst du deine Antwort vor dem Senden übersetzen lassen.
+
+## Besonderheiten
+
+- **Besucherdaten:** Das Profil rechts neben dem Chat zeigt Informationen zum Gast und zu Reservierungen. Die Daten sind nur lesbar und können nicht bearbeitet werden.
+- **Rückrufwunsch (Phone AI):** Ein Rückrufwunsch kann nicht geparkt werden. Nach dem Rückruf schließt du ihn über **Rückruf erledigt** ab.
+- **WhatsApp:** Liegt die letzte Nachricht des Gastes mehr als 24 Stunden zurück, kann der Chat aus diesem Fenster nicht mehr beantwortet werden. Das ist eine Vorgabe von WhatsApp.
