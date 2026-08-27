@@ -9,16 +9,17 @@ Die ASA-Integration verbindet DialogShift mit deinem ASA PMS. Sie wird für Jour
 
 - Dein Hotel nutzt ASA.
 - Journey Messaging ist für dein DialogShift-Konto aktiviert.
-- Customer Success hat den ASA-Reservierungsendpunkt und optional die Zugangsdaten.
+- Du hast den ASA-Reservierungsendpunkt und, falls ASA Basic Auth nutzt, Benutzername und Passwort.
 
 ## Integration aktivieren
 
-Für ASA gibt es keine Integrationsseite in der DialogShift App. Customer Success aktiviert die PMS-Verbindung für dein Hotel.
+Da es eine ASA-Integrationsseite in der DialogShift App gibt, kann das Hotel die PMS-Verbindung selbst einrichten.
 
-1. Stelle Customer Success den ASA-Reservierungsendpunkt bereit.
-2. Falls ASA Basic Auth nutzt, stelle zusätzlich Benutzername und Passwort bereit.
-3. Customer Success aktiviert die ASA-Verbindung für Journey Messaging.
-4. Prüfe anschließend in Journey Messaging, ob Journeys aus PMS-Buchungen entstehen.
+1. Öffne in der DialogShift App **Einstellungen → Integrationen** und wähle **ASA**.
+2. Trage die **URL** des ASA-Reservierungsendpunkts ein.
+3. Falls ASA Basic Auth nutzt, trage zusätzlich **Username** und **Passwort** ein.
+4. Speichere die Einstellungen. Die Verbindung ist aktiv, sobald die URL gespeichert ist.
+5. Prüfe anschließend in Journey Messaging, ob Journeys aus PMS-Buchungen entstehen.
 
 ## Buchungsagenten
 
@@ -36,4 +37,4 @@ ASA wird nicht als Booking Engine für DialogShift Buchungsagenten genutzt. Chat
 
 ## Konfiguration
 
-Die ASA-Verbindung wird durch Customer Success eingerichtet. Die Journey-Messaging-Flows und Vorlagen pflegst du anschließend in DialogShift unter **Journey Messaging**.
+Die technische ASA-Anbindung pflegst du auf der ASA-Integrationsseite in der DialogShift App. Die Journey-Messaging-Flows und Vorlagen pflegst du anschließend unter **Journey Messaging**.
