@@ -157,7 +157,8 @@
                   "de/statistiken/chatbot-ai-statistik",
                   "de/statistiken/email-ai-statistik",
                   "de/statistiken/phone-ai-statistik",
-                  "de/statistiken/buchungsstatistik"
+                  "de/statistiken/buchungsstatistik",
+                  "de/statistiken/ki-auswertung"
                 ]
               },
               {
@@ -368,7 +369,8 @@
                   "en/statistics/chatbot-ai-statistics",
                   "en/statistics/email-ai-statistics",
                   "en/statistics/phone-ai-statistics",
-                  "en/statistics/booking-statistics"
+                  "en/statistics/booking-statistics",
+                  "en/statistics/ai-analysis"
                 ]
               },
               {
