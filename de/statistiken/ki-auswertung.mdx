@@ -1,195 +1,201 @@
 ---
 title: 'KI Auswertung'
-description: 'Sieh, worüber deine Gäste mit Chat AI und Phone AI sprechen, und schließe Wissenslücken direkt mit einer FAQ oder einer URL/PDF.'
+description: 'Sieh, worüber deine Gäste mit der KI sprechen, und ergänze fehlendes Wissen direkt mit einer FAQ oder einer URL/PDF.'
 ---
 
-Die **KI Auswertung** analysiert automatisch die Gespräche von **Chat AI** (inklusive Live Chat) und **Phone AI**. Sie zeigt dir, welche **Themen** deine Gäste ansprechen, und wo der KI Wissen fehlte oder sie sich widersprochen hat. Email AI wird nicht ausgewertet.
+Die **KI Auswertung** liest automatisch die Gespräche deiner Gäste mit **Chat AI** (auch Live Chat) und **Phone AI**. Sie zeigt dir zwei Dinge:
+
+- **Themen:** Worüber sprechen deine Gäste? Und wie oft?
+- **Wissenslücken:** Wo konnte die KI nicht antworten? Wo hat sie sich widersprochen?
+
+Fehlendes Wissen kannst du direkt aus der Auswertung ergänzen. Email AI wird nicht ausgewertet.
 
 ## Voraussetzungen
 
-- Du bist mindestens **Hotel-Admin**. Mitglieder und Editoren sehen die KI Auswertung nicht.
-- Du findest sie in der linken Navigation unter **KI Auswertung**, auf Ebene eines einzelnen Hotels. Es gibt die Unterseiten **Themen** und **Wissenslücken**.
+- Du bist **Hotel-Admin** oder hast eine höhere Rolle. Mitglieder und Editoren sehen die KI Auswertung nicht.
+- Du findest sie in der linken Navigation unter **KI Auswertung**, wenn du ein Hotel geöffnet hast. Es gibt zwei Seiten: **Themen** und **Wissenslücken**.
 
 <Note>
-Ausgewertet werden Gespräche ab dem **16.09.2026**. Ältere Gespräche werden nicht nachträglich analysiert.
+Ausgewertet werden nur Gespräche ab dem **16.09.2026**. Ältere Gespräche werden nicht nachträglich analysiert.
 </Note>
 
-## Wann erscheinen neue Daten?
+## Wann sind neue Gespräche in der Auswertung?
 
-| | Chat (Webchat, WhatsApp, weitere Messenger) | Phone AI |
-|---|---|---|
-| **Analyse** | frühestens **60 Minuten nach der letzten Nachricht**. Jede neue Nachricht startet die 60 Minuten neu. | kurz nach dem **Ende des Anrufs** |
-| **Sichtbar nach** | etwa 60 bis 75 Minuten nach der letzten Nachricht | etwa 15 Minuten nach Anrufende |
-| **Eine Konversation ist** | der gesamte Chatverlauf eines Gastes. Schreibt der Gast später erneut, werden die neuen Nachrichten zusätzlich ausgewertet. | ein einzelner Anruf |
+**Chat:** Die KI wartet, bis 60 Minuten lang keine Nachricht mehr kam. Dann wertet sie den Chat aus. Das Ergebnis siehst du etwa 60 bis 75 Minuten nach der letzten Nachricht. Schreibt der Gast später noch einmal, werden die neuen Nachrichten ebenfalls ausgewertet.
 
-Bei einem hohen Nachrichtenaufkommen kann es etwas länger dauern. Alle Texte der Auswertung sind in der **Standardsprache deines Hotels** formuliert, egal in welcher Sprache der Gast geschrieben oder gesprochen hat.
+**Phone AI:** Die KI wertet jeden Anruf einzeln aus, sobald er beendet ist. Das Ergebnis siehst du etwa 15 Minuten nach dem Anruf.
 
-## Themen
+Bei einem hohen Nachrichtenaufkommen kann es etwas länger dauern. Alle Texte in der Auswertung stehen in der Standardsprache deines Hotels. Die Sprache des Gastes spielt keine Rolle.
+
+## Seite „Themen“
 
 ### Filter
 
-| Filter | Optionen | Standard |
-|---|---|---|
-| **Kanal** | Chat AI, Phone AI, Live Chat (Mitarbeiter). Mindestens einer muss gewählt sein. | Chat AI und Phone AI |
-| **Zeitraum** | frei wählbar, maximal 366 Tage | letzte 7 Tage inklusive heute |
-| **Ansicht** | Word Cloud oder Liste | Word Cloud |
+- **Kanal:** Chat AI, Phone AI und Live Chat (Mitarbeiter). Standard: Chat AI und Phone AI.
+- **Zeitraum:** Standard sind die letzten 7 Tage inklusive heute. Du kannst höchstens 366 Tage auf einmal auswählen.
+- **Ansicht:** Word Cloud oder Liste.
 
-**Chat AI** umfasst Themen, die der Gast nur mit der KI besprochen hat. **Live Chat (Mitarbeiter)** umfasst Themen, bei denen ein Mitarbeiter geantwortet hat. Live Chat ist im Standard nicht ausgewählt. Willst du alle Chat-Themen sehen, wähle ihn zusätzlich aus. Die Tagesgrenzen des Zeitraums richten sich nach der Zeitzone deines Browsers.
+**Chat AI** zeigt Themen, die der Gast nur mit der KI besprochen hat. **Live Chat (Mitarbeiter)** zeigt Themen, bei denen ein Mitarbeiter geantwortet hat. Live Chat ist im Standard nicht ausgewählt. Wähle ihn dazu, wenn du alle Chat-Themen sehen willst.
 
 ### Word Cloud und Liste
 
-- **Word Cloud:** Je größer ein Thema, desto mehr Konversationen. Gleiche Farben stehen für verwandte Themen, z. B. Buchung und Zimmer in Blau oder Essen & Trinken und Wellness in Grün.
-- **Liste:** Thema, Anzahl der Konversationen mit Anteil in Prozent und der Button **Details**.
+In der **Word Cloud** ist ein Thema umso größer, je öfter es vorkam. Verwandte Themen haben die gleiche Farbe. Zum Beispiel sind Buchung und Zimmer blau, Essen & Trinken und Wellness grün.
 
-### Woher kommen Themen und Unterthemen?
+Die **Liste** zeigt jedes Thema mit der Anzahl der Gespräche und dem Anteil in Prozent.
 
-- **Themen** stammen aus einer festen Themenliste von DialogShift, z. B. Check-in-Zeit, Parkmöglichkeiten, Frühstück oder Spa-Öffnungszeiten. Die Liste lässt sich nicht anpassen. Passt kein Thema, erscheint **Sonstiges**.
-- Gezählt werden nur Themen, die der **Gast** angesprochen hat. Was nur die KI oder ein Mitarbeiter von sich aus erwähnt hat, zählt nicht.
-- **Unterthemen** bildet die KI selbst aus den Anliegen der Gäste, z. B. Frühstück → „Frühstückszeiten“ oder „Glutenfreies Frühstück“. Ein Thema kann mehrere Unterthemen haben. Alle Hotels einer Marke teilen sich dieselben Unterthemen-Namen. Hat deine Marke Hotels mit unterschiedlicher Standardsprache, können Unterthemen daher in verschiedenen Sprachen erscheinen.
+### Woher kommen die Themen?
 
-### Details eines Themas
+Die Themen stammen aus einer festen Liste von DialogShift. Beispiele sind Check-in-Zeit, Parkmöglichkeiten, Frühstück oder Spa-Öffnungszeiten. Du kannst die Liste nicht ändern. Passt kein Thema, heißt es **Sonstiges**.
 
-Klick auf ein Thema öffnet rechts die Details:
+Es zählt nur, was der **Gast** angesprochen hat. Was die KI oder ein Mitarbeiter von sich aus erwähnt hat, zählt nicht.
 
-| Kennzahl | Bedeutung |
-|---|---|
-| **Themenrang** | Position des Themas nach Anzahl der Konversationen (#1 = häufigstes Thema) |
-| **Konversationen** | Anzahl der Konversationen mit diesem Thema im Zeitraum |
-| **Anteil der Konversationen** | Konversationen mit diesem Thema geteilt durch alle Konversationen mit mindestens einem Thema im Zeitraum |
-| **Unterthemen** | je Unterthema der **Anteil an allen Konversationen** und der **Anteil innerhalb dieses Themas** |
+Zu jedem Thema bildet die KI **Unterthemen**. Beim Thema Frühstück sind das zum Beispiel „Frühstückszeiten“ oder „Glutenfreies Frühstück“. Alle Hotels einer Marke nutzen dieselben Unterthemen. Haben die Hotels deiner Marke verschiedene Standardsprachen, können Unterthemen deshalb in verschiedenen Sprachen erscheinen.
+
+### Details zu einem Thema
+
+Klicke auf ein Thema. Rechts siehst du:
+
+- **Themenrang:** Platz des Themas nach Anzahl der Gespräche. #1 ist das häufigste Thema.
+- **Konversationen:** Wie viele Gespräche dieses Thema hatten.
+- **Anteil der Konversationen:** Wie viel Prozent aller ausgewerteten Gespräche dieses Thema hatten.
+- **Unterthemen:** Für jedes Unterthema den Anteil an allen Gesprächen und den Anteil innerhalb dieses Themas.
 
 <Info>
-Eine Konversation hat meist mehrere Themen. Die Anteile aller Themen ergeben zusammen deshalb deutlich mehr als 100 %. Basis sind nur ausgewertete Konversationen mit mindestens einem Thema, nicht alle Chats oder Anrufe.
+Ein Gespräch hat meist mehrere Themen. Zählst du die Anteile aller Themen zusammen, kommst du deshalb auf deutlich mehr als 100 %. Gezählt werden nur Gespräche mit mindestens einem Thema.
 </Info>
 
-### Konversationen ansehen
+### Die Gespräche dazu ansehen
 
-**Alle X Konversationen öffnen** (oder **öffnen** bei einem Unterthema) springt in den Live Chat und zeigt genau die Konversationen hinter der Zahl. Oben steht dann der Kasten **Themenfilter aus KI-Analyse**. Solange er aktiv ist, sind Suche und Kanalauswahl ausgeblendet. Mit dem X (**Filter entfernen**) beendest du den Filter.
+Klicke auf **Alle X Konversationen öffnen**. Bei einem Unterthema klicke auf **öffnen**. Du kommst in den Live Chat und siehst genau diese Gespräche. Oben steht der Hinweis **Themenfilter aus KI-Analyse**. Mit dem X (**Filter entfernen**) kommst du zurück zur normalen Liste.
 
-Erscheint **Keine Chats**, wurden die Gespräche nach Ablauf der Aufbewahrungsfrist bereits gelöscht. Die Themenzahlen bleiben trotzdem erhalten.
+Steht dort **Keine Chats**, wurden die Gespräche schon gelöscht, weil die Aufbewahrungsfrist abgelaufen ist. Die Zahlen in der Auswertung bleiben trotzdem erhalten.
 
-## Wissenslücken
+## Seite „Wissenslücken“
 
-### Wissenslücke oder Wissenskonflikt?
+### Was ist eine Wissenslücke? Was ist ein Wissenskonflikt?
 
-Die KI prüft jede Konversation auf zwei Arten von Problemen. Die meisten Konversationen haben keinen Eintrag.
+**Wissenslücke:** Der Gast wollte etwas wissen, und die KI hatte die Information nicht. Zum Beispiel: „Wie man die Zimmertemperatur einstellt.“
 
-**Wissenslücke:** Die KI konnte dem Gast nicht helfen, weil ihr allgemeines Wissen fehlte, z. B. „Wie man die Zimmertemperatur einstellt.“ Keine Wissenslücke sind:
+Keine Wissenslücke ist es, wenn
 
-- Informationen zur Buchung oder Rechnung des einzelnen Gastes
-- Live-Daten wie Verfügbarkeit oder aktuelle Auslastung
-- Anliegen, die eine Handlung vor Ort erfordern
-- die aktuelle Erreichbarkeit von Mitarbeitern
-- Antworten von Live-Chat-Mitarbeitern
-- Tipp- oder Spracherkennungsfehler und unverständliche Eingaben
+- der Gast etwas zu seiner eigenen Buchung oder Rechnung wissen wollte,
+- es um aktuelle Daten ging, zum Beispiel freie Zimmer oder die aktuelle Auslastung,
+- der Gast eine Handlung vor Ort brauchte,
+- der Gast wissen wollte, ob gerade ein Mitarbeiter erreichbar ist,
+- ein Mitarbeiter im Live Chat geantwortet hat,
+- die Eingabe unverständlich war, etwa durch Tippfehler oder eine falsch erkannte Sprache.
 
-**Wissenskonflikt:** Die KI hat sich widersprochen, einem Mitarbeiter im Live Chat widersprochen, oder der Gast sagt ausdrücklich, dass die KI ihn falsch informiert hat. Geänderte Wünsche des Gastes oder unterschiedliche Preise für unterschiedliche Daten sind kein Konflikt.
+**Wissenskonflikt:** Die KI hat zwei verschiedene Angaben zur selben Sache gemacht. Oder sie hat etwas anderes gesagt als ein Mitarbeiter im Live Chat. Oder der Gast hat gesagt, dass die KI ihn falsch informiert hat.
 
-### Filter und Kennzahlen
+Kein Konflikt ist es, wenn der Gast seinen Wunsch geändert hat oder wenn verschiedene Termine verschiedene Preise haben.
 
-| Element | Bedeutung |
+Die meisten Gespräche haben weder eine Lücke noch einen Konflikt.
+
+### Filter und Zahlen
+
+- **Sichtbarkeit:** **Versteckte & Gelöste ausgeblendet** ist der Standard. Mit **Alle eingeblendet** siehst du auch ausgeblendete und gelöste Einträge.
+- **Kanal:** Chat AI und Phone AI. Chat AI steht hier für alle Text-Chats.
+- **Zeitraum:** Standard sind die letzten 7 Tage.
+- **Offene Wissenslücken** und **Offene Wissenskonflikte:** Anzahl der Einträge im Zeitraum, die noch nicht gelöst oder ausgeblendet sind.
+
+### Die Tabelle
+
+Jede Zeile gehört zu genau einem Gespräch. Fragen fünf Gäste dasselbe, siehst du fünf Zeilen. Die neuesten Einträge stehen oben.
+
+| Spalte | Das siehst du |
 |---|---|
-| **Sichtbarkeit** | **Versteckte & Gelöste ausgeblendet** (Standard) oder **Alle eingeblendet** |
-| **Kanal** | Chat AI und Phone AI. Chat AI umfasst hier alle Text-Chats. |
-| **Zeitraum** | Standard: letzte 7 Tage |
-| **Offene Wissenslücken** | Wissenslücken im Zeitraum, die weder ausgeblendet noch gelöst sind |
-| **Offene Wissenskonflikte** | dasselbe für Konflikte |
-
-### Tabelle
-
-Jede Zeile ist ein Eintrag aus **genau einer Konversation**. Fragen fünf Gäste dasselbe, siehst du fünf Zeilen. Die neuesten Einträge stehen oben.
-
-| Spalte | Inhalt |
-|---|---|
-| **Status** | Offen: Auge-Symbol zum Ausblenden. ✨ = **Von der KI verknüpft**. 🔗 = **Manuell verknüpft**. |
+| **Status** | Auge-Symbol zum Ausblenden. ✨ heißt: von der KI gelöst. 🔗 heißt: von dir gelöst. |
 | **Typ** | **Wissenslücke** (gelb) oder **Konflikt** (rot) |
-| **Detail** | Beschreibung der Lücke oder des Konflikts |
-| **Kanal** | Sprechblase = Chat, Telefon = Phone AI |
-| **Aufgetreten am** | Chat: Zeitpunkt der betreffenden Nachricht. Phone AI: Ende des Anrufs. |
-| **Konversation** | **öffnen** zeigt die Konversation im Live Chat |
+| **Detail** | Was gefehlt hat oder was sich widerspricht |
+| **Kanal** | Sprechblase für Chat, Telefon für Phone AI |
+| **Aufgetreten am** | Wann es passiert ist |
+| **Konversation** | **öffnen** zeigt das Gespräch im Live Chat |
 | **Aktion** | **lösen**, **FAQ öffnen**, **Dokument öffnen** oder bei Konflikten **Hilfe** |
 
 <Note>
-Bei Phone AI zeigt **öffnen** alle Anrufe derselben Rufnummer. Die Lücke gehört zum Anruf mit dem Zeitpunkt aus **Aufgetreten am**.
+Bei Phone AI zeigt **öffnen** alle Anrufe derselben Rufnummer. Der richtige Anruf ist der mit dem Zeitpunkt aus **Aufgetreten am**.
 </Note>
 
-### Eintrag ausblenden
+### Einen Eintrag ausblenden
 
-**Ausblenden** gilt nur für diesen einen Eintrag. Er bleibt ausgeblendet, auch wenn der Gast später weiterschreibt. Dieselbe Frage aus einer anderen Konversation erscheint als eigene Zeile. Zum Einblenden wählst du **Alle eingeblendet** und klickst erneut auf das Auge-Symbol.
+Klicke auf das Auge-Symbol. Der Eintrag verschwindet aus der Liste und bleibt ausgeblendet. Fragt ein anderer Gast dasselbe, erscheint dafür ein neuer Eintrag.
 
-### Wissenskonflikt auflösen
+Willst du ihn wieder sehen, wähle **Alle eingeblendet** und klicke erneut auf das Auge-Symbol.
 
-Ein Konflikt lässt sich nicht mit einer neuen FAQ lösen, weil die Information schon vorhanden ist, nur doppelt und unterschiedlich.
+### Einen Wissenskonflikt beheben
 
-1. Klicke auf **Hilfe** und dann auf **öffnen**, um die Konversation anzusehen.
+Bei einem Konflikt hilft keine neue FAQ. Die Information ist ja schon da, nur doppelt und unterschiedlich. So gehst du vor:
+
+1. Klicke auf **Hilfe** und dann auf **öffnen**. Lies das Gespräch.
 2. Prüfe, welche der beiden Angaben stimmt.
-3. Korrigiere oder entferne die falsche Angabe in deinen FAQs, URL/PDF-Inhalten oder Instruktionen.
-4. Blende den Konflikt anschließend mit **Wissenskonflikt ausblenden** aus.
+3. Suche die falsche Angabe in deinen FAQs, URL/PDF-Inhalten oder Instruktionen. Korrigiere oder lösche sie.
+4. Klicke dann auf **Wissenskonflikt ausblenden**.
 
-## Wissenslücken schließen
+## Eine Wissenslücke schließen
 
-Eine Wissenslücke gilt als gelöst, sobald sie mit **einer FAQ oder einer URL/PDF** verknüpft ist. Klicke dazu auf **lösen**. Im Fenster **Antwort hinterlegen** hast du diese Möglichkeiten:
+Eine Wissenslücke ist gelöst, wenn du ihr eine Antwort zuweist. Die Antwort ist eine FAQ oder eine URL/PDF. Klicke auf **lösen**. Das Fenster **Antwort hinterlegen** bietet dir drei Wege:
 
-| Option | Was passiert |
-|---|---|
-| **FAQ anlegen** | Die KI sucht den passenden Platz für die Antwort und öffnet die FAQ. |
-| **URL oder PDF hinterlegen** | Das **URL und PDF Management** öffnet sich mit dem Dialog zum Hinzufügen. |
-| **Oder bestehende FAQ bearbeiten** | Bis zu drei bereits befüllte FAQs, die am besten passen, jeweils mit **Bearbeiten**. FAQs der Marke tragen den Hinweis **Markenebene**. |
-| **Ausblenden** | blendet den Eintrag aus |
+### Weg 1: Neue FAQ anlegen
 
-### FAQ anlegen
+1. Klicke auf **FAQ anlegen**. Die KI sucht kurz nach einer passenden, noch leeren FAQ in deinem Katalog.
+2. Findet sie eine, öffnet sich diese FAQ. Oben steht **Die KI hat „…“ ausgewählt**. Möchtest du lieber eine neue FAQ, klicke auf **Andere Zuordnung vornehmen**.
+3. Findet sie keine, öffnet sich eine neue FAQ. Name und Kategorie sind schon ausgefüllt.
+4. Im ersten Antwortfeld steht die Frage des Gastes. Schreibe die Antwort dazu und **speichere**.
 
-1. Klicke auf **FAQ anlegen**. Die KI prüft kurz, ob eine noch leere FAQ aus deinem Katalog passt.
-2. Passt eine, öffnet sich diese mit dem Hinweis **Die KI hat „…“ ausgewählt**. Willst du lieber eine neue FAQ, klicke auf **Andere Zuordnung vornehmen**.
-3. Passt keine, öffnet sich eine neue FAQ. Name und Kategorie sind bereits vorbelegt.
-4. Das erste Antwortfeld enthält die Beschreibung der Lücke. Ergänze die Antwort und **speichere**. Die Lücke ist danach verknüpft (🔗).
+Die Lücke ist jetzt gelöst und mit der FAQ verknüpft (🔗).
 
-### Bestehende FAQ bearbeiten
+### Weg 2: Bestehende FAQ ergänzen
 
-1. Klicke im Fenster **Antwort hinterlegen** bei einem Vorschlag auf **Bearbeiten**.
-2. Ergänze die Antwort und **speichere**. Erst beim Speichern wird die Lücke verknüpft. Brichst du ab, bleibt alles unverändert.
+Unter **Oder bestehende FAQ bearbeiten** siehst du bis zu drei FAQs, die zur Frage passen könnten. FAQs deiner Marke sind mit **Markenebene** markiert. Du siehst sie nur, wenn du die Marke bearbeiten darfst.
 
-FAQs der Marke werden nur vorgeschlagen, wenn du die Marke bearbeiten darfst.
+1. Klicke bei der passenden FAQ auf **Bearbeiten**.
+2. Ergänze die Antwort und **speichere**.
 
-### URL oder PDF hinterlegen
+Erst mit dem Speichern ist die Lücke gelöst. Brichst du ab, bleibt alles wie vorher.
 
-1. Klicke auf **URL oder PDF hinterlegen**.
-2. Trage die URL ein oder lade das PDF hoch und füge es hinzu. Die Lücke ist sofort verknüpft (🔗).
+### Weg 3: URL oder PDF hinterlegen
 
-Schließt du den Dialog, ohne etwas hinzuzufügen, bleibt die Lücke offen. Ein später hinzugefügtes Dokument wird nicht mehr mit ihr verknüpft.
+1. Klicke auf **URL oder PDF hinterlegen**. Das **URL und PDF Management** öffnet sich.
+2. Trage die URL ein oder lade das PDF hoch. Füge es hinzu.
 
-### Automatische Verknüpfung durch die KI
+Die Lücke ist sofort gelöst (🔗). Schließt du das Fenster, ohne etwas hinzuzufügen, bleibt die Lücke offen.
 
-Die KI schließt offene Wissenslücken selbst (✨), wenn neues Wissen sie **vollständig** beantwortet. Das passiert, wenn
+### Die KI löst Lücken auch selbst
 
-- eine FAQ zum ersten Mal gespeichert wird. Eine FAQ der Marke wird mit den offenen Lücken aller Hotels der Marke abgeglichen.
-- eine bestehende FAQ über **lösen** gespeichert wird.
-- eine URL oder ein PDF über **URL oder PDF hinterlegen** hinzugefügt und eingelesen wurde.
-- eine neue Lücke gefunden wird und in den letzten 12 Stunden bereits eine passende FAQ angelegt wurde.
+Wenn du neues Wissen anlegst, prüft die KI, ob es offene Lücken beantwortet. Passt eine Antwort vollständig, wird die Lücke automatisch gelöst und mit ✨ markiert. Das passiert, wenn du
 
-Die Prüfung dauert meist wenige Minuten. Neue ✨-Verknüpfungen siehst du nach dem Neuladen der Seite. Konflikte und ausgeblendete Lücken werden nie automatisch verknüpft.
+- eine FAQ zum ersten Mal speicherst. Eine FAQ der Marke prüft die KI für alle Hotels der Marke.
+- eine bestehende FAQ über **lösen** speicherst.
+- eine URL oder ein PDF über **URL oder PDF hinterlegen** hinzufügst.
+
+Außerdem: Legst du eine FAQ an, bevor die KI das Gespräch ausgewertet hat, erkennt sie das. Die Lücke erscheint dann direkt als gelöst. Das gilt für FAQs aus den letzten 12 Stunden.
+
+Die Prüfung dauert meist ein paar Minuten. Lade die Seite neu, um neue ✨-Einträge zu sehen. Konflikte und ausgeblendete Lücken löst die KI nie automatisch.
 
 <Info>
-Bearbeitest du eine bestehende FAQ direkt unter **KI Inhalte** oder fügst eine URL/PDF direkt im **URL und PDF Management** hinzu, werden offene Lücken nicht automatisch geprüft. Klicke in diesem Fall bei einer passenden Lücke auf **lösen** → **Oder bestehende FAQ bearbeiten** und speichere die FAQ. Dann prüft die KI auch alle anderen offenen Lücken.
+Änderst du eine bestehende FAQ direkt unter **KI Inhalte**, prüft die KI die offenen Lücken nicht. Dasselbe gilt, wenn du eine URL oder ein PDF direkt im **URL und PDF Management** hinzufügst.
+
+Willst du trotzdem alle passenden Lücken schließen, klicke bei einer davon auf **lösen** und wähle die FAQ unter **Oder bestehende FAQ bearbeiten**. Speichere sie. Dann prüft die KI auch alle anderen offenen Lücken.
 </Info>
 
-### Verknüpfung aufheben
+### Eine Lösung wieder entfernen
 
-- Klicke in der Spalte **Status** auf ✨ oder 🔗 und dann auf **Verknüpfung aufheben**. Die Lücke ist wieder offen, die FAQ oder das Dokument bleibt unverändert.
-- Löschst du die FAQ oder das Dokument, ist die Lücke automatisch wieder offen. Eine nur deaktivierte FAQ bleibt verknüpft.
+Klicke in der Spalte **Status** auf ✨ oder 🔗. Klicke dann auf **Verknüpfung aufheben**. Die Lücke ist wieder offen. Die FAQ oder das Dokument bleibt erhalten.
 
-Eine Lücke hat immer nur eine Antwort. Verknüpfst du eine neue, ersetzt sie die bisherige.
+Löschst du eine FAQ oder ein Dokument, werden die dazugehörigen Lücken automatisch wieder offen. Eine FAQ, die du nur deaktivierst, bleibt als Lösung bestehen.
 
-### Verknüpfte Wissenslücken in FAQs und Dokumenten
+Eine Lücke hat immer nur eine Lösung. Weist du eine neue zu, ersetzt sie die alte.
 
-Auf der Detailseite einer FAQ oder einer URL/PDF siehst du im Bereich **Verknüpfte Wissenslücken**, welche Lücken damit gelöst wurden. Mit **Trennen** hebst du eine Verknüpfung auf. Der Bereich erscheint nur, wenn mindestens eine Lücke verknüpft ist, und nur für Hotel-Admins und höher.
+### Gelöste Lücken in der FAQ sehen
 
-## Aufbewahrung und Löschung
+Öffne eine FAQ oder eine URL/PDF. Unter **Verknüpfte Wissenslücken** siehst du, welche Lücken damit gelöst wurden. Mit **Trennen** entfernst du eine Lösung. Diesen Bereich sehen nur Hotel-Admins und höhere Rollen, und nur wenn mindestens eine Lücke verknüpft ist.
 
-| Daten | Nach Ablauf der Aufbewahrungsfrist für Gästedaten |
-|---|---|
-| **Themen und Unterthemen** | bleiben als Statistik erhalten. Die Zahlen vergangener Zeiträume ändern sich nicht. |
-| **Wissenslücken und Konflikte** | werden mit den Gästedaten gelöscht. Die Liste reicht nur so weit zurück wie die Aufbewahrungsfrist. |
-| **Verknüpfte FAQs, URLs und PDFs** | bleiben bestehen |
+## Wie lange bleiben die Daten?
 
-Wird ein Gast auf Anfrage gelöscht, entfällt auch seine komplette Auswertung.
+Für Gästedaten gilt in deinem Hotel eine Aufbewahrungsfrist. Nach ihrem Ablauf passiert Folgendes:
+
+- **Themen und Unterthemen** bleiben. Die Zahlen für vergangene Zeiträume ändern sich nicht.
+- **Wissenslücken und Konflikte** werden gelöscht, weil sie Gesprächsinhalte enthalten. Die Liste reicht also nur so weit zurück wie die Aufbewahrungsfrist.
+- **FAQs, URLs und PDFs** bleiben natürlich erhalten.
+
+Löschst du einen Gast auf seine Anfrage, wird auch seine Auswertung gelöscht.

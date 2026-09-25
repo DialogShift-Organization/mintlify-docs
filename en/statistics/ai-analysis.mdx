@@ -1,195 +1,201 @@
 ---
 title: 'AI analysis'
-description: 'See what your guests talk about with Chat AI and Phone AI, and close knowledge gaps directly with an FAQ or a URL/PDF.'
+description: 'See what your guests talk about with the AI, and add missing knowledge directly with an FAQ or a URL/PDF.'
 ---
 
-**AI analysis** automatically analyzes the conversations of **Chat AI** (including Live Chat) and **Phone AI**. It shows you which **topics** your guests bring up, and where the AI was missing knowledge or contradicted itself. Email AI is not analyzed.
+**AI analysis** automatically reads your guests' conversations with **Chat AI** (including Live Chat) and **Phone AI**. It shows you two things:
+
+- **Topics:** What do your guests talk about? And how often?
+- **Knowledge gaps:** Where could the AI not answer? Where did it contradict itself?
+
+You can add missing knowledge directly from the analysis. Email AI is not analyzed.
 
 ## Requirements
 
-- You are at least **hotel admin**. Members and editors do not see AI analysis.
-- You find it in the left navigation under **AI analysis**, at the level of an individual hotel. It has two subpages: **Topics** and **Knowledge gaps**.
+- You are a **hotel admin** or have a higher role. Members and editors do not see AI analysis.
+- You find it in the left navigation under **AI analysis** when you have a hotel open. There are two pages: **Topics** and **Knowledge gaps**.
 
 <Note>
-Conversations are analyzed from **16 September 2026** onwards. Older conversations are not analyzed retroactively.
+Only conversations from **16 September 2026** onwards are analyzed. Older conversations are not analyzed retroactively.
 </Note>
 
-## When does new data appear?
+## When do new conversations appear in the analysis?
 
-| | Chat (webchat, WhatsApp, other messengers) | Phone AI |
-|---|---|---|
-| **Analysis** | at the earliest **60 minutes after the last message**. Every new message restarts the 60 minutes. | shortly after the **call ends** |
-| **Visible after** | about 60 to 75 minutes after the last message | about 15 minutes after the call ends |
-| **One conversation is** | a guest's entire chat history. If the guest writes again later, the new messages are analyzed in addition. | a single call |
+**Chat:** The AI waits until no message has arrived for 60 minutes. Then it analyzes the chat. You see the result about 60 to 75 minutes after the last message. If the guest writes again later, the new messages are analyzed too.
 
-With a high message volume, it can take a little longer. All texts in the analysis are written in your **hotel's default language**, regardless of the language the guest wrote or spoke in.
+**Phone AI:** The AI analyzes each call separately as soon as it has ended. You see the result about 15 minutes after the call.
 
-## Topics
+With a high message volume, it can take a little longer. All texts in the analysis are in your hotel's default language. The guest's language does not matter.
+
+## The "Topics" page
 
 ### Filters
 
-| Filter | Options | Default |
-|---|---|---|
-| **Channel** | Chat AI, Phone AI, Live Chat (staff). At least one must be selected. | Chat AI and Phone AI |
-| **Time period** | freely selectable, up to 366 days | last 7 days including today |
-| **View** | Word cloud or List | Word cloud |
+- **Channel:** Chat AI, Phone AI and Live Chat (staff). Default: Chat AI and Phone AI.
+- **Time period:** The default is the last 7 days including today. You can select up to 366 days at once.
+- **View:** Word cloud or List.
 
-**Chat AI** covers topics the guest discussed only with the AI. **Live Chat (staff)** covers topics where a staff member replied. Live Chat is not selected by default. To see all chat topics, select it as well. The day boundaries of the time period follow your browser's time zone.
+**Chat AI** shows topics the guest discussed only with the AI. **Live Chat (staff)** shows topics where a staff member replied. Live Chat is not selected by default. Add it if you want to see all chat topics.
 
 ### Word cloud and list
 
-- **Word cloud:** The larger a topic, the more conversations. Matching colors mark related topics, e.g. booking and rooms in blue, or food & drinks and wellness in green.
-- **List:** topic, number of conversations with percentage share, and the **Details** button.
+In the **word cloud**, a topic is larger the more often it came up. Related topics have the same color. For example, booking and rooms are blue, food & drinks and wellness are green.
 
-### Where do topics and subtopics come from?
+The **list** shows each topic with the number of conversations and the share in percent.
 
-- **Topics** come from a fixed DialogShift topic list, e.g. check-in time, parking, breakfast or spa opening hours. The list cannot be customized. If no topic fits, the conversation is assigned **other**.
-- Only topics the **guest** brought up are counted. Anything only the AI or a staff member mentioned on their own does not count.
-- **Subtopics** are created by the AI from the guests' requests, e.g. breakfast → "breakfast times" or "gluten-free breakfast". A topic can have several subtopics. All hotels of a brand share the same subtopic names. If your brand has hotels with different default languages, subtopics may therefore appear in different languages.
+### Where do the topics come from?
 
-### Topic details
+The topics come from a fixed list by DialogShift. Examples are check-in time, parking, breakfast or spa opening hours. You cannot change the list. If no topic fits, it is called **other**.
 
-Clicking a topic opens its details on the right:
+Only what the **guest** brought up counts. What the AI or a staff member mentioned on their own does not count.
 
-| Metric | Meaning |
-|---|---|
-| **Topic rank** | Position of the topic by number of conversations (#1 = most frequent topic) |
-| **Conversations** | Number of conversations with this topic in the time period |
-| **Share of conversations** | Conversations with this topic divided by all conversations with at least one topic in the time period |
-| **Subtopics** | For each subtopic, the **Share of all conversations** and the **Share within this topic** |
+For each topic, the AI creates **subtopics**. For the topic breakfast, these could be "breakfast times" or "gluten-free breakfast". All hotels of a brand use the same subtopics. If the hotels of your brand have different default languages, subtopics may therefore appear in different languages.
+
+### Details of a topic
+
+Click a topic. On the right you see:
+
+- **Topic rank:** The topic's position by number of conversations. #1 is the most frequent topic.
+- **Conversations:** How many conversations had this topic.
+- **Share of conversations:** What percentage of all analyzed conversations had this topic.
+- **Subtopics:** For each subtopic, the share of all conversations and the share within this topic.
 
 <Info>
-A conversation usually has several topics. The shares of all topics therefore add up to well over 100%. The basis is only analyzed conversations with at least one topic, not all chats or calls.
+A conversation usually has several topics. If you add up the shares of all topics, you therefore get well over 100%. Only conversations with at least one topic are counted.
 </Info>
 
-### View conversations
+### View the conversations
 
-**Open all X conversations** (or **open** next to a subtopic) takes you to Live Chat and shows exactly the conversations behind the number. The box **Topic filter from AI analysis** then appears at the top. While it is active, search and channel selection are hidden. Click the X (**Remove filter**) to end the filter.
+Click **Open all X conversations**. For a subtopic, click **open**. You go to Live Chat and see exactly these conversations. At the top you see the note **Topic filter from AI analysis**. Click the X (**Remove filter**) to return to the normal list.
 
-If **No chats** appears, the conversations have already been deleted after the retention period expired. The topic numbers are kept anyway.
+If it says **No chats**, the conversations have already been deleted because the retention period has expired. The numbers in the analysis are kept anyway.
 
-## Knowledge gaps
+## The "Knowledge gaps" page
 
-### Knowledge gap or knowledge conflict?
+### What is a knowledge gap? What is a knowledge conflict?
 
-The AI checks each conversation for two kinds of problems. Most conversations have no entry.
+**Knowledge gap:** The guest wanted to know something, and the AI did not have the information. For example: "How to adjust the room temperature."
 
-**Knowledge gap:** The AI could not help the guest because it was missing general knowledge, e.g. "How to adjust the room temperature." The following are not knowledge gaps:
+It is not a knowledge gap if
 
-- information about the individual guest's booking or invoice
-- live data such as availability or current occupancy
-- requests that require an action on site
-- the current availability of staff
-- replies from Live Chat staff
-- typos, speech recognition errors and unintelligible input
+- the guest asked about their own booking or invoice,
+- it was about live data, for example free rooms or current occupancy,
+- the guest needed someone to do something on site,
+- the guest wanted to know whether a staff member is available right now,
+- a staff member replied in Live Chat,
+- the input was unintelligible, for example because of typos or misrecognized speech.
 
-**Knowledge conflict:** The AI contradicted itself, contradicted a staff member in Live Chat, or the guest explicitly said the AI gave them wrong information. Changed guest requests or different prices for different dates are not a conflict.
+**Knowledge conflict:** The AI gave two different answers about the same thing. Or it said something different from a staff member in Live Chat. Or the guest said the AI gave them wrong information.
 
-### Filters and metrics
+It is not a conflict if the guest changed their request or if different dates have different prices.
 
-| Element | Meaning |
+Most conversations have neither a gap nor a conflict.
+
+### Filters and numbers
+
+- **Visibility:** **Hidden & solved excluded** is the default. With **All shown** you also see hidden and solved entries.
+- **Channel:** Chat AI and Phone AI. Here, Chat AI stands for all text chats.
+- **Time period:** The default is the last 7 days.
+- **Open knowledge gaps** and **Open knowledge conflicts:** Number of entries in the time period that are not yet solved or hidden.
+
+### The table
+
+Each row belongs to exactly one conversation. If five guests ask the same thing, you see five rows. The newest entries are at the top.
+
+| Column | What you see |
 |---|---|
-| **Visibility** | **Hidden & solved excluded** (default) or **All shown** |
-| **Channel** | Chat AI and Phone AI. Here, Chat AI covers all text chats. |
-| **Time period** | default: last 7 days |
-| **Open knowledge gaps** | knowledge gaps in the time period that are neither hidden nor solved |
-| **Open knowledge conflicts** | the same for conflicts |
-
-### Table
-
-Each row is an entry from **exactly one conversation**. If five guests ask the same thing, you see five rows. The newest entries are at the top.
-
-| Column | Content |
-|---|---|
-| **Status** | Open: eye icon to hide. ✨ = **Linked by AI**. 🔗 = **Linked manually**. |
+| **Status** | Eye icon to hide. ✨ means: solved by the AI. 🔗 means: solved by you. |
 | **Type** | **Knowledge gap** (yellow) or **Conflict** (red) |
-| **Detail** | Description of the gap or conflict |
-| **Channel** | Speech bubble = chat, phone = Phone AI |
-| **Occurred on** | Chat: time of the message concerned. Phone AI: end of the call. |
+| **Detail** | What was missing or what contradicts itself |
+| **Channel** | Speech bubble for chat, phone for Phone AI |
+| **Occurred on** | When it happened |
 | **Conversation** | **open** shows the conversation in Live Chat |
 | **Action** | **solve**, **Open FAQ**, **Open document** or, for conflicts, **Help** |
 
 <Note>
-For Phone AI, **open** shows all calls from the same phone number. The gap belongs to the call with the time shown under **Occurred on**.
+For Phone AI, **open** shows all calls from the same phone number. The right call is the one with the time under **Occurred on**.
 </Note>
 
 ### Hide an entry
 
-**Hide** applies only to this one entry. It stays hidden even if the guest writes again later. The same question from another conversation appears as a separate row. To show it again, select **All shown** and click the eye icon again.
+Click the eye icon. The entry disappears from the list and stays hidden. If another guest asks the same thing, a new entry appears for that.
 
-### Resolve a knowledge conflict
+To see it again, select **All shown** and click the eye icon again.
 
-A conflict cannot be solved with a new FAQ, because the information already exists, twice and differently.
+### Fix a knowledge conflict
 
-1. Click **Help**, then **open** to view the conversation.
+A new FAQ does not help with a conflict. The information already exists, just twice and differently. Here is what to do:
+
+1. Click **Help**, then **open**. Read the conversation.
 2. Check which of the two statements is correct.
-3. Correct or remove the wrong statement in your FAQs, URL/PDF content or instructions.
-4. Then hide the conflict with **Hide knowledge conflict**.
+3. Find the wrong statement in your FAQs, URL/PDF content or instructions. Correct or delete it.
+4. Then click **Hide knowledge conflict**.
 
-## Close knowledge gaps
+## Close a knowledge gap
 
-A knowledge gap counts as solved as soon as it is linked to **an FAQ or a URL/PDF**. To do this, click **solve**. The **Store answer** window offers these options:
+A knowledge gap is solved when you assign an answer to it. The answer is an FAQ or a URL/PDF. Click **solve**. The **Store answer** window offers you three ways:
 
-| Option | What happens |
-|---|---|
-| **Create FAQ** | The AI finds the right place for the answer and opens the FAQ. |
-| **Store URL or PDF** | **URL and PDF management** opens with the dialog for adding content. |
-| **Or edit an existing FAQ** | Up to three already filled FAQs that fit best, each with **Edit**. Brand FAQs are marked **Brand level**. |
-| **Hide** | hides the entry |
+### Way 1: Create a new FAQ
 
-### Create FAQ
+1. Click **Create FAQ**. The AI briefly looks for a matching, still empty FAQ in your catalog.
+2. If it finds one, this FAQ opens. At the top it says **AI picked the FAQ "…"**. If you prefer a new FAQ, click **Change assignment**.
+3. If it finds none, a new FAQ opens. Name and category are already filled in.
+4. The first answer field contains the guest's question. Write the answer and **save**.
 
-1. Click **Create FAQ**. The AI briefly checks whether an empty FAQ from your catalog fits.
-2. If one fits, it opens with the note **AI picked the FAQ "…"**. If you prefer a new FAQ, click **Change assignment**.
-3. If none fits, a new FAQ opens. Name and category are already filled in.
-4. The first answer field contains the description of the gap. Add the answer and **save**. The gap is then linked (🔗).
+The gap is now solved and linked to the FAQ (🔗).
 
-### Edit an existing FAQ
+### Way 2: Add to an existing FAQ
 
-1. In the **Store answer** window, click **Edit** next to a suggestion.
-2. Add the answer and **save**. The gap is only linked when you save. If you cancel, nothing changes.
+Under **Or edit an existing FAQ** you see up to three FAQs that might fit the question. FAQs of your brand are marked **Brand level**. You only see them if you are allowed to edit the brand.
 
-Brand FAQs are only suggested if you are allowed to edit the brand.
+1. Click **Edit** next to the matching FAQ.
+2. Add the answer and **save**.
 
-### Store URL or PDF
+The gap is only solved once you save. If you cancel, everything stays as it was.
 
-1. Click **Store URL or PDF**.
-2. Enter the URL or upload the PDF and add it. The gap is linked immediately (🔗).
+### Way 3: Store a URL or PDF
 
-If you close the dialog without adding anything, the gap stays open. A document added later is no longer linked to it.
+1. Click **Store URL or PDF**. **URL and PDF management** opens.
+2. Enter the URL or upload the PDF. Add it.
 
-### Automatic linking by the AI
+The gap is solved immediately (🔗). If you close the window without adding anything, the gap stays open.
 
-The AI closes open knowledge gaps itself (✨) when new knowledge answers them **completely**. This happens when
+### The AI also solves gaps itself
 
-- an FAQ is saved for the first time. A brand FAQ is checked against the open gaps of all hotels of the brand.
-- an existing FAQ is saved via **solve**.
-- a URL or PDF was added via **Store URL or PDF** and has been read in.
-- a new gap is found and a matching FAQ was already created in the last 12 hours.
+When you add new knowledge, the AI checks whether it answers open gaps. If an answer fits completely, the gap is solved automatically and marked with ✨. This happens when you
 
-The check usually takes a few minutes. You see new ✨ links after reloading the page. Conflicts and hidden gaps are never linked automatically.
+- save an FAQ for the first time. For a brand FAQ, the AI checks all hotels of the brand.
+- save an existing FAQ via **solve**.
+- add a URL or PDF via **Store URL or PDF**.
+
+Also: If you create an FAQ before the AI has analyzed the conversation, it notices. The gap then appears as solved right away. This applies to FAQs from the last 12 hours.
+
+The check usually takes a few minutes. Reload the page to see new ✨ entries. The AI never solves conflicts or hidden gaps automatically.
 
 <Info>
-If you edit an existing FAQ directly under **AI Content** or add a URL/PDF directly in **URL and PDF management**, open gaps are not checked automatically. In that case, click **solve** → **Or edit an existing FAQ** on a matching gap and save the FAQ. The AI then also checks all other open gaps.
+If you change an existing FAQ directly under **AI Content**, the AI does not check the open gaps. The same applies if you add a URL or PDF directly in **URL and PDF management**.
+
+If you still want to close all matching gaps, click **solve** on one of them and choose the FAQ under **Or edit an existing FAQ**. Save it. The AI then also checks all other open gaps.
 </Info>
 
-### Remove a link
+### Remove a solution
 
-- In the **Status** column, click ✨ or 🔗, then **Remove link**. The gap is open again; the FAQ or document stays unchanged.
-- If you delete the FAQ or document, the gap is automatically open again. An FAQ that is only deactivated stays linked.
+In the **Status** column, click ✨ or 🔗. Then click **Remove link**. The gap is open again. The FAQ or document is kept.
 
-A gap always has only one answer. Linking a new one replaces the previous one.
+If you delete an FAQ or document, its gaps automatically become open again. An FAQ that you only deactivate stays as a solution.
 
-### Linked knowledge gaps in FAQs and documents
+A gap always has only one solution. If you assign a new one, it replaces the old one.
 
-On the detail page of an FAQ or a URL/PDF, the **Linked knowledge gaps** section shows which gaps it solved. Use **Disconnect** to remove a link. The section only appears if at least one gap is linked, and only for hotel admins and above.
+### See solved gaps in the FAQ
 
-## Retention and deletion
+Open an FAQ or a URL/PDF. Under **Linked knowledge gaps** you see which gaps were solved with it. Use **Disconnect** to remove a solution. Only hotel admins and higher roles see this section, and only if at least one gap is linked.
 
-| Data | After the guest data retention period expires |
-|---|---|
-| **Topics and subtopics** | are kept as statistics. The numbers for past periods do not change. |
-| **Knowledge gaps and conflicts** | are deleted together with the guest data. The list only goes back as far as the retention period. |
-| **Linked FAQs, URLs and PDFs** | remain |
+## How long is the data kept?
 
-If a guest is deleted on request, their entire analysis is removed as well.
+Your hotel has a retention period for guest data. After it expires, this happens:
+
+- **Topics and subtopics** are kept. The numbers for past periods do not change.
+- **Knowledge gaps and conflicts** are deleted, because they contain conversation content. The list therefore only goes back as far as the retention period.
+- **FAQs, URLs and PDFs** are of course kept.
+
+If you delete a guest at their request, their analysis is deleted too.
