@@ -128,19 +128,6 @@ Here you'll find instructions for some of the most common phone systems.
         -   Find the **"Call Source Identification"** section.
         -   Set the fields for **"Calling Number"** and **"Caller Name"** to use the values from the `P-Asserted-Identity: User Part` and `P-Asserted-Identity: Display Name` of the SIP header.
   </Accordion>
-  <Accordion title="Avaya (IP Office / Aura)">
-    In Avaya systems, the SIP trunk must be configured to accept and trust the `P-Asserted-Identity` (PAI) as the source for caller ID.
-
-    1.  **SIP Line Configuration:**
-        -   Open the **IP Office Manager** and navigate to the configuration of the SIP line used for DialogShift.
-        -   Go to the **"Call Details"** tab.
-    2.  **Activate header trust:**
-        -   Ensure the checkbox for **`P Asserted ID`** is activated.
-        -   Switch to the **"SIP Advanced"** tab.
-    3.  **Check identity settings:**
-        -   In the **"Identity"** section, activate the option **"Use PAI for Privacy"**.
-        -   To ensure PAI is preferred over the `From` specification, make sure the option **"Caller ID from From header"** is **disabled** if PAI should be prioritized.
-  </Accordion>
   <Accordion title="Cisco (CUCM)">
     In Cisco Unified Communications Manager (CUCM), caller ID handling is controlled via profiles assigned to the SIP trunk.
 
@@ -168,23 +155,7 @@ Here you'll find instructions for some of the most common phone systems.
         -   The option **"Renegotiate SDP on all In-coming Calls"** should also be activated to avoid codec conflicts.
   </Accordion>
   <Accordion title="Deutsche Telekom (Cloud PBX / CompanyFlex)">
-    For a Telekom-operated cloud phone system to display the correct caller ID from an external SIP trunk (like DialogShift's), the system must be configured to trust the transmitted SIP headers.
-
-    Configuration usually takes place in the **Phone System Manager** of the Telekom Cloud PBX.
-
-    1.  **Create/edit SIP trunk for DialogShift:**
-        -   Log into the Phone System Manager of your Telekom Cloud PBX.
-        -   Navigate to the menu item for managing SIP trunks (often under "Telephony Settings" -> "Lines" or "Trunks").
-        -   Create a new trunk for DialogShift or edit the existing one.
-    2.  **Configure caller ID display (CLIP):**
-        -   Look for options for **"Caller ID transmission"** or **"Caller identification"** in the trunk settings.
-        -   Ensure the phone system uses the caller ID from the **`P-Asserted-Identity` (PAI)** header. The exact option name may vary, look for terms like:
-            -   "Trust PAI header"
-            -   "Caller ID source: P-Asserted-Identity"
-            -   "Identity from P-Header"
-        -   This is the crucial step for the original caller number sent by DialogShift to take precedence over the trunk's main number.
-    3.  **Check outgoing rules:**
-        -   Unlikely for incoming calls, but ensure no global rules override the incoming caller ID.
+    The Phone AI can be connected to and operated with the Telekom Cloud PBX. When transferring a call, however, the extension only shows the Phone AI's number, not the number of the calling guest. In our experience so far, this cannot be changed with the settings described on this page.
   </Accordion>
   <Accordion title="Asterisk / FreePBX">
     In Asterisk-based systems, configuration depends on whether the older `chan_sip` or the modern `pjsip` driver is used.

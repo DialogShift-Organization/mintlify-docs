@@ -46,7 +46,7 @@ Einige Router / Firewalls können die SIP-Kommunikation dynamisch anpassen, um f
 
 <Steps>
   <Step title="SIP-Account einrichten">
-    Separater Account speziell für die Phone AI
+    Separater Account speziell für die Phone AI. Erlaubt deine Anlage nur eine Anmeldung pro Account, richte zwei Accounts ein.
   </Step>
   <Step title="Zugangsdaten bereitstellen">
     Vollständige SIP-Zugangsdaten (siehe unten)
@@ -74,7 +74,7 @@ Einige Router / Firewalls können die SIP-Kommunikation dynamisch anpassen, um f
 
 ## Anforderungen
 
-- Ausfallsicherheit: Unser Softphone meldet sich immer mit zwei Softphones an der Telefonnanlage an, die Telefonanlage muss die Anmeldung von zwei Softphones erlauben.
+- Ausfallsicherheit: Unser Softphone meldet sich immer mit zwei Softphones an der Telefonnanlage an, die Telefonanlage muss die Anmeldung von zwei Softphones erlauben. Das geht entweder auf einem SIP-Account oder auf zwei getrennten SIP-Accounts.
 
 ### Zusätzlich bei lokal betriebenen Telefonanlagen:
 
@@ -149,3 +149,39 @@ Einrichtungsdauer: 1–2 Werktage nach Erhalt aller Informationen.
     Nein, dies ist nicht möglich. Die DialogShift Phone AI wurde im Hinblick auf moderne Cloud-Telefonanlagen entwickelt, welche eine klassische SIP-Anmeldung über das Internet verwenden. Mit einem starken Passwort sowie einer Firewall-Limitierung auf die DialogShift IP-Adressen ist ein ähnliches Sicherheitsniveau erreichbar wie mit einer VPN-Verbindung. Aufgrund des deutlich größeren Setup-Aufwandes sowie der großen Vielfalt an verfügbarer VPN-Softwarelösungen bieten wir daher keine Registrierung über ein VPN an.
   </Accordion>
 </AccordionGroup>
+
+## Erfahrungen mit Telefonanlagen
+
+<Warning>
+  **Diese Liste ist eine Auswahl, keine abschließende Aufstellung.** Sie enthält nur Telefonanlagen, mit denen wir bereits Erfahrungen gesammelt haben. Steht deine Anlage nicht auf der Liste, heißt das nicht, dass sie ungeeignet ist.
+</Warning>
+
+### Deine Anlage prüfen
+
+Es gibt sehr viele Telefonanlagen, Modelle und Softwarestände. Wir können deshalb nicht für jede Anlage vorab sagen, ob sie mit der Phone AI funktioniert. Auch bei den unten aufgeführten Anlagen kann das Verhalten je nach Modell und Softwarestand abweichen.
+
+Die Phone AI setzt voraus, dass deine Anlage den SIP-Standard (SIP 2.0, RFC 3261) vollständig und standardkonform umsetzt. Bitte prüfe das vor der Einrichtung mit dem Hersteller oder dem Dienstleister deiner Anlage. Frag dabei konkret nach diesen Punkten:
+
+- Anmeldung von SIP-Telefonen über das Internet
+- Zwei gleichzeitige Anmeldungen für die Phone AI, entweder auf einem SIP-Account oder auf zwei getrennten SIP-Accounts
+- Neue Anrufe der Phone AI an interne Nebenstellen oder Gruppen
+- Bei lokal betriebenen Anlagen: Angabe der öffentlichen IP-Adresse beim Gesprächsaufbau (NAT-Aware-Konfiguration)
+
+### Grundsätzlich kompatibel
+
+- STARFACE
+- 3CX
+- Cisco Unified Communications Manager (CUCM)
+- Mitel MiVoice / 3300 ICP
+- Asterisk / FreePBX
+
+### Eingeschränkt kompatibel
+
+Bei diesen Anlagen lässt sich die Phone AI anbinden und betreiben. Bei einer Weiterleitung zeigt die Nebenstelle jedoch nur die Rufnummer der Phone AI an, nicht die Rufnummer des anrufenden Gasts.
+
+- Telekom Cloud PBX / CompanyFlex
+- OpenScape Business (Unify / Mitel)
+
+### Nicht kompatibel
+
+- **Avaya IP Office:** Die SIP-Implementierung der Anlage reicht für die Phone AI nicht aus. Möglich ist die Anbindung nur mit einem vorgeschalteten SBC (Session Border Controller), der die Verbindung SIP-konform macht.

@@ -46,7 +46,7 @@ Some routers / firewalls can dynamically adjust SIP communication to correct inc
 
 <Steps>
   <Step title="Set up SIP account">
-    Separate account specifically for Phone AI
+    Separate account specifically for Phone AI. If your phone system allows only one registration per account, set up two accounts.
   </Step>
   <Step title="Provide access data">
     Complete SIP access data (see below)
@@ -80,7 +80,7 @@ You need **one** of the following options:
 
 - **Fixed IP address** (IPv4 or IPv6)
 - **Dynamic DNS** (there may be brief interruptions during IP changes)
- - **Failover reliability** Our softphone always registers with **two** softphones to the phone system.
+ - **Failover reliability** Our softphone always registers with **two** softphones to the phone system. This works either on one SIP account or on two separate SIP accounts.
 
 The Phone AI was designed for modern cloud phone systems that are already accessible via the internet. Older hardware phone systems are also compatible, provided they **fully** support the SIP 2.0 standard and have been configured correctly for operation with a phone connected via the internet. In particular, this means that the phone system knows its public IP address (e.g. via a STUN server) and advertises it as the target for audio transmission during call setup, and that all ports required for audio transmission are open.
 
@@ -146,3 +146,39 @@ Setup duration: 1–2 business days after receiving all information.
     No, this is not possible. The DialogShift Phone AI was developed with modern cloud phone systems in mind, which use a classic SIP registration over the internet. With a strong password and a firewall restriction to the DialogShift IP addresses, a security level similar to a VPN connection can be achieved. Due to the significantly greater setup effort and the wide variety of available VPN software solutions, we therefore do not offer registration over a VPN.
   </Accordion>
 </AccordionGroup>
+
+## Experience with phone systems
+
+<Warning>
+  **This list is a selection, not an exhaustive overview.** It only contains phone systems we already have experience with. If your phone system is not listed, that does not mean it is unsuitable.
+</Warning>
+
+### Check your phone system
+
+There is a large number of phone systems, models, and software versions. We therefore cannot tell in advance for every phone system whether it works with the Phone AI. Even for the phone systems listed below, the behavior can differ depending on model and software version.
+
+The Phone AI requires your phone system to implement the SIP standard (SIP 2.0, RFC 3261) fully and in compliance with the standard. Please check this with the manufacturer or service provider of your phone system before the setup. Ask specifically about these points:
+
+- Registration of SIP phones over the internet
+- Two simultaneous registrations for the Phone AI, either on one SIP account or on two separate SIP accounts
+- New calls from the Phone AI to internal extensions or groups
+- For on-premises phone systems: advertising the public IP address during call setup (NAT-aware configuration)
+
+### Compatible in principle
+
+- STARFACE
+- 3CX
+- Cisco Unified Communications Manager (CUCM)
+- Mitel MiVoice / 3300 ICP
+- Asterisk / FreePBX
+
+### Compatible with limitations
+
+The Phone AI can be connected to and operated with these phone systems. When transferring a call, however, the extension only shows the Phone AI's number, not the number of the calling guest.
+
+- Telekom Cloud PBX / CompanyFlex
+- OpenScape Business (Unify / Mitel)
+
+### Not compatible
+
+- **Avaya IP Office:** The phone system's SIP implementation is not sufficient for the Phone AI. A connection is only possible with an upstream SBC (Session Border Controller) that makes the connection SIP-compliant.
