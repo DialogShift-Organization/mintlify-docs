@@ -1,9 +1,9 @@
 ---
 title: "Oracle OHIP Integration"
-description: "Wie du Oracle OPERA Cloud/OHIP mit DialogShift für Buchungsagenten und Journey Messaging nutzt."
+description: "Wie du Oracle OPERA Cloud über OHIP mit DialogShift für Buchungsagenten und Journey Messaging verbindest."
 ---
 
-Die Oracle-OHIP-Integration verbindet DialogShift mit Oracle OPERA Cloud über die Oracle Hospitality Integration Platform. Chat AI und Phone AI können Verfügbarkeiten und Raten anzeigen; Journey Messaging kann PMS-Daten aus Oracle OHIP nutzen. Ein Buchungsabschluss über DialogShift ist nicht verfügbar.
+Die Oracle-OHIP-Integration verbindet DialogShift mit Oracle OPERA Cloud über die Oracle Hospitality Integration Platform (OHIP). Sie dient als **Booking Engine** und für **Journey Messaging**. Chat AI und Phone AI zeigen Verfügbarkeiten und Raten. Der Full Booking Agent legt echte Reservierungen in OPERA an. Journey Messaging nutzt die Reservierungen aus OPERA für automatische Gästenachrichten.
 
 <Note>
   **Closed Beta Rollout:** Diese Integration ist noch nicht allgemein für den produktiven Einsatz freigegeben. Die Aktivierung erfolgt nur abgestimmt mit Customer Success.
@@ -11,51 +11,97 @@ Die Oracle-OHIP-Integration verbindet DialogShift mit Oracle OPERA Cloud über d
 
 ## Voraussetzungen
 
-- Dein Hotel nutzt Oracle OPERA Cloud/OHIP.
-- Customer Success hat Gateway-URL, App-Key, OAuth-Zugangsdaten und Hotel-ID.
+- Dein Hotel nutzt Oracle OPERA Cloud.
+- Du hast Zugang zum Oracle Customer Developer Portal.
+- Pro DialogShift Client ist genau ein OPERA-Hotel angebunden.
 
 ## Integration aktivieren
 
-Für Oracle OHIP gibt es keine Integrationsseite in der DialogShift App. Customer Success aktiviert die Engine und die PMS-Verbindung für dein Hotel.
+Die Verbindung richtest du auf der Integrationsseite in der DialogShift App ein. Den Rest erledigen DialogShift und Oracle.
 
-1. Stelle Customer Success die OHIP-Zugangsdaten bereit.
-2. Customer Success aktiviert Oracle OHIP als Booking Engine oder Journey-Messaging-Integration.
-3. Prüfe bei Booking-Agent-Nutzung die Verfügbarkeiten und Raten im DialogShift Availability Analyzer.
+1. Öffne in der DialogShift App **Integrationen → Oracle OPERA (OHIP)**.
+2. Trage **Hotel-ID**, **Chain Code** und **Region** ein. Die Werte findest du im Oracle Customer Developer Portal.
+3. Wähle das **Authentifizierungsverfahren**. Nutze wenn möglich **OCIM** und trage die **Enterprise-ID** ein. Nur bei **SSD** trägst du stattdessen Benutzername und Passwort ein.
+4. Speichere und informiere den DialogShift Support unter support@dialogshift.com.
+5. Oracle schickt dir eine Anfrage im PMS oder per E-Mail. Nimm sie im Oracle Customer Developer Portal an. Bis Oracle den Zugang freischaltet, können einige Stunden vergehen.
+6. DialogShift trägt die übrigen Zugangsdaten ein. Danach wechselt der Status auf der Integrationsseite auf **Aktiviert**.
+7. Lade die Integrationsseite neu. Erst jetzt erscheinen Display Sets, Raten und Zimmertypen zur Auswahl.
+8. Customer Success schaltet den Buchungsagenten auf Oracle um.
+
+Viele Hotels verbinden Oracle nur für Journey Messaging. Deshalb setzt das Speichern der Integrationsseite Oracle nicht automatisch als Booking Engine für die Agenten.
 
 ## Buchungsagenten
+
+Unterstützt werden der Availability Agent und der Full Booking Agent, jeweils in Chat AI und Phone AI.
 
 | Thema | Verhalten |
 |:------|:----------|
 | Company-Code / Coupons / Rabattcodes | Nicht unterstützt. |
 | Mindestaufenthalt im Dialog | Nicht explizit durch DialogShift kommuniziert. |
-| Checkout-Workflow | Kein Checkout über DialogShift. |
+| Checkout-Workflow | Direkte Buchung in OPERA. Pro Zimmer entsteht eine eigene Reservierung. Der Gast erhält die OPERA-Bestätigungsnummer. |
 | Payment-Link im Chat | Nicht unterstützt. |
 | Payment-Link im Phone | Nicht unterstützt. |
-| Stornierung unbezahlter Buchungen | Nicht relevant, da DialogShift keine Oracle-OHIP-Buchung anlegt. |
-| Zahlungsvarianten | Nicht über DialogShift buchbar. |
+| Buchungsbestätigung per E-Mail | DialogShift verschickt keine. Den Versand steuerst du in OPERA. |
+| Stornierung unbezahlter Buchungen | DialogShift storniert nicht. Ob OPERA selbst storniert, hängt von der Garantie-Einstellung deines Hotels ab. |
+| Zahlungsvarianten | Ohne Karte und ohne Anzahlung: Buchung bestätigt. Mit Anzahlung oder Kartengarantie: Buchung offen. Nur mit Kreditkarte buchbar: Rate wird nicht angeboten. |
 | Angebots-/Quote-Funktion | Nein. |
-| Benötigte Gastdaten | Keine im DialogShift-Checkout, da kein Checkout über DialogShift stattfindet. |
+| Benötigte Gastdaten | Vorname, Nachname und E-Mail sind Pflicht. Telefonnummer ist optional. |
+
+### Offene Buchungen
+
+DialogShift sammelt keine Kreditkartendaten und erzeugt keinen Zahlungslink. Verlangt eine Rate eine Anzahlung oder eine Kreditkartengarantie, legt der Agent die Buchung trotzdem an. Sie bleibt offen. Der Agent sagt dem Gast, was noch fehlt und dass sich das Hotel meldet.
+
+Danach ist das Hotel dran:
+
+- **Anzahlung:** Kassiere die Anzahlung, zum Beispiel mit Pay by Link aus OPERA. Die Anzahlungsforderung legt OPERA selbst an.
+- **Kartengarantie:** Hole die Kreditkarte beim Gast ein.
+
+### DialogShift-Buchungen in OPERA erkennen
+
+Jede Reservierung von DialogShift hat einen internen Kommentar mit dem Titel **DialogShift**. Daran erkennst du, was noch zu tun ist:
+
+- `PAYMENT OPEN`: Die Anzahlung ist offen.
+- `CARD GUARANTEE OPEN`: Die Kreditkartengarantie fehlt.
+
+Zusätzlich trägt jede Reservierung eine externe Referenz mit dem System `DIALOGSHIFT`. Bei mehreren Zimmern sind die Reservierungen miteinander verknüpft. Als Zahlungsart steht Barzahlung (`CA`) an der Reservierung.
 
 ## Konfiguration Buchungsagenten
 
-**Gateway-URL.** Die Gateway-URL ist konfigurierbar, damit DialogShift die richtige Oracle-OHIP-Umgebung abfragt. Customer Success trägt die URL ein, die zu deiner OPERA-Cloud-Instanz gehört.
+Die Einstellungen findest du auf der Integrationsseite unter **Booking Agent Einstellungen**.
 
-**App-Key.** Der App-Key identifiziert die freigeschaltete OHIP-Anwendung. Stelle Customer Success den Key bereit, der für die DialogShift-Anbindung freigegeben wurde.
+**Raten.** Du legst fest, welche Raten der Agent verkaufen darf. Dafür gibt es zwei Wege. Du kannst immer nur einen davon nutzen.
 
-**OAuth-Zugangsdaten.** OAuth-Zugangsdaten sind nötig, damit DialogShift Verfügbarkeiten und Raten autorisiert abrufen kann. Verwende dafür nur Zugangsdaten, die für die Schnittstelle und das richtige Hotel freigegeben sind.
+- **Display Sets:** Der Agent verkauft alle Raten der gewählten Display Sets. Neue Raten im Set kommen automatisch dazu. Das ist sinnvoll, wenn du deine Raten in OPERA in Display Sets pflegst, zum Beispiel `PUB` für Public Rates.
+- **Einzelauswahl:** Der Agent verkauft genau die Raten, die du anhakst. Neue Raten musst du selbst nachtragen.
 
-**Hotel-ID.** Die Hotel-ID steuert, für welchen Betrieb Oracle OHIP Daten liefert. Prüfe nach der Einrichtung im Availability Analyzer, ob die richtigen Zimmer und Raten erscheinen.
+Ist nichts ausgewählt, gilt das Standard-Display-Set deines Hotels in OPERA. Das Display Set einer Rate findest du in OPERA unter Rate-Code-Konfiguration → Display Set.
+
+**Zimmertypen.** Du kannst festlegen, welche Zimmertypen der Agent anbietet. Ist nichts ausgewählt, bietet er alle verkaufbaren Zimmertypen an.
+
+**Was der Agent nie anbietet.** Unabhängig von deiner Auswahl zeigt der Agent nie:
+
+- Pseudo-, inaktive und Meeting-Zimmertypen
+- Raten, die in OPERA als Negotiated, House Use, Complimentary oder unterdrückt markiert sind
+- Zimmertypen, deren maximale Belegung kleiner ist als die Anfrage
+
+**Garantie-Reihenfolge.** In OPERA hat jede Rate eine oder mehrere Garantien. Der Agent nimmt die Standard-Garantie der Rate, wenn sie keine Kreditkarte, Adresse oder Ankunftszeit verlangt. Sonst nimmt er die erste solche Garantie in der Reihenfolge aus OPERA. Prüfe diese Reihenfolge bei den freigegebenen Raten. Steht dort eine Firmen- oder Gruppengarantie (zum Beispiel `CO` oder `GRPNON`) vor der normalen Garantie ohne Karte (zum Beispiel `NON`), bucht der Agent mit der Firmen- oder Gruppengarantie.
+
+**Zimmer- und Ratentexte.** Zimmername, Beschreibung und Ausstattung kommen aus den Zimmertypen in OPERA. Ratenname und Ratenbeschreibung kommen aus der Rate. Die Stornobedingung liest der Agent aus der Garantie, mit der er bucht. Schreibe Stornobedingungen, Frühstück und weitere Leistungen deshalb auch in die Ratenbeschreibung. Weist OPERA eine Rate als Nettopreis aus, sagt der Agent dem Gast, dass Steuern nicht enthalten sind.
+
+**Zimmerbilder.** OPERA liefert keine Zimmerbilder. Der Agent zeigt deshalb keine Bilder.
+
+**Aktualisierung.** Neue Raten, Zimmertypen und Display Sets erscheinen spätestens nach einer Stunde in den Auswahllisten. Preise und Verfügbarkeiten im Dialog können bis zu fünf Minuten alt sein.
 
 ## Journey Messaging
 
 | Thema | Verhalten |
 |:------|:----------|
-| Unterstützt | Beta. Oracle OHIP kann Journey Messaging mit Buchungs- und Gästedaten versorgen. |
-| Datenfluss | DialogShift liest Reservierungen regelmäßig über OHIP. |
-| Aktualisierung | Polling, ungefähr alle 15 Minuten. Änderungen sind deshalb nicht sofort sichtbar. |
-| Aktivierung | Customer Success richtet die PMS-Verbindung ein. |
-| Erste Synchronisierung | Die erste Synchronisierung kann manuell oder kontrolliert gestartet werden, damit bestehende Reservierungen sauber übernommen werden. |
+| Unterstützt | Closed Beta Rollout. Oracle OHIP versorgt Journey Messaging mit Buchungs- und Gästedaten. |
+| Datenfluss | DialogShift ruft Reservierungen regelmäßig aus OPERA ab. Pro Zimmer entsteht eine eigene Buchung. Übernommen wird nur der Hauptgast. |
+| Aktualisierung | Polling. Laufende Aufenthalte und Anreisen der nächsten 7 Tage alle 15 Minuten, alle übrigen Buchungen etwa alle 2 Stunden. |
+| Aktivierung | Dieselbe Verbindung wie für die Buchungsagenten. DialogShift ruft Daten nur ab, wenn dein Hotel Journey Messaging nutzt. Beim Aktivieren von Journey Messaging werden bestehende Buchungen automatisch übernommen. |
+| Einschränkungen | Kein Pre-Check-in-Link. Ist ein Gast in OPERA anonymisiert oder zur Anonymisierung vorgemerkt, übernimmt DialogShift weder E-Mail noch Telefonnummer. |
 
 ## Konfiguration
 
-Für Oracle OHIP werden Gateway-URL, App-Key, OAuth-Zugangsdaten und die Hotel-ID benötigt.
+**OPERA Cloud Base URL.** Das Feld ist optional. Trägst du die Adresse deiner OPERA-Cloud-Oberfläche ein, verlinkt die Journey-Liste direkt auf die Reservierung in OPERA.
