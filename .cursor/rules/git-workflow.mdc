@@ -1,0 +1,8 @@
+---
+description: Git workflow for this repository
+alwaysApply: true
+---
+
+# Git workflow
+
+Changes are committed directly on `main`. No feature branches, no merge requests.

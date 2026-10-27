@@ -114,20 +114,16 @@
                 ]
               },
               {
-                "group": "Email AI V2",
+                "group": "Email AI",
                 "icon": "envelope",
+                "tag": "V2",
                 "pages": [
-                  "de/email-ai/outlook-antwort-erstellen",
-                  "de/email-ai/outlook-einstellungen"
-                ]
-              },
-              {
-                "group": "Email AI (legacy)",
-                "icon": "envelope",
-                "pages": [
+                  "de/email-ai/uebersicht",
                   "de/email-ai/microsoft-outlook-plugin",
-                  "de/email-ai/firefox-browser-plugin",
-                  "de/email-ai/thunderbird-plugin"
+                  "de/email-ai/outlook-antwort-erstellen",
+                  "de/email-ai/outlook-einstellungen",
+                  "de/email-ai/thunderbird-plugin",
+                  "de/email-ai/firefox-browser-plugin"
                 ]
               },
               {
@@ -326,20 +322,16 @@
                 ]
               },
               {
-                "group": "Email AI V2",
+                "group": "Email AI",
                 "icon": "envelope",
+                "tag": "V2",
                 "pages": [
-                  "en/email-ai/outlook-create-reply",
-                  "en/email-ai/outlook-settings"
-                ]
-              },
-              {
-                "group": "Email AI (legacy)",
-                "icon": "envelope",
-                "pages": [
+                  "en/email-ai/overview",
                   "en/email-ai/microsoft-outlook-plugin",
-                  "en/email-ai/firefox-browser-plugin",
-                  "en/email-ai/thunderbird-plugin"
+                  "en/email-ai/outlook-create-reply",
+                  "en/email-ai/outlook-settings",
+                  "en/email-ai/thunderbird-plugin",
+                  "en/email-ai/firefox-browser-plugin"
                 ]
               },
               {
