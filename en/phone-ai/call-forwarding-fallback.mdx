@@ -1,0 +1,22 @@
+---
+title: "Phone AI Call Forwarding: Fallback to an Internal Extension"
+description: "Set up your phone system so that calls go to an internal extension when the DialogShift number of the Phone AI does not answer."
+---
+
+In [call forwarding](/en/phone-ai/call-forwarding-integration) mode, the hotel's phone system passes calls on to the DialogShift number of the Phone AI. If that number rejects the call, for example because of a carrier outage or a block, or does not answer within 15 seconds, the call goes to an internal extension. You set this up in your phone system, not at DialogShift.
+
+## Setup in the phone system
+
+1. Set up the forwarding to the DialogShift number in the phone system itself, not as a diversion in the carrier's network. Only then can the phone system see whether the call arrives. **CLI no screening** stays active.
+2. Set the fallback extension as the destination for busy, unreachable, and error.
+3. Set the fallback extension as the destination for no answer after 15 seconds.
+4. Check that the fallback extension never routes back to the main number or to the Phone AI.
+
+## Test the fallback
+
+The easiest way to test both cases is to use a mobile phone without voicemail as a temporary forwarding destination:
+
+- If you reject the call, the fallback extension rings immediately.
+- If you do not answer, it rings after 15 seconds.
+
+Afterwards, set the destination back to the DialogShift number.

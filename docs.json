@@ -109,6 +109,7 @@
                   "de/phone-ai/stimmen-auswahl",
                   "de/phone-ai/sip-integration",
                   "de/phone-ai/anrufweiterleitung-integration",
+                  "de/phone-ai/anrufweiterleitung-fallback",
                   "de/phone-ai/redirect-in-sip-de",
                   "de/phone-ai/weiterleitung-warnung"
                 ]
@@ -317,6 +318,7 @@
                   "en/phone-ai/voice-selection",
                   "en/phone-ai/sip-integration",
                   "en/phone-ai/call-forwarding-integration",
+                  "en/phone-ai/call-forwarding-fallback",
                   "en/phone-ai/pbx-configuration",
                   "en/phone-ai/forwarding-warning"
                 ]

@@ -1,0 +1,22 @@
+---
+title: "Phone AI Anrufweiterleitung: Fallback auf eine interne Nebenstelle"
+description: "Richte in der Telefonanlage ein, dass Anrufe an eine interne Nebenstelle gehen, wenn die DialogShift-Nummer der Phone AI nicht annimmt."
+---
+
+Im Modus [Anrufweiterleitung](/de/phone-ai/anrufweiterleitung-integration) stellt die Telefonanlage des Hotels Anrufe an die DialogShift-Nummer der Phone AI durch. Lehnt diese Nummer ab, etwa bei einer Störung beim Anbieter oder einer Sperre, oder nimmt sie nach 15 Sekunden nicht an, geht der Anruf an eine interne Nebenstelle. Das stellst du in der Telefonanlage ein, nicht bei DialogShift.
+
+## Einrichtung in der Telefonanlage
+
+1. Richte die Weiterleitung an die DialogShift-Nummer in der Anlage ein, nicht als Umleitung im Netz des Anbieters. Nur dann sieht die Anlage, ob der Anruf ankommt. **CLI no screening** bleibt aktiv.
+2. Setze bei besetzt, nicht erreichbar und Fehler die Fallback-Nebenstelle als Ziel.
+3. Setze bei Nichtmelden nach 15 Sekunden die Fallback-Nebenstelle als Ziel.
+4. Prüfe, dass die Fallback-Nebenstelle nie zur Hauptnummer oder zur Phone AI zurückleitet.
+
+## Fallback testen
+
+Am einfachsten testest du beide Fälle mit einem Handy ohne Mailbox als vorübergehendem Weiterleitungsziel:
+
+- Lehnst du den Anruf ab, klingelt die Fallback-Nebenstelle sofort.
+- Nimmst du nicht an, klingelt sie nach 15 Sekunden.
+
+Danach stellst du das Ziel zurück auf die DialogShift-Nummer.
