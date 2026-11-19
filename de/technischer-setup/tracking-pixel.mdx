@@ -1,61 +1,119 @@
 ---
 title: 'Tracking-Pixel'
-description: 'Abgeschlossene Buchungen an DialogShift melden, damit Conversions dem Gast und der Konversation zugeordnet werden.'
+description: 'Abgeschlossene Buchungen an DialogShift melden, damit Umsätze dem Gast und der Konversation zugeordnet werden.'
 ---
 
-Das Tracking-Pixel meldet abgeschlossene Buchungen an DialogShift. Du baust es auf der Buchungsbestätigungsseite ein – entweder als Pixel im Browser oder als direkten Aufruf des Endpoints von deinem Server.
+Das Tracking-Pixel meldet abgeschlossene Buchungen an DialogShift. DialogShift ordnet die Buchung dem Gast zu, der vorher mit dem Chat oder der Phone AI gesprochen hat, und weist den Umsatz in der Statistik des Hotels aus.
+
+Dieser Artikel richtet sich an Entwickler von Booking Engines und Websites. Du baust den Pixel auf der Buchungsbestätigungsseite ein, im Browser oder als Aufruf von deinem Server.
 
 ## Endpoint
 
 ```
-https://ibe.prod.co25.net/pixel?clientid=DEINE_CLIENT_ID&amount=234.56&currency=EUR&custid=GAST_ID
+GET https://helper.dialogshift.com/pixel?clientid=pro123&amount=234.56&currency=EUR&custid=563bd7a29b604933957d768e7711d367
 ```
+
+Die Antwort ist immer HTTP 200 mit einem transparenten 1×1-Bild, auch bei fehlenden oder ungültigen Parametern. Der Statuscode sagt also nichts darüber, ob die Buchung angekommen ist.
 
 ## Parameter
 
-| Parameter | Pflicht | Beschreibung | Beispiel |
-| --- | --- | --- | --- |
-| `clientid` | Pflicht | Von DialogShift bereitgestellte Client-ID | `pro123` |
-| `amount` | Pflicht | Buchungsbetrag, Punkt als Dezimaltrennzeichen, ohne Tausendertrennzeichen | `234.56` |
-| `currency` | Empfohlen | Währungscode (ISO 4217); ohne Angabe wird `EUR` angenommen | `EUR` |
-| `custid` | Empfohlen | Von DialogShift an die Buchungs-URL angehängte Gast-ID – unverändert zurückgeben | `c8f2a1` |
-| `conversionType` | Optional | Standard ist `ibe` | `ibe` |
-| `rooms` | Optional | Anzahl gebuchter Zimmer | `2` |
-| `nights` | Optional | Anzahl Übernachtungen | `3` |
-| `persons` | Optional | Anzahl Personen | `4` |
-| `url` | Optional | URL der Buchungsbestätigungsseite | `https://...` |
+| Parameter | Pflicht | Typ | Beschreibung | Beispiel |
+| --- | --- | --- | --- | --- |
+| `clientid` | Pflicht | String | Client-ID des gebuchten Hauses, von DialogShift bereitgestellt | `pro123` |
+| `amount` | Pflicht | Dezimalzahl | Gesamtbetrag der Buchung über alle Zimmer. Brutto oder netto legt das Hotel fest, dann für alle Buchungen gleich. Punkt als Dezimaltrennzeichen, ohne Tausendertrennzeichen | `234.56` |
+| `currency` | Empfohlen | String | Währungscode nach ISO 4217. Ohne Angabe gilt `EUR` | `CHF` |
+| `custid` | Wenn vorhanden | String | Gast-ID aus der Einstiegs-URL, unverändert zurückgeben. Fehlt sie (unbekannter Gast), lass den Parameter weg | `563bd7a29b604933957d768e7711d367` |
+| `rooms` | Optional | Ganzzahl | Anzahl gebuchter Zimmer | `2` |
+| `nights` | Optional | Ganzzahl | Anzahl Übernachtungen | `3` |
+| `persons` | Optional | Ganzzahl | Anzahl Personen | `4` |
+| `url` | Optional | String | URL der Buchungsbestätigungsseite, URL-kodiert | `https%3A%2F%2F...` |
+
+Unterstützte Währungen: AED, AUD, BHD, CAD, CHF, CZK, DKK, EUR, GBP, HKD, HUF, ILS, JPY, KRW, KWD, MYR, NOK, NZD, OMR, PLN, QAR, SAR, SEK, SGD, THB, USD, ZAR.
+
+`rooms`, `nights` und `persons` werden nur als Ganzzahl übernommen, andere Werte werden ignoriert.
+
+## Client-ID je Haus
+
+Jedes Hotel hat eine eigene Client-ID. Laufen mehrere Hotels über eine gemeinsame Buchungsdomain, sendet der Pixel die Client-ID des Hauses, in dem gebucht wurde. Die Zuordnung von deinem Hotelcode zur Client-ID erhältst du von DialogShift.
 
 ## Gastzuordnung mit `custid`
 
-DialogShift hängt beim Weiterleiten in die Buchungsstrecke einen `custid`-Parameter an die URL an (z. B. `…?…&custid=c8f2a1`). Lies diesen Wert aus der aufgerufenen URL aus, behalte ihn über die gesamte Buchungsstrecke und gib ihn im Pixel-Aufruf als `custid` zurück. Damit ordnet DialogShift die Buchung exakt diesem Gast zu.
+Leitet DialogShift einen bekannten Gast in die Buchungsstrecke weiter, hängt es den Parameter `custid` an die URL an:
 
-Ohne `custid` erfolgt die Zuordnung über fingerprinting und ist deutlich ungenauer.
+```
+https://booking.example.com/availability?arrival=2026-12-01&departure=2026-12-03&custid=563bd7a29b604933957d768e7711d367
+```
+
+1. Lies `custid` aus der Einstiegs-URL. Der Wert ist eine undurchsichtige Zeichenkette, derzeit 32 Hex-Zeichen. Prüfe oder verändere ihn nicht.
+2. Halte ihn in der Session bis zur Bestätigungsseite, auch über Weiterleitungen zum Zahlungsanbieter.
+3. Gib ihn im Pixel als `custid` zurück, URL-kodiert.
+
+Ist der Gast noch unbekannt, etwa weil er aus einer E-Mail kommt, hängt DialogShift keine `custid` an. Der Pixel wird dann ohne `custid` gesendet.
+
+Mit `custid` ordnet DialogShift die Buchung exakt dem Gast zu. Ohne `custid` gleicht DialogShift die IP-Adresse des Aufrufs mit den Gästen des Hotels ab. Das ist deutlich ungenauer.
+
+## Wann auslösen
+
+- Genau einmal pro abgeschlossener Buchung, auf der Bestätigungsseite.
+- Nicht erneut bei Reload, Zurück-Navigation oder erneutem Öffnen der Bestätigung. Jeder Aufruf zählt als eigene Buchung.
+- Bei allen Buchungen, auch ohne `custid`.
+- Stornierungen und Änderungen werden nicht gemeldet.
 
 ## Einbau
 
-### Option A: Tracking-Pixel im Browser
+### Option A: Pixel im Browser
 
-Baue auf der Bestätigungsseite ein verstecktes Bild ein. Setze die Werte aus deiner Buchung ein:
+Setze die Werte aus deiner Buchung ein:
 
 ```html
 <script>
+var src = "https://helper.dialogshift.com/pixel"
+  + "?clientid=" + encodeURIComponent(clientId)
+  + "&amount=" + Number(betrag).toFixed(2)
+  + "&currency=" + encodeURIComponent(waehrung);
+if (custid) {
+  src += "&custid=" + encodeURIComponent(custid);
+}
 var pixel = document.createElement("img");
-pixel.src = "https://ibe.prod.co25.net/pixel?clientid=DEINE_CLIENT_ID&amount=" + betrag + "&currency=" + waehrung + "&custid=" + custid;
-pixel.style = "display:none;";
+pixel.src = src;
+pixel.style.display = "none";
 document.body.appendChild(pixel);
 </script>
 ```
 
-Du kannst dieses Snippet auch über den Google Tag Manager ausspielen.
+Du kannst das Snippet auch über den Google Tag Manager ausspielen.
 
-### Option B: Endpoint direkt aufrufen
+### Option B: Aufruf vom Server
 
-Rufe dieselbe URL serverseitig per `GET` auf, sobald die Buchung feststeht:
-
-```
-GET https://ibe.prod.co25.net/pixel?clientid=DEINE_CLIENT_ID&amount=234.56&currency=EUR&custid=c8f2a1
-```
+Rufe dieselbe URL serverseitig per `GET` auf, sobald die Buchung feststeht.
 
 <Note>
-Beim serverseitigen Aufruf kommt die IP deines Servers an, nicht die des Gastes. Gib deshalb immer `custid` mit – sonst kann DialogShift die Buchung nicht zuordnen.
+Beim serverseitigen Aufruf kommt die IP deines Servers an, nicht die des Gastes. Ohne `custid` kann DialogShift die Buchung dann nicht zuordnen.
 </Note>
+
+## Übertragene Daten
+
+Mit jedem Aufruf erhält DialogShift:
+
+- alle Parameter der URL,
+- die IP-Adresse des Aufrufers, im Browser die des Gastes,
+- den Referrer, den der Browser mitsendet.
+
+Namen, E-Mail-Adressen oder Zahlungsdaten des Gastes überträgt der Pixel nicht. Sende sie auch nicht als zusätzliche Parameter.
+
+## Testen
+
+<Steps>
+  <Step title="Test-Client-ID anfordern">
+    Für Tests erhältst du von DialogShift eine Test-Client-ID. Aufrufe mit dieser ID speichert DialogShift nur zur Prüfung, sie zählen nicht als Umsatz.
+  </Step>
+  <Step title="Testbuchung abschließen">
+    Schließe mit der Test-Client-ID eine Buchung ab. Prüfe in den Entwicklertools deines Browsers, dass genau ein Aufruf an `helper.dialogshift.com/pixel` mit `clientid`, `amount`, `currency` und, falls vorhanden, `custid` rausgeht.
+  </Step>
+  <Step title="Eingang bestätigen lassen">
+    DialogShift prüft den Eingang und meldet dir das Ergebnis.
+  </Step>
+  <Step title="Gastzuordnung vor dem Go-live prüfen">
+    Starte im Chat des Hotels eine Buchung und schließe sie mit der echten Client-ID ab. Diese Buchung zählt als Umsatz in der Statistik des Hotels. DialogShift bestätigt, dass sie über die `custid` dem Gast zugeordnet wurde.
+  </Step>
+</Steps>
