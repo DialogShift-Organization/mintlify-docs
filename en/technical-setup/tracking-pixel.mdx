@@ -1,61 +1,119 @@
 ---
 title: 'Tracking Pixel'
-description: 'Report completed bookings to DialogShift so conversions are attributed to the guest and the conversation.'
+description: 'Report completed bookings to DialogShift so revenue is attributed to the guest and the conversation.'
 ---
 
-The tracking pixel reports completed bookings to DialogShift. You add it to the booking confirmation page – either as a pixel in the browser or as a direct call to the endpoint from your server.
+The tracking pixel reports completed bookings to DialogShift. DialogShift attributes the booking to the guest who previously talked to the chat or the Phone AI and shows the revenue in the hotel's statistics.
+
+This article is for developers of booking engines and websites. You add the pixel to the booking confirmation page, either in the browser or as a call from your server.
 
 ## Endpoint
 
 ```
-https://ibe.prod.co25.net/pixel?clientid=YOUR_CLIENT_ID&amount=234.56&currency=EUR&custid=GUEST_ID
+GET https://helper.dialogshift.com/pixel?clientid=pro123&amount=234.56&currency=EUR&custid=563bd7a29b604933957d768e7711d367
 ```
+
+The response is always HTTP 200 with a transparent 1×1 image, even if parameters are missing or invalid. The status code therefore does not tell you whether the booking was received.
 
 ## Parameters
 
-| Parameter | Required | Description | Example |
-| --- | --- | --- | --- |
-| `clientid` | Required | Client ID provided by DialogShift | `pro123` |
-| `amount` | Required | Booking amount, dot as decimal separator, no thousands separator | `234.56` |
-| `currency` | Recommended | Currency code (ISO 4217); `EUR` is assumed if missing | `EUR` |
-| `custid` | Recommended | Guest ID that DialogShift appended to the booking URL – return it unchanged | `c8f2a1` |
-| `conversionType` | Optional | Default is `ibe` | `ibe` |
-| `rooms` | Optional | Number of booked rooms | `2` |
-| `nights` | Optional | Number of nights | `3` |
-| `persons` | Optional | Number of persons | `4` |
-| `url` | Optional | URL of the booking confirmation page | `https://...` |
+| Parameter | Required | Type | Description | Example |
+| --- | --- | --- | --- | --- |
+| `clientid` | Required | String | Client ID of the booked property, provided by DialogShift | `pro123` |
+| `amount` | Required | Decimal | Total booking amount across all rooms. The hotel decides whether this is gross or net, and then uses the same for all bookings. Dot as decimal separator, no thousands separator | `234.56` |
+| `currency` | Recommended | String | Currency code according to ISO 4217. Defaults to `EUR` | `CHF` |
+| `custid` | If available | String | Guest ID from the entry URL, return it unchanged. If it is missing (unknown guest), omit the parameter | `563bd7a29b604933957d768e7711d367` |
+| `rooms` | Optional | Integer | Number of booked rooms | `2` |
+| `nights` | Optional | Integer | Number of nights | `3` |
+| `persons` | Optional | Integer | Number of persons | `4` |
+| `url` | Optional | String | URL of the booking confirmation page, URL-encoded | `https%3A%2F%2F...` |
+
+Supported currencies: AED, AUD, BHD, CAD, CHF, CZK, DKK, EUR, GBP, HKD, HUF, ILS, JPY, KRW, KWD, MYR, NOK, NZD, OMR, PLN, QAR, SAR, SEK, SGD, THB, USD, ZAR.
+
+`rooms`, `nights` and `persons` are only accepted as integers, other values are ignored.
+
+## Client ID per property
+
+Each hotel has its own client ID. If several hotels share one booking domain, the pixel sends the client ID of the property in which the booking was made. DialogShift provides the mapping from your hotel code to the client ID.
 
 ## Guest attribution with `custid`
 
-When DialogShift sends a guest into the booking flow, it appends a `custid` parameter to the URL (e.g. `…?…&custid=c8f2a1`). Read this value from the requested URL, keep it throughout the entire booking flow and return it as `custid` in the pixel call. DialogShift then attributes the booking exactly to this guest.
+When DialogShift sends a known guest into the booking flow, it appends the `custid` parameter to the URL:
 
-Without `custid`, attribution relies on fingerprinting and is much less accurate.
+```
+https://booking.example.com/availability?arrival=2026-12-01&departure=2026-12-03&custid=563bd7a29b604933957d768e7711d367
+```
+
+1. Read `custid` from the entry URL. The value is an opaque string, currently 32 hex characters. Do not validate or modify it.
+2. Keep it in the session until the confirmation page, including redirects to the payment provider.
+3. Return it in the pixel as `custid`, URL-encoded.
+
+If the guest is not yet known, for example because they come from an email, DialogShift does not append a `custid`. The pixel is then sent without `custid`.
+
+With `custid`, DialogShift attributes the booking exactly to the guest. Without `custid`, DialogShift matches the IP address of the call against the hotel's guests. This is much less accurate.
+
+## When to fire
+
+- Exactly once per completed booking, on the confirmation page.
+- Not again on reload, back navigation or when the confirmation is reopened. Every call counts as a separate booking.
+- For all bookings, including those without `custid`.
+- Cancellations and modifications are not reported.
 
 ## Implementation
 
-### Option A: Tracking pixel in the browser
+### Option A: Pixel in the browser
 
-Add a hidden image to the confirmation page. Insert the values from your booking:
+Insert the values from your booking:
 
 ```html
 <script>
+var src = "https://helper.dialogshift.com/pixel"
+  + "?clientid=" + encodeURIComponent(clientId)
+  + "&amount=" + Number(amount).toFixed(2)
+  + "&currency=" + encodeURIComponent(currency);
+if (custid) {
+  src += "&custid=" + encodeURIComponent(custid);
+}
 var pixel = document.createElement("img");
-pixel.src = "https://ibe.prod.co25.net/pixel?clientid=YOUR_CLIENT_ID&amount=" + amount + "&currency=" + currency + "&custid=" + custid;
-pixel.style = "display:none;";
+pixel.src = src;
+pixel.style.display = "none";
 document.body.appendChild(pixel);
 </script>
 ```
 
-You can also deliver this snippet via Google Tag Manager.
+You can also deliver the snippet via Google Tag Manager.
 
-### Option B: Call the endpoint directly
+### Option B: Call from your server
 
-Call the same URL server-side via `GET` as soon as the booking is confirmed:
-
-```
-GET https://ibe.prod.co25.net/pixel?clientid=YOUR_CLIENT_ID&amount=234.56&currency=EUR&custid=c8f2a1
-```
+Call the same URL server-side via `GET` as soon as the booking is confirmed.
 
 <Note>
-With a server-side call, DialogShift receives your server's IP, not the guest's. Therefore always include `custid` – otherwise DialogShift cannot attribute the booking.
+With a server-side call, DialogShift receives your server's IP, not the guest's. Without `custid`, DialogShift then cannot attribute the booking.
 </Note>
+
+## Transmitted data
+
+With every call, DialogShift receives:
+
+- all URL parameters,
+- the IP address of the caller, in the browser that of the guest,
+- the referrer sent by the browser.
+
+The pixel does not transmit guest names, email addresses or payment data. Do not send them as additional parameters either.
+
+## Testing
+
+<Steps>
+  <Step title="Request a test client ID">
+    For testing, DialogShift provides you with a test client ID. DialogShift stores calls with this ID for verification only, they do not count as revenue.
+  </Step>
+  <Step title="Complete a test booking">
+    Complete a booking with the test client ID. In your browser's developer tools, check that exactly one request to `helper.dialogshift.com/pixel` is sent with `clientid`, `amount`, `currency` and, if available, `custid`.
+  </Step>
+  <Step title="Have the receipt confirmed">
+    DialogShift checks the receipt and reports the result to you.
+  </Step>
+  <Step title="Check guest attribution before go-live">
+    Start a booking in the hotel's chat and complete it with the real client ID. This booking counts as revenue in the hotel's statistics. DialogShift confirms that it was attributed to the guest via `custid`.
+  </Step>
+</Steps>
