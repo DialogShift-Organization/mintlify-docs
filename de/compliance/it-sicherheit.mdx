@@ -1,0 +1,72 @@
+---
+title: "IT-Sicherheit und Informationssicherheit"
+description: "Wie DialogShift Gästedaten schützt und wie du deine Konten in der DialogShift App absicherst"
+icon: "shield-check"
+---
+
+Der Schutz der Gästedaten, die du DialogShift anvertraust, hat für uns höchste Priorität. Die Verantwortung dafür liegt direkt bei unserem CTO und Mitgründer.
+
+<Info>
+**Auf einen Blick:** Verarbeitung in Deutschland und der EU, Verschlüsselung bei Übertragung und Speicherung, automatische Anonymisierung nach 90 Tagen, verbindliches Sicherheitsmanagement seit Anfang 2025, Penetrationstests sowie 2FA, Passkeys und maskierte Kontaktdaten in der App.
+</Info>
+
+## Sicherheitsmanagement
+
+Hotels und ihre Software-Anbieter sind verstärkt Ziel von Phishing und Angriffen auf Schnittstellen. Seit Anfang 2025 arbeiten wir daher nach verbindlichen, schriftlich festgelegten Richtlinien für Informationssicherheit, die wir mindestens einmal jährlich prüfen.
+
+- **Zugangsabsicherung im Team:** Passwortmanager und Mehr-Faktor-Authentifizierung (MFA) sind für alle Mitarbeitenden Pflicht.
+- **Zugriff nach Bedarf:** Zugriff auf Kundendaten erhalten nur Mitarbeitende, die ihn für ihre Aufgabe brauchen. Kritische Administrationstätigkeiten folgen dem Vier-Augen-Prinzip.
+- **Schulungen und Risikomanagement:** Alle Mitarbeitenden werden regelmäßig zu Informationssicherheit und Phishing geschult. Risiken führen und bewerten wir laufend in einem Risikoregister.
+- **Sorgfalt bei Dienstleistern:** Dienstleister wählen wir nach festen Sorgfaltskriterien aus und binden sie vertraglich.
+
+## Hosting, Verschlüsselung und Speicherfristen
+
+- **Hosting in Deutschland und der EU:** Die Kernverarbeitung läuft im Rechenzentrum bei Hetzner in Deutschland. Alle eingesetzten Dienstleister verarbeiten Daten innerhalb der EU und des EWR.
+- **Verschlüsselung:** Daten sind bei der Übertragung (HTTPS/TLS) sowie bei der Speicherung in Datenbank und Object Storage verschlüsselt.
+- **Trennung:** Produktiv- und Testsysteme sowie Netzwerksegmente sind getrennt; Kundendaten werden logisch getrennt gespeichert.
+- **Anonymisierung nach 90 Tagen:** Personenbezogene Daten werden 90 Tage nach der letzten Aktivität, dem Anruf oder der Abreise des Gastes anonymisiert.
+
+## Schnittstellen zu PMS und Buchungssystemen
+
+Im Journey Messaging erhält DialogShift über deine PMS-Schnittstelle Buchungsdaten sowie Name, E-Mail-Adresse und Telefonnummer. Im Gespräch aufgenommene Buchungen schreiben wir in dein PMS oder deine Booking Engine zurück.
+
+Alle Zugangsdaten, Passwörter und Secrets für Schnittstellen kannst du direkt in der DialogShift App eintragen; sie werden niemals per E-Mail verschickt. Die Übertragung erfolgt verschlüsselt und ausschließlich für deine gebuchten Produkte. DialogShift verbindet deine Systeme; die Verantwortung für das Buchungssystem selbst bleibt bei dir und deinem Systemanbieter.
+
+## Zugriffsschutz in der DialogShift App
+
+- **Zwei-Faktor-Authentifizierung (2FA):** Zusätzlicher Code aus einer Authenticator-App beim Login. Organisations-Admins können 2FA für die gesamte Organisation erzwingen.
+- **Passkeys:** Anmeldung per Fingerabdruck, Gesichtserkennung oder Geräte-PIN, fest an unsere Login-Adresse gebunden und dadurch phishing-resistent.
+- **Aktive Sitzungen:** Übersicht über alle angemeldeten Geräte mit sofortiger Abmeldung einzelner oder aller Sitzungen.
+- **Maskierte Kontaktdaten (Click-to-Reveal):** E-Mail-Adressen und Telefonnummern der Gäste sind im Journey Messaging verdeckt und erscheinen erst per Klick. Begrenzte Abrufe je Nutzer verhindern massenhaftes Auslesen.
+- **Rollen und Rechte:** Persönliche Konten mit Zugriff ausschließlich auf die berechtigten Hotels und Inboxen.
+
+## Sicherheitstests und Notfallvorsorge
+
+- **Tests und Scans:** Wir prüfen unsere Plattform mit Penetrationstests unter kontrollierten Bedingungen, testen unsere Anwendungen laufend selbst und nutzen automatisierte Schwachstellenscans.
+- **Sicherer Betrieb:** Jede Code-Änderung durchläuft vor der Auslieferung eine Sicherheitsprüfung. Sicherheitsupdates spielen wir regelmäßig ein; sicherheitsrelevante Vorgänge werden protokolliert und ausgewertet.
+- **Redundanz und Backups:** Datenbanken und Anwendungen laufen redundant und überwacht. Datensicherungen liegen zusätzlich außerhalb der Produktivsysteme; die Wiederherstellung testen wir.
+- **Notfallpläne:** Schriftliche Notfallpläne regeln Zuständigkeiten und Meldewege bei Sicherheitsvorfällen und Datenschutzverletzungen. Informationspflichten bei Datenschutzverletzungen richten sich nach unserem Auftragsverarbeitungsvertrag (AVV).
+
+## Empfehlungen für dein Hotel
+
+Auch eine sichere Plattform schützt nicht vor einem per Phishing erbeuteten Passwort. Mit diesen Maßnahmen sicherst du deine Konten in wenigen Minuten ab:
+
+<Tip>
+**Wichtigste Maßnahme:** Aktiviere 2FA für alle Nutzerkonten deines Hauses. So bleiben Konten auch dann geschützt, wenn ein Passwort in falsche Hände gerät.
+</Tip>
+
+1. **2FA für die Organisation erzwingen:** Im **Nutzermanagement** unter **Sicherheit der Organisation** die Option **2FA für alle Nutzer erzwingen** aktivieren (Nutzer ohne 2FA werden abgemeldet und richten sie beim nächsten Login ein).
+2. **Nutzerkonten regelmäßig prüfen:** Die Nutzerliste quartalsweise und bei jedem Personalwechsel prüfen; ausgeschiedene Mitarbeitende und nicht mehr benötigte Dienstleister löschen.
+3. **Rollen knapp halten:** Nur benötigte Rollen und Inboxen vergeben; Admin-Rollen in wenigen Händen belassen.
+4. **Offene Einladungen löschen:** Nicht mehr benötigte Einladungen unter **Eingeladene Nutzer** zurückziehen.
+5. **Persönliche Konten nutzen:** Keine Sammelkonten verwenden, damit 2FA, Rolle und Sitzungen eindeutig einer Person zugeordnet sind.
+6. **Aktive Sitzungen prüfen:** Im **Nutzerprofil** unter **Anmeldung und Sicherheit** unbekannte Geräte sofort abmelden; an geteilten Rechnern nach Arbeitsende abmelden.
+7. **Starke Passwörter und Passkeys nutzen:** Passwortmanager verwenden und im Nutzerprofil zusätzlich Passkeys einrichten.
+8. **Auf Phishing achten:** Die App per Lesezeichen über `app.dialogshift.com` öffnen, nicht über E-Mail-Links; Passwörter und 2FA-Codes niemals weitergeben.
+9. **Bei Verdacht sofort handeln:** Im Nutzerprofil alle Sitzungen abmelden, Passwort ändern und [support@dialogshift.com](mailto:support@dialogshift.com) informieren.
+
+---
+
+<Info>
+Die verbindlichen Einzelheiten zu technischen und organisatorischen Maßnahmen, Datenverarbeitung, Dienstleistern und Meldewegen findest du in deinem Auftragsverarbeitungsvertrag (AVV) sowie in unseren Datenschutz-FAQ. Bei Fragen erreichst du uns unter [support@dialogshift.com](mailto:support@dialogshift.com).
+</Info>

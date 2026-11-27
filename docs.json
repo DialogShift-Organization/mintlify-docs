@@ -48,7 +48,8 @@
               "de/basis/user-erstellen",
               "de/basis/passwort-vergessen-de",
               "de/basis/neuen-nutzer-einladen",
-              "de/basis/benachrichtigungsoptionen"
+              "de/basis/benachrichtigungsoptionen",
+              "de/basis/zwei-faktor-authentifizierung-passkeys"
             ]
           },
           {
@@ -167,7 +168,8 @@
                   "de/compliance/textbaustein-datenschutzerklaerung",
                   "de/compliance/barrierefreiheitserklarung",
                   "de/compliance/cookie-uebersicht-consent-manager",
-                  "de/compliance/cookie-uebersicht-managed-consent-modus"
+                  "de/compliance/cookie-uebersicht-managed-consent-modus",
+                  "de/compliance/it-sicherheit"
                 ]
               },
               {
@@ -257,7 +259,8 @@
               "en/basics/create-user",
               "en/basics/password-reset",
               "en/basics/invite-new-user",
-              "en/basics/notification-options"
+              "en/basics/notification-options",
+              "en/basics/two-factor-authentication-passkeys"
             ]
           },
           {
@@ -376,7 +379,8 @@
                   "en/compliance/privacy-policy-template",
                   "en/compliance/accessibility-statement",
                   "en/compliance/cookie-overview-consent-manager",
-                  "en/compliance/cookie-overview-managed-consent-mode"
+                  "en/compliance/cookie-overview-managed-consent-mode",
+                  "en/compliance/it-security"
                 ]
               },
               {

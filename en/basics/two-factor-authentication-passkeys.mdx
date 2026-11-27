@@ -1,0 +1,128 @@
+---
+title: "Two-Factor Authentication and Passkeys"
+description: "How to protect your DialogShift App account with two-factor authentication and passkeys, and keep track of the devices you are signed in on."
+---
+
+You can protect your DialogShift App account with more than a password. There are two options: one-time codes from an authenticator app (two-factor authentication, 2FA for short) and passkeys. Both are optional unless an admin of your organization requires 2FA. We recommend 2FA for all users, especially admins and anyone who looks after several hotels.
+
+## Where to find the settings
+
+In the DialogShift App, open **Organization settings** and then **Profile**. The **Sign-in and security** section contains **Change password**, **Two-factor authentication (2FA)**, **Passkeys** and **Active sessions**.
+
+<Note>
+  Only set up 2FA and passkeys here in your profile. DialogShift does not send you a link for this by email, SMS or WhatsApp.
+</Note>
+
+## Set up two-factor authentication
+
+With 2FA you enter a 6-digit code from an authenticator app in addition to your password when signing in. Anyone who only knows your password cannot access your account.
+
+You need an authenticator app on your phone, for example Google Authenticator or Authy. A password manager that generates one-time codes works just as well.
+
+1. In your profile, click **Add two-factor authentication device**.
+2. Confirm your password or passkey if the sign-in page asks for it.
+3. Scan the QR code with your authenticator app. If the app or your password manager runs on the same device, click **Enter code manually** and copy the key that is shown.
+4. Enter the code from the app in **One-time code**.
+5. Enter a name in **Device Name** that lets you recognize the device later, for example "Front desk iPhone".
+6. Click **Submit**.
+
+You are then back in your profile and see the device in the table. As soon as a device is set up, the code is required at every sign-in.
+
+You can add several devices, each of them generates valid codes.
+
+## Set up a passkey
+
+With a passkey you sign in without a password, for example with your fingerprint, face recognition or device PIN. A passkey only works on the sign-in page of the DialogShift App and therefore cannot be stolen through phishing. Passkeys are available on computers and phones.
+
+1. In your profile, click **Add passkey**.
+2. Confirm your password or passkey if the sign-in page asks for it.
+3. Follow the steps shown by your browser or operating system and save the passkey, for example with Touch ID, Windows Hello, your phone or your password manager.
+
+The next time you sign in, click **Sign in with Passkey**.
+
+Our tip: set up an authenticator app first and then add a passkey as a convenient way to sign in. With two methods you can still access your account if one of them is unavailable.
+
+## Remove devices and passkeys
+
+Click **Remove** in the table row and confirm the deletion on the sign-in page.
+
+Once you have set up 2FA or a passkey, at least one method always remains. For the last remaining entry, **Remove** is therefore greyed out. Add another 2FA device or passkey first, then you can remove the old entry.
+
+## Check active sessions
+
+**Active sessions** lists all devices you are currently signed in on.
+
+| Column | Content |
+| --- | --- |
+| **Device** | Browser and operating system. The session you are currently using is labeled **This session**. |
+| **Apps** | One icon per application signed in within this session. The laptop stands for the DialogShift App, the phone for the DialogShift Mobile App, the envelope for Email AI. |
+| **Signed in** | Time of sign-in |
+| **Last active** | Last access in this session |
+
+- **Sign out** ends a single session. Anyone using it has to sign in again.
+- **Sign out everywhere** ends all sessions, including the current one. You then sign in again on every device.
+
+If you do not recognize a session, click **Sign out everywhere**, then change your password and set up 2FA.
+
+## No access to your authenticator app
+
+If you have lost your phone or deleted the authenticator app, an admin of your organization resets your 2FA in user management. This only works if the admin has a higher role than you. You then sign in with your password. If 2FA is required for you, you set it up again during that sign-in.
+
+If you have a passkey as a second method, simply sign in with it, add a new 2FA device and remove the old one.
+
+## For admins: require and reset 2FA
+
+You find all of the following settings under **Organization settings** and then **User management**.
+
+### Enforce 2FA for the whole organization
+
+This section is visible to users with the role **Organisations-Admin**.
+
+1. Under **Organization security**, tick **Enforce 2FA for all users**.
+2. Click **Save**.
+
+What happens when you enable it:
+
+- The requirement applies to existing and newly invited users.
+- All users of your organization are signed out immediately. Anyone without 2FA sets it up at their next sign-in.
+- In the invitation form and in the **Edit** dialog, the requirement can no longer be changed for individual users.
+
+If you untick the option again, the requirement stays in place for all users and invitations that already have it. For new invitations you choose it individually again. For an existing user, you remove it in the **Edit** dialog as long as they have not set up 2FA yet.
+
+<Note>
+  Change this setting outside the busy hours at the front desk, because all users are signed out immediately.
+</Note>
+
+### Enforce 2FA for individual users
+
+This is available from the role **Hotel-Admin** upwards.
+
+**When inviting:** In the **Invite new users** form, tick **Enforce 2FA**. The user then sets up 2FA at their first login.
+
+**For open invitations:** In the **Invited users** table, the **2FA** column shows a shield. Click it to switch the requirement on or off.
+
+**For existing users:** In the **List of users**, click **Edit**, tick **Enforce 2FA** and click **Save**. The user is signed out and sets up 2FA at their next login. As a Hotel-Admin or Brand-Admin you need to administer all inboxes of this user. If the user has already set up 2FA, the checkbox is locked. For your own account, set up 2FA in your profile.
+
+### See the 2FA status of your users
+
+In the **List of users**, the **2FA** column shows the status of each user.
+
+| Icon | Meaning |
+| --- | --- |
+| Green shield with check mark | 2FA is set up. |
+| Outlined shield with check mark | 2FA is enforced but not set up yet. |
+| Shield with cross | 2FA is neither set up nor enforced. |
+
+### Reset a user's 2FA
+
+If a user no longer has access to their authenticator app, click **Reset 2FA** in their row in the **List of users** and confirm. This removes all 2FA methods of this user, including their passkeys. If 2FA is enforced, the user sets it up again at their next login.
+
+The button appears under these conditions:
+
+- You have at least the role **Hotel-Admin**.
+- The user has set up 2FA and has a lower role than you.
+- As a Hotel-Admin or Brand-Admin, you administer all inboxes of the user.
+
+You cannot reset your own account. As an admin, set up two methods for that reason, for example an authenticator app and a passkey.
+
+Before resetting, make sure the request really comes from the person themselves.

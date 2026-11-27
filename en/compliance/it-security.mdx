@@ -1,0 +1,72 @@
+---
+title: "IT Security and Information Security"
+description: "How DialogShift protects guest data and how to keep your accounts secure in the DialogShift App"
+icon: "shield-check"
+---
+
+Protecting the guest data you entrust to DialogShift is a top priority for us. Direct responsibility for information security sits with our CTO and co-founder.
+
+<Info>
+**At a glance:** Processing in Germany and the EU, encryption in transit and at rest, automatic anonymization after 90 days, formal information security management since early 2025, penetration testing, plus 2FA, passkeys, and masked contact details in the app.
+</Info>
+
+## Information Security Management
+
+Hotels and their software providers are increasingly targeted by phishing and attacks on system interfaces. Since early 2025, we have operated under binding, written information security policies that we review at least once a year.
+
+- **Team authentication:** Password managers and multi-factor authentication (MFA) are mandatory for all employees.
+- **Need-to-know access:** Only team members who need customer data for their role are granted access. Critical administrative tasks follow the four-eyes principle.
+- **Training and risk management:** All employees receive regular training on information security and phishing. Risks are tracked in a risk register and reassessed regularly.
+- **Vendor due diligence:** Service providers are selected against defined due-diligence criteria and bound by contract.
+
+## Hosting, Encryption, and Retention
+
+- **Hosting in Germany and the EU:** Core processing runs in our data center at Hetzner in Germany. All service providers process data on servers within the EU and EEA.
+- **Encryption in transit and at rest:** Data is encrypted in transit via HTTPS/TLS and at rest in databases and object storage.
+- **Isolation:** Production and test environments as well as network segments are separated; customer data is logically isolated.
+- **90-day anonymization:** Personal data is anonymized 90 days after the last activity, call, or guest checkout.
+
+## PMS and Booking System Interfaces
+
+In Journey Messaging, DialogShift receives booking details along with the guest's name, email address, and phone number via your Property Management System (PMS) interface. Bookings captured in conversations are written back to your PMS or booking engine.
+
+All credentials, passwords, and secrets for interfaces can be entered directly in the DialogShift App and are never sent by email. Transfers are encrypted and data is processed strictly for the products you have subscribed to. DialogShift acts as the connecting layer between your systems; the booking system itself remains the responsibility of your hotel and its system provider.
+
+## Access Protection in the DialogShift App
+
+- **Two-factor authentication (2FA):** Adds a one-time code from an authenticator app at sign-in. Organization admins can enforce 2FA across the entire organization.
+- **Passkeys:** Sign in using fingerprint, face recognition, or device PIN. Bound to our login domain and therefore resistant to phishing.
+- **Active sessions:** View all signed-in devices and immediately sign out individual sessions or all sessions at once.
+- **Masked contact details (click-to-reveal):** Guest email addresses and phone numbers in Journey Messaging are hidden until clicked. Per-user retrieval limits prevent bulk harvesting.
+- **Roles and permissions:** Individual user accounts with access restricted to assigned hotels and inboxes.
+
+## Security Testing and Incident Readiness
+
+- **Tests and scans:** We test our platform through controlled penetration tests, run ongoing internal security testing on our applications, and perform automated vulnerability scans.
+- **Secure operations:** Every code change undergoes a security review before release. Security updates are applied regularly, and security-relevant events are logged and evaluated.
+- **Redundancy and backups:** Databases and applications run redundantly with continuous monitoring. Backups are stored outside production systems, and recovery is tested.
+- **Incident response:** Written response plans define responsibilities and escalation paths for security incidents and personal data breaches. Breach notification procedures are governed by our Data Processing Agreement (DPA).
+
+## Security Best Practices for Your Hotel
+
+Even a secure platform cannot stop an attacker signing in with a password stolen through phishing. These steps strengthen your account security in just a few minutes:
+
+<Tip>
+**Most important step:** Enable 2FA for all user accounts in your organization. This keeps accounts protected even if a password is compromised through phishing.
+</Tip>
+
+1. **Enforce 2FA organization-wide:** In **User management** → **Organization security**, enable **Enforce 2FA for all users** (users without 2FA are signed out and set it up on their next login).
+2. **Audit accounts regularly:** Review your user list quarterly and whenever staff leave; delete accounts of former employees and external providers no longer needed.
+3. **Keep roles minimal:** Assign only the roles and inboxes needed for each job, and keep admin access limited to a few people.
+4. **Revoke unused invitations:** Delete pending invitations that are no longer needed under **Invited users**.
+5. **Use individual accounts:** Avoid shared logins so 2FA, roles, and sessions map clearly to one person.
+6. **Review active sessions:** Check **User profile** → **Sign-in and security** and sign out unrecognized devices immediately; sign out after shifts on shared computers.
+7. **Use strong passwords and passkeys:** Use a password manager and set up passkeys in your user profile.
+8. **Watch out for phishing:** Open the app via a bookmark to `app.dialogshift.com` rather than email links; never share passwords or 2FA codes.
+9. **Act immediately on suspicion:** Click **Sign out everywhere** in your user profile, change your password, and notify [support@dialogshift.com](mailto:support@dialogshift.com).
+
+---
+
+<Info>
+Binding details on technical and organizational measures, data processing, sub-processors, and breach notification procedures are set out in your Data Processing Agreement (DPA) and our Privacy FAQ. If you have questions, contact [support@dialogshift.com](mailto:support@dialogshift.com).
+</Info>
